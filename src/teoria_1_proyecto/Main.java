@@ -119,6 +119,8 @@ public class Main extends javax.swing.JFrame {
         return null;
     }
 
+    //--------------------------
+    
     //Esta Clase se utiliza para Poner Imagenes dentro de paneles
     class FondoPanel extends JPanel {
 
