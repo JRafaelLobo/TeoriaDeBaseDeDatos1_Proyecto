@@ -25,14 +25,18 @@ public class CambiarPantallaTiempo extends Thread {
 
     @Override
     public void run() {
+        Anterior.setVisible(false);
+        Cambio.pack();
+        Cambio.setLocationRelativeTo(Anterior);
+        Cambio.setVisible(true);
         try {
             Thread.sleep(milisegundos);
         } catch (InterruptedException ex) {
         }
-        Cambio.pack();
-        Cambio.setLocationRelativeTo(Anterior);
-        Cambio.setVisible(true);
-        Anterior.setVisible(false);
+        Cambio.setVisible(false);
+        Anterior.pack();
+        Anterior.setLocationRelativeTo(Cambio);
+        Anterior.setVisible(true);
 
     }
 
