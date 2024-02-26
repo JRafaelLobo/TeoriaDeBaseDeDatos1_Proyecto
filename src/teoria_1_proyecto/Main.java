@@ -4,6 +4,15 @@
  */
 package teoria_1_proyecto;
 
+import java.awt.Graphics;
+import java.awt.Image;
+import java.io.File;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.swing.ImageIcon;
+import javax.swing.JPanel;
+
 /**
  *
  * @author rinal
@@ -95,4 +104,38 @@ public class Main extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
+//Este metodo es para reproducir sonidos en el programa
+    public static Clip playMusic(String filepath) {
+        try {
+            File music = new File(filepath);
+            AudioInputStream AudioImput = AudioSystem.getAudioInputStream(music);
+            Clip clip = AudioSystem.getClip();
+            clip.open(AudioImput);
+            return clip;
+        } catch (Exception e) {
+            System.out.println("El Archivo no Existe");
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    //--------------------------
+    
+    //Esta Clase se utiliza para Poner Imagenes dentro de paneles
+    class FondoPanel extends JPanel {
+
+        public FondoPanel(String direccion) {
+            this.direccion = direccion;
+        }
+
+        private String direccion;
+        private Image imagen;
+
+        public void paint(Graphics g) {
+            imagen = new ImageIcon(direccion).getImage();
+            g.drawImage(imagen, 0, 0, getWidth(), getHeight(), this);
+            setOpaque(false);
+            super.paint(g);
+        }
+    }
 }
