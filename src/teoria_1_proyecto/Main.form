@@ -5,6 +5,7 @@
     <Container class="javax.swing.JFrame" name="Portadita">
       <Properties>
         <Property name="defaultCloseOperation" type="int" value="3"/>
+        <Property name="undecorated" type="boolean" value="true"/>
       </Properties>
 
       <Layout>

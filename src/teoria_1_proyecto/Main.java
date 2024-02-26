@@ -25,7 +25,8 @@ public class Main extends javax.swing.JFrame {
     public Main() {
         initComponents();
         this.setLocationRelativeTo(null);
-
+        CambiarPantallaTiempo CPT = new CambiarPantallaTiempo(Portadita, this, 4000);
+        CPT.start();
     }
 
     /**
@@ -42,6 +43,7 @@ public class Main extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
 
         Portadita.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        Portadita.setUndecorated(true);
 
         jPanel2.setBackground(new java.awt.Color(255, 51, 51));
         jPanel2.setForeground(new java.awt.Color(255, 153, 153));
@@ -126,7 +128,7 @@ public class Main extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Main().setVisible(true);
+                new Main().setVisible(false);
             }
         });
     }
