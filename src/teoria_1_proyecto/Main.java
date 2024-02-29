@@ -27,7 +27,7 @@ public class Main extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         DB_Manager db = new DB_Manager();
         db.crearConexion();
-        db.crearTabla();
+        db.crearTabla();   
         //db.HacerConsulta("select id from users");
     }
 
