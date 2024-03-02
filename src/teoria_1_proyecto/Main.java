@@ -7,10 +7,12 @@ package teoria_1_proyecto;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.io.File;
+import java.util.Arrays;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
@@ -25,12 +27,13 @@ public class Main extends javax.swing.JFrame {
     public Main() {
         initComponents();
         this.setLocationRelativeTo(null);
-        DB_Manager db = new DB_Manager();
+        //DB_Manager db = new DB_Manager();
         db.crearConexion();
-        db.crearTablas();   
+        db.crearTablas();
         //db.HacerConsulta("select id from users");
         CambiarPantallaTiempo CPT = new CambiarPantallaTiempo(Portadita, this, 4000);
         CPT.start();
+        JF_Vendedor.show();
     }
 
     /**
@@ -43,34 +46,44 @@ public class Main extends javax.swing.JFrame {
     private void initComponents() {
 
         Portadita = new javax.swing.JFrame();
-        jPanel2 = new FondoPanel("./Imagen\\beinvenida.jpeg");
-        jLabel2 = new javax.swing.JLabel();
+        JP_Portada = new FondoPanel("./Imagen\\beinvenida.jpeg");
+        JL_Welcome = new javax.swing.JLabel();
+        JF_Agentes = new javax.swing.JFrame();
+        JB_CrearAgente = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        JF_Compradores = new javax.swing.JFrame();
+        JB_CrearComprador = new javax.swing.JButton();
+        JF_Vendedor = new javax.swing.JFrame();
+        JB_CrearVendedor = new javax.swing.JButton();
 
         Portadita.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         Portadita.setUndecorated(true);
 
-        jPanel2.setBackground(new java.awt.Color(255, 51, 51));
-        jPanel2.setForeground(new java.awt.Color(255, 153, 153));
+        JP_Portada.setBackground(new java.awt.Color(255, 51, 51));
+        JP_Portada.setForeground(new java.awt.Color(255, 153, 153));
 
-        jLabel2.setBackground(new java.awt.Color(162, 210, 255));
-        jLabel2.setFont(new java.awt.Font("Montserrat Thin", 1, 70)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Welcome!");
+        JL_Welcome.setBackground(new java.awt.Color(162, 210, 255));
+        JL_Welcome.setFont(new java.awt.Font("Montserrat Thin", 1, 70)); // NOI18N
+        JL_Welcome.setForeground(new java.awt.Color(255, 255, 255));
+        JL_Welcome.setText("Welcome!");
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        javax.swing.GroupLayout JP_PortadaLayout = new javax.swing.GroupLayout(JP_Portada);
+        JP_Portada.setLayout(JP_PortadaLayout);
+        JP_PortadaLayout.setHorizontalGroup(
+            JP_PortadaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JP_PortadaLayout.createSequentialGroup()
                 .addContainerGap(91, Short.MAX_VALUE)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(JL_Welcome, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(77, 77, 77))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+        JP_PortadaLayout.setVerticalGroup(
+            JP_PortadaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JP_PortadaLayout.createSequentialGroup()
                 .addGap(68, 68, 68)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(JL_Welcome, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(145, Short.MAX_VALUE))
         );
 
@@ -78,11 +91,110 @@ public class Main extends javax.swing.JFrame {
         Portadita.getContentPane().setLayout(PortaditaLayout);
         PortaditaLayout.setHorizontalGroup(
             PortaditaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(JP_Portada, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         PortaditaLayout.setVerticalGroup(
             PortaditaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(JP_Portada, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        JB_CrearAgente.setText("Crear Agente");
+        JB_CrearAgente.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                JB_CrearAgenteMouseClicked(evt);
+            }
+        });
+
+        jButton2.setText("Modificar Agente");
+
+        jButton3.setText("Borrar Agente");
+
+        jButton4.setText("Ver Agentes");
+
+        jButton5.setText("Buscar Agente");
+
+        javax.swing.GroupLayout JF_AgentesLayout = new javax.swing.GroupLayout(JF_Agentes.getContentPane());
+        JF_Agentes.getContentPane().setLayout(JF_AgentesLayout);
+        JF_AgentesLayout.setHorizontalGroup(
+            JF_AgentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JF_AgentesLayout.createSequentialGroup()
+                .addGroup(JF_AgentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(JF_AgentesLayout.createSequentialGroup()
+                        .addGap(147, 147, 147)
+                        .addComponent(JB_CrearAgente))
+                    .addGroup(JF_AgentesLayout.createSequentialGroup()
+                        .addGap(138, 138, 138)
+                        .addComponent(jButton2))
+                    .addGroup(JF_AgentesLayout.createSequentialGroup()
+                        .addGap(148, 148, 148)
+                        .addGroup(JF_AgentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton4)
+                            .addComponent(jButton3)
+                            .addComponent(jButton5))))
+                .addContainerGap(140, Short.MAX_VALUE))
+        );
+        JF_AgentesLayout.setVerticalGroup(
+            JF_AgentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JF_AgentesLayout.createSequentialGroup()
+                .addGap(47, 47, 47)
+                .addComponent(JB_CrearAgente)
+                .addGap(18, 18, 18)
+                .addComponent(jButton2)
+                .addGap(18, 18, 18)
+                .addComponent(jButton3)
+                .addGap(18, 18, 18)
+                .addComponent(jButton4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton5)
+                .addContainerGap(72, Short.MAX_VALUE))
+        );
+
+        JB_CrearComprador.setText("Crear Comprador");
+        JB_CrearComprador.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                JB_CrearCompradorMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout JF_CompradoresLayout = new javax.swing.GroupLayout(JF_Compradores.getContentPane());
+        JF_Compradores.getContentPane().setLayout(JF_CompradoresLayout);
+        JF_CompradoresLayout.setHorizontalGroup(
+            JF_CompradoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JF_CompradoresLayout.createSequentialGroup()
+                .addGap(135, 135, 135)
+                .addComponent(JB_CrearComprador)
+                .addContainerGap(143, Short.MAX_VALUE))
+        );
+        JF_CompradoresLayout.setVerticalGroup(
+            JF_CompradoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JF_CompradoresLayout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addComponent(JB_CrearComprador)
+                .addContainerGap(227, Short.MAX_VALUE))
+        );
+
+        JB_CrearVendedor.setText("Crear Vendedor");
+        JB_CrearVendedor.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                JB_CrearVendedorMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout JF_VendedorLayout = new javax.swing.GroupLayout(JF_Vendedor.getContentPane());
+        JF_Vendedor.getContentPane().setLayout(JF_VendedorLayout);
+        JF_VendedorLayout.setHorizontalGroup(
+            JF_VendedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JF_VendedorLayout.createSequentialGroup()
+                .addContainerGap(138, Short.MAX_VALUE)
+                .addComponent(JB_CrearVendedor)
+                .addGap(150, 150, 150))
+        );
+        JF_VendedorLayout.setVerticalGroup(
+            JF_VendedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JF_VendedorLayout.createSequentialGroup()
+                .addGap(41, 41, 41)
+                .addComponent(JB_CrearVendedor)
+                .addContainerGap(236, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -101,6 +213,57 @@ public class Main extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void JB_CrearAgenteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_CrearAgenteMouseClicked
+        // TODO add your handling code here:
+        String id = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el id", JOptionPane.QUESTION_MESSAGE);
+        String nombre = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el nombre", JOptionPane.QUESTION_MESSAGE);
+        String dir = JOptionPane.showInputDialog(JF_Agentes, "Ingrese la dir", JOptionPane.QUESTION_MESSAGE);
+        String cel = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el cel", JOptionPane.QUESTION_MESSAGE);
+        String telOf = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el teloficina", JOptionPane.QUESTION_MESSAGE);
+
+        char[] nombreChar = nombre.toCharArray();
+        char[] dirChar = dir.toCharArray();
+        int celInt = Integer.parseInt(cel);
+        int telofInt = Integer.parseInt(telOf);
+        char[] idChar = id.toCharArray();
+
+        String vista = "INSERT INTO agentes VALUES ('" + new String(idChar) + "','" + new String(nombreChar) + "','" + new String(dirChar) + "'," + celInt + ",'" + telOf + "')";
+        
+        db.HacerConsulta(vista);
+    }//GEN-LAST:event_JB_CrearAgenteMouseClicked
+
+    private void JB_CrearCompradorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_CrearCompradorMouseClicked
+        // TODO add your handling code here:
+        String id = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el id", JOptionPane.QUESTION_MESSAGE);
+        String nombre = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el nombre", JOptionPane.QUESTION_MESSAGE);
+        String dir = JOptionPane.showInputDialog(JF_Agentes, "Ingrese la dir", JOptionPane.QUESTION_MESSAGE);
+        String cel = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el cel", JOptionPane.QUESTION_MESSAGE);
+        
+        char[] nombreChar = nombre.toCharArray();
+        char[] dirChar = dir.toCharArray();
+        int celInt = Integer.parseInt(cel);
+        char[] idChar = id.toCharArray();
+
+        String vista = "INSERT INTO compradores VALUES ('" + new String(idChar) + "','" + new String(nombreChar) + "','" + new String(dirChar) + "'," + celInt + ")";
+        db.HacerConsulta(vista);
+    }//GEN-LAST:event_JB_CrearCompradorMouseClicked
+
+    private void JB_CrearVendedorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_CrearVendedorMouseClicked
+        // TODO add your handling code here:
+        String id = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el id", JOptionPane.QUESTION_MESSAGE);
+        String nombre = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el nombre", JOptionPane.QUESTION_MESSAGE);
+        String dir = JOptionPane.showInputDialog(JF_Agentes, "Ingrese la dir", JOptionPane.QUESTION_MESSAGE);
+        String cel = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el cel", JOptionPane.QUESTION_MESSAGE);
+        
+        char[] nombreChar = nombre.toCharArray();
+        char[] dirChar = dir.toCharArray();
+        int celInt = Integer.parseInt(cel);
+        char[] idChar = id.toCharArray();
+
+        String vista = "INSERT INTO vendedores VALUES ('" + new String(idChar) + "','" + new String(nombreChar) + "','" + new String(dirChar) + "'," + celInt + ")";
+        db.HacerConsulta(vista);
+    }//GEN-LAST:event_JB_CrearVendedorMouseClicked
 
     /**
      * @param args the command line arguments
@@ -138,10 +301,25 @@ public class Main extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton JB_CrearAgente;
+    private javax.swing.JButton JB_CrearComprador;
+    private javax.swing.JButton JB_CrearVendedor;
+    private javax.swing.JFrame JF_Agentes;
+    private javax.swing.JFrame JF_Compradores;
+    private javax.swing.JFrame JF_Vendedor;
+    private javax.swing.JLabel JL_Welcome;
+    private javax.swing.JPanel JP_Portada;
     private javax.swing.JFrame Portadita;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel jPanel2;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     // End of variables declaration//GEN-END:variables
+
+ //Variables globales
+    DB_Manager db = new DB_Manager();
+
+
 //Este metodo es para reproducir sonidos en el programa
     public static Clip playMusic(String filepath) {
         try {

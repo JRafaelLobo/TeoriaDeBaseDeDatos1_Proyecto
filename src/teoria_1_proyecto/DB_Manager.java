@@ -106,6 +106,8 @@ public class DB_Manager {
                 comunicarBase.executeUpdate(createTablePropiedadesMercado);
                 System.out.println("Table 'Propiedades_en_mercado' created successfully.");
                 
+                //Cerrar conexion
+                comunicarBase.close();
             } catch (SQLException ex) {
                 Logger.getLogger(DB_Manager.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -115,18 +117,19 @@ public class DB_Manager {
     }
 
     public void HacerConsulta(String consulta) {
-//        if (con != null) {
-//            try {
-//                //Statement statement = con.createStatement();
-//                //PreparedStatement statement = connection.prepareStatement(sql);
-//                //statement.(consulta);
-//                System.out.println("La Consulta se ha hecho con exito");
-//            } catch (SQLException ex) {
-//                Logger.getLogger(DB_Manager.class.getName()).log(Level.SEVERE, null, ex);
-//            }
-//        } else {
-//            System.err.println("Connection is null. Unable to make consult");
-//        }
+        try {
+            
+            //Rafa este es el
+            Statement comunicarBase = con.createStatement();
+            comunicarBase.execute(consulta);
+            System.out.println("Agregado con exito");
+            //Cerrar conexion
+            comunicarBase.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(DB_Manager.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("Ocurrio un error");
+        }
+        
     }
 
 }
