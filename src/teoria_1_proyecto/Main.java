@@ -33,7 +33,7 @@ public class Main extends javax.swing.JFrame {
         //db.HacerConsulta("select id from users");
         CambiarPantallaTiempo CPT = new CambiarPantallaTiempo(Portadita, this, 4000);
         CPT.start();
-        JF_Vendedor.show();
+        JF_enVenta.show();
     }
 
     /**
@@ -58,6 +58,10 @@ public class Main extends javax.swing.JFrame {
         JB_CrearComprador = new javax.swing.JButton();
         JF_Vendedor = new javax.swing.JFrame();
         JB_CrearVendedor = new javax.swing.JButton();
+        JF_Vendidas = new javax.swing.JFrame();
+        JB_CrearPropiedadEVendida = new javax.swing.JButton();
+        JF_enVenta = new javax.swing.JFrame();
+        JB_crearVenta = new javax.swing.JButton();
 
         Portadita.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         Portadita.setUndecorated(true);
@@ -197,6 +201,54 @@ public class Main extends javax.swing.JFrame {
                 .addContainerGap(236, Short.MAX_VALUE))
         );
 
+        JB_CrearPropiedadEVendida.setText("Crear Propiedad Vendida");
+        JB_CrearPropiedadEVendida.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                JB_CrearPropiedadEVendidaMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout JF_VendidasLayout = new javax.swing.GroupLayout(JF_Vendidas.getContentPane());
+        JF_Vendidas.getContentPane().setLayout(JF_VendidasLayout);
+        JF_VendidasLayout.setHorizontalGroup(
+            JF_VendidasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JF_VendidasLayout.createSequentialGroup()
+                .addGap(116, 116, 116)
+                .addComponent(JB_CrearPropiedadEVendida)
+                .addContainerGap(123, Short.MAX_VALUE))
+        );
+        JF_VendidasLayout.setVerticalGroup(
+            JF_VendidasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JF_VendidasLayout.createSequentialGroup()
+                .addGap(63, 63, 63)
+                .addComponent(JB_CrearPropiedadEVendida)
+                .addContainerGap(214, Short.MAX_VALUE))
+        );
+
+        JB_crearVenta.setText("Crear propiedad en venta");
+        JB_crearVenta.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                JB_crearVentaMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout JF_enVentaLayout = new javax.swing.GroupLayout(JF_enVenta.getContentPane());
+        JF_enVenta.getContentPane().setLayout(JF_enVentaLayout);
+        JF_enVentaLayout.setHorizontalGroup(
+            JF_enVentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JF_enVentaLayout.createSequentialGroup()
+                .addGap(119, 119, 119)
+                .addComponent(JB_crearVenta)
+                .addContainerGap(118, Short.MAX_VALUE))
+        );
+        JF_enVentaLayout.setVerticalGroup(
+            JF_enVentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JF_enVentaLayout.createSequentialGroup()
+                .addGap(49, 49, 49)
+                .addComponent(JB_crearVenta)
+                .addContainerGap(228, Short.MAX_VALUE))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
@@ -265,6 +317,42 @@ public class Main extends javax.swing.JFrame {
         db.HacerConsulta(vista);
     }//GEN-LAST:event_JB_CrearVendedorMouseClicked
 
+    private void JB_CrearPropiedadEVendidaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_CrearPropiedadEVendidaMouseClicked
+        // TODO add your handling code here:
+        String id = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el id", JOptionPane.QUESTION_MESSAGE);
+        String nombre = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el nombre", JOptionPane.QUESTION_MESSAGE);
+        String dir = JOptionPane.showInputDialog(JF_Agentes, "Ingrese la dir", JOptionPane.QUESTION_MESSAGE);
+        String ciudad = JOptionPane.showInputDialog(JF_Agentes, "Ingrese la ciudad", JOptionPane.QUESTION_MESSAGE);
+        String cantDormitorios = JOptionPane.showInputDialog(JF_Agentes, "Ingrese la cantidad de dormitorios", JOptionPane.QUESTION_MESSAGE);
+        String caracteristicas = JOptionPane.showInputDialog(JF_Agentes, "Ingrese las caracteristicas", JOptionPane.QUESTION_MESSAGE);
+        String precio = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el precio", JOptionPane.QUESTION_MESSAGE);
+        String fechaPublicacion =JOptionPane.showInputDialog(JF_Agentes, "Ingrese la fecha de publicacion", JOptionPane.QUESTION_MESSAGE);
+        String fechaVenta = JOptionPane.showInputDialog(JF_Agentes, "Ingrese la fecha de la venta", JOptionPane.QUESTION_MESSAGE);
+        String numeroIdentidadA=JOptionPane.showInputDialog(JF_Agentes, "Ingrese el numero de identidad del agente", JOptionPane.QUESTION_MESSAGE);
+        String numeroIdentidadV = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el numero de identidad de el vendedor", JOptionPane.QUESTION_MESSAGE);
+        String numeroIdentidadC = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el numero de identidad del comprador", JOptionPane.QUESTION_MESSAGE);
+        String comision = JOptionPane.showInputDialog(JF_Agentes, "Ingrese la comision", JOptionPane.QUESTION_MESSAGE);
+        
+        String vista = "INSERT INTO propiedades_vendidas VALUES ('" + id + "','" + nombre + "','" + ciudad + "','" + dir + "','" + cantDormitorios + "','" + caracteristicas + "','" + precio + "','" + fechaPublicacion + "','" + fechaVenta + "','" + numeroIdentidadA + "','" + numeroIdentidadV + "','" + numeroIdentidadC + "','" + comision + "')";
+        db.HacerConsulta(vista);
+    }//GEN-LAST:event_JB_CrearPropiedadEVendidaMouseClicked
+
+    private void JB_crearVentaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_crearVentaMouseClicked
+        // TODO add your handling code here:
+        String id = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el id", JOptionPane.QUESTION_MESSAGE);
+        String nombre = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el nombre", JOptionPane.QUESTION_MESSAGE);
+        String dir = JOptionPane.showInputDialog(JF_Agentes, "Ingrese la dir", JOptionPane.QUESTION_MESSAGE);
+        String ciudad = JOptionPane.showInputDialog(JF_Agentes, "Ingrese la ciudad", JOptionPane.QUESTION_MESSAGE);
+        String cantDormitorios = JOptionPane.showInputDialog(JF_Agentes, "Ingrese la cantidad de dormitorios", JOptionPane.QUESTION_MESSAGE);
+        String caracteristicas = JOptionPane.showInputDialog(JF_Agentes, "Ingrese las caracteristicas", JOptionPane.QUESTION_MESSAGE);
+        String precio = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el precio", JOptionPane.QUESTION_MESSAGE);
+        String fechaPublicacion =JOptionPane.showInputDialog(JF_Agentes, "Ingrese la fecha de publicacion", JOptionPane.QUESTION_MESSAGE);
+        String numeroIdentidadA=JOptionPane.showInputDialog(JF_Agentes, "Ingrese el numero de identidad del agente", JOptionPane.QUESTION_MESSAGE);
+        String numeroIdentidadV = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el numero de identidad de el vendedor", JOptionPane.QUESTION_MESSAGE);
+        String vista = "INSERT INTO propiedades_en_mercado VALUES ('" + id + "','" + nombre + "','" + ciudad + "','" + dir + "','" + cantDormitorios + "','" + caracteristicas + "','" + precio + "','" + fechaPublicacion + "','" + numeroIdentidadA + "','" + numeroIdentidadV+ "')";
+        db.HacerConsulta(vista);
+    }//GEN-LAST:event_JB_crearVentaMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -303,10 +391,14 @@ public class Main extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton JB_CrearAgente;
     private javax.swing.JButton JB_CrearComprador;
+    private javax.swing.JButton JB_CrearPropiedadEVendida;
     private javax.swing.JButton JB_CrearVendedor;
+    private javax.swing.JButton JB_crearVenta;
     private javax.swing.JFrame JF_Agentes;
     private javax.swing.JFrame JF_Compradores;
     private javax.swing.JFrame JF_Vendedor;
+    private javax.swing.JFrame JF_Vendidas;
+    private javax.swing.JFrame JF_enVenta;
     private javax.swing.JLabel JL_Welcome;
     private javax.swing.JPanel JP_Portada;
     private javax.swing.JFrame Portadita;
