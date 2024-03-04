@@ -33,7 +33,7 @@ public class Main extends javax.swing.JFrame {
         //db.HacerConsulta("select id from users");
         CambiarPantallaTiempo CPT = new CambiarPantallaTiempo(Portadita, this, 4000);
         CPT.start();
-        JF_enVenta.show();
+        JF_Agentes.show();
     }
 
     /**
@@ -50,7 +50,7 @@ public class Main extends javax.swing.JFrame {
         JL_Welcome = new javax.swing.JLabel();
         JF_Agentes = new javax.swing.JFrame();
         JB_CrearAgente = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        JB_ModificarAgente = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
@@ -109,7 +109,12 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("Modificar Agente");
+        JB_ModificarAgente.setText("Modificar Agente");
+        JB_ModificarAgente.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                JB_ModificarAgenteMouseClicked(evt);
+            }
+        });
 
         jButton3.setText("Borrar Agente");
 
@@ -128,7 +133,7 @@ public class Main extends javax.swing.JFrame {
                         .addComponent(JB_CrearAgente))
                     .addGroup(JF_AgentesLayout.createSequentialGroup()
                         .addGap(138, 138, 138)
-                        .addComponent(jButton2))
+                        .addComponent(JB_ModificarAgente))
                     .addGroup(JF_AgentesLayout.createSequentialGroup()
                         .addGap(148, 148, 148)
                         .addGroup(JF_AgentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -143,7 +148,7 @@ public class Main extends javax.swing.JFrame {
                 .addGap(47, 47, 47)
                 .addComponent(JB_CrearAgente)
                 .addGap(18, 18, 18)
-                .addComponent(jButton2)
+                .addComponent(JB_ModificarAgente)
                 .addGap(18, 18, 18)
                 .addComponent(jButton3)
                 .addGap(18, 18, 18)
@@ -353,6 +358,16 @@ public class Main extends javax.swing.JFrame {
         db.HacerConsulta(vista);
     }//GEN-LAST:event_JB_crearVentaMouseClicked
 
+    private void JB_ModificarAgenteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_ModificarAgenteMouseClicked
+        // TODO add your handling code here:
+        String id = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el id del agente", JOptionPane.QUESTION_MESSAGE);
+        String atributo = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el atributo que desea cambiar", JOptionPane.QUESTION_MESSAGE);
+        String valor = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el nuevo valor", JOptionPane.QUESTION_MESSAGE);
+        
+        String vista = "UPDATE agentes SET " + atributo + " = '" + valor + "' WHERE id = '" + id + "'";
+        db.HacerConsulta(vista);
+    }//GEN-LAST:event_JB_ModificarAgenteMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -393,6 +408,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton JB_CrearComprador;
     private javax.swing.JButton JB_CrearPropiedadEVendida;
     private javax.swing.JButton JB_CrearVendedor;
+    private javax.swing.JButton JB_ModificarAgente;
     private javax.swing.JButton JB_crearVenta;
     private javax.swing.JFrame JF_Agentes;
     private javax.swing.JFrame JF_Compradores;
@@ -402,7 +418,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel JL_Welcome;
     private javax.swing.JPanel JP_Portada;
     private javax.swing.JFrame Portadita;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
