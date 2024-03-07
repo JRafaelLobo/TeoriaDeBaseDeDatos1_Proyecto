@@ -27,19 +27,88 @@ public class DB_Manager {
         }
     }
 
-    public void crearTabla() {
+    public void crearTablas() {
         // Tabla de prueba para probar conexion
         if (con != null) {
             try {
-                Statement statement = con.createStatement();
-                String createTableSQL = "CREATE TABLE IF NOT EXISTS users ("
-                        + "id INT AUTO_INCREMENT PRIMARY KEY,"
-                        + "username VARCHAR(50) NOT NULL,"
-                        + "email VARCHAR(100) NOT NULL,"
-                        + "created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP"
-                        + ")";
-                statement.executeUpdate(createTableSQL);
-                System.out.println("Table 'users' created successfully.");
+                //Crea instancia de statement en la base de datos, nos permite comunicarnos con ella
+                Statement comunicarBase = con.createStatement();
+                
+                //Crea agentes
+                /*String createTableAgentes = "CREATE TABLE IF NOT EXISTS agentes ("
+                        + "id INT PRIMARY KEY NOT NULL,"
+                        + "nombre CHAR(10) NOT NULL,"
+                        + "direccion CHAR(30) NOT NULL," 
+                        + "celular INT NOT NULL,"
+                        + "telefonoOficina INT NOT NULL"
+                        + ")";*/
+
+                comunicarBase.executeUpdate("CALL crearTablaAgentes();");
+                System.out.println("Table 'agentes' created successfully.");
+                
+                //Crea vendedores
+                /*String createTableVendedores = "CREATE TABLE IF NOT EXISTS vendedores ("
+                        + "id INT PRIMARY KEY NOT NULL,"
+                        + "nombre CHAR(10) NOT NULL,"
+                        + "direccion CHAR(30) NOT NULL," 
+                        + "celular INT NOT NULL"
+                        + ")";*/
+                comunicarBase.executeUpdate("CALL crearTablaVendedores();");
+                System.out.println("Table 'vendedores' created successfully.");
+                
+                //Crear compradores
+                /*String createTableCompradores = "CREATE TABLE IF NOT EXISTS compradores ("
+                        + "id INT PRIMARY KEY NOT NULL,"
+                        + "nombre CHAR(10) NOT NULL,"
+                        + "direccion CHAR(30) NOT NULL," 
+                        + "celular INT NOT NULL"
+                        + ")";*/
+                comunicarBase.executeUpdate("CALL crearTablaCompradores();");
+                System.out.println("Table 'compradores' created successfully.");
+                
+                
+                //Crea propiedades vendidas
+                /*String createTablePropiedades = "CREATE TABLE IF NOT EXISTS propiedades_vendidas ("
+                        + "idPropiedad INT PRIMARY KEY NOT NULL,"
+                        + "nombre CHAR(10) NOT NULL,"
+                        + "ciudad CHAR(20) NOT NULL,"
+                        + "direccion CHAR(30) NOT NULL,"
+                        +"cantidadDormitorios INT NOT NULL,"
+                        +"caracteristicas CHAR(100) NOT NULL,"
+                        +"precio INT NOT NULL,"
+                        +"fechaPublicacion DATE NOT NULL,"
+                        +"fechaVenta DATE NOT NULL,"
+                        +"noIdentidad_Agente INT NOT NULL,"
+                        +"FOREIGN KEY (noIdentidad_Agente) REFERENCES agentes(id),"
+                        +"noIdentidad_Vendedor INT NOT NULL,"
+                        +"FOREIGN KEY (noIdentidad_Vendedor) REFERENCES vendedores(id),"
+                        +"noIdentidad_Comprador INT NOT NULL,"
+                        +"FOREIGN KEY (noIdentidad_Comprador) REFERENCES compradores(id),"
+                        + "comisionVenta INT NOT NULL"
+                        + ")";*/
+                comunicarBase.executeUpdate("CALL crearTablaPVendidas();");
+                System.out.println("Table 'Propiedades_vendidas' created successfully.");
+                
+                //Crea propiedades en mercado
+                /* String createTablePropiedadesMercado = "CREATE TABLE IF NOT EXISTS propiedades_en_mercado ("
+                        + "idPropiedad INT PRIMARY KEY NOT NULL,"
+                        + "nombre CHAR(10) NOT NULL,"
+                        + "ciudad CHAR(20) NOT NULL,"
+                        + "direccion CHAR(30) NOT NULL,"
+                        +"cantidadDormitorios INT NOT NULL,"
+                        +"caracteristicas CHAR(100) NOT NULL,"
+                        +"precio INT NOT NULL,"
+                        +"fechaPublicacion DATE NOT NULL,"
+                        +"noIdentidad_Agente INT NOT NULL,"
+                        +"FOREIGN KEY (noIdentidad_Agente) REFERENCES agentes(id),"
+                        +"noIdentidad_Vendedor INT NOT NULL,"
+                        +"FOREIGN KEY (noIdentidad_Vendedor) REFERENCES vendedores(id)"
+                        + ")";*/
+                comunicarBase.executeUpdate("CALL crearTablaPMercado();");
+                System.out.println("Table 'Propiedades_en_mercado' created successfully.");
+                
+                //Cerrar conexion
+                comunicarBase.close();
             } catch (SQLException ex) {
                 Logger.getLogger(DB_Manager.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -49,18 +118,19 @@ public class DB_Manager {
     }
 
     public void HacerConsulta(String consulta) {
-//        if (con != null) {
-//            try {
-//                //Statement statement = con.createStatement();
-//                //PreparedStatement statement = connection.prepareStatement(sql);
-//                //statement.(consulta);
-//                System.out.println("La Consulta se ha hecho con exito");
-//            } catch (SQLException ex) {
-//                Logger.getLogger(DB_Manager.class.getName()).log(Level.SEVERE, null, ex);
-//            }
-//        } else {
-//            System.err.println("Connection is null. Unable to make consult");
-//        }
+        try {
+            
+            //Rafa este es el statement
+            Statement comunicarBase = con.createStatement();
+            comunicarBase.execute(consulta);
+            System.out.println("Agregado con exito");
+            //Cerrar conexion
+            comunicarBase.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(DB_Manager.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("Ocurrio un error");
+        }
+        
     }
 
 }

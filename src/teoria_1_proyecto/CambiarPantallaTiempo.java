@@ -15,12 +15,19 @@ public class CambiarPantallaTiempo extends Thread {
     private JFrame Cambio, Anterior;
     private int milisegundos;
     private Clip Music;
+    private boolean Extended;
 
     public CambiarPantallaTiempo(JFrame Cambio, JFrame Anterior, int milisegundos) {
         this.Cambio = Cambio;
         this.Anterior = Anterior;
         this.milisegundos = milisegundos;
-
+        Extended=false;
+    }
+    public CambiarPantallaTiempo(JFrame Cambio, JFrame Anterior, int milisegundos,boolean Extended) {
+        this.Cambio = Cambio;
+        this.Anterior = Anterior;
+        this.milisegundos = milisegundos;
+        this.Extended=Extended;
     }
 
     @Override
@@ -36,8 +43,10 @@ public class CambiarPantallaTiempo extends Thread {
         Cambio.setVisible(false);
         Anterior.pack();
         Anterior.setLocationRelativeTo(Cambio);
+    if (Extended) {
+            Anterior.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        }
         Anterior.setVisible(true);
-
     }
 
     public void playMusic(String filepath) {
