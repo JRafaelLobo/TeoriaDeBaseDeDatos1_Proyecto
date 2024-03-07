@@ -4,13 +4,16 @@
  */
 package teoria_1_proyecto;
 
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.io.File;
+import java.util.Arrays;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
@@ -25,7 +28,11 @@ public class Main extends javax.swing.JFrame {
     public Main() {
         initComponents();
         this.setLocationRelativeTo(null);
-        CambiarPantallaTiempo CPT = new CambiarPantallaTiempo(Portadita, this, 4000);
+        DB_Manager db = new DB_Manager();
+        db.crearConexion();
+        db.crearTablas();
+        //db.HacerConsulta("select id from users");
+        CambiarPantallaTiempo CPT = new CambiarPantallaTiempo(Portadita, JF_Principal, 4000,true);
         CPT.start();
     }
 
@@ -39,34 +46,82 @@ public class Main extends javax.swing.JFrame {
     private void initComponents() {
 
         Portadita = new javax.swing.JFrame();
-        jPanel2 = new FondoPanel("./Imagen\\beinvenida.jpeg");
+        JP_Portada = new FondoPanel("./Imagen\\beinvenida.jpeg");
+        JL_Welcome = new javax.swing.JLabel();
+        JF_Agentes = new javax.swing.JFrame();
+        javax.swing.JPanel jPanel9 = new FondoPanel("./Imagen\\principal.jpeg");
+        JB_CrearAgente = new javax.swing.JButton();
+        JB_ModificarAgente = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        JF_Compradores = new javax.swing.JFrame();
+        jPanel14 = new FondoPanel("./Imagen\\compradores.jpeg");
+        JB_CrearComprador = new javax.swing.JButton();
+        JB_modificarComprador = new javax.swing.JButton();
+        JB_BorrarComprador = new javax.swing.JButton();
+        JB_CrearComprador3 = new javax.swing.JButton();
+        JB_CrearComprador4 = new javax.swing.JButton();
+        jLabel19 = new javax.swing.JLabel();
+        JF_Vendedor = new javax.swing.JFrame();
+        JB_CrearVendedor = new javax.swing.JButton();
+        JF_Vendidas = new javax.swing.JFrame();
+        JB_CrearPropiedadEVendida = new javax.swing.JButton();
+        JF_enVenta = new javax.swing.JFrame();
+        JB_crearVenta = new javax.swing.JButton();
+        JF_Principal = new javax.swing.JFrame();
+        jPanel1 = new FondoPanel("./Imagen\\login.jpeg");
+        jPanel2 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        tf_usernamelogin = new javax.swing.JTextField();
+        pf_passwordlogin = new javax.swing.JPasswordField();
+        jButton1 = new javax.swing.JButton();
+        JF_crearAgente = new javax.swing.JFrame();
+        jPanel10 = new FondoPanel("./Imagen\\crearagente.jpg");
+        jPanel11 = new javax.swing.JPanel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        tf_crearAgenteOficina = new javax.swing.JTextField();
+        tf_crearAgenteCelular = new javax.swing.JTextField();
+        tf_crearAgenteDireccion = new javax.swing.JTextField();
+        tf_crearAgenteNombre = new javax.swing.JTextField();
+        tf_crearAgenteId = new javax.swing.JTextField();
+        jButton8 = new javax.swing.JButton();
+        JF_modificarAgente = new javax.swing.JFrame();
+        jPanel12 = new FondoPanel("./Imagen\\modificarAgente.jpg");
+        jPanel13 = new javax.swing.JPanel();
 
         Portadita.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         Portadita.setUndecorated(true);
 
-        jPanel2.setBackground(new java.awt.Color(255, 51, 51));
-        jPanel2.setForeground(new java.awt.Color(255, 153, 153));
+        JP_Portada.setBackground(new java.awt.Color(255, 51, 51));
+        JP_Portada.setForeground(new java.awt.Color(255, 153, 153));
 
-        jLabel2.setBackground(new java.awt.Color(162, 210, 255));
-        jLabel2.setFont(new java.awt.Font("Montserrat Thin", 1, 70)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Welcome!");
+        JL_Welcome.setBackground(new java.awt.Color(162, 210, 255));
+        JL_Welcome.setFont(new java.awt.Font("Montserrat Thin", 1, 70)); // NOI18N
+        JL_Welcome.setForeground(new java.awt.Color(255, 255, 255));
+        JL_Welcome.setText("Welcome!");
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        javax.swing.GroupLayout JP_PortadaLayout = new javax.swing.GroupLayout(JP_Portada);
+        JP_Portada.setLayout(JP_PortadaLayout);
+        JP_PortadaLayout.setHorizontalGroup(
+            JP_PortadaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JP_PortadaLayout.createSequentialGroup()
                 .addContainerGap(91, Short.MAX_VALUE)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(JL_Welcome, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(77, 77, 77))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+        JP_PortadaLayout.setVerticalGroup(
+            JP_PortadaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JP_PortadaLayout.createSequentialGroup()
                 .addGap(68, 68, 68)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(JL_Welcome, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(145, Short.MAX_VALUE))
         );
 
@@ -74,11 +129,592 @@ public class Main extends javax.swing.JFrame {
         Portadita.getContentPane().setLayout(PortaditaLayout);
         PortaditaLayout.setHorizontalGroup(
             PortaditaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(JP_Portada, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         PortaditaLayout.setVerticalGroup(
             PortaditaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(JP_Portada, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        jPanel9.setBackground(new java.awt.Color(0, 51, 153));
+
+        JB_CrearAgente.setBackground(new java.awt.Color(123, 114, 105));
+        JB_CrearAgente.setFont(new java.awt.Font("Montserrat Thin", 1, 18)); // NOI18N
+        JB_CrearAgente.setForeground(new java.awt.Color(255, 255, 255));
+        JB_CrearAgente.setText("Crear Agente");
+        JB_CrearAgente.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                JB_CrearAgenteMouseClicked(evt);
+            }
+        });
+
+        JB_ModificarAgente.setBackground(new java.awt.Color(123, 114, 105));
+        JB_ModificarAgente.setFont(new java.awt.Font("Montserrat Thin", 1, 14)); // NOI18N
+        JB_ModificarAgente.setForeground(new java.awt.Color(255, 255, 255));
+        JB_ModificarAgente.setText("Modificar Agente");
+        JB_ModificarAgente.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                JB_ModificarAgenteMouseClicked(evt);
+            }
+        });
+
+        jButton3.setBackground(new java.awt.Color(123, 114, 105));
+        jButton3.setFont(new java.awt.Font("Montserrat Thin", 1, 17)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(255, 255, 255));
+        jButton3.setText("Borrar Agente");
+
+        jButton4.setBackground(new java.awt.Color(123, 114, 105));
+        jButton4.setFont(new java.awt.Font("Montserrat Thin", 1, 18)); // NOI18N
+        jButton4.setForeground(new java.awt.Color(255, 255, 255));
+        jButton4.setText("Ver Agentes");
+
+        jButton5.setBackground(new java.awt.Color(123, 114, 105));
+        jButton5.setFont(new java.awt.Font("Montserrat Thin", 1, 16)); // NOI18N
+        jButton5.setForeground(new java.awt.Color(255, 255, 255));
+        jButton5.setText("Buscar Agente");
+
+        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
+                .addContainerGap(985, Short.MAX_VALUE)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JB_ModificarAgente, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JB_CrearAgente, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(177, 177, 177))
+        );
+        jPanel9Layout.setVerticalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addGap(137, 137, 137)
+                .addComponent(JB_CrearAgente, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
+                .addComponent(JB_ModificarAgente, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(73, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout JF_AgentesLayout = new javax.swing.GroupLayout(JF_Agentes.getContentPane());
+        JF_Agentes.getContentPane().setLayout(JF_AgentesLayout);
+        JF_AgentesLayout.setHorizontalGroup(
+            JF_AgentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JF_AgentesLayout.createSequentialGroup()
+                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        JF_AgentesLayout.setVerticalGroup(
+            JF_AgentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        jPanel14.setBackground(new java.awt.Color(235, 208, 244));
+
+        JB_CrearComprador.setBackground(new java.awt.Color(215, 173, 177));
+        JB_CrearComprador.setFont(new java.awt.Font("Montserrat Thin", 1, 18)); // NOI18N
+        JB_CrearComprador.setText("Crear Comprador");
+        JB_CrearComprador.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                JB_CrearCompradorMouseClicked(evt);
+            }
+        });
+        JB_CrearComprador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JB_CrearCompradorActionPerformed(evt);
+            }
+        });
+
+        JB_modificarComprador.setBackground(new java.awt.Color(215, 173, 177));
+        JB_modificarComprador.setFont(new java.awt.Font("Montserrat Thin", 1, 18)); // NOI18N
+        JB_modificarComprador.setText("Modificar Comprador");
+        JB_modificarComprador.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                JB_modificarCompradorMouseClicked(evt);
+            }
+        });
+        JB_modificarComprador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JB_modificarCompradorActionPerformed(evt);
+            }
+        });
+
+        JB_BorrarComprador.setBackground(new java.awt.Color(215, 173, 177));
+        JB_BorrarComprador.setFont(new java.awt.Font("Montserrat Thin", 1, 18)); // NOI18N
+        JB_BorrarComprador.setText("Borrar Comprador");
+        JB_BorrarComprador.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                JB_BorrarCompradorMouseClicked(evt);
+            }
+        });
+        JB_BorrarComprador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JB_BorrarCompradorActionPerformed(evt);
+            }
+        });
+
+        JB_CrearComprador3.setBackground(new java.awt.Color(215, 173, 177));
+        JB_CrearComprador3.setFont(new java.awt.Font("Montserrat Thin", 1, 18)); // NOI18N
+        JB_CrearComprador3.setText("Ver Compradores");
+        JB_CrearComprador3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                JB_CrearComprador3MouseClicked(evt);
+            }
+        });
+        JB_CrearComprador3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JB_CrearComprador3ActionPerformed(evt);
+            }
+        });
+
+        JB_CrearComprador4.setBackground(new java.awt.Color(215, 173, 177));
+        JB_CrearComprador4.setFont(new java.awt.Font("Montserrat Thin", 1, 18)); // NOI18N
+        JB_CrearComprador4.setText("Buscar Comprador");
+        JB_CrearComprador4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                JB_CrearComprador4MouseClicked(evt);
+            }
+        });
+        JB_CrearComprador4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JB_CrearComprador4ActionPerformed(evt);
+            }
+        });
+
+        jLabel19.setBackground(new java.awt.Color(156, 127, 157));
+        jLabel19.setFont(new java.awt.Font("Segoe Script", 1, 48)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(246, 236, 232));
+        jLabel19.setText("Administrador Comprador");
+
+        javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
+        jPanel14.setLayout(jPanel14Layout);
+        jPanel14Layout.setHorizontalGroup(
+            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel14Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(JB_CrearComprador, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(JB_modificarComprador, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(JB_BorrarComprador, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(JB_CrearComprador4, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JB_CrearComprador3, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(25, 25, 25))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel14Layout.createSequentialGroup()
+                .addContainerGap(170, Short.MAX_VALUE)
+                .addComponent(jLabel19)
+                .addGap(142, 142, 142))
+        );
+        jPanel14Layout.setVerticalGroup(
+            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel14Layout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addComponent(jLabel19)
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel14Layout.createSequentialGroup()
+                        .addGap(118, 118, 118)
+                        .addComponent(JB_CrearComprador)
+                        .addGap(18, 18, 18)
+                        .addComponent(JB_modificarComprador))
+                    .addGroup(jPanel14Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(JB_CrearComprador3)
+                        .addGap(20, 20, 20)))
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel14Layout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addComponent(JB_BorrarComprador))
+                    .addComponent(JB_CrearComprador4))
+                .addContainerGap(175, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout JF_CompradoresLayout = new javax.swing.GroupLayout(JF_Compradores.getContentPane());
+        JF_Compradores.getContentPane().setLayout(JF_CompradoresLayout);
+        JF_CompradoresLayout.setHorizontalGroup(
+            JF_CompradoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        JF_CompradoresLayout.setVerticalGroup(
+            JF_CompradoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        JB_CrearVendedor.setText("Crear Vendedor");
+        JB_CrearVendedor.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                JB_CrearVendedorMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout JF_VendedorLayout = new javax.swing.GroupLayout(JF_Vendedor.getContentPane());
+        JF_Vendedor.getContentPane().setLayout(JF_VendedorLayout);
+        JF_VendedorLayout.setHorizontalGroup(
+            JF_VendedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JF_VendedorLayout.createSequentialGroup()
+                .addContainerGap(138, Short.MAX_VALUE)
+                .addComponent(JB_CrearVendedor)
+                .addGap(150, 150, 150))
+        );
+        JF_VendedorLayout.setVerticalGroup(
+            JF_VendedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JF_VendedorLayout.createSequentialGroup()
+                .addGap(41, 41, 41)
+                .addComponent(JB_CrearVendedor)
+                .addContainerGap(236, Short.MAX_VALUE))
+        );
+
+        JB_CrearPropiedadEVendida.setText("Crear Propiedad Vendida");
+        JB_CrearPropiedadEVendida.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                JB_CrearPropiedadEVendidaMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout JF_VendidasLayout = new javax.swing.GroupLayout(JF_Vendidas.getContentPane());
+        JF_Vendidas.getContentPane().setLayout(JF_VendidasLayout);
+        JF_VendidasLayout.setHorizontalGroup(
+            JF_VendidasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JF_VendidasLayout.createSequentialGroup()
+                .addGap(116, 116, 116)
+                .addComponent(JB_CrearPropiedadEVendida)
+                .addContainerGap(123, Short.MAX_VALUE))
+        );
+        JF_VendidasLayout.setVerticalGroup(
+            JF_VendidasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JF_VendidasLayout.createSequentialGroup()
+                .addGap(63, 63, 63)
+                .addComponent(JB_CrearPropiedadEVendida)
+                .addContainerGap(214, Short.MAX_VALUE))
+        );
+
+        JB_crearVenta.setText("Crear propiedad en venta");
+        JB_crearVenta.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                JB_crearVentaMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout JF_enVentaLayout = new javax.swing.GroupLayout(JF_enVenta.getContentPane());
+        JF_enVenta.getContentPane().setLayout(JF_enVentaLayout);
+        JF_enVentaLayout.setHorizontalGroup(
+            JF_enVentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JF_enVentaLayout.createSequentialGroup()
+                .addGap(119, 119, 119)
+                .addComponent(JB_crearVenta)
+                .addContainerGap(118, Short.MAX_VALUE))
+        );
+        JF_enVentaLayout.setVerticalGroup(
+            JF_enVentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JF_enVentaLayout.createSequentialGroup()
+                .addGap(49, 49, 49)
+                .addComponent(JB_crearVenta)
+                .addContainerGap(228, Short.MAX_VALUE))
+        );
+
+        jPanel1.setBackground(new java.awt.Color(51, 153, 255));
+
+        jPanel2.setBackground(new java.awt.Color(219, 166, 190));
+
+        jLabel1.setFont(new java.awt.Font("Segoe Script", 1, 58)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 231, 241));
+        jLabel1.setText("Log In");
+
+        jLabel2.setFont(new java.awt.Font("Montserrat Thin", 3, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(83, 101, 114));
+        jLabel2.setText("Username:");
+
+        jLabel3.setFont(new java.awt.Font("Montserrat Thin", 3, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(83, 101, 114));
+        jLabel3.setText("Password:");
+
+        tf_usernamelogin.setBackground(new java.awt.Color(255, 231, 241));
+        tf_usernamelogin.setFont(new java.awt.Font("Montserrat Thin", 1, 18)); // NOI18N
+        tf_usernamelogin.setForeground(new java.awt.Color(77, 74, 93));
+        tf_usernamelogin.setText("Ingrese su nombre de usuario");
+        tf_usernamelogin.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                tf_usernameloginMousePressed(evt);
+            }
+        });
+
+        pf_passwordlogin.setBackground(new java.awt.Color(255, 231, 241));
+        pf_passwordlogin.setFont(new java.awt.Font("Montserrat Thin", 1, 18)); // NOI18N
+        pf_passwordlogin.setForeground(new java.awt.Color(77, 74, 93));
+        pf_passwordlogin.setText("*******");
+        pf_passwordlogin.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                pf_passwordloginMousePressed(evt);
+            }
+        });
+
+        jButton1.setBackground(new java.awt.Color(83, 101, 114));
+        jButton1.setFont(new java.awt.Font("Montserrat Thin", 1, 24)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("Iniciar");
+        jButton1.setBorder(null);
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tf_usernamelogin, javax.swing.GroupLayout.PREFERRED_SIZE, 459, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(pf_passwordlogin, javax.swing.GroupLayout.PREFERRED_SIZE, 459, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(237, 237, 237)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(231, 231, 231)
+                        .addComponent(jLabel1)))
+                .addContainerGap(17, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(62, 62, 62)
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(tf_usernamelogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(53, 53, 53)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(pf_passwordlogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26))
+        );
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(718, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(144, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(137, 137, 137))
+        );
+
+        javax.swing.GroupLayout JF_PrincipalLayout = new javax.swing.GroupLayout(JF_Principal.getContentPane());
+        JF_Principal.getContentPane().setLayout(JF_PrincipalLayout);
+        JF_PrincipalLayout.setHorizontalGroup(
+            JF_PrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JF_PrincipalLayout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        JF_PrincipalLayout.setVerticalGroup(
+            JF_PrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JF_PrincipalLayout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        jPanel11.setBackground(new java.awt.Color(64, 82, 94));
+
+        jLabel13.setFont(new java.awt.Font("Montserrat Thin", 1, 18)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(245, 253, 255));
+        jLabel13.setText("Id:");
+
+        jLabel14.setBackground(new java.awt.Color(224, 238, 247));
+        jLabel14.setFont(new java.awt.Font("Montserrat Thin", 1, 36)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(245, 253, 255));
+        jLabel14.setText("Crear Agente");
+
+        jLabel15.setFont(new java.awt.Font("Montserrat Thin", 1, 18)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(245, 253, 255));
+        jLabel15.setText("Dirección:");
+
+        jLabel16.setFont(new java.awt.Font("Montserrat Thin", 1, 18)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(245, 253, 255));
+        jLabel16.setText("Nombre:");
+
+        jLabel17.setFont(new java.awt.Font("Montserrat Thin", 1, 18)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(245, 253, 255));
+        jLabel17.setText("Celular:");
+
+        jLabel18.setFont(new java.awt.Font("Montserrat Thin", 1, 18)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(245, 253, 255));
+        jLabel18.setText("Telefono Oficina:");
+
+        tf_crearAgenteOficina.setBackground(new java.awt.Color(140, 155, 165));
+
+        tf_crearAgenteCelular.setBackground(new java.awt.Color(140, 155, 165));
+
+        tf_crearAgenteDireccion.setBackground(new java.awt.Color(140, 155, 165));
+
+        tf_crearAgenteNombre.setBackground(new java.awt.Color(140, 155, 165));
+
+        tf_crearAgenteId.setBackground(new java.awt.Color(140, 155, 165));
+
+        jButton8.setBackground(new java.awt.Color(38, 56, 68));
+        jButton8.setFont(new java.awt.Font("Montserrat Thin", 1, 24)); // NOI18N
+        jButton8.setForeground(new java.awt.Color(255, 255, 255));
+        jButton8.setText("Crear");
+
+        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
+        jPanel11.setLayout(jPanel11Layout);
+        jPanel11Layout.setHorizontalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel11Layout.createSequentialGroup()
+                        .addGap(46, 46, 46)
+                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel18)
+                            .addComponent(jLabel17)
+                            .addComponent(jLabel15)
+                            .addComponent(jLabel16)
+                            .addComponent(jLabel13))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tf_crearAgenteCelular)
+                            .addComponent(tf_crearAgenteOficina)
+                            .addComponent(tf_crearAgenteId, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tf_crearAgenteNombre)
+                            .addComponent(tf_crearAgenteDireccion)))
+                    .addGroup(jPanel11Layout.createSequentialGroup()
+                        .addGap(124, 124, 124)
+                        .addComponent(jLabel14)))
+                .addGap(29, 29, 29))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jButton8)
+                .addGap(18, 18, 18))
+        );
+        jPanel11Layout.setVerticalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addGap(49, 49, 49)
+                .addComponent(jLabel14)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel13)
+                    .addComponent(tf_crearAgenteId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel11Layout.createSequentialGroup()
+                        .addComponent(jLabel16)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel15)
+                            .addComponent(tf_crearAgenteDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel17)
+                            .addComponent(tf_crearAgenteCelular, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel18)
+                            .addComponent(tf_crearAgenteOficina, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(tf_crearAgenteNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(16, 16, 16))
+        );
+
+        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
+        jPanel10.setLayout(jPanel10Layout);
+        jPanel10Layout.setHorizontalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addGap(52, 52, 52)
+                .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(48, Short.MAX_VALUE))
+        );
+        jPanel10Layout.setVerticalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
+                .addContainerGap(82, Short.MAX_VALUE)
+                .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(59, 59, 59))
+        );
+
+        javax.swing.GroupLayout JF_crearAgenteLayout = new javax.swing.GroupLayout(JF_crearAgente.getContentPane());
+        JF_crearAgente.getContentPane().setLayout(JF_crearAgenteLayout);
+        JF_crearAgenteLayout.setHorizontalGroup(
+            JF_crearAgenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        JF_crearAgenteLayout.setVerticalGroup(
+            JF_crearAgenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JF_crearAgenteLayout.createSequentialGroup()
+                .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        jPanel13.setBackground(new java.awt.Color(0, 0, 0));
+
+        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
+        jPanel13.setLayout(jPanel13Layout);
+        jPanel13Layout.setHorizontalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 377, Short.MAX_VALUE)
+        );
+        jPanel13Layout.setVerticalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 280, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
+        jPanel12.setLayout(jPanel12Layout);
+        jPanel12Layout.setHorizontalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel12Layout.createSequentialGroup()
+                .addGap(126, 126, 126)
+                .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(147, Short.MAX_VALUE))
+        );
+        jPanel12Layout.setVerticalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel12Layout.createSequentialGroup()
+                .addContainerGap(120, Short.MAX_VALUE)
+                .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(85, 85, 85))
+        );
+
+        javax.swing.GroupLayout JF_modificarAgenteLayout = new javax.swing.GroupLayout(JF_modificarAgente.getContentPane());
+        JF_modificarAgente.getContentPane().setLayout(JF_modificarAgenteLayout);
+        JF_modificarAgenteLayout.setHorizontalGroup(
+            JF_modificarAgenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JF_modificarAgenteLayout.createSequentialGroup()
+                .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        JF_modificarAgenteLayout.setVerticalGroup(
+            JF_modificarAgenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JF_modificarAgenteLayout.createSequentialGroup()
+                .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -88,15 +724,193 @@ public class Main extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 544, Short.MAX_VALUE)
+            .addGap(0, 911, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 325, Short.MAX_VALUE)
+            .addGap(0, 556, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void JB_CrearAgenteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_CrearAgenteMouseClicked
+        // TODO add your handling code here:
+//        String id = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el id", JOptionPane.QUESTION_MESSAGE);
+//        String nombre = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el nombre", JOptionPane.QUESTION_MESSAGE);
+//        String dir = JOptionPane.showInputDialog(JF_Agentes, "Ingrese la dir", JOptionPane.QUESTION_MESSAGE);
+//        String cel = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el cel", JOptionPane.QUESTION_MESSAGE);
+//        String telOf = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el teloficina", JOptionPane.QUESTION_MESSAGE);
+//
+//        char[] nombreChar = nombre.toCharArray();
+//        char[] dirChar = dir.toCharArray();
+//        int celInt = Integer.parseInt(cel);
+//        int telofInt = Integer.parseInt(telOf);
+//        char[] idChar = id.toCharArray();
+//
+//        String vista = "INSERT INTO agentes VALUES ('" + new String(idChar) + "','" + new String(nombreChar) + "','" + new String(dirChar) + "'," + celInt + ",'" + telOf + "')";
+//        
+//        db.HacerConsulta(vista);
+ JF_crearAgente.pack();
+                    JF_crearAgente.setLocationRelativeTo(JF_Agentes);
+                    JF_Agentes.setVisible(false);
+                    JF_crearAgente.setVisible(true);
+    }//GEN-LAST:event_JB_CrearAgenteMouseClicked
+
+    private void JB_CrearCompradorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_CrearCompradorMouseClicked
+        // TODO add your handling code here:
+        String id = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el id", JOptionPane.QUESTION_MESSAGE);
+        String nombre = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el nombre", JOptionPane.QUESTION_MESSAGE);
+        String dir = JOptionPane.showInputDialog(JF_Agentes, "Ingrese la dir", JOptionPane.QUESTION_MESSAGE);
+        String cel = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el cel", JOptionPane.QUESTION_MESSAGE);
+        
+        char[] nombreChar = nombre.toCharArray();
+        char[] dirChar = dir.toCharArray();
+        int celInt = Integer.parseInt(cel);
+        char[] idChar = id.toCharArray();
+
+        String vista = "INSERT INTO compradores VALUES ('" + new String(idChar) + "','" + new String(nombreChar) + "','" + new String(dirChar) + "'," + celInt + ")";
+        db.HacerConsulta(vista);
+    }//GEN-LAST:event_JB_CrearCompradorMouseClicked
+
+    private void JB_CrearVendedorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_CrearVendedorMouseClicked
+        // TODO add your handling code here:
+        String id = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el id", JOptionPane.QUESTION_MESSAGE);
+        String nombre = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el nombre", JOptionPane.QUESTION_MESSAGE);
+        String dir = JOptionPane.showInputDialog(JF_Agentes, "Ingrese la dir", JOptionPane.QUESTION_MESSAGE);
+        String cel = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el cel", JOptionPane.QUESTION_MESSAGE);
+        
+        char[] nombreChar = nombre.toCharArray();
+        char[] dirChar = dir.toCharArray();
+        int celInt = Integer.parseInt(cel);
+        char[] idChar = id.toCharArray();
+
+        String vista = "INSERT INTO vendedores VALUES ('" + new String(idChar) + "','" + new String(nombreChar) + "','" + new String(dirChar) + "'," + celInt + ")";
+        db.HacerConsulta(vista);
+    }//GEN-LAST:event_JB_CrearVendedorMouseClicked
+
+    private void JB_CrearPropiedadEVendidaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_CrearPropiedadEVendidaMouseClicked
+        // TODO add your handling code here:
+        String id = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el id", JOptionPane.QUESTION_MESSAGE);
+        String nombre = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el nombre", JOptionPane.QUESTION_MESSAGE);
+        String dir = JOptionPane.showInputDialog(JF_Agentes, "Ingrese la dir", JOptionPane.QUESTION_MESSAGE);
+        String ciudad = JOptionPane.showInputDialog(JF_Agentes, "Ingrese la ciudad", JOptionPane.QUESTION_MESSAGE);
+        String cantDormitorios = JOptionPane.showInputDialog(JF_Agentes, "Ingrese la cantidad de dormitorios", JOptionPane.QUESTION_MESSAGE);
+        String caracteristicas = JOptionPane.showInputDialog(JF_Agentes, "Ingrese las caracteristicas", JOptionPane.QUESTION_MESSAGE);
+        String precio = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el precio", JOptionPane.QUESTION_MESSAGE);
+        String fechaPublicacion =JOptionPane.showInputDialog(JF_Agentes, "Ingrese la fecha de publicacion", JOptionPane.QUESTION_MESSAGE);
+        String fechaVenta = JOptionPane.showInputDialog(JF_Agentes, "Ingrese la fecha de la venta", JOptionPane.QUESTION_MESSAGE);
+        String numeroIdentidadA=JOptionPane.showInputDialog(JF_Agentes, "Ingrese el numero de identidad del agente", JOptionPane.QUESTION_MESSAGE);
+        String numeroIdentidadV = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el numero de identidad de el vendedor", JOptionPane.QUESTION_MESSAGE);
+        String numeroIdentidadC = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el numero de identidad del comprador", JOptionPane.QUESTION_MESSAGE);
+        String comision = JOptionPane.showInputDialog(JF_Agentes, "Ingrese la comision", JOptionPane.QUESTION_MESSAGE);
+        
+        String vista = "INSERT INTO propiedades_vendidas VALUES ('" + id + "','" + nombre + "','" + ciudad + "','" + dir + "','" + cantDormitorios + "','" + caracteristicas + "','" + precio + "','" + fechaPublicacion + "','" + fechaVenta + "','" + numeroIdentidadA + "','" + numeroIdentidadV + "','" + numeroIdentidadC + "','" + comision + "')";
+        db.HacerConsulta(vista);
+    }//GEN-LAST:event_JB_CrearPropiedadEVendidaMouseClicked
+
+    private void JB_crearVentaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_crearVentaMouseClicked
+        // TODO add your handling code here:
+        String id = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el id", JOptionPane.QUESTION_MESSAGE);
+        String nombre = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el nombre", JOptionPane.QUESTION_MESSAGE);
+        String dir = JOptionPane.showInputDialog(JF_Agentes, "Ingrese la dir", JOptionPane.QUESTION_MESSAGE);
+        String ciudad = JOptionPane.showInputDialog(JF_Agentes, "Ingrese la ciudad", JOptionPane.QUESTION_MESSAGE);
+        String cantDormitorios = JOptionPane.showInputDialog(JF_Agentes, "Ingrese la cantidad de dormitorios", JOptionPane.QUESTION_MESSAGE);
+        String caracteristicas = JOptionPane.showInputDialog(JF_Agentes, "Ingrese las caracteristicas", JOptionPane.QUESTION_MESSAGE);
+        String precio = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el precio", JOptionPane.QUESTION_MESSAGE);
+        String fechaPublicacion =JOptionPane.showInputDialog(JF_Agentes, "Ingrese la fecha de publicacion", JOptionPane.QUESTION_MESSAGE);
+        String numeroIdentidadA=JOptionPane.showInputDialog(JF_Agentes, "Ingrese el numero de identidad del agente", JOptionPane.QUESTION_MESSAGE);
+        String numeroIdentidadV = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el numero de identidad de el vendedor", JOptionPane.QUESTION_MESSAGE);
+        String vista = "INSERT INTO propiedades_en_mercado VALUES ('" + id + "','" + nombre + "','" + ciudad + "','" + dir + "','" + cantDormitorios + "','" + caracteristicas + "','" + precio + "','" + fechaPublicacion + "','" + numeroIdentidadA + "','" + numeroIdentidadV+ "')";
+        db.HacerConsulta(vista);
+    }//GEN-LAST:event_JB_crearVentaMouseClicked
+
+    private void JB_ModificarAgenteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_ModificarAgenteMouseClicked
+        // TODO add your handling code here:
+//        String id = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el id del agente", JOptionPane.QUESTION_MESSAGE);
+//        String atributo = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el atributo que desea cambiar", JOptionPane.QUESTION_MESSAGE);
+//        String valor = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el nuevo valor", JOptionPane.QUESTION_MESSAGE);
+//        
+//        String vista = "UPDATE agentes SET " + atributo + " = '" + valor + "' WHERE id = '" + id + "'";
+//        db.HacerConsulta(vista);
+ JF_modificarAgente.pack();
+                    JF_modificarAgente.setLocationRelativeTo(JF_Agentes);
+                    JF_Agentes.setVisible(false);
+                    JF_modificarAgente.setVisible(true);
+    }//GEN-LAST:event_JB_ModificarAgenteMouseClicked
+
+    private void tf_usernameloginMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tf_usernameloginMousePressed
+
+        if (tf_usernamelogin.getText().equals("Ingrese su nombre de usuario")) {
+            tf_usernamelogin.setText("");
+            tf_usernamelogin.setForeground(Color.WHITE);
+        }
+        if (String.valueOf(pf_passwordlogin.getPassword()).isEmpty()) {
+            pf_passwordlogin.setText("*******");
+            pf_passwordlogin.setForeground(Color.GRAY);
+        }
+    
+    }//GEN-LAST:event_tf_usernameloginMousePressed
+
+    private void pf_passwordloginMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pf_passwordloginMousePressed
+        if (String.valueOf(pf_passwordlogin.getPassword()).equals("*******")) {
+            pf_passwordlogin.setText("");
+            pf_passwordlogin.setForeground(Color.white);
+        }
+        if (tf_usernamelogin.getText().isEmpty()) {
+            tf_usernamelogin.setText("Ingrese su nombre de usuario");
+            tf_usernamelogin.setForeground(Color.GRAY);
+        }
+    }//GEN-LAST:event_pf_passwordloginMousePressed
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+//         JF_Agentes.pack();
+//                    JF_Agentes.setLocationRelativeTo(JF_Principal);
+//                    JF_Agentes.setExtendedState(MAXIMIZED_BOTH);
+//                    JF_Principal.setVisible(false);
+//                    JF_Agentes.setVisible(true);
+  JF_Compradores.pack();
+                    JF_Compradores.setLocationRelativeTo(JF_Principal);
+//                     JF_Compradores.setExtendedState(MAXIMIZED_BOTH);
+                    JF_Principal.setVisible(false);
+                     JF_Compradores.setVisible(true);
+    }//GEN-LAST:event_jButton1MouseClicked
+
+    private void JB_CrearCompradorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_CrearCompradorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JB_CrearCompradorActionPerformed
+
+    private void JB_modificarCompradorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_modificarCompradorMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JB_modificarCompradorMouseClicked
+
+    private void JB_modificarCompradorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_modificarCompradorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JB_modificarCompradorActionPerformed
+
+    private void JB_BorrarCompradorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_BorrarCompradorMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JB_BorrarCompradorMouseClicked
+
+    private void JB_BorrarCompradorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_BorrarCompradorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JB_BorrarCompradorActionPerformed
+
+    private void JB_CrearComprador3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_CrearComprador3MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JB_CrearComprador3MouseClicked
+
+    private void JB_CrearComprador3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_CrearComprador3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JB_CrearComprador3ActionPerformed
+
+    private void JB_CrearComprador4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_CrearComprador4MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JB_CrearComprador4MouseClicked
+
+    private void JB_CrearComprador4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_CrearComprador4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JB_CrearComprador4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -134,10 +948,62 @@ public class Main extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton JB_BorrarComprador;
+    private javax.swing.JButton JB_CrearAgente;
+    private javax.swing.JButton JB_CrearComprador;
+    private javax.swing.JButton JB_CrearComprador3;
+    private javax.swing.JButton JB_CrearComprador4;
+    private javax.swing.JButton JB_CrearPropiedadEVendida;
+    private javax.swing.JButton JB_CrearVendedor;
+    private javax.swing.JButton JB_ModificarAgente;
+    private javax.swing.JButton JB_crearVenta;
+    private javax.swing.JButton JB_modificarComprador;
+    private javax.swing.JFrame JF_Agentes;
+    private javax.swing.JFrame JF_Compradores;
+    private javax.swing.JFrame JF_Principal;
+    private javax.swing.JFrame JF_Vendedor;
+    private javax.swing.JFrame JF_Vendidas;
+    private javax.swing.JFrame JF_crearAgente;
+    private javax.swing.JFrame JF_enVenta;
+    private javax.swing.JFrame JF_modificarAgente;
+    private javax.swing.JLabel JL_Welcome;
+    private javax.swing.JPanel JP_Portada;
     private javax.swing.JFrame Portadita;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton8;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel13;
+    private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPasswordField pf_passwordlogin;
+    private javax.swing.JTextField tf_crearAgenteCelular;
+    private javax.swing.JTextField tf_crearAgenteDireccion;
+    private javax.swing.JTextField tf_crearAgenteId;
+    private javax.swing.JTextField tf_crearAgenteNombre;
+    private javax.swing.JTextField tf_crearAgenteOficina;
+    private javax.swing.JTextField tf_usernamelogin;
     // End of variables declaration//GEN-END:variables
+
+ //Variables globales
+    DB_Manager db = new DB_Manager();
+
+
 //Este metodo es para reproducir sonidos en el programa
     public static Clip playMusic(String filepath) {
         try {
