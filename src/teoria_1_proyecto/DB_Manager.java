@@ -35,39 +35,40 @@ public class DB_Manager {
                 Statement comunicarBase = con.createStatement();
                 
                 //Crea agentes
-                String createTableAgentes = "CREATE TABLE IF NOT EXISTS agentes ("
+                /*String createTableAgentes = "CREATE TABLE IF NOT EXISTS agentes ("
                         + "id INT PRIMARY KEY NOT NULL,"
                         + "nombre CHAR(10) NOT NULL,"
                         + "direccion CHAR(30) NOT NULL," 
                         + "celular INT NOT NULL,"
                         + "telefonoOficina INT NOT NULL"
-                        + ")";
-                comunicarBase.executeUpdate(createTableAgentes);
+                        + ")";*/
+
+                comunicarBase.executeUpdate("CALL crearTablaAgentes();");
                 System.out.println("Table 'agentes' created successfully.");
                 
                 //Crea vendedores
-                String createTableVendedores = "CREATE TABLE IF NOT EXISTS vendedores ("
+                /*String createTableVendedores = "CREATE TABLE IF NOT EXISTS vendedores ("
                         + "id INT PRIMARY KEY NOT NULL,"
                         + "nombre CHAR(10) NOT NULL,"
                         + "direccion CHAR(30) NOT NULL," 
                         + "celular INT NOT NULL"
-                        + ")";
-                comunicarBase.executeUpdate(createTableVendedores);
+                        + ")";*/
+                comunicarBase.executeUpdate("CALL crearTablaVendedores();");
                 System.out.println("Table 'vendedores' created successfully.");
                 
                 //Crear compradores
-                String createTableCompradores = "CREATE TABLE IF NOT EXISTS compradores ("
+                /*String createTableCompradores = "CREATE TABLE IF NOT EXISTS compradores ("
                         + "id INT PRIMARY KEY NOT NULL,"
                         + "nombre CHAR(10) NOT NULL,"
                         + "direccion CHAR(30) NOT NULL," 
                         + "celular INT NOT NULL"
-                        + ")";
-                comunicarBase.executeUpdate(createTableCompradores);
+                        + ")";*/
+                comunicarBase.executeUpdate("CALL crearTablaCompradores();");
                 System.out.println("Table 'compradores' created successfully.");
                 
                 
                 //Crea propiedades vendidas
-                String createTablePropiedades = "CREATE TABLE IF NOT EXISTS propiedades_vendidas ("
+                /*String createTablePropiedades = "CREATE TABLE IF NOT EXISTS propiedades_vendidas ("
                         + "idPropiedad INT PRIMARY KEY NOT NULL,"
                         + "nombre CHAR(10) NOT NULL,"
                         + "ciudad CHAR(20) NOT NULL,"
@@ -84,12 +85,12 @@ public class DB_Manager {
                         +"noIdentidad_Comprador INT NOT NULL,"
                         +"FOREIGN KEY (noIdentidad_Comprador) REFERENCES compradores(id),"
                         + "comisionVenta INT NOT NULL"
-                        + ")";
-                comunicarBase.executeUpdate(createTablePropiedades);
+                        + ")";*/
+                comunicarBase.executeUpdate("CALL crearTablaPVendidas();");
                 System.out.println("Table 'Propiedades_vendidas' created successfully.");
                 
                 //Crea propiedades en mercado
-                 String createTablePropiedadesMercado = "CREATE TABLE IF NOT EXISTS propiedades_en_mercado ("
+                /* String createTablePropiedadesMercado = "CREATE TABLE IF NOT EXISTS propiedades_en_mercado ("
                         + "idPropiedad INT PRIMARY KEY NOT NULL,"
                         + "nombre CHAR(10) NOT NULL,"
                         + "ciudad CHAR(20) NOT NULL,"
@@ -102,8 +103,8 @@ public class DB_Manager {
                         +"FOREIGN KEY (noIdentidad_Agente) REFERENCES agentes(id),"
                         +"noIdentidad_Vendedor INT NOT NULL,"
                         +"FOREIGN KEY (noIdentidad_Vendedor) REFERENCES vendedores(id)"
-                        + ")";
-                comunicarBase.executeUpdate(createTablePropiedadesMercado);
+                        + ")";*/
+                comunicarBase.executeUpdate("CALL crearTablaPMercado();");
                 System.out.println("Table 'Propiedades_en_mercado' created successfully.");
                 
                 //Cerrar conexion
@@ -119,7 +120,7 @@ public class DB_Manager {
     public void HacerConsulta(String consulta) {
         try {
             
-            //Rafa este es el
+            //Rafa este es el statement
             Statement comunicarBase = con.createStatement();
             comunicarBase.execute(consulta);
             System.out.println("Agregado con exito");
