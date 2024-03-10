@@ -31,7 +31,6 @@ public class Main extends javax.swing.JFrame {
         DB_Manager db = new DB_Manager();
         db.crearConexion();
         db.crearTablas();
-        //db.HacerConsulta("select id from users");
         CambiarPantallaTiempo CPT = new CambiarPantallaTiempo(Portadita, JF_Principal, 4000,true);
         CPT.start();
     }
@@ -147,6 +146,11 @@ public class Main extends javax.swing.JFrame {
                 JB_CrearAgenteMouseClicked(evt);
             }
         });
+        JB_CrearAgente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JB_CrearAgenteActionPerformed(evt);
+            }
+        });
 
         JB_ModificarAgente.setBackground(new java.awt.Color(123, 114, 105));
         JB_ModificarAgente.setFont(new java.awt.Font("Montserrat Thin", 1, 14)); // NOI18N
@@ -162,6 +166,11 @@ public class Main extends javax.swing.JFrame {
         jButton3.setFont(new java.awt.Font("Montserrat Thin", 1, 17)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("Borrar Agente");
+        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton3MouseClicked(evt);
+            }
+        });
 
         jButton4.setBackground(new java.awt.Color(123, 114, 105));
         jButton4.setFont(new java.awt.Font("Montserrat Thin", 1, 18)); // NOI18N
@@ -395,6 +404,12 @@ public class Main extends javax.swing.JFrame {
                 .addContainerGap(214, Short.MAX_VALUE))
         );
 
+        JF_enVenta.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                JF_enVentaMouseClicked(evt);
+            }
+        });
+
         JB_crearVenta.setText("Crear propiedad en venta");
         JB_crearVenta.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -580,6 +595,11 @@ public class Main extends javax.swing.JFrame {
         jButton8.setFont(new java.awt.Font("Montserrat Thin", 1, 24)); // NOI18N
         jButton8.setForeground(new java.awt.Color(255, 255, 255));
         jButton8.setText("Crear");
+        jButton8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton8MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
@@ -751,7 +771,7 @@ public class Main extends javax.swing.JFrame {
 //        String vista = "INSERT INTO agentes VALUES ('" + new String(idChar) + "','" + new String(nombreChar) + "','" + new String(dirChar) + "'," + celInt + ",'" + telOf + "')";
 //        
 //        db.HacerConsulta(vista);
- JF_crearAgente.pack();
+                    JF_crearAgente.pack();
                     JF_crearAgente.setLocationRelativeTo(JF_Agentes);
                     JF_Agentes.setVisible(false);
                     JF_crearAgente.setVisible(true);
@@ -764,12 +784,8 @@ public class Main extends javax.swing.JFrame {
         String dir = JOptionPane.showInputDialog(JF_Agentes, "Ingrese la dir", JOptionPane.QUESTION_MESSAGE);
         String cel = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el cel", JOptionPane.QUESTION_MESSAGE);
         
-        char[] nombreChar = nombre.toCharArray();
-        char[] dirChar = dir.toCharArray();
-        int celInt = Integer.parseInt(cel);
-        char[] idChar = id.toCharArray();
 
-        String vista = "INSERT INTO compradores VALUES ('" + new String(idChar) + "','" + new String(nombreChar) + "','" + new String(dirChar) + "'," + celInt + ")";
+        String vista = "CALL insertarComprador('" + id + "','" + nombre + "','" + dir + "'," + cel + ")";
         db.HacerConsulta(vista);
     }//GEN-LAST:event_JB_CrearCompradorMouseClicked
 
@@ -779,13 +795,8 @@ public class Main extends javax.swing.JFrame {
         String nombre = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el nombre", JOptionPane.QUESTION_MESSAGE);
         String dir = JOptionPane.showInputDialog(JF_Agentes, "Ingrese la dir", JOptionPane.QUESTION_MESSAGE);
         String cel = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el cel", JOptionPane.QUESTION_MESSAGE);
-        
-        char[] nombreChar = nombre.toCharArray();
-        char[] dirChar = dir.toCharArray();
-        int celInt = Integer.parseInt(cel);
-        char[] idChar = id.toCharArray();
 
-        String vista = "INSERT INTO vendedores VALUES ('" + new String(idChar) + "','" + new String(nombreChar) + "','" + new String(dirChar) + "'," + celInt + ")";
+        String vista = "CALL insertarVendedor('" +id + "','" + nombre + "','" + dir + "'," + cel + ")";
         db.HacerConsulta(vista);
     }//GEN-LAST:event_JB_CrearVendedorMouseClicked
 
@@ -805,7 +816,7 @@ public class Main extends javax.swing.JFrame {
         String numeroIdentidadC = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el numero de identidad del comprador", JOptionPane.QUESTION_MESSAGE);
         String comision = JOptionPane.showInputDialog(JF_Agentes, "Ingrese la comision", JOptionPane.QUESTION_MESSAGE);
         
-        String vista = "INSERT INTO propiedades_vendidas VALUES ('" + id + "','" + nombre + "','" + ciudad + "','" + dir + "','" + cantDormitorios + "','" + caracteristicas + "','" + precio + "','" + fechaPublicacion + "','" + fechaVenta + "','" + numeroIdentidadA + "','" + numeroIdentidadV + "','" + numeroIdentidadC + "','" + comision + "')";
+        String vista = "CALL insertarPM ('" + id + "','" + nombre + "','" + ciudad + "','" + dir + "','" + cantDormitorios + "','" + caracteristicas + "','" + precio + "','" + fechaPublicacion + "','" + fechaVenta + "','" + numeroIdentidadA + "','" + numeroIdentidadV + "','" + numeroIdentidadC + "','" + comision + "')";
         db.HacerConsulta(vista);
     }//GEN-LAST:event_JB_CrearPropiedadEVendidaMouseClicked
 
@@ -821,7 +832,7 @@ public class Main extends javax.swing.JFrame {
         String fechaPublicacion =JOptionPane.showInputDialog(JF_Agentes, "Ingrese la fecha de publicacion", JOptionPane.QUESTION_MESSAGE);
         String numeroIdentidadA=JOptionPane.showInputDialog(JF_Agentes, "Ingrese el numero de identidad del agente", JOptionPane.QUESTION_MESSAGE);
         String numeroIdentidadV = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el numero de identidad de el vendedor", JOptionPane.QUESTION_MESSAGE);
-        String vista = "INSERT INTO propiedades_en_mercado VALUES ('" + id + "','" + nombre + "','" + ciudad + "','" + dir + "','" + cantDormitorios + "','" + caracteristicas + "','" + precio + "','" + fechaPublicacion + "','" + numeroIdentidadA + "','" + numeroIdentidadV+ "')";
+        String vista = "CALL insertarPV ('" + id + "','" + nombre + "','" + ciudad + "','" + dir + "','" + cantDormitorios + "','" + caracteristicas + "','" + precio + "','" + fechaPublicacion + "','" + numeroIdentidadA + "','" + numeroIdentidadV+ "')";
         db.HacerConsulta(vista);
     }//GEN-LAST:event_JB_crearVentaMouseClicked
 
@@ -911,6 +922,31 @@ public class Main extends javax.swing.JFrame {
     private void JB_CrearComprador4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_CrearComprador4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_JB_CrearComprador4ActionPerformed
+
+    private void JB_CrearAgenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_CrearAgenteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JB_CrearAgenteActionPerformed
+
+    private void jButton8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton8MouseClicked
+        // TODO add your handling code here:
+        String id = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el id", JOptionPane.QUESTION_MESSAGE);
+        String nombre = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el nombre", JOptionPane.QUESTION_MESSAGE);
+        String dir = JOptionPane.showInputDialog(JF_Agentes, "Ingrese la dir", JOptionPane.QUESTION_MESSAGE);
+        String cel = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el cel", JOptionPane.QUESTION_MESSAGE);
+        String telOf = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el teloficina", JOptionPane.QUESTION_MESSAGE);
+
+        
+        db.HacerConsulta("CALL insertarAgente('"+id+"','"+nombre+"','"+dir+"','"+cel+"','"+telOf+"');");
+    }//GEN-LAST:event_jButton8MouseClicked
+
+    private void JF_enVentaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JF_enVentaMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JF_enVentaMouseClicked
+
+    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jButton3MouseClicked
 
     /**
      * @param args the command line arguments
