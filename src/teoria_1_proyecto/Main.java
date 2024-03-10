@@ -33,7 +33,6 @@ public class Main extends javax.swing.JFrame {
         db.crearTablas();
         CambiarPantallaTiempo CPT = new CambiarPantallaTiempo(Portadita, JF_Principal, 4000,true);
         CPT.start();
-        JF_enVenta.show();
     }
 
     /**
@@ -167,6 +166,11 @@ public class Main extends javax.swing.JFrame {
         jButton3.setFont(new java.awt.Font("Montserrat Thin", 1, 17)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("Borrar Agente");
+        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton3MouseClicked(evt);
+            }
+        });
 
         jButton4.setBackground(new java.awt.Color(123, 114, 105));
         jButton4.setFont(new java.awt.Font("Montserrat Thin", 1, 18)); // NOI18N
@@ -938,6 +942,11 @@ public class Main extends javax.swing.JFrame {
     private void JF_enVentaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JF_enVentaMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_JF_enVentaMouseClicked
+
+    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jButton3MouseClicked
 
     /**
      * @param args the command line arguments

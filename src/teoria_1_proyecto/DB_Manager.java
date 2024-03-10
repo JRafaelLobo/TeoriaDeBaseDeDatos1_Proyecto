@@ -81,11 +81,11 @@ public class DB_Manager {
                         +"fechaPublicacion DATE NOT NULL,"
                         +"fechaVenta DATE NOT NULL,"
                         +"noIdentidad_Agente INT NOT NULL,"
-                        +"FOREIGN KEY (noIdentidad_Agente) REFERENCES agentes(id),"
+                        +"FOREIGN KEY (noIdentidad_Agente) REFERENCES agentes(id) ON DELETE CASCADE,"
                         +"noIdentidad_Vendedor INT NOT NULL,"
-                        +"FOREIGN KEY (noIdentidad_Vendedor) REFERENCES vendedores(id),"
+                        +"FOREIGN KEY (noIdentidad_Vendedor) REFERENCES vendedores(id) ON DELETE CASCADE,"
                         +"noIdentidad_Comprador INT NOT NULL,"
-                        +"FOREIGN KEY (noIdentidad_Comprador) REFERENCES compradores(id),"
+                        +"FOREIGN KEY (noIdentidad_Comprador) REFERENCES compradores(id) ON DELETE CASCADE,"
                         + "comisionVenta INT NOT NULL"
                         + ")";
                 comunicarBase.executeUpdate(createTablePropiedades);
@@ -102,9 +102,9 @@ public class DB_Manager {
                         +"precio INT NOT NULL,"
                         +"fechaPublicacion DATE NOT NULL,"
                         +"noIdentidad_Agente INT NOT NULL,"
-                        +"FOREIGN KEY (noIdentidad_Agente) REFERENCES agentes(id),"
+                        +"FOREIGN KEY (noIdentidad_Agente) REFERENCES agentes(id) ON DELETE CASCADE,"
                         +"noIdentidad_Vendedor INT NOT NULL,"
-                        +"FOREIGN KEY (noIdentidad_Vendedor) REFERENCES vendedores(id)"
+                        +"FOREIGN KEY (noIdentidad_Vendedor) REFERENCES vendedores(id) ON DELETE CASCADE"
                         + ")";
                 comunicarBase.executeUpdate(createTablePropiedadesMercado);
                 System.out.println("Table 'Propiedades_en_mercado' created successfully.");
