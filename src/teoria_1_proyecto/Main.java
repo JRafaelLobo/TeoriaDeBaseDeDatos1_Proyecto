@@ -33,7 +33,7 @@ public class Main extends javax.swing.JFrame {
         db.crearTablas();
         CambiarPantallaTiempo CPT = new CambiarPantallaTiempo(Portadita, JF_Principal, 4000, true);
         CPT.start();
-        JF_Agentes.show();
+        JF_Vendidas.show();
     }
 
     /**
@@ -66,12 +66,15 @@ public class Main extends javax.swing.JFrame {
         JF_Vendedor = new javax.swing.JFrame();
         JB_CrearVendedor = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jButton10 = new javax.swing.JButton();
         JF_Vendidas = new javax.swing.JFrame();
         JB_CrearPropiedadEVendida = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
+        jButton12 = new javax.swing.JButton();
         JF_enVenta = new javax.swing.JFrame();
         JB_crearVenta = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
+        jButton11 = new javax.swing.JButton();
         JF_Principal = new javax.swing.JFrame();
         jPanel1 = new FondoPanel("./Imagen\\login.jpeg");
         jPanel2 = new javax.swing.JPanel();
@@ -375,6 +378,13 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
+        jButton10.setText("Modificar vendedor");
+        jButton10.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton10MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout JF_VendedorLayout = new javax.swing.GroupLayout(JF_Vendedor.getContentPane());
         JF_Vendedor.getContentPane().setLayout(JF_VendedorLayout);
         JF_VendedorLayout.setHorizontalGroup(
@@ -382,9 +392,10 @@ public class Main extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JF_VendedorLayout.createSequentialGroup()
                 .addContainerGap(138, Short.MAX_VALUE)
                 .addGroup(JF_VendedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton10)
                     .addComponent(jButton2)
                     .addComponent(JB_CrearVendedor))
-                .addGap(136, 136, 136))
+                .addGap(128, 128, 128))
         );
         JF_VendedorLayout.setVerticalGroup(
             JF_VendedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -393,7 +404,9 @@ public class Main extends javax.swing.JFrame {
                 .addComponent(JB_CrearVendedor)
                 .addGap(32, 32, 32)
                 .addComponent(jButton2)
-                .addContainerGap(181, Short.MAX_VALUE))
+                .addGap(30, 30, 30)
+                .addComponent(jButton10)
+                .addContainerGap(128, Short.MAX_VALUE))
         );
 
         JB_CrearPropiedadEVendida.setText("Crear Propiedad Vendida");
@@ -410,15 +423,24 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
+        jButton12.setText("Modificar propiedad vendida");
+        jButton12.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton12MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout JF_VendidasLayout = new javax.swing.GroupLayout(JF_Vendidas.getContentPane());
         JF_Vendidas.getContentPane().setLayout(JF_VendidasLayout);
         JF_VendidasLayout.setHorizontalGroup(
             JF_VendidasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(JF_VendidasLayout.createSequentialGroup()
-                .addGap(116, 116, 116)
-                .addGroup(JF_VendidasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton7)
-                    .addComponent(JB_CrearPropiedadEVendida))
+                .addGap(108, 108, 108)
+                .addGroup(JF_VendidasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton12)
+                    .addGroup(JF_VendidasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jButton7)
+                        .addComponent(JB_CrearPropiedadEVendida)))
                 .addContainerGap(109, Short.MAX_VALUE))
         );
         JF_VendidasLayout.setVerticalGroup(
@@ -428,7 +450,9 @@ public class Main extends javax.swing.JFrame {
                 .addComponent(JB_CrearPropiedadEVendida)
                 .addGap(30, 30, 30)
                 .addComponent(jButton7)
-                .addContainerGap(161, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jButton12)
+                .addContainerGap(120, Short.MAX_VALUE))
         );
 
         JF_enVenta.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -451,6 +475,13 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
+        jButton11.setText("Modificar en venta");
+        jButton11.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton11MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout JF_enVentaLayout = new javax.swing.GroupLayout(JF_enVenta.getContentPane());
         JF_enVenta.getContentPane().setLayout(JF_enVentaLayout);
         JF_enVentaLayout.setHorizontalGroup(
@@ -461,7 +492,9 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(JB_crearVenta)
                     .addGroup(JF_enVentaLayout.createSequentialGroup()
                         .addGap(20, 20, 20)
-                        .addComponent(jButton6)))
+                        .addGroup(JF_enVentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton11)
+                            .addComponent(jButton6))))
                 .addContainerGap(118, Short.MAX_VALUE))
         );
         JF_enVentaLayout.setVerticalGroup(
@@ -471,7 +504,9 @@ public class Main extends javax.swing.JFrame {
                 .addComponent(JB_crearVenta)
                 .addGap(33, 33, 33)
                 .addComponent(jButton6)
-                .addContainerGap(172, Short.MAX_VALUE))
+                .addGap(29, 29, 29)
+                .addComponent(jButton11)
+                .addContainerGap(120, Short.MAX_VALUE))
         );
 
         jPanel1.setBackground(new java.awt.Color(51, 153, 255));
@@ -945,6 +980,10 @@ public class Main extends javax.swing.JFrame {
 
     private void JB_modificarCompradorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_modificarCompradorMouseClicked
         // TODO add your handling code here:
+        String id = JOptionPane.showInputDialog(JF_Compradores, "Ingrese el id", JOptionPane.QUESTION_MESSAGE);
+        String atributo = JOptionPane.showInputDialog(JF_Compradores, "Ingrese el atributo a cambiar", JOptionPane.QUESTION_MESSAGE);
+        String nuevo_atributo = JOptionPane.showInputDialog(JF_Compradores, "Ingrese el nuevo atributo", JOptionPane.QUESTION_MESSAGE);
+        db.HacerConsulta("CALL modificarComprador('" + id + "','"+atributo+"','"+nuevo_atributo+"');");
     }//GEN-LAST:event_JB_modificarCompradorMouseClicked
 
     private void JB_modificarCompradorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_modificarCompradorActionPerformed
@@ -1029,6 +1068,30 @@ public class Main extends javax.swing.JFrame {
         db.HacerConsulta("CALL modificarAgente('"+id+"','"+atributo+"','"+nuevo_valor+"');");
     }//GEN-LAST:event_jButton9MouseClicked
 
+    private void jButton10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton10MouseClicked
+        // TODO add your handling code here:
+        String id = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el id", JOptionPane.QUESTION_MESSAGE);
+        String atributo = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el atributo que va a actualizar", JOptionPane.QUESTION_MESSAGE);
+        String nuevo_valor = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el nuevo atributo", JOptionPane.QUESTION_MESSAGE);
+        db.HacerConsulta("CALL modificarVendedor('"+id+"','"+atributo+"','"+nuevo_valor+"');");
+    }//GEN-LAST:event_jButton10MouseClicked
+
+    private void jButton11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton11MouseClicked
+        // TODO add your handling code here:
+        String id = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el id", JOptionPane.QUESTION_MESSAGE);
+        String atributo = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el atributo que va a actualizar", JOptionPane.QUESTION_MESSAGE);
+        String nuevo_valor = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el nuevo atributo", JOptionPane.QUESTION_MESSAGE);
+        db.HacerConsulta("CALL modificarPropiedadEnMercado('"+id+"','"+atributo+"','"+nuevo_valor+"');");
+    }//GEN-LAST:event_jButton11MouseClicked
+
+    private void jButton12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton12MouseClicked
+        // TODO add your handling code here:
+        String id = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el id", JOptionPane.QUESTION_MESSAGE);
+        String atributo = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el atributo que va a actualizar", JOptionPane.QUESTION_MESSAGE);
+        String nuevo_valor = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el nuevo atributo", JOptionPane.QUESTION_MESSAGE);
+        db.HacerConsulta("CALL modificarPropiedadVendida('"+id+"','"+atributo+"','"+nuevo_valor+"');");
+    }//GEN-LAST:event_jButton12MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -1087,6 +1150,9 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel JP_Portada;
     private javax.swing.JFrame Portadita;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton11;
+    private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
