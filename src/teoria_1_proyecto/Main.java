@@ -33,6 +33,7 @@ public class Main extends javax.swing.JFrame {
         db.crearTablas();
         CambiarPantallaTiempo CPT = new CambiarPantallaTiempo(Portadita, JF_Principal, 4000,true);
         CPT.start();
+        //JF_Vendidas.show();
     }
 
     /**
@@ -64,10 +65,13 @@ public class Main extends javax.swing.JFrame {
         jLabel19 = new javax.swing.JLabel();
         JF_Vendedor = new javax.swing.JFrame();
         JB_CrearVendedor = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         JF_Vendidas = new javax.swing.JFrame();
         JB_CrearPropiedadEVendida = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
         JF_enVenta = new javax.swing.JFrame();
         JB_crearVenta = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
         JF_Principal = new javax.swing.JFrame();
         jPanel1 = new FondoPanel("./Imagen\\login.jpeg");
         jPanel2 = new javax.swing.JPanel();
@@ -363,21 +367,32 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
+        jButton2.setText("Eliminar vendedor");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout JF_VendedorLayout = new javax.swing.GroupLayout(JF_Vendedor.getContentPane());
         JF_Vendedor.getContentPane().setLayout(JF_VendedorLayout);
         JF_VendedorLayout.setHorizontalGroup(
             JF_VendedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JF_VendedorLayout.createSequentialGroup()
                 .addContainerGap(138, Short.MAX_VALUE)
-                .addComponent(JB_CrearVendedor)
-                .addGap(150, 150, 150))
+                .addGroup(JF_VendedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton2)
+                    .addComponent(JB_CrearVendedor))
+                .addGap(136, 136, 136))
         );
         JF_VendedorLayout.setVerticalGroup(
             JF_VendedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(JF_VendedorLayout.createSequentialGroup()
                 .addGap(41, 41, 41)
                 .addComponent(JB_CrearVendedor)
-                .addContainerGap(236, Short.MAX_VALUE))
+                .addGap(32, 32, 32)
+                .addComponent(jButton2)
+                .addContainerGap(181, Short.MAX_VALUE))
         );
 
         JB_CrearPropiedadEVendida.setText("Crear Propiedad Vendida");
@@ -387,13 +402,22 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
+        jButton7.setText("Eliminar propiedad vendida");
+        jButton7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton7MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout JF_VendidasLayout = new javax.swing.GroupLayout(JF_Vendidas.getContentPane());
         JF_Vendidas.getContentPane().setLayout(JF_VendidasLayout);
         JF_VendidasLayout.setHorizontalGroup(
             JF_VendidasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(JF_VendidasLayout.createSequentialGroup()
-                .addGap(116, 116, 116)
-                .addComponent(JB_CrearPropiedadEVendida)
+                .addGap(102, 102, 102)
+                .addGroup(JF_VendidasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton7)
+                    .addComponent(JB_CrearPropiedadEVendida))
                 .addContainerGap(123, Short.MAX_VALUE))
         );
         JF_VendidasLayout.setVerticalGroup(
@@ -401,7 +425,9 @@ public class Main extends javax.swing.JFrame {
             .addGroup(JF_VendidasLayout.createSequentialGroup()
                 .addGap(63, 63, 63)
                 .addComponent(JB_CrearPropiedadEVendida)
-                .addContainerGap(214, Short.MAX_VALUE))
+                .addGap(26, 26, 26)
+                .addComponent(jButton7)
+                .addContainerGap(165, Short.MAX_VALUE))
         );
 
         JF_enVenta.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -417,13 +443,24 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
+        jButton6.setText("Eliminar en venta");
+        jButton6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton6MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout JF_enVentaLayout = new javax.swing.GroupLayout(JF_enVenta.getContentPane());
         JF_enVenta.getContentPane().setLayout(JF_enVentaLayout);
         JF_enVentaLayout.setHorizontalGroup(
             JF_enVentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(JF_enVentaLayout.createSequentialGroup()
                 .addGap(119, 119, 119)
-                .addComponent(JB_crearVenta)
+                .addGroup(JF_enVentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(JB_crearVenta)
+                    .addGroup(JF_enVentaLayout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(jButton6)))
                 .addContainerGap(118, Short.MAX_VALUE))
         );
         JF_enVentaLayout.setVerticalGroup(
@@ -431,7 +468,9 @@ public class Main extends javax.swing.JFrame {
             .addGroup(JF_enVentaLayout.createSequentialGroup()
                 .addGap(49, 49, 49)
                 .addComponent(JB_crearVenta)
-                .addContainerGap(228, Short.MAX_VALUE))
+                .addGap(33, 33, 33)
+                .addComponent(jButton6)
+                .addContainerGap(172, Short.MAX_VALUE))
         );
 
         jPanel1.setBackground(new java.awt.Color(51, 153, 255));
@@ -901,6 +940,8 @@ public class Main extends javax.swing.JFrame {
 
     private void JB_BorrarCompradorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_BorrarCompradorMouseClicked
         // TODO add your handling code here:
+         String id = JOptionPane.showInputDialog(JF_Compradores, "Ingrese el id", JOptionPane.QUESTION_MESSAGE);
+         db.HacerConsulta("CALL eliminarComprador('"+id+"');");
     }//GEN-LAST:event_JB_BorrarCompradorMouseClicked
 
     private void JB_BorrarCompradorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_BorrarCompradorActionPerformed
@@ -945,8 +986,28 @@ public class Main extends javax.swing.JFrame {
 
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
         // TODO add your handling code here:
+        String id = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el id", JOptionPane.QUESTION_MESSAGE);
         
+        db.HacerConsulta("CALL eliminarAgente('"+id+"');");
     }//GEN-LAST:event_jButton3MouseClicked
+
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+        // TODO add your handling code here:
+        String id = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el id", JOptionPane.QUESTION_MESSAGE);
+        db.HacerConsulta("CALL eliminarVendedor('"+id+"');");
+    }//GEN-LAST:event_jButton2MouseClicked
+
+    private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
+        // TODO add your handling code here:
+        String id = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el id", JOptionPane.QUESTION_MESSAGE);
+        db.HacerConsulta("CALL eliminarPM('"+id+"');");
+    }//GEN-LAST:event_jButton6MouseClicked
+
+    private void jButton7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton7MouseClicked
+        // TODO add your handling code here:
+        String id = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el id", JOptionPane.QUESTION_MESSAGE);
+        db.HacerConsulta("CALL eliminarPV('"+id+"');");
+    }//GEN-LAST:event_jButton7MouseClicked
 
     /**
      * @param args the command line arguments
@@ -1006,9 +1067,12 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel JP_Portada;
     private javax.swing.JFrame Portadita;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel13;
