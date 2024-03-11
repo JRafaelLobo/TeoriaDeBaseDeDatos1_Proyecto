@@ -28,9 +28,9 @@ public class Main extends javax.swing.JFrame {
     public Main() {
         initComponents();
         this.setLocationRelativeTo(null);
-        //DB_Manager db = new DB_Manager();
-        //db.crearConexion();
-        //db.crearTablas();
+        DB_Manager db = new DB_Manager();
+        db.crearConexion();
+        db.crearTablas();
         //db.HacerConsulta("select id from users");
         CambiarPantallaTiempo CPT = new CambiarPantallaTiempo(Portadita, JF_Principal, 4000,true);
         CPT.start();
