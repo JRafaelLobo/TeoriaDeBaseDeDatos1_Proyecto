@@ -1,6 +1,6 @@
 package teoria_1_proyecto;
 
-//import com.mysql.cj.protocol.Resultset;
+import com.mysql.cj.protocol.Resultset;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;

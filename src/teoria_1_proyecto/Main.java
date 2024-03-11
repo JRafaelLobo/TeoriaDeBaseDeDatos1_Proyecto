@@ -33,9 +33,9 @@ public class Main extends javax.swing.JFrame {
     public Main() {
         initComponents();
         this.setLocationRelativeTo(null);
-//        DB_Manager db = new DB_Manager();
-//        db.crearConexion();
-//        db.crearTablas();
+        DB_Manager db = new DB_Manager();
+        db.crearConexion();
+        db.crearTablas();
         CambiarPantallaTiempo CPT = new CambiarPantallaTiempo(Portadita, JF_Principal, 4000, true);
         CPT.start();
     }
@@ -3820,7 +3820,7 @@ public class Main extends javax.swing.JFrame {
         String cel = tf_crearAgenteCelular.getText();
         String telOf = tf_crearAgenteOficina.getText();
 
-//        db.HacerConsulta("CALL insertarAgente('" + id + "','" + nombre + "','" + dir + "','" + cel + "','" + telOf + "');");
+        db.HacerConsulta("CALL insertarAgente('" + id + "','" + nombre + "','" + dir + "','" + cel + "','" + telOf + "');");
     }//GEN-LAST:event_JB_crearAgenteMouseClicked
 
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
@@ -3884,7 +3884,7 @@ public class Main extends javax.swing.JFrame {
         String valor = (String) tf_nuevovalorAgente.getText();
 
         String vista = "UPDATE agentes SET " + atributo + " = '" + valor + "' WHERE id = '" + id + "'";
-//        db.HacerConsulta(vista);
+        db.HacerConsulta(vista);
     }//GEN-LAST:event_JB_modificarAgenteMouseClicked
 
     private void JB_modificarAgenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_modificarAgenteActionPerformed
@@ -3898,14 +3898,14 @@ public class Main extends javax.swing.JFrame {
         String cel = tf_crearAgenteCelular.getText();
 
         String vista = "CALL insertarVendedor('" + id + "','" + nombre + "','" + dir + "'," + cel + ")";
-//        db.HacerConsulta(vista);
+        db.HacerConsulta(vista);
     }//GEN-LAST:event_JB_crearVendedorMouseClicked
 
     private void JB_modificarVendedorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_modificarVendedorMouseClicked
         String id = (String) cb_modificarVendedor.getSelectedItem();
         String atributo = (String) cb_atributovendedor.getSelectedItem();
         String nuevo_valor = (String) cb_atributovendedor.getSelectedItem();
-//        db.HacerConsulta("CALL modificarPropiedadEnMercado('"+id+"','"+atributo+"','"+nuevo_valor+"');");
+        db.HacerConsulta("CALL modificarPropiedadEnMercado('"+id+"','"+atributo+"','"+nuevo_valor+"');");
     }//GEN-LAST:event_JB_modificarVendedorMouseClicked
 
     private void JB_crearCompradorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_crearCompradorMouseClicked
@@ -3915,7 +3915,7 @@ public class Main extends javax.swing.JFrame {
         String cel = tf_crearCompradorCelular.getText();
 
         String vista = "CALL insertarComprador('" + id + "','" + nombre + "','" + dir + "'," + cel + ")";
-//        db.HacerConsulta(vista);
+       db.HacerConsulta(vista);
     }//GEN-LAST:event_JB_crearCompradorMouseClicked
 
     private void JB_modificarVenCompradorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_modificarVenCompradorMouseClicked
@@ -3923,13 +3923,13 @@ public class Main extends javax.swing.JFrame {
         String id = (String) cb_modificarComprador.getSelectedItem();
         String atributo = (String) cb_atributoComprador.getSelectedItem();
         String nuevo_atributo = tf_nuevoValorComprador.getText();
-//        db.HacerConsulta("CALL modificarComprador('" + id + "','"+atributo+"','"+nuevo_atributo+"');");
+        db.HacerConsulta("CALL modificarComprador('" + id + "','"+atributo+"','"+nuevo_atributo+"');");
     }//GEN-LAST:event_JB_modificarVenCompradorMouseClicked
 
     private void JB_eliminarAgenteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_eliminarAgenteMouseClicked
         // TODO add your handling code here:
         String id = (String) cb_eliminarAgente.getSelectedItem();
-//        db.HacerConsulta("CALL eliminarAgente('" + id + "');");
+       db.HacerConsulta("CALL eliminarAgente('" + id + "');");
     }//GEN-LAST:event_JB_eliminarAgenteMouseClicked
 
     private void JB_eliminarVendedorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_eliminarVendedorMouseClicked
@@ -4466,7 +4466,7 @@ public class Main extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     //Variables globales
-//    DB_Manager db = new DB_Manager();
+    DB_Manager db = new DB_Manager();
 //Este metodo es para reproducir sonidos en el programa
     public static Clip playMusic(String filepath) {
         try {
