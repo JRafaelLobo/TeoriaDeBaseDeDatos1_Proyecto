@@ -38,7 +38,6 @@ public class Main extends javax.swing.JFrame {
         db.crearTablas();
         CambiarPantallaTiempo CPT = new CambiarPantallaTiempo(Portadita, JF_Principal, 4000, true);
         CPT.start();
-        JF_enVenta.show();
     }
 
     /**
