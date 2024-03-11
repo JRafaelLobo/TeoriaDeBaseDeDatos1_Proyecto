@@ -15,11 +15,16 @@ import javax.sound.sampled.Clip;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
  * @author rinal
  */
+
 public class Main extends javax.swing.JFrame {
 
     /**
@@ -33,7 +38,6 @@ public class Main extends javax.swing.JFrame {
         db.crearTablas();
         CambiarPantallaTiempo CPT = new CambiarPantallaTiempo(Portadita, JF_Principal, 4000, true);
         CPT.start();
-        JF_Vendidas.show();
     }
 
     /**
@@ -67,14 +71,17 @@ public class Main extends javax.swing.JFrame {
         JB_CrearVendedor = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton10 = new javax.swing.JButton();
+        jButton13 = new javax.swing.JButton();
         JF_Vendidas = new javax.swing.JFrame();
         JB_CrearPropiedadEVendida = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
         jButton12 = new javax.swing.JButton();
+        jButton14 = new javax.swing.JButton();
         JF_enVenta = new javax.swing.JFrame();
         JB_crearVenta = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jButton11 = new javax.swing.JButton();
+        jButton15 = new javax.swing.JButton();
         JF_Principal = new javax.swing.JFrame();
         jPanel1 = new FondoPanel("./Imagen\\login.jpeg");
         jPanel2 = new javax.swing.JPanel();
@@ -103,6 +110,11 @@ public class Main extends javax.swing.JFrame {
         jPanel12 = new FondoPanel("./Imagen\\modificarAgente.jpg");
         jPanel13 = new javax.swing.JPanel();
         jButton9 = new javax.swing.JButton();
+        Reportes = new javax.swing.JFrame();
+        jButton16 = new javax.swing.JButton();
+        jButton17 = new javax.swing.JButton();
+        jButton18 = new javax.swing.JButton();
+        jButton19 = new javax.swing.JButton();
 
         Portadita.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         Portadita.setUndecorated(true);
@@ -184,6 +196,11 @@ public class Main extends javax.swing.JFrame {
         jButton4.setFont(new java.awt.Font("Montserrat Thin", 1, 18)); // NOI18N
         jButton4.setForeground(new java.awt.Color(255, 255, 255));
         jButton4.setText("Ver Agentes");
+        jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton4MouseClicked(evt);
+            }
+        });
 
         jButton5.setBackground(new java.awt.Color(123, 114, 105));
         jButton5.setFont(new java.awt.Font("Montserrat Thin", 1, 16)); // NOI18N
@@ -385,6 +402,13 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
+        jButton13.setText("Ver vendedores");
+        jButton13.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton13MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout JF_VendedorLayout = new javax.swing.GroupLayout(JF_Vendedor.getContentPane());
         JF_Vendedor.getContentPane().setLayout(JF_VendedorLayout);
         JF_VendedorLayout.setHorizontalGroup(
@@ -392,6 +416,7 @@ public class Main extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JF_VendedorLayout.createSequentialGroup()
                 .addContainerGap(138, Short.MAX_VALUE)
                 .addGroup(JF_VendedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton13)
                     .addComponent(jButton10)
                     .addComponent(jButton2)
                     .addComponent(JB_CrearVendedor))
@@ -406,7 +431,9 @@ public class Main extends javax.swing.JFrame {
                 .addComponent(jButton2)
                 .addGap(30, 30, 30)
                 .addComponent(jButton10)
-                .addContainerGap(128, Short.MAX_VALUE))
+                .addGap(33, 33, 33)
+                .addComponent(jButton13)
+                .addContainerGap(72, Short.MAX_VALUE))
         );
 
         JB_CrearPropiedadEVendida.setText("Crear Propiedad Vendida");
@@ -430,17 +457,26 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
+        jButton14.setText("ver propiedades vendidas");
+        jButton14.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton14MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout JF_VendidasLayout = new javax.swing.GroupLayout(JF_Vendidas.getContentPane());
         JF_Vendidas.getContentPane().setLayout(JF_VendidasLayout);
         JF_VendidasLayout.setHorizontalGroup(
             JF_VendidasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(JF_VendidasLayout.createSequentialGroup()
                 .addGap(108, 108, 108)
-                .addGroup(JF_VendidasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton12)
-                    .addGroup(JF_VendidasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jButton7)
-                        .addComponent(JB_CrearPropiedadEVendida)))
+                .addGroup(JF_VendidasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton14)
+                    .addGroup(JF_VendidasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jButton12)
+                        .addGroup(JF_VendidasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton7)
+                            .addComponent(JB_CrearPropiedadEVendida))))
                 .addContainerGap(109, Short.MAX_VALUE))
         );
         JF_VendidasLayout.setVerticalGroup(
@@ -452,7 +488,9 @@ public class Main extends javax.swing.JFrame {
                 .addComponent(jButton7)
                 .addGap(18, 18, 18)
                 .addComponent(jButton12)
-                .addContainerGap(120, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jButton14)
+                .addContainerGap(79, Short.MAX_VALUE))
         );
 
         JF_enVenta.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -482,19 +520,28 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
+        jButton15.setText("ver propiedades en venta");
+        jButton15.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton15MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout JF_enVentaLayout = new javax.swing.GroupLayout(JF_enVenta.getContentPane());
         JF_enVenta.getContentPane().setLayout(JF_enVentaLayout);
         JF_enVentaLayout.setHorizontalGroup(
             JF_enVentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(JF_enVentaLayout.createSequentialGroup()
                 .addGap(119, 119, 119)
-                .addGroup(JF_enVentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(JB_crearVenta)
-                    .addGroup(JF_enVentaLayout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addGroup(JF_enVentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton11)
-                            .addComponent(jButton6))))
+                .addGroup(JF_enVentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton15)
+                    .addGroup(JF_enVentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(JB_crearVenta)
+                        .addGroup(JF_enVentaLayout.createSequentialGroup()
+                            .addGap(20, 20, 20)
+                            .addGroup(JF_enVentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jButton11)
+                                .addComponent(jButton6)))))
                 .addContainerGap(118, Short.MAX_VALUE))
         );
         JF_enVentaLayout.setVerticalGroup(
@@ -506,7 +553,9 @@ public class Main extends javax.swing.JFrame {
                 .addComponent(jButton6)
                 .addGap(29, 29, 29)
                 .addComponent(jButton11)
-                .addContainerGap(120, Short.MAX_VALUE))
+                .addGap(28, 28, 28)
+                .addComponent(jButton15)
+                .addContainerGap(69, Short.MAX_VALUE))
         );
 
         jPanel1.setBackground(new java.awt.Color(51, 153, 255));
@@ -825,6 +874,61 @@ public class Main extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
+        jButton16.setText("Cantidad de ventas por agente");
+        jButton16.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton16MouseClicked(evt);
+            }
+        });
+
+        jButton17.setText("Cantidad de ventas por vendedor");
+        jButton17.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton17MouseClicked(evt);
+            }
+        });
+
+        jButton18.setText("Cantidad de compras por comprador");
+        jButton18.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton18MouseClicked(evt);
+            }
+        });
+
+        jButton19.setText("Cantidad de ventas por ubicacion");
+        jButton19.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton19MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout ReportesLayout = new javax.swing.GroupLayout(Reportes.getContentPane());
+        Reportes.getContentPane().setLayout(ReportesLayout);
+        ReportesLayout.setHorizontalGroup(
+            ReportesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ReportesLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addGroup(ReportesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton19)
+                    .addComponent(jButton18)
+                    .addComponent(jButton17)
+                    .addComponent(jButton16))
+                .addContainerGap(144, Short.MAX_VALUE))
+        );
+        ReportesLayout.setVerticalGroup(
+            ReportesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ReportesLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(jButton16)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton17)
+                .addGap(18, 18, 18)
+                .addComponent(jButton18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton19)
+                .addContainerGap(144, Short.MAX_VALUE))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
@@ -983,7 +1087,7 @@ public class Main extends javax.swing.JFrame {
         String id = JOptionPane.showInputDialog(JF_Compradores, "Ingrese el id", JOptionPane.QUESTION_MESSAGE);
         String atributo = JOptionPane.showInputDialog(JF_Compradores, "Ingrese el atributo a cambiar", JOptionPane.QUESTION_MESSAGE);
         String nuevo_atributo = JOptionPane.showInputDialog(JF_Compradores, "Ingrese el nuevo atributo", JOptionPane.QUESTION_MESSAGE);
-        db.HacerConsulta("CALL modificarComprador('" + id + "','"+atributo+"','"+nuevo_atributo+"');");
+        db.HacerConsulta("CALL modificarComprador('" + id + "','" + atributo + "','" + nuevo_atributo + "');");
     }//GEN-LAST:event_JB_modificarCompradorMouseClicked
 
     private void JB_modificarCompradorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_modificarCompradorActionPerformed
@@ -1002,6 +1106,19 @@ public class Main extends javax.swing.JFrame {
 
     private void JB_CrearComprador3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_CrearComprador3MouseClicked
         // TODO add your handling code here:
+        try {
+            // TODO add your handling code here:
+            ResultSet rs = db.mostrarElementos("SELECT * FROM compradores;");
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                String nombre = rs.getString("nombre");
+                String direccion = rs.getString("direccion");
+                int cel = rs.getInt("celular");
+                System.out.println("ID: " + id + " nombre: " + nombre + " Direccion: " + direccion + " cel: " + cel);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_JB_CrearComprador3MouseClicked
 
     private void JB_CrearComprador3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_CrearComprador3ActionPerformed
@@ -1065,7 +1182,7 @@ public class Main extends javax.swing.JFrame {
         String id = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el id", JOptionPane.QUESTION_MESSAGE);
         String atributo = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el atributo que va a actualizar", JOptionPane.QUESTION_MESSAGE);
         String nuevo_valor = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el nuevo atributo", JOptionPane.QUESTION_MESSAGE);
-        db.HacerConsulta("CALL modificarAgente('"+id+"','"+atributo+"','"+nuevo_valor+"');");
+        db.HacerConsulta("CALL modificarAgente('" + id + "','" + atributo + "','" + nuevo_valor + "');");
     }//GEN-LAST:event_jButton9MouseClicked
 
     private void jButton10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton10MouseClicked
@@ -1073,7 +1190,7 @@ public class Main extends javax.swing.JFrame {
         String id = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el id", JOptionPane.QUESTION_MESSAGE);
         String atributo = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el atributo que va a actualizar", JOptionPane.QUESTION_MESSAGE);
         String nuevo_valor = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el nuevo atributo", JOptionPane.QUESTION_MESSAGE);
-        db.HacerConsulta("CALL modificarVendedor('"+id+"','"+atributo+"','"+nuevo_valor+"');");
+        db.HacerConsulta("CALL modificarVendedor('" + id + "','" + atributo + "','" + nuevo_valor + "');");
     }//GEN-LAST:event_jButton10MouseClicked
 
     private void jButton11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton11MouseClicked
@@ -1081,7 +1198,7 @@ public class Main extends javax.swing.JFrame {
         String id = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el id", JOptionPane.QUESTION_MESSAGE);
         String atributo = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el atributo que va a actualizar", JOptionPane.QUESTION_MESSAGE);
         String nuevo_valor = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el nuevo atributo", JOptionPane.QUESTION_MESSAGE);
-        db.HacerConsulta("CALL modificarPropiedadEnMercado('"+id+"','"+atributo+"','"+nuevo_valor+"');");
+        db.HacerConsulta("CALL modificarPropiedadEnMercado('" + id + "','" + atributo + "','" + nuevo_valor + "');");
     }//GEN-LAST:event_jButton11MouseClicked
 
     private void jButton12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton12MouseClicked
@@ -1089,43 +1206,218 @@ public class Main extends javax.swing.JFrame {
         String id = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el id", JOptionPane.QUESTION_MESSAGE);
         String atributo = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el atributo que va a actualizar", JOptionPane.QUESTION_MESSAGE);
         String nuevo_valor = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el nuevo atributo", JOptionPane.QUESTION_MESSAGE);
-        db.HacerConsulta("CALL modificarPropiedadVendida('"+id+"','"+atributo+"','"+nuevo_valor+"');");
+        db.HacerConsulta("CALL modificarPropiedadVendida('" + id + "','" + atributo + "','" + nuevo_valor + "');");
     }//GEN-LAST:event_jButton12MouseClicked
+
+    private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
+        try {
+            // TODO add your handling code here:
+            ResultSet rs = db.mostrarElementos("SELECT * FROM agentes;");
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                String nombre = rs.getString("nombre");
+                String direccion = rs.getString("direccion");
+                int cel = rs.getInt("celular");
+                int telof = rs.getInt("telefonoOficina");
+                System.out.println("ID: " + id + " nombre: " + nombre + " Direccion: " + direccion + " cel: " + cel + " telefono: " + telof);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton4MouseClicked
+
+    private void jButton13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton13MouseClicked
+        // TODO add your handling code here:
+        try {
+            // TODO add your handling code here:
+            ResultSet rs = db.mostrarElementos("SELECT * FROM vendedores;");
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                String nombre = rs.getString("nombre");
+                String direccion = rs.getString("direccion");
+                int cel = rs.getInt("celular");
+                System.out.println("ID: " + id + " nombre: " + nombre + " Direccion: " + direccion + " cel: " + cel);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton13MouseClicked
+
+    private void jButton14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton14MouseClicked
+        // TODO add your handling code here:
+        ResultSet rs = db.mostrarElementos("SELECT * FROM propiedades_vendidas;");
+        try {
+            while (rs.next()) {
+                int idPropiedad = rs.getInt("idPropiedad");
+                String nombre = rs.getString("nombre");
+                String ciudad = rs.getString("ciudad");
+                String direccion = rs.getString("direccion");
+                int cantidadDormitorios = rs.getInt("cantidadDormitorios");
+                String caracteristicas = rs.getString("caracteristicas");
+                int precio = rs.getInt("precio");
+                String fechaPublicacion = rs.getString("fechaPublicacion");
+                String fechaVenta = rs.getString("fechaVenta");
+                int noIdentidad_Agente = rs.getInt("noIdentidad_Agente");
+                int noIdentidad_Vendedor = rs.getInt("noIdentidad_Vendedor");
+                int noIdentidad_Comprador = rs.getInt("noIdentidad_Comprador");
+                int comisionVenta = rs.getInt("comisionVenta");
+
+                System.out.println("ID Propiedad: " + idPropiedad
+                        + ", Nombre: " + nombre
+                        + ", Ciudad: " + ciudad
+                        + ", Dirección: " + direccion
+                        + ", Cantidad de Dormitorios: " + cantidadDormitorios
+                        + ", Características: " + caracteristicas
+                        + ", Precio: " + precio
+                        + ", Fecha de Publicación: " + fechaPublicacion
+                        + ", Fecha de Venta: " + fechaVenta
+                        + ", ID Agente: " + noIdentidad_Agente
+                        + ", ID Vendedor: " + noIdentidad_Vendedor
+                        + ", ID Comprador: " + noIdentidad_Comprador
+                        + ", Comisión de Venta: " + comisionVenta);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton14MouseClicked
+
+    private void jButton15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton15MouseClicked
+        // TODO add your handling code here:
+        try {
+            // TODO add your handling code here:
+            ResultSet rs = db.mostrarElementos("SELECT * FROM propiedades_en_mercado;");
+            while (rs.next()) {
+                int idPropiedad = rs.getInt("idPropiedad");
+                String nombre = rs.getString("nombre");
+                String ciudad = rs.getString("ciudad");
+                String direccion = rs.getString("direccion");
+                int cantidadDormitorios = rs.getInt("cantidadDormitorios");
+                String caracteristicas = rs.getString("caracteristicas");
+                int precio = rs.getInt("precio");
+                String fechaPublicacion = rs.getString("fechaPublicacion");
+                int noIdentidad_Agente = rs.getInt("noIdentidad_Agente");
+                int noIdentidad_Vendedor = rs.getInt("noIdentidad_Vendedor");
+
+                System.out.println("ID Propiedad: " + idPropiedad +
+                        ", Nombre: " + nombre +
+                        ", Ciudad: " + ciudad +
+                        ", Dirección: " + direccion +
+                        ", Cantidad de Dormitorios: " + cantidadDormitorios +
+                        ", Características: " + caracteristicas +
+                        ", Precio: " + precio +
+                        ", Fecha de Publicación: " + fechaPublicacion +
+                        ", ID Agente: " + noIdentidad_Agente +
+                        ", ID Vendedor: " + noIdentidad_Vendedor);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        /**/
+    }//GEN-LAST:event_jButton15MouseClicked
+
+    private void jButton16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton16MouseClicked
+        try {
+            // TODO add your handling code here:
+            ResultSet rs = db.mostrarElementos("SELECT * FROM ventas_x_agente");
+            while(rs.next()){
+                int id = rs.getInt("id");
+                String nombre = rs.getString("nombre");
+                int cant = rs.getInt("Cantidad_de_propiedades_vendidas");
+                System.out.println(id);
+                System.out.println(nombre);
+                System.out.println(cant);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton16MouseClicked
+
+    private void jButton17MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton17MouseClicked
+        // TODO add your handling code here:
+        try {
+            // TODO add your handling code here:
+            ResultSet rs = db.mostrarElementos("SELECT * FROM ventas_x_vendedor");
+            while(rs.next()){
+                int id = rs.getInt("id");
+                String nombre = rs.getString("nombre");
+                int cant = rs.getInt("Cantidad_de_propiedades_vendidas");
+                System.out.println(id);
+                System.out.println(nombre);
+                System.out.println(cant);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton17MouseClicked
+
+    private void jButton18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton18MouseClicked
+        // TODO add your handling code here:
+        try {
+            // TODO add your handling code here:
+            ResultSet rs = db.mostrarElementos("SELECT * FROM compras_x_comprador");
+            while(rs.next()){
+                int id = rs.getInt("id");
+                String nombre = rs.getString("nombre");
+                int cant = rs.getInt("Cant_Propiedades_Compradas");
+                System.out.println(id);
+                System.out.println(nombre);
+                System.out.println(cant);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton18MouseClicked
+
+    private void jButton19MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton19MouseClicked
+        // TODO add your handling code here:
+        try {
+            // TODO add your handling code here:
+            ResultSet rs = db.mostrarElementos("SELECT * FROM ventas_x_ubicacion");
+            while(rs.next()){
+                String dir = rs.getString("direccion");
+                int cant = rs.getInt("Cant_de_casas");
+                System.out.println(dir);
+                System.out.println(cant);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton19MouseClicked
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+    /* Set the Nimbus look and feel */
+    //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+    /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
+     */
+    try {
+        for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+            if ("Nimbus".equals(info.getName())) {
+                javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                break;
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Main().setVisible(false);
-            }
-        });
+    } catch (ClassNotFoundException ex) {
+        java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+    } catch (InstantiationException ex) {
+        java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+    } catch (IllegalAccessException ex) {
+        java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+    } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
     }
+    //</editor-fold>
+
+    /* Create and display the form */
+    java.awt.EventQueue.invokeLater(new Runnable() {
+        public void run() {
+            new Main().setVisible(false);
+        }
+    });
+}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton JB_BorrarComprador;
@@ -1149,10 +1441,18 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel JL_Welcome;
     private javax.swing.JPanel JP_Portada;
     private javax.swing.JFrame Portadita;
+    private javax.swing.JFrame Reportes;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
+    private javax.swing.JButton jButton13;
+    private javax.swing.JButton jButton14;
+    private javax.swing.JButton jButton15;
+    private javax.swing.JButton jButton16;
+    private javax.swing.JButton jButton17;
+    private javax.swing.JButton jButton18;
+    private javax.swing.JButton jButton19;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
