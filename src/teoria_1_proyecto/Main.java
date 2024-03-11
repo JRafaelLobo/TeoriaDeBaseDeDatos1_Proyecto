@@ -31,8 +31,9 @@ public class Main extends javax.swing.JFrame {
         DB_Manager db = new DB_Manager();
         db.crearConexion();
         db.crearTablas();
-        CambiarPantallaTiempo CPT = new CambiarPantallaTiempo(Portadita, JF_Principal, 4000,true);
+        CambiarPantallaTiempo CPT = new CambiarPantallaTiempo(Portadita, JF_Principal, 4000, true);
         CPT.start();
+        JF_Vendidas.show();
     }
 
     /**
@@ -64,10 +65,16 @@ public class Main extends javax.swing.JFrame {
         jLabel19 = new javax.swing.JLabel();
         JF_Vendedor = new javax.swing.JFrame();
         JB_CrearVendedor = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton10 = new javax.swing.JButton();
         JF_Vendidas = new javax.swing.JFrame();
         JB_CrearPropiedadEVendida = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
+        jButton12 = new javax.swing.JButton();
         JF_enVenta = new javax.swing.JFrame();
         JB_crearVenta = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        jButton11 = new javax.swing.JButton();
         JF_Principal = new javax.swing.JFrame();
         jPanel1 = new FondoPanel("./Imagen\\login.jpeg");
         jPanel2 = new javax.swing.JPanel();
@@ -95,6 +102,7 @@ public class Main extends javax.swing.JFrame {
         JF_modificarAgente = new javax.swing.JFrame();
         jPanel12 = new FondoPanel("./Imagen\\modificarAgente.jpg");
         jPanel13 = new javax.swing.JPanel();
+        jButton9 = new javax.swing.JButton();
 
         Portadita.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         Portadita.setUndecorated(true);
@@ -363,21 +371,42 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
+        jButton2.setText("Eliminar vendedor");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
+
+        jButton10.setText("Modificar vendedor");
+        jButton10.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton10MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout JF_VendedorLayout = new javax.swing.GroupLayout(JF_Vendedor.getContentPane());
         JF_Vendedor.getContentPane().setLayout(JF_VendedorLayout);
         JF_VendedorLayout.setHorizontalGroup(
             JF_VendedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JF_VendedorLayout.createSequentialGroup()
                 .addContainerGap(138, Short.MAX_VALUE)
-                .addComponent(JB_CrearVendedor)
-                .addGap(150, 150, 150))
+                .addGroup(JF_VendedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton10)
+                    .addComponent(jButton2)
+                    .addComponent(JB_CrearVendedor))
+                .addGap(128, 128, 128))
         );
         JF_VendedorLayout.setVerticalGroup(
             JF_VendedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(JF_VendedorLayout.createSequentialGroup()
                 .addGap(41, 41, 41)
                 .addComponent(JB_CrearVendedor)
-                .addContainerGap(236, Short.MAX_VALUE))
+                .addGap(32, 32, 32)
+                .addComponent(jButton2)
+                .addGap(30, 30, 30)
+                .addComponent(jButton10)
+                .addContainerGap(128, Short.MAX_VALUE))
         );
 
         JB_CrearPropiedadEVendida.setText("Crear Propiedad Vendida");
@@ -387,21 +416,43 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
+        jButton7.setText("Eliminar propiedad vendida");
+        jButton7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton7MouseClicked(evt);
+            }
+        });
+
+        jButton12.setText("Modificar propiedad vendida");
+        jButton12.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton12MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout JF_VendidasLayout = new javax.swing.GroupLayout(JF_Vendidas.getContentPane());
         JF_Vendidas.getContentPane().setLayout(JF_VendidasLayout);
         JF_VendidasLayout.setHorizontalGroup(
             JF_VendidasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(JF_VendidasLayout.createSequentialGroup()
-                .addGap(116, 116, 116)
-                .addComponent(JB_CrearPropiedadEVendida)
-                .addContainerGap(123, Short.MAX_VALUE))
+                .addGap(108, 108, 108)
+                .addGroup(JF_VendidasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton12)
+                    .addGroup(JF_VendidasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jButton7)
+                        .addComponent(JB_CrearPropiedadEVendida)))
+                .addContainerGap(109, Short.MAX_VALUE))
         );
         JF_VendidasLayout.setVerticalGroup(
             JF_VendidasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(JF_VendidasLayout.createSequentialGroup()
                 .addGap(63, 63, 63)
                 .addComponent(JB_CrearPropiedadEVendida)
-                .addContainerGap(214, Short.MAX_VALUE))
+                .addGap(30, 30, 30)
+                .addComponent(jButton7)
+                .addGap(18, 18, 18)
+                .addComponent(jButton12)
+                .addContainerGap(120, Short.MAX_VALUE))
         );
 
         JF_enVenta.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -417,13 +468,33 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
+        jButton6.setText("Eliminar en venta");
+        jButton6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton6MouseClicked(evt);
+            }
+        });
+
+        jButton11.setText("Modificar en venta");
+        jButton11.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton11MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout JF_enVentaLayout = new javax.swing.GroupLayout(JF_enVenta.getContentPane());
         JF_enVenta.getContentPane().setLayout(JF_enVentaLayout);
         JF_enVentaLayout.setHorizontalGroup(
             JF_enVentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(JF_enVentaLayout.createSequentialGroup()
                 .addGap(119, 119, 119)
-                .addComponent(JB_crearVenta)
+                .addGroup(JF_enVentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(JB_crearVenta)
+                    .addGroup(JF_enVentaLayout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addGroup(JF_enVentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton11)
+                            .addComponent(jButton6))))
                 .addContainerGap(118, Short.MAX_VALUE))
         );
         JF_enVentaLayout.setVerticalGroup(
@@ -431,7 +502,11 @@ public class Main extends javax.swing.JFrame {
             .addGroup(JF_enVentaLayout.createSequentialGroup()
                 .addGap(49, 49, 49)
                 .addComponent(JB_crearVenta)
-                .addContainerGap(228, Short.MAX_VALUE))
+                .addGap(33, 33, 33)
+                .addComponent(jButton6)
+                .addGap(29, 29, 29)
+                .addComponent(jButton11)
+                .addContainerGap(120, Short.MAX_VALUE))
         );
 
         jPanel1.setBackground(new java.awt.Color(51, 153, 255));
@@ -694,15 +769,28 @@ public class Main extends javax.swing.JFrame {
 
         jPanel13.setBackground(new java.awt.Color(0, 0, 0));
 
+        jButton9.setText("jButton9");
+        jButton9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton9MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
         jPanel13.setLayout(jPanel13Layout);
         jPanel13Layout.setHorizontalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 377, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
+                .addContainerGap(158, Short.MAX_VALUE)
+                .addComponent(jButton9)
+                .addGap(144, 144, 144))
         );
         jPanel13Layout.setVerticalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 280, Short.MAX_VALUE)
+            .addGroup(jPanel13Layout.createSequentialGroup()
+                .addGap(48, 48, 48)
+                .addComponent(jButton9)
+                .addContainerGap(209, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
@@ -771,10 +859,10 @@ public class Main extends javax.swing.JFrame {
 //        String vista = "INSERT INTO agentes VALUES ('" + new String(idChar) + "','" + new String(nombreChar) + "','" + new String(dirChar) + "'," + celInt + ",'" + telOf + "')";
 //        
 //        db.HacerConsulta(vista);
-                    JF_crearAgente.pack();
-                    JF_crearAgente.setLocationRelativeTo(JF_Agentes);
-                    JF_Agentes.setVisible(false);
-                    JF_crearAgente.setVisible(true);
+        JF_crearAgente.pack();
+        JF_crearAgente.setLocationRelativeTo(JF_Agentes);
+        JF_Agentes.setVisible(false);
+        JF_crearAgente.setVisible(true);
     }//GEN-LAST:event_JB_CrearAgenteMouseClicked
 
     private void JB_CrearCompradorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_CrearCompradorMouseClicked
@@ -783,7 +871,6 @@ public class Main extends javax.swing.JFrame {
         String nombre = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el nombre", JOptionPane.QUESTION_MESSAGE);
         String dir = JOptionPane.showInputDialog(JF_Agentes, "Ingrese la dir", JOptionPane.QUESTION_MESSAGE);
         String cel = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el cel", JOptionPane.QUESTION_MESSAGE);
-        
 
         String vista = "CALL insertarComprador('" + id + "','" + nombre + "','" + dir + "'," + cel + ")";
         db.HacerConsulta(vista);
@@ -796,7 +883,7 @@ public class Main extends javax.swing.JFrame {
         String dir = JOptionPane.showInputDialog(JF_Agentes, "Ingrese la dir", JOptionPane.QUESTION_MESSAGE);
         String cel = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el cel", JOptionPane.QUESTION_MESSAGE);
 
-        String vista = "CALL insertarVendedor('" +id + "','" + nombre + "','" + dir + "'," + cel + ")";
+        String vista = "CALL insertarVendedor('" + id + "','" + nombre + "','" + dir + "'," + cel + ")";
         db.HacerConsulta(vista);
     }//GEN-LAST:event_JB_CrearVendedorMouseClicked
 
@@ -809,13 +896,13 @@ public class Main extends javax.swing.JFrame {
         String cantDormitorios = JOptionPane.showInputDialog(JF_Agentes, "Ingrese la cantidad de dormitorios", JOptionPane.QUESTION_MESSAGE);
         String caracteristicas = JOptionPane.showInputDialog(JF_Agentes, "Ingrese las caracteristicas", JOptionPane.QUESTION_MESSAGE);
         String precio = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el precio", JOptionPane.QUESTION_MESSAGE);
-        String fechaPublicacion =JOptionPane.showInputDialog(JF_Agentes, "Ingrese la fecha de publicacion", JOptionPane.QUESTION_MESSAGE);
+        String fechaPublicacion = JOptionPane.showInputDialog(JF_Agentes, "Ingrese la fecha de publicacion", JOptionPane.QUESTION_MESSAGE);
         String fechaVenta = JOptionPane.showInputDialog(JF_Agentes, "Ingrese la fecha de la venta", JOptionPane.QUESTION_MESSAGE);
-        String numeroIdentidadA=JOptionPane.showInputDialog(JF_Agentes, "Ingrese el numero de identidad del agente", JOptionPane.QUESTION_MESSAGE);
+        String numeroIdentidadA = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el numero de identidad del agente", JOptionPane.QUESTION_MESSAGE);
         String numeroIdentidadV = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el numero de identidad de el vendedor", JOptionPane.QUESTION_MESSAGE);
         String numeroIdentidadC = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el numero de identidad del comprador", JOptionPane.QUESTION_MESSAGE);
         String comision = JOptionPane.showInputDialog(JF_Agentes, "Ingrese la comision", JOptionPane.QUESTION_MESSAGE);
-        
+
         String vista = "CALL insertarPM ('" + id + "','" + nombre + "','" + ciudad + "','" + dir + "','" + cantDormitorios + "','" + caracteristicas + "','" + precio + "','" + fechaPublicacion + "','" + fechaVenta + "','" + numeroIdentidadA + "','" + numeroIdentidadV + "','" + numeroIdentidadC + "','" + comision + "')";
         db.HacerConsulta(vista);
     }//GEN-LAST:event_JB_CrearPropiedadEVendidaMouseClicked
@@ -829,10 +916,10 @@ public class Main extends javax.swing.JFrame {
         String cantDormitorios = JOptionPane.showInputDialog(JF_Agentes, "Ingrese la cantidad de dormitorios", JOptionPane.QUESTION_MESSAGE);
         String caracteristicas = JOptionPane.showInputDialog(JF_Agentes, "Ingrese las caracteristicas", JOptionPane.QUESTION_MESSAGE);
         String precio = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el precio", JOptionPane.QUESTION_MESSAGE);
-        String fechaPublicacion =JOptionPane.showInputDialog(JF_Agentes, "Ingrese la fecha de publicacion", JOptionPane.QUESTION_MESSAGE);
-        String numeroIdentidadA=JOptionPane.showInputDialog(JF_Agentes, "Ingrese el numero de identidad del agente", JOptionPane.QUESTION_MESSAGE);
+        String fechaPublicacion = JOptionPane.showInputDialog(JF_Agentes, "Ingrese la fecha de publicacion", JOptionPane.QUESTION_MESSAGE);
+        String numeroIdentidadA = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el numero de identidad del agente", JOptionPane.QUESTION_MESSAGE);
         String numeroIdentidadV = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el numero de identidad de el vendedor", JOptionPane.QUESTION_MESSAGE);
-        String vista = "CALL insertarPV ('" + id + "','" + nombre + "','" + ciudad + "','" + dir + "','" + cantDormitorios + "','" + caracteristicas + "','" + precio + "','" + fechaPublicacion + "','" + numeroIdentidadA + "','" + numeroIdentidadV+ "')";
+        String vista = "CALL insertarPV ('" + id + "','" + nombre + "','" + ciudad + "','" + dir + "','" + cantDormitorios + "','" + caracteristicas + "','" + precio + "','" + fechaPublicacion + "','" + numeroIdentidadA + "','" + numeroIdentidadV + "')";
         db.HacerConsulta(vista);
     }//GEN-LAST:event_JB_crearVentaMouseClicked
 
@@ -844,10 +931,10 @@ public class Main extends javax.swing.JFrame {
 //        
 //        String vista = "UPDATE agentes SET " + atributo + " = '" + valor + "' WHERE id = '" + id + "'";
 //        db.HacerConsulta(vista);
- JF_modificarAgente.pack();
-                    JF_modificarAgente.setLocationRelativeTo(JF_Agentes);
-                    JF_Agentes.setVisible(false);
-                    JF_modificarAgente.setVisible(true);
+        JF_modificarAgente.pack();
+        JF_modificarAgente.setLocationRelativeTo(JF_Agentes);
+        JF_Agentes.setVisible(false);
+        JF_modificarAgente.setVisible(true);
     }//GEN-LAST:event_JB_ModificarAgenteMouseClicked
 
     private void tf_usernameloginMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tf_usernameloginMousePressed
@@ -860,7 +947,7 @@ public class Main extends javax.swing.JFrame {
             pf_passwordlogin.setText("*******");
             pf_passwordlogin.setForeground(Color.GRAY);
         }
-    
+
     }//GEN-LAST:event_tf_usernameloginMousePressed
 
     private void pf_passwordloginMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pf_passwordloginMousePressed
@@ -880,11 +967,11 @@ public class Main extends javax.swing.JFrame {
 //                    JF_Agentes.setExtendedState(MAXIMIZED_BOTH);
 //                    JF_Principal.setVisible(false);
 //                    JF_Agentes.setVisible(true);
-  JF_Compradores.pack();
-                    JF_Compradores.setLocationRelativeTo(JF_Principal);
+        JF_Compradores.pack();
+        JF_Compradores.setLocationRelativeTo(JF_Principal);
 //                     JF_Compradores.setExtendedState(MAXIMIZED_BOTH);
-                    JF_Principal.setVisible(false);
-                     JF_Compradores.setVisible(true);
+        JF_Principal.setVisible(false);
+        JF_Compradores.setVisible(true);
     }//GEN-LAST:event_jButton1MouseClicked
 
     private void JB_CrearCompradorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_CrearCompradorActionPerformed
@@ -893,6 +980,10 @@ public class Main extends javax.swing.JFrame {
 
     private void JB_modificarCompradorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_modificarCompradorMouseClicked
         // TODO add your handling code here:
+        String id = JOptionPane.showInputDialog(JF_Compradores, "Ingrese el id", JOptionPane.QUESTION_MESSAGE);
+        String atributo = JOptionPane.showInputDialog(JF_Compradores, "Ingrese el atributo a cambiar", JOptionPane.QUESTION_MESSAGE);
+        String nuevo_atributo = JOptionPane.showInputDialog(JF_Compradores, "Ingrese el nuevo atributo", JOptionPane.QUESTION_MESSAGE);
+        db.HacerConsulta("CALL modificarComprador('" + id + "','"+atributo+"','"+nuevo_atributo+"');");
     }//GEN-LAST:event_JB_modificarCompradorMouseClicked
 
     private void JB_modificarCompradorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_modificarCompradorActionPerformed
@@ -901,6 +992,8 @@ public class Main extends javax.swing.JFrame {
 
     private void JB_BorrarCompradorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_BorrarCompradorMouseClicked
         // TODO add your handling code here:
+        String id = JOptionPane.showInputDialog(JF_Compradores, "Ingrese el id", JOptionPane.QUESTION_MESSAGE);
+        db.HacerConsulta("CALL eliminarComprador('" + id + "');");
     }//GEN-LAST:event_JB_BorrarCompradorMouseClicked
 
     private void JB_BorrarCompradorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_BorrarCompradorActionPerformed
@@ -935,8 +1028,7 @@ public class Main extends javax.swing.JFrame {
         String cel = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el cel", JOptionPane.QUESTION_MESSAGE);
         String telOf = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el teloficina", JOptionPane.QUESTION_MESSAGE);
 
-        
-        db.HacerConsulta("CALL insertarAgente('"+id+"','"+nombre+"','"+dir+"','"+cel+"','"+telOf+"');");
+        db.HacerConsulta("CALL insertarAgente('" + id + "','" + nombre + "','" + dir + "','" + cel + "','" + telOf + "');");
     }//GEN-LAST:event_jButton8MouseClicked
 
     private void JF_enVentaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JF_enVentaMouseClicked
@@ -945,8 +1037,60 @@ public class Main extends javax.swing.JFrame {
 
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
         // TODO add your handling code here:
-        
+        String id = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el id", JOptionPane.QUESTION_MESSAGE);
+
+        db.HacerConsulta("CALL eliminarAgente('" + id + "');");
     }//GEN-LAST:event_jButton3MouseClicked
+
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+        // TODO add your handling code here:
+        String id = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el id", JOptionPane.QUESTION_MESSAGE);
+        db.HacerConsulta("CALL eliminarVendedor('" + id + "');");
+    }//GEN-LAST:event_jButton2MouseClicked
+
+    private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
+        // TODO add your handling code here:
+        String id = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el id", JOptionPane.QUESTION_MESSAGE);
+        db.HacerConsulta("CALL eliminarPM('" + id + "');");
+    }//GEN-LAST:event_jButton6MouseClicked
+
+    private void jButton7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton7MouseClicked
+        // TODO add your handling code here:
+        String id = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el id", JOptionPane.QUESTION_MESSAGE);
+        db.HacerConsulta("CALL eliminarPV('" + id + "');");
+    }//GEN-LAST:event_jButton7MouseClicked
+
+    private void jButton9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton9MouseClicked
+        // TODO add your handling code here:
+        String id = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el id", JOptionPane.QUESTION_MESSAGE);
+        String atributo = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el atributo que va a actualizar", JOptionPane.QUESTION_MESSAGE);
+        String nuevo_valor = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el nuevo atributo", JOptionPane.QUESTION_MESSAGE);
+        db.HacerConsulta("CALL modificarAgente('"+id+"','"+atributo+"','"+nuevo_valor+"');");
+    }//GEN-LAST:event_jButton9MouseClicked
+
+    private void jButton10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton10MouseClicked
+        // TODO add your handling code here:
+        String id = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el id", JOptionPane.QUESTION_MESSAGE);
+        String atributo = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el atributo que va a actualizar", JOptionPane.QUESTION_MESSAGE);
+        String nuevo_valor = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el nuevo atributo", JOptionPane.QUESTION_MESSAGE);
+        db.HacerConsulta("CALL modificarVendedor('"+id+"','"+atributo+"','"+nuevo_valor+"');");
+    }//GEN-LAST:event_jButton10MouseClicked
+
+    private void jButton11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton11MouseClicked
+        // TODO add your handling code here:
+        String id = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el id", JOptionPane.QUESTION_MESSAGE);
+        String atributo = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el atributo que va a actualizar", JOptionPane.QUESTION_MESSAGE);
+        String nuevo_valor = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el nuevo atributo", JOptionPane.QUESTION_MESSAGE);
+        db.HacerConsulta("CALL modificarPropiedadEnMercado('"+id+"','"+atributo+"','"+nuevo_valor+"');");
+    }//GEN-LAST:event_jButton11MouseClicked
+
+    private void jButton12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton12MouseClicked
+        // TODO add your handling code here:
+        String id = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el id", JOptionPane.QUESTION_MESSAGE);
+        String atributo = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el atributo que va a actualizar", JOptionPane.QUESTION_MESSAGE);
+        String nuevo_valor = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el nuevo atributo", JOptionPane.QUESTION_MESSAGE);
+        db.HacerConsulta("CALL modificarPropiedadVendida('"+id+"','"+atributo+"','"+nuevo_valor+"');");
+    }//GEN-LAST:event_jButton12MouseClicked
 
     /**
      * @param args the command line arguments
@@ -1006,10 +1150,17 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel JP_Portada;
     private javax.swing.JFrame Portadita;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton11;
+    private javax.swing.JButton jButton12;
+    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
@@ -1036,9 +1187,8 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTextField tf_usernamelogin;
     // End of variables declaration//GEN-END:variables
 
- //Variables globales
+    //Variables globales
     DB_Manager db = new DB_Manager();
-
 
 //Este metodo es para reproducir sonidos en el programa
     public static Clip playMusic(String filepath) {
