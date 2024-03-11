@@ -110,6 +110,11 @@ public class Main extends javax.swing.JFrame {
         jPanel12 = new FondoPanel("./Imagen\\modificarAgente.jpg");
         jPanel13 = new javax.swing.JPanel();
         jButton9 = new javax.swing.JButton();
+        Reportes = new javax.swing.JFrame();
+        jButton16 = new javax.swing.JButton();
+        jButton17 = new javax.swing.JButton();
+        jButton18 = new javax.swing.JButton();
+        jButton19 = new javax.swing.JButton();
 
         Portadita.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         Portadita.setUndecorated(true);
@@ -869,6 +874,61 @@ public class Main extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
+        jButton16.setText("Cantidad de ventas por agente");
+        jButton16.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton16MouseClicked(evt);
+            }
+        });
+
+        jButton17.setText("Cantidad de ventas por vendedor");
+        jButton17.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton17MouseClicked(evt);
+            }
+        });
+
+        jButton18.setText("Cantidad de compras por comprador");
+        jButton18.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton18MouseClicked(evt);
+            }
+        });
+
+        jButton19.setText("Cantidad de ventas por ubicacion");
+        jButton19.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton19MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout ReportesLayout = new javax.swing.GroupLayout(Reportes.getContentPane());
+        Reportes.getContentPane().setLayout(ReportesLayout);
+        ReportesLayout.setHorizontalGroup(
+            ReportesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ReportesLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addGroup(ReportesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton19)
+                    .addComponent(jButton18)
+                    .addComponent(jButton17)
+                    .addComponent(jButton16))
+                .addContainerGap(144, Short.MAX_VALUE))
+        );
+        ReportesLayout.setVerticalGroup(
+            ReportesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ReportesLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(jButton16)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton17)
+                .addGap(18, 18, 18)
+                .addComponent(jButton18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton19)
+                .addContainerGap(144, Short.MAX_VALUE))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
@@ -1255,6 +1315,75 @@ public class Main extends javax.swing.JFrame {
         /**/
     }//GEN-LAST:event_jButton15MouseClicked
 
+    private void jButton16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton16MouseClicked
+        try {
+            // TODO add your handling code here:
+            ResultSet rs = db.mostrarElementos("SELECT * FROM ventas_x_agente");
+            while(rs.next()){
+                int id = rs.getInt("id");
+                String nombre = rs.getString("nombre");
+                int cant = rs.getInt("Cantidad_de_propiedades_vendidas");
+                System.out.println(id);
+                System.out.println(nombre);
+                System.out.println(cant);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton16MouseClicked
+
+    private void jButton17MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton17MouseClicked
+        // TODO add your handling code here:
+        try {
+            // TODO add your handling code here:
+            ResultSet rs = db.mostrarElementos("SELECT * FROM ventas_x_vendedor");
+            while(rs.next()){
+                int id = rs.getInt("id");
+                String nombre = rs.getString("nombre");
+                int cant = rs.getInt("Cantidad_de_propiedades_vendidas");
+                System.out.println(id);
+                System.out.println(nombre);
+                System.out.println(cant);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton17MouseClicked
+
+    private void jButton18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton18MouseClicked
+        // TODO add your handling code here:
+        try {
+            // TODO add your handling code here:
+            ResultSet rs = db.mostrarElementos("SELECT * FROM compras_x_comprador");
+            while(rs.next()){
+                int id = rs.getInt("id");
+                String nombre = rs.getString("nombre");
+                int cant = rs.getInt("Cant_Propiedades_Compradas");
+                System.out.println(id);
+                System.out.println(nombre);
+                System.out.println(cant);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton18MouseClicked
+
+    private void jButton19MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton19MouseClicked
+        // TODO add your handling code here:
+        try {
+            // TODO add your handling code here:
+            ResultSet rs = db.mostrarElementos("SELECT * FROM ventas_x_ubicacion");
+            while(rs.next()){
+                String dir = rs.getString("direccion");
+                int cant = rs.getInt("Cant_de_casas");
+                System.out.println(dir);
+                System.out.println(cant);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton19MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -1312,6 +1441,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel JL_Welcome;
     private javax.swing.JPanel JP_Portada;
     private javax.swing.JFrame Portadita;
+    private javax.swing.JFrame Reportes;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
@@ -1319,6 +1449,10 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton15;
+    private javax.swing.JButton jButton16;
+    private javax.swing.JButton jButton17;
+    private javax.swing.JButton jButton18;
+    private javax.swing.JButton jButton19;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
