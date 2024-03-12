@@ -19,12 +19,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author rinal
  */
-
 public class Main extends javax.swing.JFrame {
 
     /**
@@ -38,6 +38,7 @@ public class Main extends javax.swing.JFrame {
         db.crearTablas();
         CambiarPantallaTiempo CPT = new CambiarPantallaTiempo(Portadita, JF_Principal, 4000, true);
         CPT.start();
+        //JF_crearPropiedadesVendidas.show();
     }
 
     /**
@@ -260,18 +261,18 @@ public class Main extends javax.swing.JFrame {
         tf_crearPropiedadenVentanombre = new javax.swing.JTextField();
         tf_crearPropiedadenVentaid = new javax.swing.JTextField();
         JB_crearPropiedadVenta = new javax.swing.JButton();
-        js_crearPropiedadenVentaDormitorios = new javax.swing.JSpinner();
         jLabel60 = new javax.swing.JLabel();
         jScrollPane6 = new javax.swing.JScrollPane();
         ta_crearPropiedadenVentaCaracteristicas = new javax.swing.JTextArea();
         jLabel61 = new javax.swing.JLabel();
-        ff_crearPropiedadenVentaPrecio = new javax.swing.JFormattedTextField();
         jLabel62 = new javax.swing.JLabel();
-        ff_crearPropiedadenVentaFecha = new javax.swing.JFormattedTextField();
         jLabel63 = new javax.swing.JLabel();
         jLabel64 = new javax.swing.JLabel();
         tf_crearPropiedadenVentaidAgente = new javax.swing.JTextField();
         tf_crearPropiedadenVentaidVendedor = new javax.swing.JTextField();
+        jTextField3 = new javax.swing.JTextField();
+        jTextField4 = new javax.swing.JTextField();
+        jTextField5 = new javax.swing.JTextField();
         JF_modificarPropiedadVenta = new javax.swing.JFrame();
         jPanel36 = new FondoPanel("./Imagen\\modificarPropVenta.jpg");
         jPanel37 = new javax.swing.JPanel();
@@ -317,24 +318,24 @@ public class Main extends javax.swing.JFrame {
         tf_crearPropiedadenvendidaNombre = new javax.swing.JTextField();
         tf_crearPropiedadenvendidaId = new javax.swing.JTextField();
         JB_crearPropiedadVenta1 = new javax.swing.JButton();
-        js_crearPropiedadenvendidaCantDor = new javax.swing.JSpinner();
         jLabel80 = new javax.swing.JLabel();
         jScrollPane8 = new javax.swing.JScrollPane();
         ta_crearPropiedadenvendidaCaracteristicas = new javax.swing.JTextArea();
         jLabel81 = new javax.swing.JLabel();
-        ff_crearPropiedadenvendidaPrecio = new javax.swing.JFormattedTextField();
         jLabel82 = new javax.swing.JLabel();
-        ff_crearPropiedadenvendidaFechaPublicacion = new javax.swing.JFormattedTextField();
         jLabel83 = new javax.swing.JLabel();
         jLabel84 = new javax.swing.JLabel();
         tf_crearPropiedadenvendidaidAgente = new javax.swing.JTextField();
         tf_crearPropiedadenvendidaidVendedor = new javax.swing.JTextField();
         jLabel85 = new javax.swing.JLabel();
-        ff_crearPropiedadenvendidaFechaVenta = new javax.swing.JFormattedTextField();
         jLabel86 = new javax.swing.JLabel();
         tf_crearPropiedadenvendidaidComprador = new javax.swing.JTextField();
         jLabel87 = new javax.swing.JLabel();
-        tf_crearPropiedadenvendidaComision = new javax.swing.JFormattedTextField();
+        jTextField6 = new javax.swing.JTextField();
+        jTextField7 = new javax.swing.JTextField();
+        jTextField8 = new javax.swing.JTextField();
+        jTextField9 = new javax.swing.JTextField();
+        jTextField10 = new javax.swing.JTextField();
         JF_modificarPropVendidas = new javax.swing.JFrame();
         jPanel48 = new FondoPanel("./Imagen\\modifcarPropVendida.jpg");
         jPanel49 = new javax.swing.JPanel();
@@ -447,6 +448,11 @@ public class Main extends javax.swing.JFrame {
         jButton5.setFont(new java.awt.Font("Montserrat Thin", 1, 16)); // NOI18N
         jButton5.setForeground(new java.awt.Color(255, 255, 255));
         jButton5.setText("Buscar");
+        jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton5MouseClicked(evt);
+            }
+        });
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -491,7 +497,7 @@ public class Main extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
                         .addContainerGap(222, Short.MAX_VALUE)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 672, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(91, 91, 91)))
+                        .addGap(84, 84, 84)))
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(JB_ModificarAgente, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(JB_CrearAgente, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -610,7 +616,7 @@ public class Main extends javax.swing.JFrame {
                 {null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "ID", "Nombre", "Direccion", "Celular"
             }
         ));
         jScrollPane4.setViewportView(jTable3);
@@ -1120,9 +1126,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
-        CB_modificarAgente.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        cb_atributoAgente.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cb_atributoAgente.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "nombre", "direccion", "celular", "telefonoOficina" }));
 
         javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
         jPanel15.setLayout(jPanel15Layout);
@@ -1870,7 +1874,6 @@ public class Main extends javax.swing.JFrame {
 
         cb_eliminarAgente.setBackground(new java.awt.Color(221, 228, 254));
         cb_eliminarAgente.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        cb_eliminarAgente.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         JB_eliminarAgente.setBackground(new java.awt.Color(232, 239, 254));
         JB_eliminarAgente.setFont(new java.awt.Font("Montserrat Thin", 1, 18)); // NOI18N
@@ -2102,10 +2105,9 @@ public class Main extends javax.swing.JFrame {
         });
 
         cb_modificarVendedor.setBackground(new java.awt.Color(209, 200, 221));
-        cb_modificarVendedor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         cb_atributovendedor.setBackground(new java.awt.Color(209, 200, 221));
-        cb_atributovendedor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cb_atributovendedor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "nombre", "direccion", "celular" }));
 
         jLabel36.setFont(new java.awt.Font("Montserrat Thin", 1, 18)); // NOI18N
         jLabel36.setForeground(new java.awt.Color(245, 253, 255));
@@ -2201,7 +2203,6 @@ public class Main extends javax.swing.JFrame {
 
         cb_eliminarVendedor.setBackground(new java.awt.Color(221, 228, 254));
         cb_eliminarVendedor.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        cb_eliminarVendedor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         JB_eliminarVendedor.setBackground(new java.awt.Color(232, 239, 254));
         JB_eliminarVendedor.setFont(new java.awt.Font("Montserrat Thin", 1, 18)); // NOI18N
@@ -2430,10 +2431,9 @@ public class Main extends javax.swing.JFrame {
         });
 
         cb_modificarComprador.setBackground(new java.awt.Color(229, 185, 221));
-        cb_modificarComprador.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         cb_atributoComprador.setBackground(new java.awt.Color(229, 185, 221));
-        cb_atributoComprador.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cb_atributoComprador.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "nombre", "direccion", "celular" }));
 
         jLabel44.setFont(new java.awt.Font("Montserrat Thin", 1, 18)); // NOI18N
         jLabel44.setForeground(new java.awt.Color(245, 253, 255));
@@ -2531,7 +2531,6 @@ public class Main extends javax.swing.JFrame {
 
         cb_eliminarComprador.setBackground(new java.awt.Color(221, 228, 254));
         cb_eliminarComprador.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        cb_eliminarComprador.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         JB_eliminarComprador.setBackground(new java.awt.Color(232, 239, 254));
         JB_eliminarComprador.setFont(new java.awt.Font("Montserrat Thin", 1, 18)); // NOI18N
@@ -2656,8 +2655,6 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
-        js_crearPropiedadenVentaDormitorios.setModel(new javax.swing.SpinnerNumberModel());
-
         jLabel60.setFont(new java.awt.Font("Montserrat Thin", 1, 18)); // NOI18N
         jLabel60.setForeground(new java.awt.Color(245, 253, 255));
         jLabel60.setText("Caracteristicas:");
@@ -2671,15 +2668,9 @@ public class Main extends javax.swing.JFrame {
         jLabel61.setForeground(new java.awt.Color(245, 253, 255));
         jLabel61.setText("Precio:");
 
-        ff_crearPropiedadenVentaPrecio.setBackground(new java.awt.Color(234, 234, 234));
-        ff_crearPropiedadenVentaPrecio.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getCurrencyInstance())));
-
         jLabel62.setFont(new java.awt.Font("Montserrat Thin", 1, 18)); // NOI18N
         jLabel62.setForeground(new java.awt.Color(245, 253, 255));
         jLabel62.setText("ID Vendedor:");
-
-        ff_crearPropiedadenVentaFecha.setBackground(new java.awt.Color(234, 234, 234));
-        ff_crearPropiedadenVentaFecha.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("YYYY-MM-DD"))));
 
         jLabel63.setFont(new java.awt.Font("Montserrat Thin", 1, 18)); // NOI18N
         jLabel63.setForeground(new java.awt.Color(245, 253, 255));
@@ -2718,18 +2709,17 @@ public class Main extends javax.swing.JFrame {
                     .addGroup(jPanel41Layout.createSequentialGroup()
                         .addComponent(jLabel61)
                         .addGap(80, 80, 80)))
-                .addGap(18, 18, 18)
                 .addGroup(jPanel41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(tf_crearPropiedadenVentaDireccion)
                     .addComponent(tf_crearPropiedadenVentanombre)
                     .addComponent(tf_crearPropiedadenVentaCiudad)
                     .addComponent(tf_crearPropiedadenVentaid)
-                    .addComponent(js_crearPropiedadenVentaDormitorios)
                     .addComponent(jScrollPane6)
-                    .addComponent(ff_crearPropiedadenVentaPrecio, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(ff_crearPropiedadenVentaFecha)
                     .addComponent(tf_crearPropiedadenVentaidAgente, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(tf_crearPropiedadenVentaidVendedor, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addComponent(tf_crearPropiedadenVentaidVendedor, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jTextField3)
+                    .addComponent(jTextField4)
+                    .addComponent(jTextField5))
                 .addGap(31, 31, 31))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel41Layout.createSequentialGroup()
                 .addGap(0, 17, Short.MAX_VALUE)
@@ -2762,7 +2752,7 @@ public class Main extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel59)
-                            .addComponent(js_crearPropiedadenVentaDormitorios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(tf_crearPropiedadenVentanombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2770,12 +2760,12 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ff_crearPropiedadenVentaPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel61))
+                    .addComponent(jLabel61)
+                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ff_crearPropiedadenVentaFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel63))
+                    .addComponent(jLabel63)
+                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel64)
@@ -3234,8 +3224,6 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
-        js_crearPropiedadenvendidaCantDor.setModel(new javax.swing.SpinnerNumberModel());
-
         jLabel80.setFont(new java.awt.Font("Montserrat Thin", 1, 18)); // NOI18N
         jLabel80.setForeground(new java.awt.Color(102, 102, 255));
         jLabel80.setText("Caracteristicas:");
@@ -3249,15 +3237,9 @@ public class Main extends javax.swing.JFrame {
         jLabel81.setForeground(new java.awt.Color(102, 102, 255));
         jLabel81.setText("Comisión:");
 
-        ff_crearPropiedadenvendidaPrecio.setBackground(new java.awt.Color(234, 234, 234));
-        ff_crearPropiedadenvendidaPrecio.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getCurrencyInstance())));
-
         jLabel82.setFont(new java.awt.Font("Montserrat Thin", 1, 18)); // NOI18N
         jLabel82.setForeground(new java.awt.Color(102, 102, 255));
         jLabel82.setText("ID Vendedor:");
-
-        ff_crearPropiedadenvendidaFechaPublicacion.setBackground(new java.awt.Color(234, 234, 234));
-        ff_crearPropiedadenvendidaFechaPublicacion.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("YYYY-MM-DD"))));
 
         jLabel83.setFont(new java.awt.Font("Montserrat Thin", 1, 18)); // NOI18N
         jLabel83.setForeground(new java.awt.Color(102, 102, 255));
@@ -3280,9 +3262,6 @@ public class Main extends javax.swing.JFrame {
         jLabel85.setForeground(new java.awt.Color(102, 102, 255));
         jLabel85.setText("Fecha Venta:");
 
-        ff_crearPropiedadenvendidaFechaVenta.setBackground(new java.awt.Color(234, 234, 234));
-        ff_crearPropiedadenvendidaFechaVenta.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("YYYY-MM-DD"))));
-
         jLabel86.setFont(new java.awt.Font("Montserrat Thin", 1, 18)); // NOI18N
         jLabel86.setForeground(new java.awt.Color(102, 102, 255));
         jLabel86.setText("ID Comprador:");
@@ -3292,9 +3271,6 @@ public class Main extends javax.swing.JFrame {
         jLabel87.setFont(new java.awt.Font("Montserrat Thin", 1, 18)); // NOI18N
         jLabel87.setForeground(new java.awt.Color(102, 102, 255));
         jLabel87.setText("Precio:");
-
-        tf_crearPropiedadenvendidaComision.setBackground(new java.awt.Color(234, 234, 234));
-        tf_crearPropiedadenvendidaComision.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getCurrencyInstance())));
 
         javax.swing.GroupLayout jPanel47Layout = new javax.swing.GroupLayout(jPanel47);
         jPanel47.setLayout(jPanel47Layout);
@@ -3329,19 +3305,19 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(jLabel87))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(ff_crearPropiedadenvendidaPrecio)
-                    .addComponent(ff_crearPropiedadenvendidaFechaPublicacion)
                     .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 296, Short.MAX_VALUE)
-                    .addComponent(js_crearPropiedadenvendidaCantDor)
                     .addComponent(tf_crearPropiedadenvendidaDireccion)
                     .addComponent(tf_crearPropiedadenvendidaCiudad)
                     .addComponent(tf_crearPropiedadenvendidaNombre)
                     .addComponent(tf_crearPropiedadenvendidaId)
-                    .addComponent(ff_crearPropiedadenvendidaFechaVenta)
                     .addComponent(tf_crearPropiedadenvendidaidAgente)
                     .addComponent(tf_crearPropiedadenvendidaidVendedor)
                     .addComponent(tf_crearPropiedadenvendidaidComprador)
-                    .addComponent(tf_crearPropiedadenvendidaComision))
+                    .addComponent(jTextField6)
+                    .addComponent(jTextField7)
+                    .addComponent(jTextField8)
+                    .addComponent(jTextField9)
+                    .addComponent(jTextField10))
                 .addGap(15, 15, 15))
         );
         jPanel47Layout.setVerticalGroup(
@@ -3368,23 +3344,23 @@ public class Main extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel79)
-                    .addComponent(js_crearPropiedadenvendidaCantDor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel80)
                     .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ff_crearPropiedadenvendidaPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel87))
+                    .addComponent(jLabel87)
+                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ff_crearPropiedadenvendidaFechaPublicacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel83))
+                    .addComponent(jLabel83)
+                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel85)
-                    .addComponent(ff_crearPropiedadenvendidaFechaVenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel84)
@@ -3398,13 +3374,10 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(jLabel86)
                     .addComponent(tf_crearPropiedadenvendidaidComprador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel47Layout.createSequentialGroup()
-                        .addComponent(jLabel81)
-                        .addGap(12, 12, 12))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel47Layout.createSequentialGroup()
-                        .addComponent(tf_crearPropiedadenvendidaComision, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel81)
+                    .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(11, 11, 11)
                 .addComponent(JB_crearPropiedadVenta1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(17, Short.MAX_VALUE))
         );
@@ -3816,7 +3789,16 @@ public class Main extends javax.swing.JFrame {
 
     private void JB_ModificarAgenteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_ModificarAgenteMouseClicked
         // TODO add your handling code here:
+        ResultSet rs = db.mostrarElementos("SELECT id FROM agentes");
+        try {
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                CB_modificarAgente.addItem(Integer.toString(id));
+            }
 
+        } catch (SQLException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
         JF_modificarAgente.pack();
         JF_modificarAgente.setLocationRelativeTo(JF_Agentes);
         JF_modificarAgente.setVisible(true);
@@ -3878,6 +3860,16 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_JB_CrearCompradorActionPerformed
 
     private void JB_modificarCompradorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_modificarCompradorMouseClicked
+        ResultSet rs = db.mostrarElementos("SELECT id FROM compradores");
+        try {
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                cb_modificarComprador.addItem(Integer.toString(id));
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
         JF_modificarComprador.pack();
         JF_modificarComprador.setLocationRelativeTo(JF_Agentes);
         JF_modificarComprador.setVisible(true);
@@ -3888,7 +3880,16 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_JB_modificarCompradorActionPerformed
 
     private void JB_BorrarCompradorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_BorrarCompradorMouseClicked
+        ResultSet rs = db.mostrarElementos("SELECT id FROM compradores");
+        try {
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                cb_eliminarComprador.addItem(Integer.toString(id));
+            }
 
+        } catch (SQLException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
         JF_eliminarComprador.pack();
         JF_eliminarComprador.setLocationRelativeTo(JF_Compradores);;
         JF_eliminarComprador.setVisible(true);
@@ -3898,7 +3899,7 @@ public class Main extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_JB_BorrarCompradorActionPerformed
 
-    private void JB_buscarCompradorMouseClicked(java.awt.event.MouseEvent evt) {                                                
+    private void JB_buscarCompradorMouseClicked(java.awt.event.MouseEvent evt) {
         // TODO add your handling code here:
 //        try {
 //            // TODO add your handling code here:
@@ -3913,7 +3914,24 @@ public class Main extends javax.swing.JFrame {
 //        } catch (SQLException ex) {
 //            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
 //        }
-    }                                               
+        String id = jTextField1.getText();
+        ResultSet rs = db.mostrarElementos("SELECT * FROM compradores WHERE id = '" + id + "';");
+        DefaultTableModel model = (DefaultTableModel) jTable3.getModel();
+        model.setRowCount(0);
+        try {
+            while (rs.next()) {
+                int id2 = rs.getInt("id");
+                String nombre = rs.getString("nombre");
+                String direccion = rs.getString("direccion");
+                int cel = rs.getInt("celular");
+                Object[] row = {id2, nombre, direccion, cel};
+                model.addRow(row);
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 
     private void JB_buscarCompradorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_buscarCompradorActionPerformed
         // TODO add your handling code here:
@@ -3949,19 +3967,48 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_JB_crearAgenteMouseClicked
 
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+        ResultSet rs = db.mostrarElementos("SELECT id FROM agentes");
+        try {
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                cb_eliminarAgente.addItem(Integer.toString(id));
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
         JF_eliminarAgente.pack();
         JF_eliminarAgente.setLocationRelativeTo(JF_Agentes);;
         JF_eliminarAgente.setVisible(true);
     }//GEN-LAST:event_jButton3MouseClicked
 
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+        ResultSet rs = db.mostrarElementos("SELECT id FROM vendedores");
+        try {
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                cb_eliminarVendedor.addItem(Integer.toString(id));
+            }
 
+        } catch (SQLException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
         JF_eliminarVendedor.pack();
         JF_eliminarVendedor.setLocationRelativeTo(JF_Vendedor);;
         JF_eliminarVendedor.setVisible(true);
     }//GEN-LAST:event_jButton2MouseClicked
 
     private void jButton10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton10MouseClicked
+        ResultSet rs = db.mostrarElementos("SELECT id FROM vendedores");
+        try {
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                cb_modificarVendedor.addItem(Integer.toString(id));
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
         JF_modificarVendedor.pack();
         JF_modificarVendedor.setLocationRelativeTo(JF_Principal);
         JF_modificarVendedor.setVisible(true);
@@ -4030,7 +4077,7 @@ public class Main extends javax.swing.JFrame {
         String id = (String) cb_modificarVendedor.getSelectedItem();
         String atributo = (String) cb_atributovendedor.getSelectedItem();
         String nuevo_valor = (String) cb_atributovendedor.getSelectedItem();
-        db.HacerConsulta("CALL modificarPropiedadEnMercado('"+id+"','"+atributo+"','"+nuevo_valor+"');");
+        db.HacerConsulta("CALL modificarPropiedadEnMercado('" + id + "','" + atributo + "','" + nuevo_valor + "');");
     }//GEN-LAST:event_JB_modificarVendedorMouseClicked
 
     private void JB_crearCompradorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_crearCompradorMouseClicked
@@ -4040,7 +4087,7 @@ public class Main extends javax.swing.JFrame {
         String cel = tf_crearCompradorCelular.getText();
 
         String vista = "CALL insertarComprador('" + id + "','" + nombre + "','" + dir + "'," + cel + ")";
-       db.HacerConsulta(vista);
+        db.HacerConsulta(vista);
     }//GEN-LAST:event_JB_crearCompradorMouseClicked
 
     private void JB_modificarVenCompradorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_modificarVenCompradorMouseClicked
@@ -4048,24 +4095,25 @@ public class Main extends javax.swing.JFrame {
         String id = (String) cb_modificarComprador.getSelectedItem();
         String atributo = (String) cb_atributoComprador.getSelectedItem();
         String nuevo_atributo = tf_nuevoValorComprador.getText();
-        db.HacerConsulta("CALL modificarComprador('" + id + "','"+atributo+"','"+nuevo_atributo+"');");
+        db.HacerConsulta("CALL modificarComprador('" + id + "','" + atributo + "','" + nuevo_atributo + "');");
     }//GEN-LAST:event_JB_modificarVenCompradorMouseClicked
 
     private void JB_eliminarAgenteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_eliminarAgenteMouseClicked
         // TODO add your handling code here:
+
         String id = (String) cb_eliminarAgente.getSelectedItem();
-       db.HacerConsulta("CALL eliminarAgente('" + id + "');");
+        db.HacerConsulta("CALL eliminarAgente('" + id + "');");
     }//GEN-LAST:event_JB_eliminarAgenteMouseClicked
 
     private void JB_eliminarVendedorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_eliminarVendedorMouseClicked
         // TODO add your handling code here:
         String id = (String) cb_eliminarVendedor.getSelectedItem();
-//        db.HacerConsulta("CALL eliminarVendedor('" + id + "');");
+        db.HacerConsulta("CALL eliminarVendedor('" + id + "');");
     }//GEN-LAST:event_JB_eliminarVendedorMouseClicked
 
     private void JB_eliminarCompradorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_eliminarCompradorMouseClicked
         String id = (String) cb_eliminarComprador.getSelectedItem();
-//        db.HacerConsulta("CALL eliminarComprador('" + id + "');");
+        db.HacerConsulta("CALL eliminarComprador('" + id + "');");
     }//GEN-LAST:event_JB_eliminarCompradorMouseClicked
 
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
@@ -4086,14 +4134,14 @@ public class Main extends javax.swing.JFrame {
         String nombre = tf_crearPropiedadenVentanombre.getText();
         String dir = tf_crearPropiedadenVentaDireccion.getText();
         String ciudad = tf_crearPropiedadenVentaCiudad.getText();
-        String cantDormitorios = (String) js_crearPropiedadenVentaDormitorios.getValue();
+        String cantDormitorios = jTextField3.getText();
         String caracteristicas = ta_crearPropiedadenVentaCaracteristicas.getText();
-        String precio = (String) ff_crearPropiedadenVentaPrecio.getText();
-        String fechaPublicacion = (String) ff_crearPropiedadenVentaFecha.getText();
+        String precio = jTextField5.getText();
+        String fechaPublicacion = jTextField4.getText();
         String numeroIdentidadA = tf_crearPropiedadenVentaidAgente.getText();
         String numeroIdentidadV = tf_crearPropiedadenVentaidVendedor.getText();
         String vista = "CALL insertarPV ('" + id + "','" + nombre + "','" + ciudad + "','" + dir + "','" + cantDormitorios + "','" + caracteristicas + "','" + precio + "','" + fechaPublicacion + "','" + numeroIdentidadA + "','" + numeroIdentidadV + "')";
-//        db.HacerConsulta(vista);
+        db.HacerConsulta(vista);
     }//GEN-LAST:event_JB_crearPropiedadVentaMouseClicked
 
     private void tf_crearPropiedadenVentaidAgenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_crearPropiedadenVentaidAgenteActionPerformed
@@ -4110,7 +4158,7 @@ public class Main extends javax.swing.JFrame {
         String id = (String) CB_modificarPropEnVenta.getSelectedItem();
         String atributo = (String) cb_atributoPropEnVenta.getSelectedItem();
         String nuevo_valor = tf_nuevovalorPropEnVenta.getText();
-//        db.HacerConsulta("CALL modificarPropiedadEnMercado('"+id+"','"+atributo+"','"+nuevo_valor+"');");
+        db.HacerConsulta("CALL modificarPropiedadEnMercado('" + id + "','" + atributo + "','" + nuevo_valor + "');");
     }//GEN-LAST:event_JB_modificarPropenVentaMouseClicked
 
     private void JB_modificarPropenVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_modificarPropenVentaActionPerformed
@@ -4124,7 +4172,7 @@ public class Main extends javax.swing.JFrame {
     private void JB_eliminarPropiedadenVentaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_eliminarPropiedadenVentaMouseClicked
         // TODO add your handling code here:
         String id = (String) cb_eliminarPropVenta.getSelectedItem();
-//        db.HacerConsulta("CALL eliminarPM('" + id + "');");
+        db.HacerConsulta("CALL eliminarPM('" + id + "');");
     }//GEN-LAST:event_JB_eliminarPropiedadenVentaMouseClicked
 
     private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
@@ -4162,23 +4210,23 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_tf_buscarPropiedadesVendidasActionPerformed
 
     private void JB_crearPropiedadVenta1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_crearPropiedadVenta1MouseClicked
-                // TODO add your handling code here:
+        // TODO add your handling code here:
         String id = tf_crearPropiedadenvendidaId.getText();
         String nombre = tf_crearPropiedadenvendidaNombre.getText();
         String dir = tf_crearPropiedadenvendidaDireccion.getText();
         String ciudad = tf_crearPropiedadenvendidaCiudad.getText();
-        String cantDormitorios = (String) js_crearPropiedadenvendidaCantDor.getValue();
+        String cantDormitorios = jTextField7.getText();
         String caracteristicas = ta_crearPropiedadenvendidaCaracteristicas.getText();
-        String precio = ff_crearPropiedadenvendidaPrecio.getText();
-        String fechaPublicacion = ff_crearPropiedadenvendidaFechaPublicacion.getText();
-        String fechaVenta = ff_crearPropiedadenvendidaFechaVenta.getText();
-        String numeroIdentidadA =  tf_crearPropiedadenvendidaidAgente.getText();
+        String precio = jTextField6.getText();
+        String fechaPublicacion = jTextField8.getText();
+        String fechaVenta = jTextField9.getText();
+        String numeroIdentidadA = tf_crearPropiedadenvendidaidAgente.getText();
         String numeroIdentidadV = tf_crearPropiedadenvendidaidVendedor.getText();
         String numeroIdentidadC = tf_crearPropiedadenvendidaidComprador.getText();
-        String comision = tf_crearPropiedadenvendidaComision.getText();
+        String comision = jTextField10.getText();
 
         String vista = "CALL insertarPM ('" + id + "','" + nombre + "','" + ciudad + "','" + dir + "','" + cantDormitorios + "','" + caracteristicas + "','" + precio + "','" + fechaPublicacion + "','" + fechaVenta + "','" + numeroIdentidadA + "','" + numeroIdentidadV + "','" + numeroIdentidadC + "','" + comision + "')";
-//        db.HacerConsulta(vista);
+        db.HacerConsulta(vista);
     }//GEN-LAST:event_JB_crearPropiedadVenta1MouseClicked
 
     private void tf_crearPropiedadenvendidaidAgenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_crearPropiedadenvendidaidAgenteActionPerformed
@@ -4190,11 +4238,11 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_tf_nuevovalorVendidaActionPerformed
 
     private void JB_modificarVendidaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_modificarVendidaMouseClicked
-         // TODO add your handling code here:
+        // TODO add your handling code here:
         String id = (String) CB_modificarPropVendida.getSelectedItem();
         String atributo = (String) cb_atributoPropVendida.getSelectedItem();
         String nuevo_valor = tf_nuevovalorVendida.getText();
-//        db.HacerConsulta("CALL modificarPropiedadVendida('"+id+"','"+atributo+"','"+nuevo_valor+"');");
+        db.HacerConsulta("CALL modificarPropiedadVendida('" + id + "','" + atributo + "','" + nuevo_valor + "');");
     }//GEN-LAST:event_JB_modificarVendidaMouseClicked
 
     private void JB_modificarVendidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_modificarVendidaActionPerformed
@@ -4204,7 +4252,7 @@ public class Main extends javax.swing.JFrame {
     private void JB_eliminarPropVendidaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_eliminarPropVendidaMouseClicked
         // TODO add your handling code here:
         String id = (String) cb_eliminarPropVendida.getSelectedItem();
-//        db.HacerConsulta("CALL eliminarPV('" + id + "');");
+        db.HacerConsulta("CALL eliminarPV('" + id + "');");
     }//GEN-LAST:event_JB_eliminarPropVendidaMouseClicked
 
     private void jButton14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton14MouseClicked
@@ -4216,13 +4264,13 @@ public class Main extends javax.swing.JFrame {
         String id = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el id", JOptionPane.QUESTION_MESSAGE);
         String atributo = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el atributo que va a actualizar", JOptionPane.QUESTION_MESSAGE);
         String nuevo_valor = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el nuevo atributo", JOptionPane.QUESTION_MESSAGE);
-        //        db.HacerConsulta("CALL modificarPropiedadVendida('"+id+"','"+atributo+"','"+nuevo_valor+"');");
+        db.HacerConsulta("CALL modificarPropiedadVendida('" + id + "','" + atributo + "','" + nuevo_valor + "');");
     }//GEN-LAST:event_jButton12MouseClicked
 
     private void jButton7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton7MouseClicked
         // TODO add your handling code here:
         String id = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el id", JOptionPane.QUESTION_MESSAGE);
-        //        db.HacerConsulta("CALL eliminarPV('" + id + "');");
+        db.HacerConsulta("CALL eliminarPV('" + id + "');");
     }//GEN-LAST:event_jButton7MouseClicked
 
     private void JB_CrearPropiedadEVendidaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_CrearPropiedadEVendidaMouseClicked
@@ -4264,41 +4312,64 @@ public class Main extends javax.swing.JFrame {
     private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton16ActionPerformed
+        // TODO add your handling code here:
+
+    private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
+        // TODO add your handling code here:
+        String id = tf_buscarAgentes.getText();
+        ResultSet rs = db.mostrarElementos("SELECT * FROM agentes WHERE id = '" + id + "';");
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        model.setRowCount(0);
+        try {
+            while (rs.next()) {
+                int id2 = rs.getInt("id");
+                String nombre = rs.getString("nombre");
+                String direccion = rs.getString("direccion");
+                int cel = rs.getInt("celular");
+                int telefonoOficina = rs.getInt("telefonoOficina");
+                Object[] row = {id2, nombre, direccion, cel, telefonoOficina};
+                model.addRow(row);
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton5MouseClicked
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-    /* Set the Nimbus look and feel */
-    //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-    /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-     */
-    try {
-        for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-            if ("Nimbus".equals(info.getName())) {
-                javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                break;
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
             }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-    } catch (ClassNotFoundException ex) {
-        java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-    } catch (InstantiationException ex) {
-        java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-    } catch (IllegalAccessException ex) {
-        java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-    } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-        java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-    }
-    //</editor-fold>
+        //</editor-fold>
 
-    /* Create and display the form */
-    java.awt.EventQueue.invokeLater(new Runnable() {
-        public void run() {
-            new Main().setVisible(false);
-        }
-    });
-}
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Main().setVisible(false);
+            }
+        });
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> CB_modificarAgente;
@@ -4381,11 +4452,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cb_eliminarVendedor;
     private javax.swing.JComboBox<String> cb_modificarComprador;
     private javax.swing.JComboBox<String> cb_modificarVendedor;
-    private javax.swing.JFormattedTextField ff_crearPropiedadenVentaFecha;
-    private javax.swing.JFormattedTextField ff_crearPropiedadenVentaPrecio;
-    private javax.swing.JFormattedTextField ff_crearPropiedadenvendidaFechaPublicacion;
-    private javax.swing.JFormattedTextField ff_crearPropiedadenvendidaFechaVenta;
-    private javax.swing.JFormattedTextField ff_crearPropiedadenvendidaPrecio;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton12;
@@ -4564,7 +4630,15 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTable jTable4;
     private javax.swing.JTable jTable5;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField jTextField7;
+    private javax.swing.JTextField jTextField8;
+    private javax.swing.JTextField jTextField9;
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JButton jb_buscarUsuarios;
     private javax.swing.JButton jb_crudagentes;
@@ -4574,8 +4648,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel jp_ventanaVendedor;
     private javax.swing.JPanel jp_ventanaVendedor1;
     private javax.swing.JPanel jp_ventanaVendedor2;
-    private javax.swing.JSpinner js_crearPropiedadenVentaDormitorios;
-    private javax.swing.JSpinner js_crearPropiedadenvendidaCantDor;
     private javax.swing.JPasswordField pf_passwordlogin;
     private javax.swing.JTextArea ta_crearPropiedadenVentaCaracteristicas;
     private javax.swing.JTextArea ta_crearPropiedadenvendidaCaracteristicas;
@@ -4599,7 +4671,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTextField tf_crearPropiedadenVentaidVendedor;
     private javax.swing.JTextField tf_crearPropiedadenVentanombre;
     private javax.swing.JTextField tf_crearPropiedadenvendidaCiudad;
-    private javax.swing.JFormattedTextField tf_crearPropiedadenvendidaComision;
     private javax.swing.JTextField tf_crearPropiedadenvendidaDireccion;
     private javax.swing.JTextField tf_crearPropiedadenvendidaId;
     private javax.swing.JTextField tf_crearPropiedadenvendidaNombre;
@@ -4621,6 +4692,7 @@ public class Main extends javax.swing.JFrame {
     //Variables globales
     DB_Manager db = new DB_Manager();
 //Este metodo es para reproducir sonidos en el programa
+
     public static Clip playMusic(String filepath) {
         try {
             File music = new File(filepath);
