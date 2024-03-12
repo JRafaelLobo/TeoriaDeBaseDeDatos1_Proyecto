@@ -407,6 +407,8 @@ public class Main extends javax.swing.JFrame {
             .addComponent(JP_Portada, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        JF_Agentes.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
         jPanel9.setBackground(new java.awt.Color(0, 51, 153));
 
         JB_CrearAgente.setBackground(new java.awt.Color(123, 114, 105));
@@ -538,6 +540,8 @@ public class Main extends javax.swing.JFrame {
             JF_AgentesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
+
+        JF_Compradores.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel14.setBackground(new java.awt.Color(235, 208, 244));
 
@@ -682,6 +686,8 @@ public class Main extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        JF_Vendedor.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
         jPanel3.setBackground(new java.awt.Color(204, 204, 255));
 
         JB_CrearVendedor.setBackground(new java.awt.Color(0, 0, 0));
@@ -778,6 +784,8 @@ public class Main extends javax.swing.JFrame {
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        JF_Vendidas.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
         JB_CrearPropiedadEVendida.setText("Crear Propiedad Vendida");
         JB_CrearPropiedadEVendida.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -834,6 +842,8 @@ public class Main extends javax.swing.JFrame {
                 .addComponent(jButton14)
                 .addContainerGap(79, Short.MAX_VALUE))
         );
+
+        JF_Principal.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(51, 153, 255));
 
@@ -954,6 +964,8 @@ public class Main extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
+
+        JF_crearAgente.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel11.setBackground(new java.awt.Color(64, 82, 94));
 
@@ -1092,6 +1104,8 @@ public class Main extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
+        JF_modificarAgente.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
         jPanel15.setBackground(new java.awt.Color(0, 0, 0));
 
         jLabel20.setFont(new java.awt.Font("Montserrat Thin", 1, 18)); // NOI18N
@@ -1205,6 +1219,8 @@ public class Main extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
+        JF_ventanaVendedor.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
         jp_ventanaVendedor.setBackground(new java.awt.Color(255, 204, 255));
 
         jLabel11.setFont(new java.awt.Font("Segoe Script", 1, 64)); // NOI18N
@@ -1280,6 +1296,8 @@ public class Main extends javax.swing.JFrame {
                 .addComponent(jp_ventanaVendedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
+
+        JF_ventanaAgente.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jp_ventanaVendedor1.setBackground(new java.awt.Color(204, 204, 255));
 
@@ -1357,6 +1375,8 @@ public class Main extends javax.swing.JFrame {
                 .addComponent(jp_ventanaVendedor1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
+
+        JF_ventanacomprador.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jp_ventanaVendedor2.setBackground(new java.awt.Color(204, 204, 255));
 
@@ -1447,6 +1467,8 @@ public class Main extends javax.swing.JFrame {
                 .addComponent(jp_ventanaVendedor2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
+
+        JF_ventanaAdmin.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel4.setBackground(new java.awt.Color(0, 0, 0));
 
@@ -1703,6 +1725,8 @@ public class Main extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
+        JF_crudPropiedadesVenta.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
         jPanel38.setBackground(new java.awt.Color(0, 0, 0));
 
         jLabel51.setFont(new java.awt.Font("Segoe Script", 1, 48)); // NOI18N
@@ -1865,6 +1889,8 @@ public class Main extends javax.swing.JFrame {
                     .addContainerGap(277, Short.MAX_VALUE)))
         );
 
+        JF_eliminarAgente.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
         jPanel31.setBackground(new java.awt.Color(212, 227, 255));
 
         jLabel45.setBackground(new java.awt.Color(241, 247, 251));
@@ -1954,6 +1980,8 @@ public class Main extends javax.swing.JFrame {
             JF_eliminarAgenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel30, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
+
+        JF_crearVendedor.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel23.setBackground(new java.awt.Color(0, 0, 102));
 
@@ -2079,6 +2107,8 @@ public class Main extends javax.swing.JFrame {
             .addComponent(jPanel22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        JF_modificarVendedor.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
         jPanel25.setBackground(new java.awt.Color(49, 42, 49));
 
         jLabel32.setFont(new java.awt.Font("Montserrat Thin", 1, 18)); // NOI18N
@@ -2194,6 +2224,8 @@ public class Main extends javax.swing.JFrame {
             .addComponent(jPanel24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        JF_eliminarVendedor.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
         jPanel33.setBackground(new java.awt.Color(82, 139, 218));
 
         jLabel47.setBackground(new java.awt.Color(241, 247, 251));
@@ -2279,6 +2311,8 @@ public class Main extends javax.swing.JFrame {
             JF_eliminarVendedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel32, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
+
+        JF_crearComprador.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel27.setBackground(new java.awt.Color(140, 117, 171));
 
@@ -2405,6 +2439,8 @@ public class Main extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
+        JF_modificarComprador.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
         jPanel29.setBackground(new java.awt.Color(155, 107, 191));
 
         jLabel41.setFont(new java.awt.Font("Montserrat Thin", 1, 18)); // NOI18N
@@ -2522,6 +2558,8 @@ public class Main extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
+        JF_eliminarComprador.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
         jPanel35.setBackground(new java.awt.Color(147, 170, 238));
 
         jLabel49.setBackground(new java.awt.Color(241, 247, 251));
@@ -2609,6 +2647,8 @@ public class Main extends javax.swing.JFrame {
                 .addComponent(jPanel34, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
+
+        JF_crearPropiedadVenta.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel41.setBackground(new java.awt.Color(159, 159, 159));
 
@@ -2809,6 +2849,8 @@ public class Main extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
+        JF_modificarPropiedadVenta.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
         jPanel37.setBackground(new java.awt.Color(218, 204, 255));
 
         jLabel65.setFont(new java.awt.Font("Montserrat Thin", 1, 18)); // NOI18N
@@ -2929,6 +2971,8 @@ public class Main extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
+        JF_eliminarPropiedadVenta.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
         jPanel43.setBackground(new java.awt.Color(146, 139, 218));
 
         jLabel69.setBackground(new java.awt.Color(241, 247, 251));
@@ -3015,6 +3059,8 @@ public class Main extends javax.swing.JFrame {
             JF_eliminarPropiedadVentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel42, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
+
+        JF_crudPropiedadesVendidas.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel44.setBackground(new java.awt.Color(0, 0, 0));
 
@@ -3176,6 +3222,8 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(jPanel44, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 6, Short.MAX_VALUE)))
         );
+
+        JF_crearPropiedadesVendidas.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel46.setBackground(new java.awt.Color(204, 204, 255));
 
@@ -3412,6 +3460,8 @@ public class Main extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
+        JF_modificarPropVendidas.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
         jPanel49.setBackground(new java.awt.Color(223, 169, 175));
 
         jLabel88.setFont(new java.awt.Font("Montserrat Thin", 1, 18)); // NOI18N
@@ -3532,6 +3582,8 @@ public class Main extends javax.swing.JFrame {
             .addComponent(jPanel48, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
+        JF_eliminarPropVendidas.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
         jPanel51.setBackground(new java.awt.Color(102, 102, 255));
 
         jLabel92.setBackground(new java.awt.Color(241, 247, 251));
@@ -3619,6 +3671,8 @@ public class Main extends javax.swing.JFrame {
             .addComponent(jPanel50, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        Reportes.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
         jButton16.setText("Cantidad de ventas por agente");
         jButton16.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -3658,6 +3712,8 @@ public class Main extends javax.swing.JFrame {
                 .addComponent(jButton19)
                 .addContainerGap(144, Short.MAX_VALUE))
         );
+
+        JF_bitacora.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel52.setBackground(new java.awt.Color(0, 0, 86));
 
