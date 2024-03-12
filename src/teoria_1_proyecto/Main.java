@@ -147,6 +147,7 @@ public class Main extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
+        jButton6 = new javax.swing.JButton();
         jTabbedPane2 = new javax.swing.JTabbedPane();
         jPanel8 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
@@ -346,7 +347,7 @@ public class Main extends javax.swing.JFrame {
         CB_modificarPropVendida = new javax.swing.JComboBox<>();
         cb_atributoPropVendida = new javax.swing.JComboBox<>();
         JF_eliminarPropVendidas = new javax.swing.JFrame();
-        jPanel50 = new FondoPanel("./Imagen\\eliminarPropVendida.jpg");
+        javax.swing.JPanel jPanel50 = new FondoPanel("./Imagen\\eliminarPropVendida.jpg");
         jPanel51 = new javax.swing.JPanel();
         jLabel92 = new javax.swing.JLabel();
         cb_eliminarPropVendida = new javax.swing.JComboBox<>();
@@ -357,6 +358,14 @@ public class Main extends javax.swing.JFrame {
         jButton17 = new javax.swing.JButton();
         jButton18 = new javax.swing.JButton();
         jButton19 = new javax.swing.JButton();
+        JF_bitacora = new javax.swing.JFrame();
+        jPanel52 = new FondoPanel("./Imagen\\bitacora.jpg");
+        jPanel53 = new javax.swing.JPanel();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        jTable5 = new javax.swing.JTable();
+        jLabel94 = new javax.swing.JLabel();
+        tf_buscarUsuarioId = new javax.swing.JTextField();
+        JB_buscarUsuarioBitacora = new javax.swing.JButton();
 
         Portadita.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         Portadita.setUndecorated(true);
@@ -1468,13 +1477,32 @@ public class Main extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Segoe Script", 1, 24)); // NOI18N
         jLabel6.setText("Bitacora");
 
+        jButton6.setBackground(new java.awt.Color(0, 0, 0));
+        jButton6.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        jButton6.setForeground(new java.awt.Color(255, 255, 255));
+        jButton6.setText("Ver Bitacora");
+        jButton6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton6MouseClicked(evt);
+            }
+        });
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addGap(15, 15, 15)
-                .addComponent(jLabel6)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel6))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
@@ -1482,7 +1510,9 @@ public class Main extends javax.swing.JFrame {
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addComponent(jLabel6)
-                .addContainerGap(116, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(78, Short.MAX_VALUE))
         );
 
         jTabbedPane2.setBackground(new java.awt.Color(255, 255, 255));
@@ -1495,7 +1525,7 @@ public class Main extends javax.swing.JFrame {
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 350, Short.MAX_VALUE)
+            .addGap(0, 355, Short.MAX_VALUE)
         );
 
         jTabbedPane2.addTab("Propiedades", jPanel8);
@@ -1607,7 +1637,7 @@ public class Main extends javax.swing.JFrame {
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
-                .addContainerGap(18, Short.MAX_VALUE)
+                .addContainerGap(23, Short.MAX_VALUE)
                 .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -3617,6 +3647,11 @@ public class Main extends javax.swing.JFrame {
         );
 
         jButton16.setText("Cantidad de ventas por agente");
+        jButton16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton16ActionPerformed(evt);
+            }
+        });
 
         jButton17.setText("Cantidad de ventas por vendedor");
 
@@ -3649,6 +3684,96 @@ public class Main extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton19)
                 .addContainerGap(144, Short.MAX_VALUE))
+        );
+
+        jPanel52.setBackground(new java.awt.Color(0, 0, 86));
+
+        jPanel53.setBackground(new java.awt.Color(0, 0, 102));
+
+        jTable5.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "id", "accion", "tabla_afectada", "fecha_hora", "alteración"
+            }
+        ));
+        jScrollPane9.setViewportView(jTable5);
+
+        jLabel94.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel94.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel94.setText("Id:");
+
+        tf_buscarUsuarioId.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tf_buscarUsuarioIdActionPerformed(evt);
+            }
+        });
+
+        JB_buscarUsuarioBitacora.setText("Buscar");
+
+        javax.swing.GroupLayout jPanel53Layout = new javax.swing.GroupLayout(jPanel53);
+        jPanel53.setLayout(jPanel53Layout);
+        jPanel53Layout.setHorizontalGroup(
+            jPanel53Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel53Layout.createSequentialGroup()
+                .addGap(44, 44, 44)
+                .addGroup(jPanel53Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 910, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel53Layout.createSequentialGroup()
+                        .addGap(8, 8, 8)
+                        .addComponent(jLabel94)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(tf_buscarUsuarioId, javax.swing.GroupLayout.PREFERRED_SIZE, 772, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(JB_buscarUsuarioBitacora)))
+                .addContainerGap(46, Short.MAX_VALUE))
+        );
+        jPanel53Layout.setVerticalGroup(
+            jPanel53Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel53Layout.createSequentialGroup()
+                .addContainerGap(44, Short.MAX_VALUE)
+                .addGroup(jPanel53Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel94)
+                    .addGroup(jPanel53Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(tf_buscarUsuarioId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(JB_buscarUsuarioBitacora)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 357, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(64, 64, 64))
+        );
+
+        javax.swing.GroupLayout jPanel52Layout = new javax.swing.GroupLayout(jPanel52);
+        jPanel52.setLayout(jPanel52Layout);
+        jPanel52Layout.setHorizontalGroup(
+            jPanel52Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel52Layout.createSequentialGroup()
+                .addGap(132, 132, 132)
+                .addComponent(jPanel53, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(155, Short.MAX_VALUE))
+        );
+        jPanel52Layout.setVerticalGroup(
+            jPanel52Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel52Layout.createSequentialGroup()
+                .addContainerGap(76, Short.MAX_VALUE)
+                .addComponent(jPanel53, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(120, 120, 120))
+        );
+
+        javax.swing.GroupLayout JF_bitacoraLayout = new javax.swing.GroupLayout(JF_bitacora.getContentPane());
+        JF_bitacora.getContentPane().setLayout(JF_bitacoraLayout);
+        JF_bitacoraLayout.setHorizontalGroup(
+            JF_bitacoraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel52, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        JF_bitacoraLayout.setVerticalGroup(
+            JF_bitacoraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JF_bitacoraLayout.createSequentialGroup()
+                .addComponent(jPanel52, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 3, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -4101,24 +4226,44 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton7MouseClicked
 
     private void JB_CrearPropiedadEVendidaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_CrearPropiedadEVendidaMouseClicked
-        // TODO add your handling code here:
-        String id = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el id", JOptionPane.QUESTION_MESSAGE);
-        String nombre = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el nombre", JOptionPane.QUESTION_MESSAGE);
-        String dir = JOptionPane.showInputDialog(JF_Agentes, "Ingrese la dir", JOptionPane.QUESTION_MESSAGE);
-        String ciudad = JOptionPane.showInputDialog(JF_Agentes, "Ingrese la ciudad", JOptionPane.QUESTION_MESSAGE);
-        String cantDormitorios = JOptionPane.showInputDialog(JF_Agentes, "Ingrese la cantidad de dormitorios", JOptionPane.QUESTION_MESSAGE);
-        String caracteristicas = JOptionPane.showInputDialog(JF_Agentes, "Ingrese las caracteristicas", JOptionPane.QUESTION_MESSAGE);
-        String precio = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el precio", JOptionPane.QUESTION_MESSAGE);
-        String fechaPublicacion = JOptionPane.showInputDialog(JF_Agentes, "Ingrese la fecha de publicacion", JOptionPane.QUESTION_MESSAGE);
-        String fechaVenta = JOptionPane.showInputDialog(JF_Agentes, "Ingrese la fecha de la venta", JOptionPane.QUESTION_MESSAGE);
-        String numeroIdentidadA = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el numero de identidad del agente", JOptionPane.QUESTION_MESSAGE);
-        String numeroIdentidadV = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el numero de identidad de el vendedor", JOptionPane.QUESTION_MESSAGE);
-        String numeroIdentidadC = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el numero de identidad del comprador", JOptionPane.QUESTION_MESSAGE);
-        String comision = JOptionPane.showInputDialog(JF_Agentes, "Ingrese la comision", JOptionPane.QUESTION_MESSAGE);
-
-        String vista = "CALL insertarPM ('" + id + "','" + nombre + "','" + ciudad + "','" + dir + "','" + cantDormitorios + "','" + caracteristicas + "','" + precio + "','" + fechaPublicacion + "','" + fechaVenta + "','" + numeroIdentidadA + "','" + numeroIdentidadV + "','" + numeroIdentidadC + "','" + comision + "')";
-        //        db.HacerConsulta(vista);
+//        // TODO add your handling code here:
+//        String id = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el id", JOptionPane.QUESTION_MESSAGE);
+//        String nombre = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el nombre", JOptionPane.QUESTION_MESSAGE);
+//        String dir = JOptionPane.showInputDialog(JF_Agentes, "Ingrese la dir", JOptionPane.QUESTION_MESSAGE);
+//        String ciudad = JOptionPane.showInputDialog(JF_Agentes, "Ingrese la ciudad", JOptionPane.QUESTION_MESSAGE);
+//        String cantDormitorios = JOptionPane.showInputDialog(JF_Agentes, "Ingrese la cantidad de dormitorios", JOptionPane.QUESTION_MESSAGE);
+//        String caracteristicas = JOptionPane.showInputDialog(JF_Agentes, "Ingrese las caracteristicas", JOptionPane.QUESTION_MESSAGE);
+//        String precio = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el precio", JOptionPane.QUESTION_MESSAGE);
+//        String fechaPublicacion = JOptionPane.showInputDialog(JF_Agentes, "Ingrese la fecha de publicacion", JOptionPane.QUESTION_MESSAGE);
+//        String fechaVenta = JOptionPane.showInputDialog(JF_Agentes, "Ingrese la fecha de la venta", JOptionPane.QUESTION_MESSAGE);
+//        String numeroIdentidadA = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el numero de identidad del agente", JOptionPane.QUESTION_MESSAGE);
+//        String numeroIdentidadV = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el numero de identidad de el vendedor", JOptionPane.QUESTION_MESSAGE);
+//        String numeroIdentidadC = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el numero de identidad del comprador", JOptionPane.QUESTION_MESSAGE);
+//        String comision = JOptionPane.showInputDialog(JF_Agentes, "Ingrese la comision", JOptionPane.QUESTION_MESSAGE);
+//
+//        String vista = "CALL insertarPM ('" + id + "','" + nombre + "','" + ciudad + "','" + dir + "','" + cantDormitorios + "','" + caracteristicas + "','" + precio + "','" + fechaPublicacion + "','" + fechaVenta + "','" + numeroIdentidadA + "','" + numeroIdentidadV + "','" + numeroIdentidadC + "','" + comision + "')";
+//        //        db.HacerConsulta(vista);
     }//GEN-LAST:event_JB_CrearPropiedadEVendidaMouseClicked
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
+    JF_bitacora.pack();
+        JF_bitacora.setLocationRelativeTo(JF_Principal);
+        JF_bitacora.setExtendedState(MAXIMIZED_BOTH);
+        JF_Principal.setVisible(false);
+        JF_bitacora.setVisible(true);        
+    }//GEN-LAST:event_jButton6MouseClicked
+
+    private void tf_buscarUsuarioIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_buscarUsuarioIdActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tf_buscarUsuarioIdActionPerformed
+
+    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton16ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -4167,6 +4312,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton JB_ModificarAgente;
     private javax.swing.JButton JB_buscarComprador;
     private javax.swing.JButton JB_buscarPropiedadesVendidas;
+    private javax.swing.JButton JB_buscarUsuarioBitacora;
     private javax.swing.JButton JB_crearAgente;
     private javax.swing.JButton JB_crearComprador;
     private javax.swing.JButton JB_crearPropiedadVenta;
@@ -4193,6 +4339,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JFrame JF_Principal;
     private javax.swing.JFrame JF_Vendedor;
     private javax.swing.JFrame JF_Vendidas;
+    private javax.swing.JFrame JF_bitacora;
     private javax.swing.JFrame JF_crearAgente;
     private javax.swing.JFrame JF_crearComprador;
     private javax.swing.JFrame JF_crearPropiedadVenta;
@@ -4251,6 +4398,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
@@ -4347,6 +4495,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel91;
     private javax.swing.JLabel jLabel92;
     private javax.swing.JLabel jLabel93;
+    private javax.swing.JLabel jLabel94;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
@@ -4392,8 +4541,9 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel48;
     private javax.swing.JPanel jPanel49;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel50;
     private javax.swing.JPanel jPanel51;
+    private javax.swing.JPanel jPanel52;
+    private javax.swing.JPanel jPanel53;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
@@ -4405,12 +4555,14 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
     private javax.swing.JTable jTable4;
+    private javax.swing.JTable jTable5;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JToolBar jToolBar1;
@@ -4430,6 +4582,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTextField tf_buscarAgentes;
     private javax.swing.JTextField tf_buscarPropiedadesVendidas;
     private javax.swing.JTextField tf_buscarUsuaios;
+    private javax.swing.JTextField tf_buscarUsuarioId;
     private javax.swing.JTextField tf_crearAgenteCelular;
     private javax.swing.JTextField tf_crearAgenteDireccion;
     private javax.swing.JTextField tf_crearAgenteId;
