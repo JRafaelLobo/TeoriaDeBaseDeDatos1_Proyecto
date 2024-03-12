@@ -38,6 +38,7 @@ public class Main extends javax.swing.JFrame {
         db.crearTablas();
         CambiarPantallaTiempo CPT = new CambiarPantallaTiempo(Portadita, JF_Principal, 4000, true);
         CPT.start();
+        //JF_crearPropiedadesVendidas.show();
     }
 
     /**
@@ -259,18 +260,18 @@ public class Main extends javax.swing.JFrame {
         tf_crearPropiedadenVentanombre = new javax.swing.JTextField();
         tf_crearPropiedadenVentaid = new javax.swing.JTextField();
         JB_crearPropiedadVenta = new javax.swing.JButton();
-        js_crearPropiedadenVentaDormitorios = new javax.swing.JSpinner();
         jLabel60 = new javax.swing.JLabel();
         jScrollPane6 = new javax.swing.JScrollPane();
         ta_crearPropiedadenVentaCaracteristicas = new javax.swing.JTextArea();
         jLabel61 = new javax.swing.JLabel();
-        ff_crearPropiedadenVentaPrecio = new javax.swing.JFormattedTextField();
         jLabel62 = new javax.swing.JLabel();
-        ff_crearPropiedadenVentaFecha = new javax.swing.JFormattedTextField();
         jLabel63 = new javax.swing.JLabel();
         jLabel64 = new javax.swing.JLabel();
         tf_crearPropiedadenVentaidAgente = new javax.swing.JTextField();
         tf_crearPropiedadenVentaidVendedor = new javax.swing.JTextField();
+        jTextField3 = new javax.swing.JTextField();
+        jTextField4 = new javax.swing.JTextField();
+        jTextField5 = new javax.swing.JTextField();
         JF_modificarPropiedadVenta = new javax.swing.JFrame();
         jPanel36 = new FondoPanel("./Imagen\\modificarPropVenta.jpg");
         jPanel37 = new javax.swing.JPanel();
@@ -316,24 +317,24 @@ public class Main extends javax.swing.JFrame {
         tf_crearPropiedadenvendidaNombre = new javax.swing.JTextField();
         tf_crearPropiedadenvendidaId = new javax.swing.JTextField();
         JB_crearPropiedadVenta1 = new javax.swing.JButton();
-        js_crearPropiedadenvendidaCantDor = new javax.swing.JSpinner();
         jLabel80 = new javax.swing.JLabel();
         jScrollPane8 = new javax.swing.JScrollPane();
         ta_crearPropiedadenvendidaCaracteristicas = new javax.swing.JTextArea();
         jLabel81 = new javax.swing.JLabel();
-        ff_crearPropiedadenvendidaPrecio = new javax.swing.JFormattedTextField();
         jLabel82 = new javax.swing.JLabel();
-        ff_crearPropiedadenvendidaFechaPublicacion = new javax.swing.JFormattedTextField();
         jLabel83 = new javax.swing.JLabel();
         jLabel84 = new javax.swing.JLabel();
         tf_crearPropiedadenvendidaidAgente = new javax.swing.JTextField();
         tf_crearPropiedadenvendidaidVendedor = new javax.swing.JTextField();
         jLabel85 = new javax.swing.JLabel();
-        ff_crearPropiedadenvendidaFechaVenta = new javax.swing.JFormattedTextField();
         jLabel86 = new javax.swing.JLabel();
         tf_crearPropiedadenvendidaidComprador = new javax.swing.JTextField();
         jLabel87 = new javax.swing.JLabel();
-        tf_crearPropiedadenvendidaComision = new javax.swing.JFormattedTextField();
+        jTextField6 = new javax.swing.JTextField();
+        jTextField7 = new javax.swing.JTextField();
+        jTextField8 = new javax.swing.JTextField();
+        jTextField9 = new javax.swing.JTextField();
+        jTextField10 = new javax.swing.JTextField();
         JF_modificarPropVendidas = new javax.swing.JFrame();
         jPanel48 = new FondoPanel("./Imagen\\modifcarPropVendida.jpg");
         jPanel49 = new javax.swing.JPanel();
@@ -2074,10 +2075,9 @@ public class Main extends javax.swing.JFrame {
         });
 
         cb_modificarVendedor.setBackground(new java.awt.Color(209, 200, 221));
-        cb_modificarVendedor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         cb_atributovendedor.setBackground(new java.awt.Color(209, 200, 221));
-        cb_atributovendedor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cb_atributovendedor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "nombre", "direccion", "celular" }));
 
         jLabel36.setFont(new java.awt.Font("Montserrat Thin", 1, 18)); // NOI18N
         jLabel36.setForeground(new java.awt.Color(245, 253, 255));
@@ -2173,7 +2173,6 @@ public class Main extends javax.swing.JFrame {
 
         cb_eliminarVendedor.setBackground(new java.awt.Color(221, 228, 254));
         cb_eliminarVendedor.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        cb_eliminarVendedor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         JB_eliminarVendedor.setBackground(new java.awt.Color(232, 239, 254));
         JB_eliminarVendedor.setFont(new java.awt.Font("Montserrat Thin", 1, 18)); // NOI18N
@@ -2626,8 +2625,6 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
-        js_crearPropiedadenVentaDormitorios.setModel(new javax.swing.SpinnerNumberModel());
-
         jLabel60.setFont(new java.awt.Font("Montserrat Thin", 1, 18)); // NOI18N
         jLabel60.setForeground(new java.awt.Color(245, 253, 255));
         jLabel60.setText("Caracteristicas:");
@@ -2641,15 +2638,9 @@ public class Main extends javax.swing.JFrame {
         jLabel61.setForeground(new java.awt.Color(245, 253, 255));
         jLabel61.setText("Precio:");
 
-        ff_crearPropiedadenVentaPrecio.setBackground(new java.awt.Color(234, 234, 234));
-        ff_crearPropiedadenVentaPrecio.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getCurrencyInstance())));
-
         jLabel62.setFont(new java.awt.Font("Montserrat Thin", 1, 18)); // NOI18N
         jLabel62.setForeground(new java.awt.Color(245, 253, 255));
         jLabel62.setText("ID Vendedor:");
-
-        ff_crearPropiedadenVentaFecha.setBackground(new java.awt.Color(234, 234, 234));
-        ff_crearPropiedadenVentaFecha.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("YYYY-MM-DD"))));
 
         jLabel63.setFont(new java.awt.Font("Montserrat Thin", 1, 18)); // NOI18N
         jLabel63.setForeground(new java.awt.Color(245, 253, 255));
@@ -2688,18 +2679,17 @@ public class Main extends javax.swing.JFrame {
                     .addGroup(jPanel41Layout.createSequentialGroup()
                         .addComponent(jLabel61)
                         .addGap(80, 80, 80)))
-                .addGap(18, 18, 18)
                 .addGroup(jPanel41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(tf_crearPropiedadenVentaDireccion)
                     .addComponent(tf_crearPropiedadenVentanombre)
                     .addComponent(tf_crearPropiedadenVentaCiudad)
                     .addComponent(tf_crearPropiedadenVentaid)
-                    .addComponent(js_crearPropiedadenVentaDormitorios)
                     .addComponent(jScrollPane6)
-                    .addComponent(ff_crearPropiedadenVentaPrecio, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(ff_crearPropiedadenVentaFecha)
                     .addComponent(tf_crearPropiedadenVentaidAgente, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(tf_crearPropiedadenVentaidVendedor, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addComponent(tf_crearPropiedadenVentaidVendedor, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jTextField3)
+                    .addComponent(jTextField4)
+                    .addComponent(jTextField5))
                 .addGap(31, 31, 31))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel41Layout.createSequentialGroup()
                 .addGap(0, 17, Short.MAX_VALUE)
@@ -2732,7 +2722,7 @@ public class Main extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel59)
-                            .addComponent(js_crearPropiedadenVentaDormitorios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(tf_crearPropiedadenVentanombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2740,12 +2730,12 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ff_crearPropiedadenVentaPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel61))
+                    .addComponent(jLabel61)
+                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ff_crearPropiedadenVentaFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel63))
+                    .addComponent(jLabel63)
+                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel64)
@@ -3204,8 +3194,6 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
-        js_crearPropiedadenvendidaCantDor.setModel(new javax.swing.SpinnerNumberModel());
-
         jLabel80.setFont(new java.awt.Font("Montserrat Thin", 1, 18)); // NOI18N
         jLabel80.setForeground(new java.awt.Color(102, 102, 255));
         jLabel80.setText("Caracteristicas:");
@@ -3219,15 +3207,9 @@ public class Main extends javax.swing.JFrame {
         jLabel81.setForeground(new java.awt.Color(102, 102, 255));
         jLabel81.setText("Comisión:");
 
-        ff_crearPropiedadenvendidaPrecio.setBackground(new java.awt.Color(234, 234, 234));
-        ff_crearPropiedadenvendidaPrecio.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getCurrencyInstance())));
-
         jLabel82.setFont(new java.awt.Font("Montserrat Thin", 1, 18)); // NOI18N
         jLabel82.setForeground(new java.awt.Color(102, 102, 255));
         jLabel82.setText("ID Vendedor:");
-
-        ff_crearPropiedadenvendidaFechaPublicacion.setBackground(new java.awt.Color(234, 234, 234));
-        ff_crearPropiedadenvendidaFechaPublicacion.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("YYYY-MM-DD"))));
 
         jLabel83.setFont(new java.awt.Font("Montserrat Thin", 1, 18)); // NOI18N
         jLabel83.setForeground(new java.awt.Color(102, 102, 255));
@@ -3250,9 +3232,6 @@ public class Main extends javax.swing.JFrame {
         jLabel85.setForeground(new java.awt.Color(102, 102, 255));
         jLabel85.setText("Fecha Venta:");
 
-        ff_crearPropiedadenvendidaFechaVenta.setBackground(new java.awt.Color(234, 234, 234));
-        ff_crearPropiedadenvendidaFechaVenta.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("YYYY-MM-DD"))));
-
         jLabel86.setFont(new java.awt.Font("Montserrat Thin", 1, 18)); // NOI18N
         jLabel86.setForeground(new java.awt.Color(102, 102, 255));
         jLabel86.setText("ID Comprador:");
@@ -3262,9 +3241,6 @@ public class Main extends javax.swing.JFrame {
         jLabel87.setFont(new java.awt.Font("Montserrat Thin", 1, 18)); // NOI18N
         jLabel87.setForeground(new java.awt.Color(102, 102, 255));
         jLabel87.setText("Precio:");
-
-        tf_crearPropiedadenvendidaComision.setBackground(new java.awt.Color(234, 234, 234));
-        tf_crearPropiedadenvendidaComision.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getCurrencyInstance())));
 
         javax.swing.GroupLayout jPanel47Layout = new javax.swing.GroupLayout(jPanel47);
         jPanel47.setLayout(jPanel47Layout);
@@ -3299,19 +3275,19 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(jLabel87))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(ff_crearPropiedadenvendidaPrecio)
-                    .addComponent(ff_crearPropiedadenvendidaFechaPublicacion)
                     .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 296, Short.MAX_VALUE)
-                    .addComponent(js_crearPropiedadenvendidaCantDor)
                     .addComponent(tf_crearPropiedadenvendidaDireccion)
                     .addComponent(tf_crearPropiedadenvendidaCiudad)
                     .addComponent(tf_crearPropiedadenvendidaNombre)
                     .addComponent(tf_crearPropiedadenvendidaId)
-                    .addComponent(ff_crearPropiedadenvendidaFechaVenta)
                     .addComponent(tf_crearPropiedadenvendidaidAgente)
                     .addComponent(tf_crearPropiedadenvendidaidVendedor)
                     .addComponent(tf_crearPropiedadenvendidaidComprador)
-                    .addComponent(tf_crearPropiedadenvendidaComision))
+                    .addComponent(jTextField6)
+                    .addComponent(jTextField7)
+                    .addComponent(jTextField8)
+                    .addComponent(jTextField9)
+                    .addComponent(jTextField10))
                 .addGap(15, 15, 15))
         );
         jPanel47Layout.setVerticalGroup(
@@ -3338,23 +3314,23 @@ public class Main extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel79)
-                    .addComponent(js_crearPropiedadenvendidaCantDor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel80)
                     .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ff_crearPropiedadenvendidaPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel87))
+                    .addComponent(jLabel87)
+                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ff_crearPropiedadenvendidaFechaPublicacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel83))
+                    .addComponent(jLabel83)
+                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel85)
-                    .addComponent(ff_crearPropiedadenvendidaFechaVenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel84)
@@ -3368,13 +3344,10 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(jLabel86)
                     .addComponent(tf_crearPropiedadenvendidaidComprador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel47Layout.createSequentialGroup()
-                        .addComponent(jLabel81)
-                        .addGap(12, 12, 12))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel47Layout.createSequentialGroup()
-                        .addComponent(tf_crearPropiedadenvendidaComision, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel81)
+                    .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(11, 11, 11)
                 .addComponent(JB_crearPropiedadVenta1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(17, Short.MAX_VALUE))
         );
@@ -3885,13 +3858,32 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3MouseClicked
 
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+        ResultSet rs = db.mostrarElementos("SELECT id FROM vendedores");
+        try {
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                cb_eliminarVendedor.addItem(Integer.toString(id));
+            }
 
+        } catch (SQLException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
         JF_eliminarVendedor.pack();
         JF_eliminarVendedor.setLocationRelativeTo(JF_Vendedor);;
         JF_eliminarVendedor.setVisible(true);
     }//GEN-LAST:event_jButton2MouseClicked
 
     private void jButton10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton10MouseClicked
+        ResultSet rs = db.mostrarElementos("SELECT id FROM vendedores");
+        try {
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                cb_modificarVendedor.addItem(Integer.toString(id));
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
         JF_modificarVendedor.pack();
         JF_modificarVendedor.setLocationRelativeTo(JF_Principal);
         JF_modificarVendedor.setVisible(true);
@@ -4017,10 +4009,10 @@ public class Main extends javax.swing.JFrame {
         String nombre = tf_crearPropiedadenVentanombre.getText();
         String dir = tf_crearPropiedadenVentaDireccion.getText();
         String ciudad = tf_crearPropiedadenVentaCiudad.getText();
-        String cantDormitorios = (String) js_crearPropiedadenVentaDormitorios.getValue();
+        String cantDormitorios = jTextField3.getText();
         String caracteristicas = ta_crearPropiedadenVentaCaracteristicas.getText();
-        String precio = (String) ff_crearPropiedadenVentaPrecio.getText();
-        String fechaPublicacion = (String) ff_crearPropiedadenVentaFecha.getText();
+        String precio = jTextField5.getText();
+        String fechaPublicacion = jTextField4.getText();
         String numeroIdentidadA = tf_crearPropiedadenVentaidAgente.getText();
         String numeroIdentidadV = tf_crearPropiedadenVentaidVendedor.getText();
         String vista = "CALL insertarPV ('" + id + "','" + nombre + "','" + ciudad + "','" + dir + "','" + cantDormitorios + "','" + caracteristicas + "','" + precio + "','" + fechaPublicacion + "','" + numeroIdentidadA + "','" + numeroIdentidadV + "')";
@@ -4098,15 +4090,15 @@ public class Main extends javax.swing.JFrame {
         String nombre = tf_crearPropiedadenvendidaNombre.getText();
         String dir = tf_crearPropiedadenvendidaDireccion.getText();
         String ciudad = tf_crearPropiedadenvendidaCiudad.getText();
-        String cantDormitorios = (String) js_crearPropiedadenvendidaCantDor.getValue();
+        String cantDormitorios = jTextField7.getText();
         String caracteristicas = ta_crearPropiedadenvendidaCaracteristicas.getText();
-        String precio = ff_crearPropiedadenvendidaPrecio.getText();
-        String fechaPublicacion = ff_crearPropiedadenvendidaFechaPublicacion.getText();
-        String fechaVenta = ff_crearPropiedadenvendidaFechaVenta.getText();
+        String precio = jTextField6.getText();
+        String fechaPublicacion = jTextField8.getText();
+        String fechaVenta = jTextField9.getText();
         String numeroIdentidadA = tf_crearPropiedadenvendidaidAgente.getText();
         String numeroIdentidadV = tf_crearPropiedadenvendidaidVendedor.getText();
         String numeroIdentidadC = tf_crearPropiedadenvendidaidComprador.getText();
-        String comision = tf_crearPropiedadenvendidaComision.getText();
+        String comision = jTextField10.getText();
 
         String vista = "CALL insertarPM ('" + id + "','" + nombre + "','" + ciudad + "','" + dir + "','" + cantDormitorios + "','" + caracteristicas + "','" + precio + "','" + fechaPublicacion + "','" + fechaVenta + "','" + numeroIdentidadA + "','" + numeroIdentidadV + "','" + numeroIdentidadC + "','" + comision + "')";
         db.HacerConsulta(vista);
@@ -4312,11 +4304,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cb_eliminarVendedor;
     private javax.swing.JComboBox<String> cb_modificarComprador;
     private javax.swing.JComboBox<String> cb_modificarVendedor;
-    private javax.swing.JFormattedTextField ff_crearPropiedadenVentaFecha;
-    private javax.swing.JFormattedTextField ff_crearPropiedadenVentaPrecio;
-    private javax.swing.JFormattedTextField ff_crearPropiedadenvendidaFechaPublicacion;
-    private javax.swing.JFormattedTextField ff_crearPropiedadenvendidaFechaVenta;
-    private javax.swing.JFormattedTextField ff_crearPropiedadenvendidaPrecio;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton12;
@@ -4490,7 +4477,15 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTable jTable3;
     private javax.swing.JTable jTable4;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField jTextField7;
+    private javax.swing.JTextField jTextField8;
+    private javax.swing.JTextField jTextField9;
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JButton jb_buscarUsuarios;
     private javax.swing.JButton jb_crudagentes;
@@ -4500,8 +4495,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel jp_ventanaVendedor;
     private javax.swing.JPanel jp_ventanaVendedor1;
     private javax.swing.JPanel jp_ventanaVendedor2;
-    private javax.swing.JSpinner js_crearPropiedadenVentaDormitorios;
-    private javax.swing.JSpinner js_crearPropiedadenvendidaCantDor;
     private javax.swing.JPasswordField pf_passwordlogin;
     private javax.swing.JTextArea ta_crearPropiedadenVentaCaracteristicas;
     private javax.swing.JTextArea ta_crearPropiedadenvendidaCaracteristicas;
@@ -4524,7 +4517,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTextField tf_crearPropiedadenVentaidVendedor;
     private javax.swing.JTextField tf_crearPropiedadenVentanombre;
     private javax.swing.JTextField tf_crearPropiedadenvendidaCiudad;
-    private javax.swing.JFormattedTextField tf_crearPropiedadenvendidaComision;
     private javax.swing.JTextField tf_crearPropiedadenvendidaDireccion;
     private javax.swing.JTextField tf_crearPropiedadenvendidaId;
     private javax.swing.JTextField tf_crearPropiedadenvendidaNombre;
