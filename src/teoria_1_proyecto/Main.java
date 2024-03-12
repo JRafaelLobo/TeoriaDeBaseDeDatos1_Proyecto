@@ -19,12 +19,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author rinal
  */
-
 public class Main extends javax.swing.JFrame {
 
     /**
@@ -438,6 +438,11 @@ public class Main extends javax.swing.JFrame {
         jButton5.setFont(new java.awt.Font("Montserrat Thin", 1, 16)); // NOI18N
         jButton5.setForeground(new java.awt.Color(255, 255, 255));
         jButton5.setText("Buscar");
+        jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton5MouseClicked(evt);
+            }
+        });
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -482,7 +487,7 @@ public class Main extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
                         .addContainerGap(222, Short.MAX_VALUE)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 672, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(91, 91, 91)))
+                        .addGap(84, 84, 84)))
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(JB_ModificarAgente, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(JB_CrearAgente, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -601,7 +606,7 @@ public class Main extends javax.swing.JFrame {
                 {null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "ID", "Nombre", "Direccion", "Celular"
             }
         ));
         jScrollPane4.setViewportView(jTable3);
@@ -1111,9 +1116,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
-        CB_modificarAgente.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        cb_atributoAgente.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cb_atributoAgente.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "nombre", "direccion", "celular", "telefonoOficina" }));
 
         javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
         jPanel15.setLayout(jPanel15Layout);
@@ -1840,7 +1843,6 @@ public class Main extends javax.swing.JFrame {
 
         cb_eliminarAgente.setBackground(new java.awt.Color(221, 228, 254));
         cb_eliminarAgente.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        cb_eliminarAgente.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         JB_eliminarAgente.setBackground(new java.awt.Color(232, 239, 254));
         JB_eliminarAgente.setFont(new java.awt.Font("Montserrat Thin", 1, 18)); // NOI18N
@@ -2400,10 +2402,9 @@ public class Main extends javax.swing.JFrame {
         });
 
         cb_modificarComprador.setBackground(new java.awt.Color(229, 185, 221));
-        cb_modificarComprador.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         cb_atributoComprador.setBackground(new java.awt.Color(229, 185, 221));
-        cb_atributoComprador.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cb_atributoComprador.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "nombre", "direccion", "celular" }));
 
         jLabel44.setFont(new java.awt.Font("Montserrat Thin", 1, 18)); // NOI18N
         jLabel44.setForeground(new java.awt.Color(245, 253, 255));
@@ -2501,7 +2502,6 @@ public class Main extends javax.swing.JFrame {
 
         cb_eliminarComprador.setBackground(new java.awt.Color(221, 228, 254));
         cb_eliminarComprador.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        cb_eliminarComprador.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         JB_eliminarComprador.setBackground(new java.awt.Color(232, 239, 254));
         JB_eliminarComprador.setFont(new java.awt.Font("Montserrat Thin", 1, 18)); // NOI18N
@@ -3691,7 +3691,16 @@ public class Main extends javax.swing.JFrame {
 
     private void JB_ModificarAgenteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_ModificarAgenteMouseClicked
         // TODO add your handling code here:
+        ResultSet rs = db.mostrarElementos("SELECT id FROM agentes");
+        try {
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                CB_modificarAgente.addItem(Integer.toString(id));
+            }
 
+        } catch (SQLException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
         JF_modificarAgente.pack();
         JF_modificarAgente.setLocationRelativeTo(JF_Agentes);
         JF_modificarAgente.setVisible(true);
@@ -3753,6 +3762,16 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_JB_CrearCompradorActionPerformed
 
     private void JB_modificarCompradorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_modificarCompradorMouseClicked
+        ResultSet rs = db.mostrarElementos("SELECT id FROM compradores");
+        try {
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                cb_modificarComprador.addItem(Integer.toString(id));
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
         JF_modificarComprador.pack();
         JF_modificarComprador.setLocationRelativeTo(JF_Agentes);
         JF_modificarComprador.setVisible(true);
@@ -3763,7 +3782,16 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_JB_modificarCompradorActionPerformed
 
     private void JB_BorrarCompradorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_BorrarCompradorMouseClicked
+        ResultSet rs = db.mostrarElementos("SELECT id FROM compradores");
+        try {
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                cb_eliminarComprador.addItem(Integer.toString(id));
+            }
 
+        } catch (SQLException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
         JF_eliminarComprador.pack();
         JF_eliminarComprador.setLocationRelativeTo(JF_Compradores);;
         JF_eliminarComprador.setVisible(true);
@@ -3773,7 +3801,7 @@ public class Main extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_JB_BorrarCompradorActionPerformed
 
-    private void JB_buscarCompradorMouseClicked(java.awt.event.MouseEvent evt) {                                                
+    private void JB_buscarCompradorMouseClicked(java.awt.event.MouseEvent evt) {
         // TODO add your handling code here:
 //        try {
 //            // TODO add your handling code here:
@@ -3788,7 +3816,24 @@ public class Main extends javax.swing.JFrame {
 //        } catch (SQLException ex) {
 //            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
 //        }
-    }                                               
+        String id = jTextField1.getText();
+        ResultSet rs = db.mostrarElementos("SELECT * FROM compradores WHERE id = '" + id + "';");
+        DefaultTableModel model = (DefaultTableModel) jTable3.getModel();
+        model.setRowCount(0);
+        try {
+            while (rs.next()) {
+                int id2 = rs.getInt("id");
+                String nombre = rs.getString("nombre");
+                String direccion = rs.getString("direccion");
+                int cel = rs.getInt("celular");
+                Object[] row = {id2, nombre, direccion, cel};
+                model.addRow(row);
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 
     private void JB_buscarCompradorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_buscarCompradorActionPerformed
         // TODO add your handling code here:
@@ -3824,6 +3869,16 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_JB_crearAgenteMouseClicked
 
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+        ResultSet rs = db.mostrarElementos("SELECT id FROM agentes");
+        try {
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                cb_eliminarAgente.addItem(Integer.toString(id));
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
         JF_eliminarAgente.pack();
         JF_eliminarAgente.setLocationRelativeTo(JF_Agentes);;
         JF_eliminarAgente.setVisible(true);
@@ -3905,7 +3960,7 @@ public class Main extends javax.swing.JFrame {
         String id = (String) cb_modificarVendedor.getSelectedItem();
         String atributo = (String) cb_atributovendedor.getSelectedItem();
         String nuevo_valor = (String) cb_atributovendedor.getSelectedItem();
-        db.HacerConsulta("CALL modificarPropiedadEnMercado('"+id+"','"+atributo+"','"+nuevo_valor+"');");
+        db.HacerConsulta("CALL modificarPropiedadEnMercado('" + id + "','" + atributo + "','" + nuevo_valor + "');");
     }//GEN-LAST:event_JB_modificarVendedorMouseClicked
 
     private void JB_crearCompradorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_crearCompradorMouseClicked
@@ -3915,7 +3970,7 @@ public class Main extends javax.swing.JFrame {
         String cel = tf_crearCompradorCelular.getText();
 
         String vista = "CALL insertarComprador('" + id + "','" + nombre + "','" + dir + "'," + cel + ")";
-       db.HacerConsulta(vista);
+        db.HacerConsulta(vista);
     }//GEN-LAST:event_JB_crearCompradorMouseClicked
 
     private void JB_modificarVenCompradorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_modificarVenCompradorMouseClicked
@@ -3923,24 +3978,25 @@ public class Main extends javax.swing.JFrame {
         String id = (String) cb_modificarComprador.getSelectedItem();
         String atributo = (String) cb_atributoComprador.getSelectedItem();
         String nuevo_atributo = tf_nuevoValorComprador.getText();
-        db.HacerConsulta("CALL modificarComprador('" + id + "','"+atributo+"','"+nuevo_atributo+"');");
+        db.HacerConsulta("CALL modificarComprador('" + id + "','" + atributo + "','" + nuevo_atributo + "');");
     }//GEN-LAST:event_JB_modificarVenCompradorMouseClicked
 
     private void JB_eliminarAgenteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_eliminarAgenteMouseClicked
         // TODO add your handling code here:
+
         String id = (String) cb_eliminarAgente.getSelectedItem();
-       db.HacerConsulta("CALL eliminarAgente('" + id + "');");
+        db.HacerConsulta("CALL eliminarAgente('" + id + "');");
     }//GEN-LAST:event_JB_eliminarAgenteMouseClicked
 
     private void JB_eliminarVendedorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_eliminarVendedorMouseClicked
         // TODO add your handling code here:
         String id = (String) cb_eliminarVendedor.getSelectedItem();
-//        db.HacerConsulta("CALL eliminarVendedor('" + id + "');");
+        db.HacerConsulta("CALL eliminarVendedor('" + id + "');");
     }//GEN-LAST:event_JB_eliminarVendedorMouseClicked
 
     private void JB_eliminarCompradorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_eliminarCompradorMouseClicked
         String id = (String) cb_eliminarComprador.getSelectedItem();
-//        db.HacerConsulta("CALL eliminarComprador('" + id + "');");
+        db.HacerConsulta("CALL eliminarComprador('" + id + "');");
     }//GEN-LAST:event_JB_eliminarCompradorMouseClicked
 
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
@@ -3968,7 +4024,7 @@ public class Main extends javax.swing.JFrame {
         String numeroIdentidadA = tf_crearPropiedadenVentaidAgente.getText();
         String numeroIdentidadV = tf_crearPropiedadenVentaidVendedor.getText();
         String vista = "CALL insertarPV ('" + id + "','" + nombre + "','" + ciudad + "','" + dir + "','" + cantDormitorios + "','" + caracteristicas + "','" + precio + "','" + fechaPublicacion + "','" + numeroIdentidadA + "','" + numeroIdentidadV + "')";
-//        db.HacerConsulta(vista);
+        db.HacerConsulta(vista);
     }//GEN-LAST:event_JB_crearPropiedadVentaMouseClicked
 
     private void tf_crearPropiedadenVentaidAgenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_crearPropiedadenVentaidAgenteActionPerformed
@@ -3985,7 +4041,7 @@ public class Main extends javax.swing.JFrame {
         String id = (String) CB_modificarPropEnVenta.getSelectedItem();
         String atributo = (String) cb_atributoPropEnVenta.getSelectedItem();
         String nuevo_valor = tf_nuevovalorPropEnVenta.getText();
-//        db.HacerConsulta("CALL modificarPropiedadEnMercado('"+id+"','"+atributo+"','"+nuevo_valor+"');");
+        db.HacerConsulta("CALL modificarPropiedadEnMercado('" + id + "','" + atributo + "','" + nuevo_valor + "');");
     }//GEN-LAST:event_JB_modificarPropenVentaMouseClicked
 
     private void JB_modificarPropenVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_modificarPropenVentaActionPerformed
@@ -3999,7 +4055,7 @@ public class Main extends javax.swing.JFrame {
     private void JB_eliminarPropiedadenVentaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_eliminarPropiedadenVentaMouseClicked
         // TODO add your handling code here:
         String id = (String) cb_eliminarPropVenta.getSelectedItem();
-//        db.HacerConsulta("CALL eliminarPM('" + id + "');");
+        db.HacerConsulta("CALL eliminarPM('" + id + "');");
     }//GEN-LAST:event_JB_eliminarPropiedadenVentaMouseClicked
 
     private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
@@ -4037,7 +4093,7 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_tf_buscarPropiedadesVendidasActionPerformed
 
     private void JB_crearPropiedadVenta1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_crearPropiedadVenta1MouseClicked
-                // TODO add your handling code here:
+        // TODO add your handling code here:
         String id = tf_crearPropiedadenvendidaId.getText();
         String nombre = tf_crearPropiedadenvendidaNombre.getText();
         String dir = tf_crearPropiedadenvendidaDireccion.getText();
@@ -4047,13 +4103,13 @@ public class Main extends javax.swing.JFrame {
         String precio = ff_crearPropiedadenvendidaPrecio.getText();
         String fechaPublicacion = ff_crearPropiedadenvendidaFechaPublicacion.getText();
         String fechaVenta = ff_crearPropiedadenvendidaFechaVenta.getText();
-        String numeroIdentidadA =  tf_crearPropiedadenvendidaidAgente.getText();
+        String numeroIdentidadA = tf_crearPropiedadenvendidaidAgente.getText();
         String numeroIdentidadV = tf_crearPropiedadenvendidaidVendedor.getText();
         String numeroIdentidadC = tf_crearPropiedadenvendidaidComprador.getText();
         String comision = tf_crearPropiedadenvendidaComision.getText();
 
         String vista = "CALL insertarPM ('" + id + "','" + nombre + "','" + ciudad + "','" + dir + "','" + cantDormitorios + "','" + caracteristicas + "','" + precio + "','" + fechaPublicacion + "','" + fechaVenta + "','" + numeroIdentidadA + "','" + numeroIdentidadV + "','" + numeroIdentidadC + "','" + comision + "')";
-//        db.HacerConsulta(vista);
+        db.HacerConsulta(vista);
     }//GEN-LAST:event_JB_crearPropiedadVenta1MouseClicked
 
     private void tf_crearPropiedadenvendidaidAgenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_crearPropiedadenvendidaidAgenteActionPerformed
@@ -4065,11 +4121,11 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_tf_nuevovalorVendidaActionPerformed
 
     private void JB_modificarVendidaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_modificarVendidaMouseClicked
-         // TODO add your handling code here:
+        // TODO add your handling code here:
         String id = (String) CB_modificarPropVendida.getSelectedItem();
         String atributo = (String) cb_atributoPropVendida.getSelectedItem();
         String nuevo_valor = tf_nuevovalorVendida.getText();
-//        db.HacerConsulta("CALL modificarPropiedadVendida('"+id+"','"+atributo+"','"+nuevo_valor+"');");
+        db.HacerConsulta("CALL modificarPropiedadVendida('" + id + "','" + atributo + "','" + nuevo_valor + "');");
     }//GEN-LAST:event_JB_modificarVendidaMouseClicked
 
     private void JB_modificarVendidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_modificarVendidaActionPerformed
@@ -4079,7 +4135,7 @@ public class Main extends javax.swing.JFrame {
     private void JB_eliminarPropVendidaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_eliminarPropVendidaMouseClicked
         // TODO add your handling code here:
         String id = (String) cb_eliminarPropVendida.getSelectedItem();
-//        db.HacerConsulta("CALL eliminarPV('" + id + "');");
+        db.HacerConsulta("CALL eliminarPV('" + id + "');");
     }//GEN-LAST:event_JB_eliminarPropVendidaMouseClicked
 
     private void jButton14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton14MouseClicked
@@ -4091,13 +4147,13 @@ public class Main extends javax.swing.JFrame {
         String id = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el id", JOptionPane.QUESTION_MESSAGE);
         String atributo = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el atributo que va a actualizar", JOptionPane.QUESTION_MESSAGE);
         String nuevo_valor = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el nuevo atributo", JOptionPane.QUESTION_MESSAGE);
-        //        db.HacerConsulta("CALL modificarPropiedadVendida('"+id+"','"+atributo+"','"+nuevo_valor+"');");
+        db.HacerConsulta("CALL modificarPropiedadVendida('" + id + "','" + atributo + "','" + nuevo_valor + "');");
     }//GEN-LAST:event_jButton12MouseClicked
 
     private void jButton7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton7MouseClicked
         // TODO add your handling code here:
         String id = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el id", JOptionPane.QUESTION_MESSAGE);
-        //        db.HacerConsulta("CALL eliminarPV('" + id + "');");
+        db.HacerConsulta("CALL eliminarPV('" + id + "');");
     }//GEN-LAST:event_jButton7MouseClicked
 
     private void JB_CrearPropiedadEVendidaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_CrearPropiedadEVendidaMouseClicked
@@ -4117,43 +4173,65 @@ public class Main extends javax.swing.JFrame {
         String comision = JOptionPane.showInputDialog(JF_Agentes, "Ingrese la comision", JOptionPane.QUESTION_MESSAGE);
 
         String vista = "CALL insertarPM ('" + id + "','" + nombre + "','" + ciudad + "','" + dir + "','" + cantDormitorios + "','" + caracteristicas + "','" + precio + "','" + fechaPublicacion + "','" + fechaVenta + "','" + numeroIdentidadA + "','" + numeroIdentidadV + "','" + numeroIdentidadC + "','" + comision + "')";
-        //        db.HacerConsulta(vista);
+        db.HacerConsulta(vista);
     }//GEN-LAST:event_JB_CrearPropiedadEVendidaMouseClicked
+
+    private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
+        // TODO add your handling code here:
+        String id = tf_buscarAgentes.getText();
+        ResultSet rs = db.mostrarElementos("SELECT * FROM agentes WHERE id = '" + id + "';");
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        model.setRowCount(0);
+        try {
+            while (rs.next()) {
+                int id2 = rs.getInt("id");
+                String nombre = rs.getString("nombre");
+                String direccion = rs.getString("direccion");
+                int cel = rs.getInt("celular");
+                int telefonoOficina = rs.getInt("telefonoOficina");
+                Object[] row = {id2, nombre, direccion, cel, telefonoOficina};
+                model.addRow(row);
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton5MouseClicked
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-    /* Set the Nimbus look and feel */
-    //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-    /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-     */
-    try {
-        for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-            if ("Nimbus".equals(info.getName())) {
-                javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                break;
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
             }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-    } catch (ClassNotFoundException ex) {
-        java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-    } catch (InstantiationException ex) {
-        java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-    } catch (IllegalAccessException ex) {
-        java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-    } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-        java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-    }
-    //</editor-fold>
+        //</editor-fold>
 
-    /* Create and display the form */
-    java.awt.EventQueue.invokeLater(new Runnable() {
-        public void run() {
-            new Main().setVisible(false);
-        }
-    });
-}
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Main().setVisible(false);
+            }
+        });
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> CB_modificarAgente;
@@ -4468,6 +4546,7 @@ public class Main extends javax.swing.JFrame {
     //Variables globales
     DB_Manager db = new DB_Manager();
 //Este metodo es para reproducir sonidos en el programa
+
     public static Clip playMusic(String filepath) {
         try {
             File music = new File(filepath);
