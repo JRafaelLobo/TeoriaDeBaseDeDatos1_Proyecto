@@ -3727,7 +3727,7 @@ public class Main extends javax.swing.JFrame {
                 {null, null, null, null, null}
             },
             new String [] {
-                "id", "accion", "tabla_afectada", "fecha_hora", "alteración"
+                "Id", "Accion", "Tabla afectada", "Timestamp", "Objeto modificado"
             }
         ));
         jScrollPane9.setViewportView(jTable5);
@@ -3743,6 +3743,11 @@ public class Main extends javax.swing.JFrame {
         });
 
         JB_buscarUsuarioBitacora.setText("Buscar");
+        JB_buscarUsuarioBitacora.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                JB_buscarUsuarioBitacoraMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel53Layout = new javax.swing.GroupLayout(jPanel53);
         jPanel53.setLayout(jPanel53Layout);
@@ -4354,11 +4359,29 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
-    JF_bitacora.pack();
+
+        ResultSet rs = db.mostrarElementos("SELECT * FROM bitacora;");
+        DefaultTableModel model = (DefaultTableModel) jTable5.getModel();
+        model.setRowCount(0);
+        try {
+            while (rs.next()) {
+                int id2 = rs.getInt("id");
+                String accion = rs.getString("accion");
+                String tabla = rs.getString("tabla_afectada");
+                String timestamp = rs.getString("fecha_hora");
+                String alteracion = rs.getString("alteracion");
+                Object[] row = {id2, accion, tabla, timestamp, alteracion};
+                model.addRow(row);
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        JF_bitacora.pack();
         JF_bitacora.setLocationRelativeTo(JF_Principal);
         JF_bitacora.setExtendedState(MAXIMIZED_BOTH);
         JF_Principal.setVisible(false);
-        JF_bitacora.setVisible(true);        
+        JF_bitacora.setVisible(true);
     }//GEN-LAST:event_jButton6MouseClicked
 
     private void tf_buscarUsuarioIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_buscarUsuarioIdActionPerformed
@@ -4368,7 +4391,7 @@ public class Main extends javax.swing.JFrame {
     private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton16ActionPerformed
-        // TODO add your handling code here:
+    // TODO add your handling code here:
 
     private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
         // TODO add your handling code here:
@@ -4391,6 +4414,29 @@ public class Main extends javax.swing.JFrame {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jButton5MouseClicked
+
+    private void JB_buscarUsuarioBitacoraMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_buscarUsuarioBitacoraMouseClicked
+        // TODO add your handling code here:
+        String id = tf_buscarUsuarioId.getText();
+        ResultSet rs = db.mostrarElementos("SELECT * FROM bitacora WHERE id = '" + id + "';");
+        DefaultTableModel model = (DefaultTableModel) jTable5.getModel();
+        model.setRowCount(0);
+        try {
+            while (rs.next()) {
+                int id2 = rs.getInt("id");
+                String accion = rs.getString("accion");
+                String tabla = rs.getString("tabla_afectada");
+                String timestamp = rs.getString("fecha_hora");
+                String alteracion = rs.getString("alteracion");
+                Object[] row = {id2, accion, tabla, timestamp, alteracion};
+                model.addRow(row);
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }//GEN-LAST:event_JB_buscarUsuarioBitacoraMouseClicked
 
     /**
      * @param args the command line arguments
