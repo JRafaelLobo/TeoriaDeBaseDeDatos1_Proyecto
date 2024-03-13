@@ -5995,11 +5995,11 @@
                       <Properties>
                         <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                           <Table columnCount="5" rowCount="4">
-                            <Column editable="true" title="id" type="java.lang.Object"/>
-                            <Column editable="true" title="accion" type="java.lang.Object"/>
-                            <Column editable="true" title="tabla_afectada" type="java.lang.Object"/>
-                            <Column editable="true" title="fecha_hora" type="java.lang.Object"/>
-                            <Column editable="true" title="alteraci&#xf3;n" type="java.lang.Object"/>
+                            <Column editable="true" title="Id" type="java.lang.Object"/>
+                            <Column editable="true" title="Accion" type="java.lang.Object"/>
+                            <Column editable="true" title="Tabla afectada" type="java.lang.Object"/>
+                            <Column editable="true" title="Timestamp" type="java.lang.Object"/>
+                            <Column editable="true" title="Objeto modificado" type="java.lang.Object"/>
                           </Table>
                         </Property>
                       </Properties>
@@ -6026,6 +6026,9 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Buscar"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="JB_buscarUsuarioBitacoraMouseClicked"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
