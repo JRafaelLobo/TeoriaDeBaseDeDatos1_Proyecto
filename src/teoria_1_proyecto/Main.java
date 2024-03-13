@@ -17,6 +17,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
@@ -31,14 +32,31 @@ public class Main extends javax.swing.JFrame {
      * Creates new form Main
      */
     public Main() {
-        initComponents();
-        this.setLocationRelativeTo(null);
-        DB_Manager db = new DB_Manager();
-        db.crearConexion();
-        db.crearTablas();
-        CambiarPantallaTiempo CPT = new CambiarPantallaTiempo(Portadita, JF_Principal, 4000, true);
-        CPT.start();
-        //JF_crearPropiedadesVendidas.show();
+        try {
+            initComponents();
+            this.setLocationRelativeTo(null);
+            DB_Manager db = new DB_Manager();
+            db.crearConexion();
+            db.crearTablas();
+            CambiarPantallaTiempo CPT = new CambiarPantallaTiempo(Portadita, JF_Principal, 4000, true);
+            CPT.start();
+            
+            
+            ArrayList<String> temp = new ArrayList();
+            ResultSet rs = db.mostrarElementos("SELECT id FROM usuario");
+
+            while (rs.next()) {
+                String id = rs.getString("id");
+                temp.add(id);
+            }
+            
+            for (int i = 0; i < temp.size(); i++) {
+                db.HacerConsulta("UPDATE usuario SET activo = 'FALSE' WHERE id = "+temp.get(i));
+            }
+            //JF_crearPropiedadesVendidas.show();
+        } catch (SQLException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -3890,12 +3908,57 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_pf_passwordloginMousePressed
 
     private void JB_loginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_loginMouseClicked
+        try {
+            ArrayList<String> temp = new ArrayList();
+            ArrayList<String> temp2 = new ArrayList();
+            String correo = tf_usernamelogin.getText();
+            String contra = pf_passwordlogin.getText();
+            boolean check = false;
 
-        JF_ventanaAdmin.pack();
-        JF_ventanaAdmin.setLocationRelativeTo(JF_Principal);
-        JF_ventanaAdmin.setExtendedState(MAXIMIZED_BOTH);
-        JF_Principal.setVisible(false);
-        JF_ventanaAdmin.setVisible(true);
+            ResultSet rs = db.mostrarElementos("SELECT correo FROM usuario");
+
+            while (rs.next()) {
+                String correo2 = rs.getString("correo");
+                temp.add(correo2);
+            }
+
+            ResultSet rs2 = db.mostrarElementos("SELECT contraseña FROM usuario");
+            while (rs2.next()) {
+                String contra2 = rs2.getString("contraseña");
+                temp2.add(contra2);
+            }
+
+            for (int j = 0; j < temp.size(); j++) {
+                if (temp.get(j).equalsIgnoreCase(correo)) {
+                    check = true;
+                    break;
+                }
+            }
+            for (int j = 0; j < temp2.size(); j++) {
+                if (temp2.get(j).equalsIgnoreCase(contra)) {
+                    check = true;
+                    break;
+                }
+            }
+
+            if (check) {
+                String id = "";
+                ResultSet rs3 = db.mostrarElementos("SELECT id FROM usuario WHERE correo = '" + correo + "';");
+                while (rs3.next()) { // Aquí debe ser rs3 en lugar de rs
+                    id = rs3.getString("id");
+                }
+                db.HacerConsulta("UPDATE usuario SET activo = 'TRUE' WHERE id = " + id + ";");
+
+                JF_ventanaAdmin.pack();
+                JF_ventanaAdmin.setLocationRelativeTo(JF_Principal);
+                JF_ventanaAdmin.setExtendedState(MAXIMIZED_BOTH);
+                JF_Principal.setVisible(false);
+                JF_ventanaAdmin.setVisible(true);
+
+            } else {
+                JOptionPane.showMessageDialog(JF_Principal, "Correo o contraseña incorrectos");
+            }
+
 ////    vendedor
 //        JF_ventanaVendedor.pack();
 //        JF_ventanaVendedor.setLocationRelativeTo(JF_Principal);
@@ -3914,6 +3977,9 @@ public class Main extends javax.swing.JFrame {
 //        JF_ventanacomprador.setExtendedState(MAXIMIZED_BOTH);
 //        JF_Principal.setVisible(false);
 //      JF_ventanacomprador.setVisible(true);
+        } catch (SQLException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_JB_loginMouseClicked
 
     private void JB_CrearCompradorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_CrearCompradorActionPerformed
@@ -4435,7 +4501,7 @@ public class Main extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
     }//GEN-LAST:event_JB_buscarUsuarioBitacoraMouseClicked
 
     /**
