@@ -22,9 +22,9 @@ public class DB_Manager {
     }
 
     public void crearConexion() {
-
         try {
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/bienesraicesdb", "root", "laikaluz");
+            //con = DriverManager.getConnection("jdbc:mysql://localhost:3306/bienesraicesdb", "root", "laikaluz");
+            con = DriverManager.getConnection("jdbc:mysql://db-teoriadebasededatos1-intento2.cv0s004w2wx5.us-east-1.rds.amazonaws.com:3306/bienesraicesdb", "admin", "lamejorcontra");
             System.out.println("Se conecto :D!");
         } catch (SQLException e) {
             System.err.println("No se conecto :(!");
@@ -42,7 +42,7 @@ public class DB_Manager {
                 //Crea agentes
                 String createTableAgentes = "CREATE TABLE IF NOT EXISTS agentes ("
                         + "id INT PRIMARY KEY NOT NULL,"
-                        + "nombre CHAR(10) NOT NULL,"
+                        + "nombre CHAR(40) NOT NULL,"
                         + "direccion CHAR(30) NOT NULL,"
                         + "celular INT NOT NULL,"
                         + "telefonoOficina INT NOT NULL"
@@ -54,7 +54,7 @@ public class DB_Manager {
                 //Crea vendedores
                 String createTableVendedores = "CREATE TABLE IF NOT EXISTS vendedores ("
                         + "id INT PRIMARY KEY NOT NULL,"
-                        + "nombre CHAR(10) NOT NULL,"
+                        + "nombre CHAR(40) NOT NULL,"
                         + "direccion CHAR(30) NOT NULL,"
                         + "celular INT NOT NULL"
                         + ")";
@@ -64,7 +64,7 @@ public class DB_Manager {
                 //Crear compradores
                 String createTableCompradores = "CREATE TABLE IF NOT EXISTS compradores ("
                         + "id INT PRIMARY KEY NOT NULL,"
-                        + "nombre CHAR(10) NOT NULL,"
+                        + "nombre CHAR(40) NOT NULL,"
                         + "direccion CHAR(30) NOT NULL,"
                         + "celular INT NOT NULL"
                         + ")";
@@ -74,8 +74,8 @@ public class DB_Manager {
                 //Crea propiedades vendidas
                 String createTablePropiedades = "CREATE TABLE IF NOT EXISTS propiedades_vendidas ("
                         + "idPropiedad INT PRIMARY KEY NOT NULL,"
-                        + "nombre CHAR(10) NOT NULL,"
-                        + "ciudad CHAR(20) NOT NULL,"
+                        + "nombre CHAR(40) NOT NULL,"
+                        + "ciudad CHAR(40) NOT NULL,"
                         + "direccion CHAR(30) NOT NULL,"
                         + "cantidadDormitorios INT NOT NULL,"
                         + "caracteristicas CHAR(100) NOT NULL,"
@@ -96,8 +96,8 @@ public class DB_Manager {
                 //Crea propiedades en mercado
                 String createTablePropiedadesMercado = "CREATE TABLE IF NOT EXISTS propiedades_en_mercado ("
                         + "idPropiedad INT PRIMARY KEY NOT NULL,"
-                        + "nombre CHAR(10) NOT NULL,"
-                        + "ciudad CHAR(20) NOT NULL,"
+                        + "nombre CHAR(40) NOT NULL,"
+                        + "ciudad CHAR(40) NOT NULL,"
                         + "direccion CHAR(30) NOT NULL,"
                         + "cantidadDormitorios INT NOT NULL,"
                         + "caracteristicas CHAR(100) NOT NULL,"
