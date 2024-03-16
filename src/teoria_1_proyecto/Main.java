@@ -25,7 +25,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.imageio.ImageIO;
 import javax.swing.DefaultListModel;
+import javax.swing.Icon;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableModel;
@@ -34,6 +36,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author rinal
  */
+
 public class Main extends javax.swing.JFrame {
 
     /**
@@ -152,19 +155,6 @@ public class Main extends javax.swing.JFrame {
         jp_ventanaVendedor = new FondoPanel("./Imagen\\ventanaVendedor.jpg");
         jLabel11 = new javax.swing.JLabel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
-        jPanel13 = new javax.swing.JPanel();
-        jPanel54 = new FondoPanel("./Imagen\\prop1.jpg");
-        jl_prop1VendedorenVenta = new javax.swing.JLabel();
-        jPanel55 = new FondoPanel("./Imagen\\prop4.jpg");
-        jl_prop2VendedorenVenta = new javax.swing.JLabel();
-        jPanel56 = new FondoPanel("./Imagen\\prop2.jpg");
-        jPanel57 = new FondoPanel("./Imagen\\prop3.jpg");
-        jPanel58 = new FondoPanel("./Imagen\\prop5.jpg");
-        jPanel59 = new FondoPanel("./Imagen\\prop6.jpg");
-        jl_prop3VendedorenVenta = new javax.swing.JLabel();
-        jl_prop4VendedorenVenta = new javax.swing.JLabel();
-        jl_prop5VendedorenVenta = new javax.swing.JLabel();
-        jl_prop6VendedorenVenta = new javax.swing.JLabel();
         jPanel16 = new javax.swing.JPanel();
         jPanel60 = new javax.swing.JPanel();
         jPanel61 = new FondoPanel("./Imagen\\prop7.jpg");
@@ -179,6 +169,27 @@ public class Main extends javax.swing.JFrame {
         jl_prop5VendedorVendida = new javax.swing.JLabel();
         jl_prop3VendedorVendida = new javax.swing.JLabel();
         jl_prop6VendedorVendida = new javax.swing.JLabel();
+        jPanel91 = new javax.swing.JPanel();
+        jScrollPane13 = new javax.swing.JScrollPane();
+        jTable8 = new javax.swing.JTable();
+        jButton26 = new javax.swing.JButton();
+        jPanel13 = new javax.swing.JPanel();
+        jPanel54 = new FondoPanel("./Imagen\\prop1.jpg");
+        jl_prop1VendedorenVenta = new javax.swing.JLabel();
+        jPanel55 = new FondoPanel("./Imagen\\prop4.jpg");
+        jl_prop2VendedorenVenta = new javax.swing.JLabel();
+        jPanel56 = new FondoPanel("./Imagen\\prop2.jpg");
+        jPanel57 = new FondoPanel("./Imagen\\prop3.jpg");
+        jPanel58 = new FondoPanel("./Imagen\\prop5.jpg");
+        jPanel59 = new FondoPanel("./Imagen\\prop6.jpg");
+        jl_prop3VendedorenVenta = new javax.swing.JLabel();
+        jl_prop4VendedorenVenta = new javax.swing.JLabel();
+        jl_prop5VendedorenVenta = new javax.swing.JLabel();
+        jl_prop6VendedorenVenta = new javax.swing.JLabel();
+        jPanel92 = new javax.swing.JPanel();
+        jScrollPane14 = new javax.swing.JScrollPane();
+        jTable9 = new javax.swing.JTable();
+        jButton27 = new javax.swing.JButton();
         JF_ventanaAgente = new javax.swing.JFrame();
         jp_ventanaVendedor1 = new FondoPanel("./Imagen\\ventanaAgente.jpeg");
         jLabel12 = new javax.swing.JLabel();
@@ -211,6 +222,14 @@ public class Main extends javax.swing.JFrame {
         jl_prop4AgenteVendidas = new javax.swing.JLabel();
         jl_prop5AgenteVendidas = new javax.swing.JLabel();
         jl_prop6AgenteVendidas = new javax.swing.JLabel();
+        jPanel93 = new javax.swing.JPanel();
+        jScrollPane16 = new javax.swing.JScrollPane();
+        jTable11 = new javax.swing.JTable();
+        jButton28 = new javax.swing.JButton();
+        jPanel94 = new javax.swing.JPanel();
+        jScrollPane17 = new javax.swing.JScrollPane();
+        jTable12 = new javax.swing.JTable();
+        jButton29 = new javax.swing.JButton();
         JF_ventanacomprador = new javax.swing.JFrame();
         jp_ventanaVendedor2 = new FondoPanel("./Imagen\\ventanaComprador.jpg");
         jPanel21 = new javax.swing.JPanel();
@@ -232,18 +251,27 @@ public class Main extends javax.swing.JFrame {
         jl_prop6CompradorEnMercado = new javax.swing.JLabel();
         jPanel20 = new javax.swing.JPanel();
         jPanel88 = new javax.swing.JPanel();
-        jPanel89 = new FondoPanel("./Imagen\\prop11.jpg");
         jl_prop1CompradorCompradas = new javax.swing.JLabel();
-        jPanel90 = new FondoPanel("./Imagen\\prop7.jpg");
         jl_prop2CompradorCompradas = new javax.swing.JLabel();
-        jPanel91 = new FondoPanel("./Imagen\\prop13.jpg");
-        jPanel92 = new FondoPanel("./Imagen\\prop15.jpg");
-        jPanel93 = new FondoPanel("./Imagen\\prop10.jpg");
-        jPanel94 = new FondoPanel("./Imagen\\prop9.jpg");
         jl_prop3CompradorCompradas = new javax.swing.JLabel();
         jl_prop4CompradorCompradas = new javax.swing.JLabel();
         jl_prop5CompradorCompradas = new javax.swing.JLabel();
         jl_prop6CompradorCompradas = new javax.swing.JLabel();
+        jButton22 = new javax.swing.JButton();
+        JL_propCompFoto1 = new javax.swing.JLabel();
+        jLabel95 = new javax.swing.JLabel();
+        jLabel97 = new javax.swing.JLabel();
+        jLabel98 = new javax.swing.JLabel();
+        jLabel99 = new javax.swing.JLabel();
+        jLabel100 = new javax.swing.JLabel();
+        jPanel89 = new javax.swing.JPanel();
+        jScrollPane11 = new javax.swing.JScrollPane();
+        jTable6 = new javax.swing.JTable();
+        jButton24 = new javax.swing.JButton();
+        jPanel90 = new javax.swing.JPanel();
+        jScrollPane12 = new javax.swing.JScrollPane();
+        jTable7 = new javax.swing.JTable();
+        jButton25 = new javax.swing.JButton();
         JF_ventanaAdmin = new javax.swing.JFrame();
         jPanel4 = new FondoPanel("./Imagen\\agente.jpg");
         jLabel4 = new javax.swing.JLabel();
@@ -255,6 +283,8 @@ public class Main extends javax.swing.JFrame {
         jButton6 = new javax.swing.JButton();
         jTabbedPane2 = new javax.swing.JTabbedPane();
         jPanel8 = new javax.swing.JPanel();
+        jScrollPane18 = new javax.swing.JScrollPane();
+        jTable13 = new javax.swing.JTable();
         jPanel7 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         JT_adminUsuarios = new javax.swing.JTable();
@@ -441,6 +471,7 @@ public class Main extends javax.swing.JFrame {
         jTextField8 = new javax.swing.JTextField();
         jTextField9 = new javax.swing.JTextField();
         jTextField10 = new javax.swing.JTextField();
+        jButton23 = new javax.swing.JButton();
         JF_modificarPropVendidas = new javax.swing.JFrame();
         jPanel48 = new FondoPanel("./Imagen\\modifcarPropVendida.jpg");
         jPanel49 = new javax.swing.JPanel();
@@ -1337,145 +1368,6 @@ public class Main extends javax.swing.JFrame {
 
         jTabbedPane1.setBackground(new java.awt.Color(254, 244, 252));
 
-        jPanel13.setBackground(new java.awt.Color(254, 244, 252));
-
-        javax.swing.GroupLayout jPanel54Layout = new javax.swing.GroupLayout(jPanel54);
-        jPanel54.setLayout(jPanel54Layout);
-        jPanel54Layout.setHorizontalGroup(
-            jPanel54Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 209, Short.MAX_VALUE)
-        );
-        jPanel54Layout.setVerticalGroup(
-            jPanel54Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-
-        jl_prop1VendedorenVenta.setText("Propiedad 1 id");
-
-        javax.swing.GroupLayout jPanel55Layout = new javax.swing.GroupLayout(jPanel55);
-        jPanel55.setLayout(jPanel55Layout);
-        jPanel55Layout.setHorizontalGroup(
-            jPanel55Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jPanel55Layout.setVerticalGroup(
-            jPanel55Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-
-        jl_prop2VendedorenVenta.setText("Propiedad 2 id");
-
-        javax.swing.GroupLayout jPanel56Layout = new javax.swing.GroupLayout(jPanel56);
-        jPanel56.setLayout(jPanel56Layout);
-        jPanel56Layout.setHorizontalGroup(
-            jPanel56Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 216, Short.MAX_VALUE)
-        );
-        jPanel56Layout.setVerticalGroup(
-            jPanel56Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 184, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout jPanel57Layout = new javax.swing.GroupLayout(jPanel57);
-        jPanel57.setLayout(jPanel57Layout);
-        jPanel57Layout.setHorizontalGroup(
-            jPanel57Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jPanel57Layout.setVerticalGroup(
-            jPanel57Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout jPanel58Layout = new javax.swing.GroupLayout(jPanel58);
-        jPanel58.setLayout(jPanel58Layout);
-        jPanel58Layout.setHorizontalGroup(
-            jPanel58Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jPanel58Layout.setVerticalGroup(
-            jPanel58Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 164, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout jPanel59Layout = new javax.swing.GroupLayout(jPanel59);
-        jPanel59.setLayout(jPanel59Layout);
-        jPanel59Layout.setHorizontalGroup(
-            jPanel59Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 199, Short.MAX_VALUE)
-        );
-        jPanel59Layout.setVerticalGroup(
-            jPanel59Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 160, Short.MAX_VALUE)
-        );
-
-        jl_prop3VendedorenVenta.setText("Propiedad 3 id");
-
-        jl_prop4VendedorenVenta.setText("Propiedad 4 id");
-
-        jl_prop5VendedorenVenta.setText("Propiedad 5 id");
-
-        jl_prop6VendedorenVenta.setText("Propiedad 6 id");
-
-        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
-        jPanel13.setLayout(jPanel13Layout);
-        jPanel13Layout.setHorizontalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel13Layout.createSequentialGroup()
-                .addGap(115, 115, 115)
-                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jl_prop2VendedorenVenta)
-                    .addComponent(jPanel54, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jl_prop1VendedorenVenta)
-                    .addComponent(jPanel55, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(54, 54, 54)
-                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jPanel56, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jPanel58, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(jl_prop3VendedorenVenta)
-                    .addComponent(jl_prop4VendedorenVenta))
-                .addGap(62, 62, 62)
-                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jl_prop6VendedorenVenta)
-                    .addComponent(jl_prop5VendedorenVenta)
-                    .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jPanel59, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jPanel57, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap(75, Short.MAX_VALUE))
-        );
-        jPanel13Layout.setVerticalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel13Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jPanel56, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel54, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel57, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jl_prop1VendedorenVenta)
-                    .addComponent(jl_prop3VendedorenVenta)
-                    .addComponent(jl_prop5VendedorenVenta))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel13Layout.createSequentialGroup()
-                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jPanel58, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel55, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jl_prop2VendedorenVenta)
-                            .addComponent(jl_prop4VendedorenVenta)))
-                    .addGroup(jPanel13Layout.createSequentialGroup()
-                        .addComponent(jPanel59, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jl_prop6VendedorenVenta)))
-                .addGap(0, 44, Short.MAX_VALUE))
-        );
-
-        jTabbedPane1.addTab("Propiedades en Venta", jPanel13);
-
         jPanel16.setBackground(new java.awt.Color(254, 244, 252));
 
         jPanel60.setBackground(new java.awt.Color(254, 244, 252));
@@ -1638,6 +1530,236 @@ public class Main extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Propiedades Vendidas", jPanel16);
 
+        jTable8.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "nombre", "ciudad", "direccion", "cantidad de dormitorios", "caracteristicas", "precio", "fechaPublicacion", "Agente", "Vendedor"
+            }
+        ));
+        jScrollPane13.setViewportView(jTable8);
+
+        jButton26.setText("Cargar propiedades");
+        jButton26.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton26MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel91Layout = new javax.swing.GroupLayout(jPanel91);
+        jPanel91.setLayout(jPanel91Layout);
+        jPanel91Layout.setHorizontalGroup(
+            jPanel91Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel91Layout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 873, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(38, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel91Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton26)
+                .addGap(340, 340, 340))
+        );
+        jPanel91Layout.setVerticalGroup(
+            jPanel91Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel91Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 403, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton26)
+                .addContainerGap(22, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Mis propiedades", jPanel91);
+
+        jPanel13.setBackground(new java.awt.Color(254, 244, 252));
+
+        javax.swing.GroupLayout jPanel54Layout = new javax.swing.GroupLayout(jPanel54);
+        jPanel54.setLayout(jPanel54Layout);
+        jPanel54Layout.setHorizontalGroup(
+            jPanel54Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 209, Short.MAX_VALUE)
+        );
+        jPanel54Layout.setVerticalGroup(
+            jPanel54Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        jl_prop1VendedorenVenta.setText("Propiedad 1 id");
+
+        javax.swing.GroupLayout jPanel55Layout = new javax.swing.GroupLayout(jPanel55);
+        jPanel55.setLayout(jPanel55Layout);
+        jPanel55Layout.setHorizontalGroup(
+            jPanel55Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanel55Layout.setVerticalGroup(
+            jPanel55Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        jl_prop2VendedorenVenta.setText("Propiedad 2 id");
+
+        javax.swing.GroupLayout jPanel56Layout = new javax.swing.GroupLayout(jPanel56);
+        jPanel56.setLayout(jPanel56Layout);
+        jPanel56Layout.setHorizontalGroup(
+            jPanel56Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 216, Short.MAX_VALUE)
+        );
+        jPanel56Layout.setVerticalGroup(
+            jPanel56Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 184, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jPanel57Layout = new javax.swing.GroupLayout(jPanel57);
+        jPanel57.setLayout(jPanel57Layout);
+        jPanel57Layout.setHorizontalGroup(
+            jPanel57Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanel57Layout.setVerticalGroup(
+            jPanel57Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jPanel58Layout = new javax.swing.GroupLayout(jPanel58);
+        jPanel58.setLayout(jPanel58Layout);
+        jPanel58Layout.setHorizontalGroup(
+            jPanel58Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanel58Layout.setVerticalGroup(
+            jPanel58Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 164, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jPanel59Layout = new javax.swing.GroupLayout(jPanel59);
+        jPanel59.setLayout(jPanel59Layout);
+        jPanel59Layout.setHorizontalGroup(
+            jPanel59Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 199, Short.MAX_VALUE)
+        );
+        jPanel59Layout.setVerticalGroup(
+            jPanel59Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 160, Short.MAX_VALUE)
+        );
+
+        jl_prop3VendedorenVenta.setText("Propiedad 3 id");
+
+        jl_prop4VendedorenVenta.setText("Propiedad 4 id");
+
+        jl_prop5VendedorenVenta.setText("Propiedad 5 id");
+
+        jl_prop6VendedorenVenta.setText("Propiedad 6 id");
+
+        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
+        jPanel13.setLayout(jPanel13Layout);
+        jPanel13Layout.setHorizontalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel13Layout.createSequentialGroup()
+                .addGap(115, 115, 115)
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jl_prop2VendedorenVenta)
+                    .addComponent(jPanel54, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jl_prop1VendedorenVenta)
+                    .addComponent(jPanel55, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(54, 54, 54)
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jPanel56, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel58, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jl_prop3VendedorenVenta)
+                    .addComponent(jl_prop4VendedorenVenta))
+                .addGap(62, 62, 62)
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jl_prop6VendedorenVenta)
+                    .addComponent(jl_prop5VendedorenVenta)
+                    .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jPanel59, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel57, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap(75, Short.MAX_VALUE))
+        );
+        jPanel13Layout.setVerticalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel13Layout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jPanel56, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel54, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel57, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jl_prop1VendedorenVenta)
+                    .addComponent(jl_prop3VendedorenVenta)
+                    .addComponent(jl_prop5VendedorenVenta))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel13Layout.createSequentialGroup()
+                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jPanel58, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jPanel55, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jl_prop2VendedorenVenta)
+                            .addComponent(jl_prop4VendedorenVenta)))
+                    .addGroup(jPanel13Layout.createSequentialGroup()
+                        .addComponent(jPanel59, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jl_prop6VendedorenVenta)))
+                .addGap(0, 44, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Propiedades en Venta", jPanel13);
+
+        jTable9.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "nombre", "ciudad", "direccion", "cantidad de dormitorios", "caracteristicas", "precio", "fechaPublicacion", "Agente", "Vendedor"
+            }
+        ));
+        jScrollPane14.setViewportView(jTable9);
+
+        jButton27.setText("Cargar propiedades");
+        jButton27.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton27MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel92Layout = new javax.swing.GroupLayout(jPanel92);
+        jPanel92.setLayout(jPanel92Layout);
+        jPanel92Layout.setHorizontalGroup(
+            jPanel92Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel92Layout.createSequentialGroup()
+                .addGroup(jPanel92Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel92Layout.createSequentialGroup()
+                        .addGap(39, 39, 39)
+                        .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 841, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel92Layout.createSequentialGroup()
+                        .addGap(382, 382, 382)
+                        .addComponent(jButton27)))
+                .addContainerGap(50, Short.MAX_VALUE))
+        );
+        jPanel92Layout.setVerticalGroup(
+            jPanel92Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel92Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton27)
+                .addContainerGap(29, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Propiedades Disponibles", jPanel92);
+
         javax.swing.GroupLayout jp_ventanaVendedorLayout = new javax.swing.GroupLayout(jp_ventanaVendedor);
         jp_ventanaVendedor.setLayout(jp_ventanaVendedorLayout);
         jp_ventanaVendedorLayout.setHorizontalGroup(
@@ -1658,7 +1780,7 @@ public class Main extends javax.swing.JFrame {
                 .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 495, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(66, Short.MAX_VALUE))
+                .addContainerGap(103, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout JF_ventanaVendedorLayout = new javax.swing.GroupLayout(JF_ventanaVendedor.getContentPane());
@@ -1997,6 +2119,96 @@ public class Main extends javax.swing.JFrame {
 
         TP_ventanaCliente.addTab("Propiedades Vendidas", jPanel18);
 
+        jTable11.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "nombre", "ciudad", "direccion", "cantidad de dormitorios", "caracteristicas", "precio", "fechaPublicacion", "Agente", "Vendedor"
+            }
+        ));
+        jScrollPane16.setViewportView(jTable11);
+
+        jButton28.setText("Cargar propiedades");
+        jButton28.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton28MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel93Layout = new javax.swing.GroupLayout(jPanel93);
+        jPanel93.setLayout(jPanel93Layout);
+        jPanel93Layout.setHorizontalGroup(
+            jPanel93Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel93Layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(jScrollPane16, javax.swing.GroupLayout.PREFERRED_SIZE, 873, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(35, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel93Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton28)
+                .addGap(380, 380, 380))
+        );
+        jPanel93Layout.setVerticalGroup(
+            jPanel93Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel93Layout.createSequentialGroup()
+                .addContainerGap(20, Short.MAX_VALUE)
+                .addComponent(jScrollPane16, javax.swing.GroupLayout.PREFERRED_SIZE, 403, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton28)
+                .addGap(12, 12, 12))
+        );
+
+        TP_ventanaCliente.addTab("Mis propiedades asignadas", jPanel93);
+
+        jTable12.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "nombre", "ciudad", "direccion", "cantidad dormitorios", "carcateristicas", "precio", "fechaPublicacion", "fechaVenta", "Agente", "Vendedor", "Comprador", "Comision"
+            }
+        ));
+        jScrollPane17.setViewportView(jTable12);
+
+        jButton29.setText("cargar propiedades");
+        jButton29.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton29MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel94Layout = new javax.swing.GroupLayout(jPanel94);
+        jPanel94.setLayout(jPanel94Layout);
+        jPanel94Layout.setHorizontalGroup(
+            jPanel94Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel94Layout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addComponent(jScrollPane17, javax.swing.GroupLayout.PREFERRED_SIZE, 874, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(45, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel94Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton29)
+                .addGap(424, 424, 424))
+        );
+        jPanel94Layout.setVerticalGroup(
+            jPanel94Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel94Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane17, javax.swing.GroupLayout.PREFERRED_SIZE, 408, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton29)
+                .addContainerGap(15, Short.MAX_VALUE))
+        );
+
+        TP_ventanaCliente.addTab("Propiedades Que he Vendido", jPanel94);
+
         javax.swing.GroupLayout jp_ventanaVendedor1Layout = new javax.swing.GroupLayout(jp_ventanaVendedor1);
         jp_ventanaVendedor1.setLayout(jp_ventanaVendedor1Layout);
         jp_ventanaVendedor1Layout.setHorizontalGroup(
@@ -2221,75 +2433,9 @@ public class Main extends javax.swing.JFrame {
 
         jPanel88.setBackground(new java.awt.Color(238, 238, 254));
 
-        javax.swing.GroupLayout jPanel89Layout = new javax.swing.GroupLayout(jPanel89);
-        jPanel89.setLayout(jPanel89Layout);
-        jPanel89Layout.setHorizontalGroup(
-            jPanel89Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 209, Short.MAX_VALUE)
-        );
-        jPanel89Layout.setVerticalGroup(
-            jPanel89Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-
         jl_prop1CompradorCompradas.setText("Propiedad 1 id");
 
-        javax.swing.GroupLayout jPanel90Layout = new javax.swing.GroupLayout(jPanel90);
-        jPanel90.setLayout(jPanel90Layout);
-        jPanel90Layout.setHorizontalGroup(
-            jPanel90Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jPanel90Layout.setVerticalGroup(
-            jPanel90Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-
         jl_prop2CompradorCompradas.setText("Propiedad 2 id");
-
-        javax.swing.GroupLayout jPanel91Layout = new javax.swing.GroupLayout(jPanel91);
-        jPanel91.setLayout(jPanel91Layout);
-        jPanel91Layout.setHorizontalGroup(
-            jPanel91Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 216, Short.MAX_VALUE)
-        );
-        jPanel91Layout.setVerticalGroup(
-            jPanel91Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 184, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout jPanel92Layout = new javax.swing.GroupLayout(jPanel92);
-        jPanel92.setLayout(jPanel92Layout);
-        jPanel92Layout.setHorizontalGroup(
-            jPanel92Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jPanel92Layout.setVerticalGroup(
-            jPanel92Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout jPanel93Layout = new javax.swing.GroupLayout(jPanel93);
-        jPanel93.setLayout(jPanel93Layout);
-        jPanel93Layout.setHorizontalGroup(
-            jPanel93Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jPanel93Layout.setVerticalGroup(
-            jPanel93Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 164, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout jPanel94Layout = new javax.swing.GroupLayout(jPanel94);
-        jPanel94.setLayout(jPanel94Layout);
-        jPanel94Layout.setHorizontalGroup(
-            jPanel94Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 199, Short.MAX_VALUE)
-        );
-        jPanel94Layout.setVerticalGroup(
-            jPanel94Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 160, Short.MAX_VALUE)
-        );
 
         jl_prop3CompradorCompradas.setText("Propiedad 3 id");
 
@@ -2299,61 +2445,92 @@ public class Main extends javax.swing.JFrame {
 
         jl_prop6CompradorCompradas.setText("Propiedad 6 id");
 
+        jButton22.setText("Cargar imagenes");
+        jButton22.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton22MouseClicked(evt);
+            }
+        });
+
+        jLabel100.setText("jLabel100");
+
         javax.swing.GroupLayout jPanel88Layout = new javax.swing.GroupLayout(jPanel88);
         jPanel88.setLayout(jPanel88Layout);
         jPanel88Layout.setHorizontalGroup(
             jPanel88Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel88Layout.createSequentialGroup()
-                .addGap(115, 115, 115)
-                .addGroup(jPanel88Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jl_prop2CompradorCompradas)
-                    .addComponent(jPanel89, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jl_prop1CompradorCompradas)
-                    .addComponent(jPanel90, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(148, 148, 148)
                 .addGroup(jPanel88Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel88Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jPanel91, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jPanel93, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(jl_prop3CompradorCompradas)
-                    .addComponent(jl_prop4CompradorCompradas))
-                .addGap(147, 147, 147)
+                    .addGroup(jPanel88Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jButton22)
+                        .addGap(39, 39, 39)
+                        .addComponent(JL_propCompFoto1, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel88Layout.createSequentialGroup()
+                        .addGap(153, 153, 153)
+                        .addGroup(jPanel88Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel98, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jl_prop2CompradorCompradas)
+                            .addComponent(jl_prop1CompradorCompradas))))
                 .addGroup(jPanel88Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jl_prop6CompradorCompradas)
-                    .addComponent(jl_prop5CompradorCompradas)
-                    .addGroup(jPanel88Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jPanel94, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jPanel92, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap(81, Short.MAX_VALUE))
+                    .addGroup(jPanel88Layout.createSequentialGroup()
+                        .addGap(150, 150, 150)
+                        .addGroup(jPanel88Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel95, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jl_prop3CompradorCompradas)
+                            .addComponent(jl_prop4CompradorCompradas)))
+                    .addGroup(jPanel88Layout.createSequentialGroup()
+                        .addGap(124, 124, 124)
+                        .addComponent(jLabel99, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(jPanel88Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel88Layout.createSequentialGroup()
+                        .addGap(147, 147, 147)
+                        .addGroup(jPanel88Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jl_prop6CompradorCompradas)
+                            .addComponent(jl_prop5CompradorCompradas))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel88Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 111, Short.MAX_VALUE)
+                        .addGroup(jPanel88Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel100, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel97, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(94, 94, 94))))
         );
         jPanel88Layout.setVerticalGroup(
             jPanel88Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel88Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addGroup(jPanel88Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jPanel91, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel89, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel92, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel88Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel88Layout.createSequentialGroup()
+                        .addGap(70, 70, 70)
+                        .addComponent(jLabel95, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel88Layout.createSequentialGroup()
+                        .addGap(56, 56, 56)
+                        .addGroup(jPanel88Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(JL_propCompFoto1, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel97, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel88Layout.createSequentialGroup()
+                        .addGap(37, 37, 37)
+                        .addComponent(jButton22)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel88Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jl_prop1CompradorCompradas)
                     .addComponent(jl_prop3CompradorCompradas)
                     .addComponent(jl_prop5CompradorCompradas))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel88Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel88Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel88Layout.createSequentialGroup()
-                        .addGroup(jPanel88Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jPanel93, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel90, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(53, 53, 53)
+                        .addComponent(jLabel100, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jl_prop6CompradorCompradas))
+                    .addGroup(jPanel88Layout.createSequentialGroup()
+                        .addGap(13, 13, 13)
+                        .addGroup(jPanel88Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel98, javax.swing.GroupLayout.DEFAULT_SIZE, 163, Short.MAX_VALUE)
+                            .addComponent(jLabel99, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel88Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jl_prop2CompradorCompradas)
-                            .addComponent(jl_prop4CompradorCompradas)))
-                    .addGroup(jPanel88Layout.createSequentialGroup()
-                        .addComponent(jPanel94, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jl_prop6CompradorCompradas)))
-                .addGap(0, 44, Short.MAX_VALUE))
+                            .addComponent(jl_prop4CompradorCompradas))))
+                .addGap(32, 32, 32))
         );
 
         javax.swing.GroupLayout jPanel20Layout = new javax.swing.GroupLayout(jPanel20);
@@ -2372,6 +2549,97 @@ public class Main extends javax.swing.JFrame {
         );
 
         TP_ventanaCliente1.addTab("Propiedades Compradas", jPanel20);
+
+        jTable6.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "nombre", "ciudad", "direccion", "cantidad dormitorios", "carcateristicas", "precio", "fechaPublicacion", "fechaVenta", "Agente", "Vendedor", "Comprador", "Comision"
+            }
+        ));
+        jScrollPane11.setViewportView(jTable6);
+
+        jButton24.setText("Cargar");
+        jButton24.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton24MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel89Layout = new javax.swing.GroupLayout(jPanel89);
+        jPanel89.setLayout(jPanel89Layout);
+        jPanel89Layout.setHorizontalGroup(
+            jPanel89Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel89Layout.createSequentialGroup()
+                .addGap(46, 46, 46)
+                .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 1023, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
+                .addComponent(jButton24)
+                .addContainerGap())
+        );
+        jPanel89Layout.setVerticalGroup(
+            jPanel89Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel89Layout.createSequentialGroup()
+                .addContainerGap(59, Short.MAX_VALUE)
+                .addGroup(jPanel89Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel89Layout.createSequentialGroup()
+                        .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(28, 28, 28))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel89Layout.createSequentialGroup()
+                        .addComponent(jButton24)
+                        .addGap(46, 46, 46))))
+        );
+
+        TP_ventanaCliente1.addTab("Mis Propiedades", jPanel89);
+
+        jTable7.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "nombre", "ciudad", "direccion", "cantidad de dormitorios", "caracteristicas", "precio", "fechaPublicacion", "Agente", "Vendedor"
+            }
+        ));
+        jScrollPane12.setViewportView(jTable7);
+
+        jButton25.setText("Cargar");
+        jButton25.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton25MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel90Layout = new javax.swing.GroupLayout(jPanel90);
+        jPanel90.setLayout(jPanel90Layout);
+        jPanel90Layout.setHorizontalGroup(
+            jPanel90Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel90Layout.createSequentialGroup()
+                .addGap(78, 78, 78)
+                .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 997, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(95, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel90Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton25)
+                .addGap(40, 40, 40))
+        );
+        jPanel90Layout.setVerticalGroup(
+            jPanel90Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel90Layout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton25)
+                .addContainerGap(21, Short.MAX_VALUE))
+        );
+
+        TP_ventanaCliente1.addTab("Todas las propiedades disponibles", jPanel90);
 
         javax.swing.GroupLayout jp_ventanaVendedor2Layout = new javax.swing.GroupLayout(jp_ventanaVendedor2);
         jp_ventanaVendedor2.setLayout(jp_ventanaVendedor2Layout);
@@ -2450,7 +2718,7 @@ public class Main extends javax.swing.JFrame {
                 .addComponent(jLabel5)
                 .addGap(18, 18, 18)
                 .addComponent(verReportes, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(75, Short.MAX_VALUE))
+                .addContainerGap(72, Short.MAX_VALUE))
         );
 
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
@@ -2498,18 +2766,37 @@ public class Main extends javax.swing.JFrame {
 
         jTabbedPane2.setBackground(new java.awt.Color(255, 255, 255));
 
+        jTable13.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "nombre", "ciudad", "direccion", "cantidad de dormitorios", "caracteristicas", "precio", "fechaPublicacion", "Agente", "Vendedor"
+            }
+        ));
+        jScrollPane18.setViewportView(jTable13);
+
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 725, Short.MAX_VALUE)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addComponent(jScrollPane18, javax.swing.GroupLayout.PREFERRED_SIZE, 659, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(37, Short.MAX_VALUE))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 355, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                .addContainerGap(18, Short.MAX_VALUE)
+                .addComponent(jScrollPane18, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(86, 86, 86))
         );
 
-        jTabbedPane2.addTab("Propiedades", jPanel8);
+        jTabbedPane2.addTab("Propiedades en Mercado", jPanel8);
 
         jPanel7.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -2601,35 +2888,39 @@ public class Main extends javax.swing.JFrame {
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGap(33, 33, 33)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel8)
-                    .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 589, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jPanel7Layout.createSequentialGroup()
-                            .addComponent(jLabel7)
-                            .addGap(28, 28, 28)
-                            .addComponent(tf_buscarUsuaios, javax.swing.GroupLayout.PREFERRED_SIZE, 427, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jb_buscarUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)))
-                    .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 478, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(103, Short.MAX_VALUE))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGap(33, 33, 33)
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel7Layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(jLabel7)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(tf_buscarUsuaios, javax.swing.GroupLayout.PREFERRED_SIZE, 427, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jb_buscarUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel8)
+                            .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 478, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 649, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(57, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
-                .addContainerGap(23, Short.MAX_VALUE)
+                .addGap(32, 32, 32)
                 .addComponent(jLabel8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tf_buscarUsuaios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7)
+                    .addComponent(tf_buscarUsuaios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jb_buscarUsuarios))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(49, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("Mantenimiento", jPanel7);
@@ -4271,12 +4562,21 @@ public class Main extends javax.swing.JFrame {
         jLabel87.setForeground(new java.awt.Color(102, 102, 255));
         jLabel87.setText("Precio:");
 
+        jButton23.setText("Seleccionar imagen");
+        jButton23.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton23MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel47Layout = new javax.swing.GroupLayout(jPanel47);
         jPanel47.setLayout(jPanel47Layout);
         jPanel47Layout.setHorizontalGroup(
             jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel47Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addGap(54, 54, 54)
+                .addComponent(jButton23)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(JB_crearPropiedadVenta1)
                 .addGap(20, 20, 20))
             .addGroup(jPanel47Layout.createSequentialGroup()
@@ -4377,7 +4677,9 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(jLabel81)
                     .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(11, 11, 11)
-                .addComponent(JB_crearPropiedadVenta1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(JB_crearPropiedadVenta1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton23))
                 .addContainerGap(17, Short.MAX_VALUE))
         );
 
@@ -4936,14 +5238,36 @@ public class Main extends javax.swing.JFrame {
                 String id = "";
                 ResultSet rs3 = db.mostrarElementos("SELECT id FROM usuario WHERE correo = '" + correo + "';");
                 while (rs3.next()) { // Aquí debe ser rs3 en lugar de rs
-                    id = rs3.getString("id");
+                    identidadUsuarioActivo = rs3.getInt("id");
                 }
-                db.HacerConsulta("UPDATE usuario SET activo = 'TRUE' WHERE id = " + id + ";");
+                db.HacerConsulta("UPDATE usuario SET activo = 'TRUE' WHERE id = " + identidadUsuarioActivo + ";");
                 ResultSet rs4 = db.mostrarElementos("SELECT rol FROM usuario WHERE correo = '" + correo + "';");
                 while (rs4.next()) {
                     rol = rs4.getString("rol");
                 }
                 if (rol.equals("administrador")) {
+                    ResultSet d = db.mostrarElementos("SELECT * FROM propiedades_en_mercado");
+                    DefaultTableModel model = (DefaultTableModel) jTable13.getModel();
+                    model.setRowCount(0);
+                    try {
+                        while (d.next()) {
+                            int idprop = d.getInt("idPropiedad");
+                            String nombre = d.getString("nombre");
+                            String ciudad = d.getString("ciudad");
+                            String direccion = d.getString("direccion");
+                            int cant_dor = d.getInt("cantidadDormitorios");
+                            String car = d.getString("caracteristicas");
+                            int precio = d.getInt("precio");
+                            String fecha = d.getString("fechaPublicacion");
+                            int agente = d.getInt("noIdentidad_Agente");
+                            int vendedor = d.getInt("noIdentidad_Vendedor");
+                            Object[] row = {idprop, nombre, ciudad, direccion, cant_dor, car, precio, fecha, agente, vendedor};
+                            model.addRow(row);
+                        }
+
+                    } catch (SQLException ex) {
+                        Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                     JF_ventanaAdmin.pack();
                     JF_ventanaAdmin.setLocationRelativeTo(JF_Principal);
                     JF_ventanaAdmin.setExtendedState(MAXIMIZED_BOTH);
@@ -4951,11 +5275,24 @@ public class Main extends javax.swing.JFrame {
                     JF_ventanaAdmin.setVisible(true);
 
                 } else if (rol.equals("vendedor")) {
-
+                    JF_ventanaVendedor.pack();
+                    JF_ventanaVendedor.setLocationRelativeTo(JF_Principal);
+                    JF_ventanaVendedor.setExtendedState(MAXIMIZED_BOTH);
+                    JF_Principal.setVisible(false);
+                    JF_ventanaVendedor.setVisible(true);
                 } else if (rol.equals("comprador")) {
-
+                    JF_ventanacomprador.pack();
+                    JF_ventanacomprador.setLocationRelativeTo(JF_Principal);
+                    JF_ventanacomprador.setExtendedState(MAXIMIZED_BOTH);
+                    JF_Principal.setVisible(false);
+                    JF_ventanacomprador.setVisible(true);
                 } else if (rol.equals("agente")) {
 
+                    JF_ventanaAgente.pack();
+                    JF_ventanaAgente.setLocationRelativeTo(JF_Principal);
+                    JF_ventanaAgente.setExtendedState(MAXIMIZED_BOTH);
+                    JF_Principal.setVisible(false);
+                    JF_ventanaAgente.setVisible(true);
                 }
 
             } else {
@@ -5801,8 +6138,8 @@ public class Main extends javax.swing.JFrame {
         if (respuesta == JFileChooser.APPROVE_OPTION) {
             ruta = jf.getSelectedFile().getPath();
             String carpetaDestino = "./imagenCasas"; // Eliminar las comillas dobles
-            String nuevoNombre = tf_crearPropiedadenVentaid.getText()+".jpg"; 
-            
+            String nuevoNombre = tf_crearPropiedadenVentaid.getText() + ".jpg";
+
             try {
                 // Copiar la imagen a la carpeta de destino con el nuevo nombre
                 Path origenPath = Paths.get(ruta);
@@ -5816,40 +6153,279 @@ public class Main extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton21MouseClicked
 
+    private void jButton22MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton22MouseClicked
+        // TODO add your handling code here:
+        try {
+            ResultSet rs = db.mostrarElementos("CALL obtenerCasasComprador(" + identidadUsuarioActivo + ");");
+            DefaultListModel<String> modeloLista = new DefaultListModel<>();
+            int idprop = 0;
+            ArrayList fotos = new ArrayList();
+            try {
+                while (rs.next()) {
+                    idprop = rs.getInt("idPropiedad");
+                    fotos.add(idprop);
+                }
+
+            } catch (SQLException ex) {
+                Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            //Primera imagen -----------------------
+            String nombreImagen = fotos.get(0).toString() + ".jpg"; // Obtener el nombre de la imagen
+            String rutaImagen = "./imagenCasas/" + nombreImagen; // Ruta completa de la imagen
+            Image m = new ImageIcon(rutaImagen).getImage();
+            ImageIcon mi = new ImageIcon(m.getScaledInstance(JL_propCompFoto1.getWidth(), JL_propCompFoto1.getHeight(), JL_propCompFoto1.getWidth()));
+            JL_propCompFoto1.setIcon(mi);
+
+            //Segunda imagen ------------------------
+            String nombreImagen2 = fotos.get(1).toString() + ".jpg"; // Obtener el nombre de la imagen
+            String rutaImagen2 = "./imagenCasas/" + nombreImagen2; // Ruta completa de la imagen
+            Image m2 = new ImageIcon(rutaImagen2).getImage();
+            ImageIcon mi2 = new ImageIcon(m2.getScaledInstance(jLabel95.getWidth(), jLabel95.getHeight(), jLabel95.getWidth()));
+            jLabel95.setIcon(mi2);
+
+            //Tercera imagen ------------------------
+            String nombreImagen3 = fotos.get(2).toString() + ".jpg"; // Obtener el nombre de la imagen
+            String rutaImagen3 = "./imagenCasas/" + nombreImagen3; // Ruta completa de la imagen
+            Image m3 = new ImageIcon(rutaImagen3).getImage();
+            ImageIcon mi3 = new ImageIcon(m3.getScaledInstance(jLabel97.getWidth(), jLabel97.getHeight(), jLabel97.getWidth()));
+            jLabel97.setIcon(mi3);
+
+            //Cuarta imagen -------------------------
+            String nombreImagen4 = fotos.get(3).toString() + ".jpg"; // Obtener el nombre de la imagen
+            String rutaImagen4 = "./imagenCasas/" + nombreImagen4; // Ruta completa de la imagen
+            Image m4 = new ImageIcon(rutaImagen4).getImage();
+            ImageIcon mi4 = new ImageIcon(m4.getScaledInstance(jLabel98.getWidth(), jLabel98.getHeight(), jLabel98.getWidth()));
+            jLabel98.setIcon(mi4);
+
+            //Quinta imagen -------------------------
+            String nombreImagen5 = fotos.get(4).toString() + ".jpg"; // Obtener el nombre de la imagen
+            String rutaImagen5 = "./imagenCasas/" + nombreImagen5; // Ruta completa de la imagen
+            Image m5 = new ImageIcon(rutaImagen5).getImage();
+            ImageIcon mi5 = new ImageIcon(m5.getScaledInstance(jLabel99.getWidth(), jLabel99.getHeight(), jLabel99.getWidth()));
+            jLabel99.setIcon(mi5);
+        } catch (IndexOutOfBoundsException e) {
+            JOptionPane.showMessageDialog(JF_ventanacomprador, "No hay suficientes imagenes para llenar el resto de los espacios");
+        }
+    
+    }//GEN-LAST:event_jButton22MouseClicked
+
+    private void jButton23MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton23MouseClicked
+        // TODO add your handling code here:
+        String ruta = "";
+        JFileChooser jf = new JFileChooser();
+        FileNameExtensionFilter filtrado = new FileNameExtensionFilter("JPG, PNG", "jpg", "png");
+        jf.setFileFilter(filtrado);
+
+        int respuesta = jf.showOpenDialog(JF_crearPropiedadVenta);
+        if (respuesta == JFileChooser.APPROVE_OPTION) {
+            ruta = jf.getSelectedFile().getPath();
+            String carpetaDestino = "./imagenCasas"; // Eliminar las comillas dobles
+            String nuevoNombre = tf_crearPropiedadenvendidaId.getText() + ".jpg";
+
+            try {
+                // Copiar la imagen a la carpeta de destino con el nuevo nombre
+                Path origenPath = Paths.get(ruta);
+                Path destinoPath = Paths.get(carpetaDestino + "/" + nuevoNombre);
+                Files.copy(origenPath, destinoPath, StandardCopyOption.REPLACE_EXISTING);
+
+                System.out.println("Imagen guardada en: " + destinoPath.toString());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }//GEN-LAST:event_jButton23MouseClicked
+
+    private void jButton24MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton24MouseClicked
+        // TODO add your handling code here:
+        //System.out.println(identidadUsuarioActivo);
+        ResultSet rs = db.mostrarElementos("CALL ventasDelComprador(" + identidadUsuarioActivo + ");");
+        DefaultTableModel model = (DefaultTableModel) jTable6.getModel();
+        model.setRowCount(0);
+        try {
+            while (rs.next()) {
+                String nombre = rs.getString("nombre");
+                String ciudad = rs.getString("ciudad");
+                String direccion = rs.getString("direccion");
+                int cant_dor = rs.getInt("cantidadDormitorios");
+                String car = rs.getString("caracteristicas");
+                int precio = rs.getInt("precio");
+                String fecha = rs.getString("fechaPublicacion");
+                String fechaVenta = rs.getString("fechaVenta");
+                int agente = rs.getInt("noIdentidad_Agente");
+                int vendedor = rs.getInt("noIdentidad_Vendedor");
+                int comprador = rs.getInt("noIdentidad_Comprador");
+                int comision = rs.getInt("comisionVenta");
+                Object[] row = {nombre, ciudad, direccion, cant_dor, car, precio, fecha, fechaVenta, agente, vendedor, comprador, comision};
+                model.addRow(row);
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton24MouseClicked
+
+    private void jButton25MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton25MouseClicked
+        // TODO add your handling code here:
+        ResultSet rs = db.mostrarElementos("SELECT * FROM propiedades_en_mercado");
+        DefaultTableModel model = (DefaultTableModel) jTable7.getModel();
+        model.setRowCount(0);
+        try {
+            while (rs.next()) {
+                String nombre = rs.getString("nombre");
+                String ciudad = rs.getString("ciudad");
+                String direccion = rs.getString("direccion");
+                int cant_dor = rs.getInt("cantidadDormitorios");
+                String car = rs.getString("caracteristicas");
+                int precio = rs.getInt("precio");
+                String fecha = rs.getString("fechaPublicacion");
+                int agente = rs.getInt("noIdentidad_Agente");
+                int vendedor = rs.getInt("noIdentidad_Vendedor");
+                Object[] row = {nombre, ciudad, direccion, cant_dor, car, precio, fecha, agente, vendedor};
+                model.addRow(row);
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton25MouseClicked
+
+    private void jButton26MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton26MouseClicked
+        // TODO add your handling code here:
+        ResultSet rs = db.mostrarElementos("CALL propiedadesVendedor(" + identidadUsuarioActivo + ");");
+        DefaultTableModel model = (DefaultTableModel) jTable8.getModel();
+        model.setRowCount(0);
+        try {
+            while (rs.next()) {
+                String nombre = rs.getString("nombre");
+                String ciudad = rs.getString("ciudad");
+                String direccion = rs.getString("direccion");
+                int cant_dor = rs.getInt("cantidadDormitorios");
+                String car = rs.getString("caracteristicas");
+                int precio = rs.getInt("precio");
+                String fecha = rs.getString("fechaPublicacion");
+                int agente = rs.getInt("noIdentidad_Agente");
+                int vendedor = rs.getInt("noIdentidad_Vendedor");
+                Object[] row = {nombre, ciudad, direccion, cant_dor, car, precio, fecha, agente, vendedor};
+                model.addRow(row);
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton26MouseClicked
+
+    private void jButton27MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton27MouseClicked
+        // TODO add your handling code here:
+        ResultSet rs = db.mostrarElementos("SELECT * FROM propiedades_en_mercado");
+        DefaultTableModel model = (DefaultTableModel) jTable9.getModel();
+        model.setRowCount(0);
+        try {
+            while (rs.next()) {
+                String nombre = rs.getString("nombre");
+                String ciudad = rs.getString("ciudad");
+                String direccion = rs.getString("direccion");
+                int cant_dor = rs.getInt("cantidadDormitorios");
+                String car = rs.getString("caracteristicas");
+                int precio = rs.getInt("precio");
+                String fecha = rs.getString("fechaPublicacion");
+                int agente = rs.getInt("noIdentidad_Agente");
+                int vendedor = rs.getInt("noIdentidad_Vendedor");
+                Object[] row = {nombre, ciudad, direccion, cant_dor, car, precio, fecha, agente, vendedor};
+                model.addRow(row);
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton27MouseClicked
+
+    private void jButton28MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton28MouseClicked
+        // TODO add your handling code here:
+        ResultSet rs = db.mostrarElementos("CALL propiedadesAgentesAsignadas(" + identidadUsuarioActivo + ");");
+        DefaultTableModel model = (DefaultTableModel) jTable11.getModel();
+        model.setRowCount(0);
+        try {
+            while (rs.next()) {
+                String nombre = rs.getString("nombre");
+                String ciudad = rs.getString("ciudad");
+                String direccion = rs.getString("direccion");
+                int cant_dor = rs.getInt("cantidadDormitorios");
+                String car = rs.getString("caracteristicas");
+                int precio = rs.getInt("precio");
+                String fecha = rs.getString("fechaPublicacion");
+                int agente = rs.getInt("noIdentidad_Agente");
+                int vendedor = rs.getInt("noIdentidad_Vendedor");
+                Object[] row = {nombre, ciudad, direccion, cant_dor, car, precio, fecha, agente, vendedor};
+                model.addRow(row);
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton28MouseClicked
+
+    private void jButton29MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton29MouseClicked
+        // TODO add your handling code here:
+        ResultSet rs = db.mostrarElementos("CALL propidedadesAgente(" + identidadUsuarioActivo + ");");
+        DefaultTableModel model = (DefaultTableModel) jTable12.getModel();
+        model.setRowCount(0);
+        try {
+            while (rs.next()) {
+                String nombre = rs.getString("nombre");
+                String ciudad = rs.getString("ciudad");
+                String direccion = rs.getString("direccion");
+                int cant_dor = rs.getInt("cantidadDormitorios");
+                String car = rs.getString("caracteristicas");
+                int precio = rs.getInt("precio");
+                String fecha = rs.getString("fechaPublicacion");
+                String fechaVenta = rs.getString("fechaVenta");
+                int agente = rs.getInt("noIdentidad_Agente");
+                int vendedor = rs.getInt("noIdentidad_Vendedor");
+                int comprador = rs.getInt("noIdentidad_Comprador");
+                int comision = rs.getInt("comisionVenta");
+                Object[] row = {nombre, ciudad, direccion, cant_dor, car, precio, fecha, fechaVenta, agente, vendedor, comprador, comision};
+                model.addRow(row);
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton29MouseClicked
+
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+    /* Set the Nimbus look and feel */
+    //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+    /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
+     */
+    try {
+        for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+            if ("Nimbus".equals(info.getName())) {
+                javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                break;
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Main().setVisible(false);
-            }
-        });
+    } catch (ClassNotFoundException ex) {
+        java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+    } catch (InstantiationException ex) {
+        java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+    } catch (IllegalAccessException ex) {
+        java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+    } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
     }
+    //</editor-fold>
+
+    /* Create and display the form */
+    java.awt.EventQueue.invokeLater(new Runnable() {
+        public void run() {
+            new Main().setVisible(false);
+        }
+    });
+}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> CB_modificarAgente;
@@ -5913,6 +6489,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JFrame JF_ventanaVendedor;
     private javax.swing.JFrame JF_ventanacomprador;
     private javax.swing.JLabel JL_Welcome;
+    private javax.swing.JLabel JL_propCompFoto1;
     private javax.swing.JPanel JP_Portada;
     private javax.swing.JTable JT_adminUsuarios;
     private javax.swing.JTable JT_propiedadesVendidas;
@@ -5946,6 +6523,14 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton20;
     private javax.swing.JButton jButton21;
+    private javax.swing.JButton jButton22;
+    private javax.swing.JButton jButton23;
+    private javax.swing.JButton jButton24;
+    private javax.swing.JButton jButton25;
+    private javax.swing.JButton jButton26;
+    private javax.swing.JButton jButton27;
+    private javax.swing.JButton jButton28;
+    private javax.swing.JButton jButton29;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
@@ -5955,6 +6540,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel100;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
@@ -6047,6 +6633,10 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel92;
     private javax.swing.JLabel jLabel93;
     private javax.swing.JLabel jLabel94;
+    private javax.swing.JLabel jLabel95;
+    private javax.swing.JLabel jLabel97;
+    private javax.swing.JLabel jLabel98;
+    private javax.swing.JLabel jLabel99;
     private javax.swing.JList<String> jList1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
@@ -6142,6 +6732,13 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel94;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
+    private javax.swing.JScrollPane jScrollPane11;
+    private javax.swing.JScrollPane jScrollPane12;
+    private javax.swing.JScrollPane jScrollPane13;
+    private javax.swing.JScrollPane jScrollPane14;
+    private javax.swing.JScrollPane jScrollPane16;
+    private javax.swing.JScrollPane jScrollPane17;
+    private javax.swing.JScrollPane jScrollPane18;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
@@ -6153,10 +6750,17 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTable11;
+    private javax.swing.JTable jTable12;
+    private javax.swing.JTable jTable13;
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
     private javax.swing.JTable jTable4;
     private javax.swing.JTable jTable5;
+    private javax.swing.JTable jTable6;
+    private javax.swing.JTable jTable7;
+    private javax.swing.JTable jTable8;
+    private javax.swing.JTable jTable9;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField2;
@@ -6257,6 +6861,7 @@ public class Main extends javax.swing.JFrame {
 
     //Variables globales
     DB_Manager db = new DB_Manager();
+    int identidadUsuarioActivo = 0;
 //Este metodo es para reproducir sonidos en el programa
 
     public static Clip playMusic(String filepath) {
