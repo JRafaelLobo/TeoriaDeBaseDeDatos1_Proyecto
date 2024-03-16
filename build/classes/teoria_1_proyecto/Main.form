@@ -74,9 +74,6 @@
       </SubComponents>
     </Container>
     <Container class="javax.swing.JFrame" name="JF_Agentes">
-      <Properties>
-        <Property name="defaultCloseOperation" type="int" value="3"/>
-      </Properties>
 
       <Layout>
         <DimensionLayout dim="0">
@@ -307,9 +304,6 @@
       </SubComponents>
     </Container>
     <Container class="javax.swing.JFrame" name="JF_Compradores">
-      <Properties>
-        <Property name="defaultCloseOperation" type="int" value="3"/>
-      </Properties>
 
       <Layout>
         <DimensionLayout dim="0">
@@ -515,9 +509,6 @@
       </SubComponents>
     </Container>
     <Container class="javax.swing.JFrame" name="JF_Vendedor">
-      <Properties>
-        <Property name="defaultCloseOperation" type="int" value="3"/>
-      </Properties>
 
       <Layout>
         <DimensionLayout dim="0">
@@ -676,9 +667,6 @@
       </SubComponents>
     </Container>
     <Container class="javax.swing.JFrame" name="JF_Vendidas">
-      <Properties>
-        <Property name="defaultCloseOperation" type="int" value="3"/>
-      </Properties>
 
       <Layout>
         <DimensionLayout dim="0">
@@ -751,9 +739,6 @@
       </SubComponents>
     </Container>
     <Container class="javax.swing.JFrame" name="JF_Principal">
-      <Properties>
-        <Property name="defaultCloseOperation" type="int" value="3"/>
-      </Properties>
 
       <Layout>
         <DimensionLayout dim="0">
@@ -974,9 +959,6 @@
       </SubComponents>
     </Container>
     <Container class="javax.swing.JFrame" name="JF_crearAgente">
-      <Properties>
-        <Property name="defaultCloseOperation" type="int" value="3"/>
-      </Properties>
 
       <Layout>
         <DimensionLayout dim="0">
@@ -1229,9 +1211,6 @@
       </SubComponents>
     </Container>
     <Container class="javax.swing.JFrame" name="JF_modificarAgente">
-      <Properties>
-        <Property name="defaultCloseOperation" type="int" value="3"/>
-      </Properties>
 
       <Layout>
         <DimensionLayout dim="0">
@@ -1438,9 +1417,6 @@
       </SubComponents>
     </Container>
     <Container class="javax.swing.JFrame" name="JF_ventanaVendedor">
-      <Properties>
-        <Property name="defaultCloseOperation" type="int" value="3"/>
-      </Properties>
 
       <Layout>
         <DimensionLayout dim="0">
@@ -2016,9 +1992,6 @@
       </SubComponents>
     </Container>
     <Container class="javax.swing.JFrame" name="JF_ventanaAgente">
-      <Properties>
-        <Property name="defaultCloseOperation" type="int" value="3"/>
-      </Properties>
 
       <Layout>
         <DimensionLayout dim="0">
@@ -3335,10 +3308,18 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
-                          <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="154" max="32767" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                                  <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                                  <Component id="verReportes" min="-2" pref="149" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -3347,7 +3328,9 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                           <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="129" max="32767" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="verReportes" min="-2" pref="36" max="-2" attributes="0"/>
+                          <EmptySpace pref="75" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -3360,6 +3343,14 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Reportes"/>
                   </Properties>
+                </Component>
+                <Component class="javax.swing.JButton" name="verReportes">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Ver reportes"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="verReportesMouseClicked"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
@@ -3382,7 +3373,7 @@
                               </Group>
                               <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace pref="103" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -3660,9 +3651,6 @@
       </SubComponents>
     </Container>
     <Container class="javax.swing.JFrame" name="JF_crudPropiedadesVenta">
-      <Properties>
-        <Property name="defaultCloseOperation" type="int" value="3"/>
-      </Properties>
 
       <Layout>
         <DimensionLayout dim="0">
@@ -3877,6 +3865,9 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Buscar"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton9MouseClicked"/>
+                  </Events>
                 </Component>
                 <Container class="javax.swing.JScrollPane" name="jScrollPane5">
                   <AuxValues>
@@ -3888,11 +3879,17 @@
                     <Component class="javax.swing.JTable" name="jTable4">
                       <Properties>
                         <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                          <Table columnCount="4" rowCount="4">
-                            <Column editable="true" title="Title 1" type="java.lang.Object"/>
-                            <Column editable="true" title="Title 2" type="java.lang.Object"/>
-                            <Column editable="true" title="Title 3" type="java.lang.Object"/>
-                            <Column editable="true" title="Title 4" type="java.lang.Object"/>
+                          <Table columnCount="10" rowCount="4">
+                            <Column editable="true" title="id" type="java.lang.Object"/>
+                            <Column editable="true" title="nombre" type="java.lang.Object"/>
+                            <Column editable="true" title="ciudad" type="java.lang.Object"/>
+                            <Column editable="true" title="direccion" type="java.lang.Object"/>
+                            <Column editable="true" title="cant_dormitorios" type="java.lang.Object"/>
+                            <Column editable="true" title="caracteristicas" type="java.lang.Object"/>
+                            <Column editable="true" title="precio" type="java.lang.Object"/>
+                            <Column editable="true" title="fechaPub" type="java.lang.Object"/>
+                            <Column editable="true" title="agente" type="java.lang.Object"/>
+                            <Column editable="true" title="vendedor" type="java.lang.Object"/>
                           </Table>
                         </Property>
                       </Properties>
@@ -3932,9 +3929,6 @@
       </SubComponents>
     </Container>
     <Container class="javax.swing.JFrame" name="JF_eliminarAgente">
-      <Properties>
-        <Property name="defaultCloseOperation" type="int" value="3"/>
-      </Properties>
 
       <Layout>
         <DimensionLayout dim="0">
@@ -4097,9 +4091,6 @@
       </SubComponents>
     </Container>
     <Container class="javax.swing.JFrame" name="JF_crearVendedor">
-      <Properties>
-        <Property name="defaultCloseOperation" type="int" value="3"/>
-      </Properties>
 
       <Layout>
         <DimensionLayout dim="0">
@@ -4327,9 +4318,6 @@
       </SubComponents>
     </Container>
     <Container class="javax.swing.JFrame" name="JF_modificarVendedor">
-      <Properties>
-        <Property name="defaultCloseOperation" type="int" value="3"/>
-      </Properties>
 
       <Layout>
         <DimensionLayout dim="0">
@@ -4550,9 +4538,6 @@
       </SubComponents>
     </Container>
     <Container class="javax.swing.JFrame" name="JF_eliminarVendedor">
-      <Properties>
-        <Property name="defaultCloseOperation" type="int" value="3"/>
-      </Properties>
 
       <Layout>
         <DimensionLayout dim="0">
@@ -4708,9 +4693,6 @@
       </SubComponents>
     </Container>
     <Container class="javax.swing.JFrame" name="JF_crearComprador">
-      <Properties>
-        <Property name="defaultCloseOperation" type="int" value="3"/>
-      </Properties>
 
       <Layout>
         <DimensionLayout dim="0">
@@ -4938,9 +4920,6 @@
       </SubComponents>
     </Container>
     <Container class="javax.swing.JFrame" name="JF_modificarComprador">
-      <Properties>
-        <Property name="defaultCloseOperation" type="int" value="3"/>
-      </Properties>
 
       <Layout>
         <DimensionLayout dim="0">
@@ -5164,9 +5143,6 @@
       </SubComponents>
     </Container>
     <Container class="javax.swing.JFrame" name="JF_eliminarComprador">
-      <Properties>
-        <Property name="defaultCloseOperation" type="int" value="3"/>
-      </Properties>
 
       <Layout>
         <DimensionLayout dim="0">
@@ -5325,9 +5301,6 @@
       </SubComponents>
     </Container>
     <Container class="javax.swing.JFrame" name="JF_crearPropiedadVenta">
-      <Properties>
-        <Property name="defaultCloseOperation" type="int" value="3"/>
-      </Properties>
 
       <Layout>
         <DimensionLayout dim="0">
@@ -5356,7 +5329,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                       <Component id="jPanel41" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="53" max="32767" attributes="0"/>
+                      <EmptySpace pref="86" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -5365,7 +5338,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                       <Component id="jPanel41" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="80" max="32767" attributes="0"/>
+                      <EmptySpace pref="42" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -5383,36 +5356,45 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel59" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel58" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel56" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel57" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel54" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel60" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel63" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel62" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel64" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Component id="jLabel61" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="tf_crearPropiedadenVentaDireccion" alignment="0" max="32767" attributes="0"/>
-                              <Component id="tf_crearPropiedadenVentanombre" alignment="0" max="32767" attributes="0"/>
-                              <Component id="tf_crearPropiedadenVentaCiudad" alignment="0" max="32767" attributes="0"/>
-                              <Component id="tf_crearPropiedadenVentaid" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jScrollPane6" alignment="0" max="32767" attributes="0"/>
-                              <Component id="tf_crearPropiedadenVentaidAgente" alignment="1" max="32767" attributes="0"/>
-                              <Component id="tf_crearPropiedadenVentaidVendedor" alignment="1" max="32767" attributes="0"/>
-                              <Component id="jTextField3" max="32767" attributes="0"/>
-                              <Component id="jTextField4" max="32767" attributes="0"/>
-                              <Component id="jTextField5" max="32767" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                                          <Component id="jLabel59" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel58" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel56" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel57" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel54" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel60" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel63" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel62" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel64" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Component id="jLabel61" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="tf_crearPropiedadenVentaDireccion" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="tf_crearPropiedadenVentanombre" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="tf_crearPropiedadenVentaCiudad" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="tf_crearPropiedadenVentaid" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="jScrollPane6" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="tf_crearPropiedadenVentaidAgente" alignment="1" max="32767" attributes="0"/>
+                                      <Component id="tf_crearPropiedadenVentaidVendedor" alignment="1" max="32767" attributes="0"/>
+                                      <Component id="jTextField3" max="32767" attributes="0"/>
+                                      <Component id="jTextField4" max="32767" attributes="0"/>
+                                      <Component id="jTextField5" max="32767" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                                  <Component id="jButton21" min="-2" pref="229" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                              </Group>
                           </Group>
-                          <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace min="0" pref="17" max="32767" attributes="0"/>
@@ -5482,8 +5464,11 @@
                               <Component id="jLabel62" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="JB_crearPropiedadVenta" min="-2" pref="28" max="-2" attributes="0"/>
-                          <EmptySpace pref="15" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="JB_crearPropiedadVenta" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
+                              <Component id="jButton21" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace pref="53" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -5699,6 +5684,14 @@
                 </Component>
                 <Component class="javax.swing.JTextField" name="jTextField5">
                 </Component>
+                <Component class="javax.swing.JButton" name="jButton21">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Seleccionar imagen"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton21MouseClicked"/>
+                  </Events>
+                </Component>
               </SubComponents>
             </Container>
           </SubComponents>
@@ -5706,9 +5699,6 @@
       </SubComponents>
     </Container>
     <Container class="javax.swing.JFrame" name="JF_modificarPropiedadVenta">
-      <Properties>
-        <Property name="defaultCloseOperation" type="int" value="3"/>
-      </Properties>
 
       <Layout>
         <DimensionLayout dim="0">
@@ -5889,12 +5879,7 @@
                 <Component class="javax.swing.JComboBox" name="CB_modificarPropEnVenta">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="4">
-                        <StringItem index="0" value="Item 1"/>
-                        <StringItem index="1" value="Item 2"/>
-                        <StringItem index="2" value="Item 3"/>
-                        <StringItem index="3" value="Item 4"/>
-                      </StringArray>
+                      <StringArray count="0"/>
                     </Property>
                   </Properties>
                   <AuxValues>
@@ -5904,11 +5889,16 @@
                 <Component class="javax.swing.JComboBox" name="cb_atributoPropEnVenta">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="4">
-                        <StringItem index="0" value="Item 1"/>
-                        <StringItem index="1" value="Item 2"/>
-                        <StringItem index="2" value="Item 3"/>
-                        <StringItem index="3" value="Item 4"/>
+                      <StringArray count="9">
+                        <StringItem index="0" value="nombre"/>
+                        <StringItem index="1" value="ciudad"/>
+                        <StringItem index="2" value="direccion "/>
+                        <StringItem index="3" value="cantidadDormitorios  "/>
+                        <StringItem index="4" value="caracteristicas  "/>
+                        <StringItem index="5" value="precio "/>
+                        <StringItem index="6" value="fechaPublicacion"/>
+                        <StringItem index="7" value="noIdentidad_Agente"/>
+                        <StringItem index="8" value="noIdentidad_Vendedor"/>
                       </StringArray>
                     </Property>
                   </Properties>
@@ -5923,9 +5913,6 @@
       </SubComponents>
     </Container>
     <Container class="javax.swing.JFrame" name="JF_eliminarPropiedadVenta">
-      <Properties>
-        <Property name="defaultCloseOperation" type="int" value="3"/>
-      </Properties>
 
       <Layout>
         <DimensionLayout dim="0">
@@ -6039,12 +6026,7 @@
                       <Font name="Segoe UI" size="14" style="0"/>
                     </Property>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="4">
-                        <StringItem index="0" value="Item 1"/>
-                        <StringItem index="1" value="Item 2"/>
-                        <StringItem index="2" value="Item 3"/>
-                        <StringItem index="3" value="Item 4"/>
-                      </StringArray>
+                      <StringArray count="0"/>
                     </Property>
                   </Properties>
                   <AuxValues>
@@ -6086,9 +6068,6 @@
       </SubComponents>
     </Container>
     <Container class="javax.swing.JFrame" name="JF_crudPropiedadesVendidas">
-      <Properties>
-        <Property name="defaultCloseOperation" type="int" value="3"/>
-      </Properties>
 
       <Layout>
         <DimensionLayout dim="0">
@@ -6307,6 +6286,9 @@
                     </Property>
                     <Property name="text" type="java.lang.String" value="Buscar"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="JB_buscarPropiedadesVendidasMouseClicked"/>
+                  </Events>
                 </Component>
                 <Container class="javax.swing.JScrollPane" name="jScrollPane7">
                   <AuxValues>
@@ -6318,11 +6300,20 @@
                     <Component class="javax.swing.JTable" name="JT_propiedadesVendidas">
                       <Properties>
                         <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                          <Table columnCount="4" rowCount="4">
-                            <Column editable="true" title="Title 1" type="java.lang.Object"/>
-                            <Column editable="true" title="Title 2" type="java.lang.Object"/>
-                            <Column editable="true" title="Title 3" type="java.lang.Object"/>
-                            <Column editable="true" title="Title 4" type="java.lang.Object"/>
+                          <Table columnCount="13" rowCount="4">
+                            <Column editable="true" title="id" type="java.lang.Object"/>
+                            <Column editable="true" title="nombre" type="java.lang.Object"/>
+                            <Column editable="true" title="ciudad" type="java.lang.Object"/>
+                            <Column editable="true" title="direccion" type="java.lang.Object"/>
+                            <Column editable="true" title="cant_dormitorios" type="java.lang.Object"/>
+                            <Column editable="true" title="caracteristicas" type="java.lang.Object"/>
+                            <Column editable="true" title="precio" type="java.lang.Object"/>
+                            <Column editable="true" title="fechaPublicacion" type="java.lang.Object"/>
+                            <Column editable="true" title="fechaVenta" type="java.lang.Object"/>
+                            <Column editable="true" title="noIdentidad_Agente" type="java.lang.Object"/>
+                            <Column editable="true" title="noIdentidad_Vendedor" type="java.lang.Object"/>
+                            <Column editable="true" title="noIdentidad_Comprador" type="java.lang.Object"/>
+                            <Column editable="true" title="comisionVenta" type="java.lang.Object"/>
                           </Table>
                         </Property>
                       </Properties>
@@ -6354,9 +6345,6 @@
       </SubComponents>
     </Container>
     <Container class="javax.swing.JFrame" name="JF_crearPropiedadesVendidas">
-      <Properties>
-        <Property name="defaultCloseOperation" type="int" value="3"/>
-      </Properties>
 
       <Layout>
         <DimensionLayout dim="0">
@@ -6806,9 +6794,6 @@
       </SubComponents>
     </Container>
     <Container class="javax.swing.JFrame" name="JF_modificarPropVendidas">
-      <Properties>
-        <Property name="defaultCloseOperation" type="int" value="3"/>
-      </Properties>
 
       <Layout>
         <DimensionLayout dim="0">
@@ -6989,12 +6974,7 @@
                 <Component class="javax.swing.JComboBox" name="CB_modificarPropVendida">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="4">
-                        <StringItem index="0" value="Item 1"/>
-                        <StringItem index="1" value="Item 2"/>
-                        <StringItem index="2" value="Item 3"/>
-                        <StringItem index="3" value="Item 4"/>
-                      </StringArray>
+                      <StringArray count="0"/>
                     </Property>
                   </Properties>
                   <AuxValues>
@@ -7004,11 +6984,19 @@
                 <Component class="javax.swing.JComboBox" name="cb_atributoPropVendida">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="4">
-                        <StringItem index="0" value="Item 1"/>
-                        <StringItem index="1" value="Item 2"/>
-                        <StringItem index="2" value="Item 3"/>
-                        <StringItem index="3" value="Item 4"/>
+                      <StringArray count="12">
+                        <StringItem index="0" value="nombre"/>
+                        <StringItem index="1" value="ciudad"/>
+                        <StringItem index="2" value="direccion"/>
+                        <StringItem index="3" value="cantidadDormitorios"/>
+                        <StringItem index="4" value="caracteristicas"/>
+                        <StringItem index="5" value="precio"/>
+                        <StringItem index="6" value="fechaPublicacion"/>
+                        <StringItem index="7" value="fechaVenta "/>
+                        <StringItem index="8" value="noIdentidad_Agente"/>
+                        <StringItem index="9" value="noIdentidad_Vendedor "/>
+                        <StringItem index="10" value="noIdentidad_Comprador"/>
+                        <StringItem index="11" value="comisionVenta"/>
                       </StringArray>
                     </Property>
                   </Properties>
@@ -7023,9 +7011,6 @@
       </SubComponents>
     </Container>
     <Container class="javax.swing.JFrame" name="JF_eliminarPropVendidas">
-      <Properties>
-        <Property name="defaultCloseOperation" type="int" value="3"/>
-      </Properties>
 
       <Layout>
         <DimensionLayout dim="0">
@@ -7141,12 +7126,7 @@
                       <Font name="Segoe UI" size="14" style="0"/>
                     </Property>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="4">
-                        <StringItem index="0" value="Item 1"/>
-                        <StringItem index="1" value="Item 2"/>
-                        <StringItem index="2" value="Item 3"/>
-                        <StringItem index="3" value="Item 4"/>
-                      </StringArray>
+                      <StringArray count="0"/>
                     </Property>
                   </Properties>
                   <AuxValues>
@@ -7188,9 +7168,6 @@
       </SubComponents>
     </Container>
     <Container class="javax.swing.JFrame" name="Reportes">
-      <Properties>
-        <Property name="defaultCloseOperation" type="int" value="3"/>
-      </Properties>
 
       <Layout>
         <DimensionLayout dim="0">
@@ -7198,12 +7175,20 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jButton19" min="-2" max="-2" attributes="0"/>
-                      <Component id="jButton18" min="-2" max="-2" attributes="0"/>
-                      <Component id="jButton17" min="-2" max="-2" attributes="0"/>
-                      <Component id="jButton16" min="-2" max="-2" attributes="0"/>
+                      <Component id="jButton20" min="-2" max="-2" attributes="0"/>
+                      <Component id="jButton13" min="-2" pref="247" max="-2" attributes="0"/>
+                      <Component id="jButton15" min="-2" max="-2" attributes="0"/>
+                      <Component id="jButton17" alignment="0" min="-2" pref="191" max="-2" attributes="0"/>
+                      <Component id="jButton16" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                          <Component id="jButton18" alignment="0" pref="0" max="32767" attributes="0"/>
+                          <Component id="jButton11" alignment="0" max="32767" attributes="0"/>
+                      </Group>
+                      <Component id="jButton19" min="-2" pref="195" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="144" max="32767" attributes="0"/>
+                  <EmptySpace pref="155" max="32767" attributes="0"/>
+                  <Component id="jScrollPane10" min="-2" pref="455" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -7211,14 +7196,27 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
-                  <Component id="jButton16" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="jButton17" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="jButton18" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="jButton19" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="144" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jScrollPane10" min="-2" pref="293" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <Component id="jButton16" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="jButton17" min="-2" pref="23" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="jButton18" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                          <Component id="jButton19" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="jButton11" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jButton15" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="jButton13" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="jButton20" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace pref="18" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -7229,6 +7227,7 @@
             <Property name="text" type="java.lang.String" value="Cantidad de ventas por agente"/>
           </Properties>
           <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton16MouseClicked"/>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton16ActionPerformed"/>
           </Events>
         </Component>
@@ -7236,23 +7235,80 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Cantidad de ventas por vendedor"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton17MouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jButton18">
           <Properties>
             <Property name="text" type="java.lang.String" value="Cantidad de compras por comprador"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton18MouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jButton19">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Cantidad de ventas por ubicacion"/>
+            <Property name="text" type="java.lang.String" value="Ventas por Ubicacion"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton19MouseClicked"/>
+          </Events>
         </Component>
+        <Component class="javax.swing.JButton" name="jButton11">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Ventas por precio de propiedad"/>
+          </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton11MouseClicked"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="jButton13">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Ventas de propiedades por caracteristicas"/>
+          </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton13MouseClicked"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="jButton15">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Agente que vendio la mayor cantidad"/>
+          </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton15MouseClicked"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="jButton20">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Promedios de agentes"/>
+          </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton20MouseClicked"/>
+          </Events>
+        </Component>
+        <Container class="javax.swing.JScrollPane" name="jScrollPane10">
+          <AuxValues>
+            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+          </AuxValues>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+          <SubComponents>
+            <Component class="javax.swing.JList" name="jList1">
+              <Properties>
+                <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
+                  <StringArray count="0"/>
+                </Property>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
+            </Component>
+          </SubComponents>
+        </Container>
       </SubComponents>
     </Container>
     <Container class="javax.swing.JFrame" name="JF_bitacora">
-      <Properties>
-        <Property name="defaultCloseOperation" type="int" value="3"/>
-      </Properties>
 
       <Layout>
         <DimensionLayout dim="0">
