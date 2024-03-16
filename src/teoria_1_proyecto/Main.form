@@ -1512,7 +1512,7 @@
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="930" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="968" max="32767" attributes="0"/>
                           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -1547,29 +1547,49 @@
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="115" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="jl_prop4VendedorVendida" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jPanel61" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jl_prop1VendedorVendida" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jPanel62" alignment="0" max="32767" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="jPanel63" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jPanel65" alignment="0" max="32767" attributes="0"/>
+                                      <Group type="102" attributes="0">
+                                          <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                                          <Component id="jButton32" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="jl_prop4VendedorVendida" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jl_prop1VendedorVendida" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel109" min="-2" pref="201" max="-2" attributes="0"/>
+                                          </Group>
                                       </Group>
-                                      <Component id="jl_prop2VendedorVendida" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jl_prop5VendedorVendida" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <EmptySpace min="-2" pref="163" max="-2" attributes="0"/>
+                                          <Component id="jLabel112" min="-2" pref="191" max="-2" attributes="0"/>
+                                      </Group>
                                   </Group>
-                                  <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jl_prop6VendedorVendida" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jl_prop3VendedorVendida" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="jPanel66" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jPanel64" alignment="0" max="32767" attributes="0"/>
+                                      <Group type="102" attributes="0">
+                                          <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="jl_prop2VendedorVendida" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jl_prop5VendedorVendida" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel110" min="-2" pref="202" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
+                                          <Component id="jLabel113" min="-2" pref="202" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="jl_prop6VendedorVendida" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jl_prop3VendedorVendida" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jPanel66" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                                          <Component id="jLabel111" min="-2" pref="200" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <EmptySpace pref="75" max="32767" attributes="0"/>
@@ -1579,13 +1599,24 @@
                         <DimensionLayout dim="1">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                      <Component id="jPanel63" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jPanel61" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jPanel64" alignment="1" max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="jButton32" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel109" alignment="3" min="-2" pref="106" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
+                                          <Component id="jLabel110" min="-2" pref="101" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
+                                          <Component id="jLabel111" min="-2" pref="96" max="-2" attributes="0"/>
+                                      </Group>
                                   </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jl_prop1VendedorVendida" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jl_prop2VendedorVendida" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -1594,11 +1625,12 @@
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="21" pref="21" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="jPanel65" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="jPanel62" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="jLabel112" pref="121" max="32767" attributes="0"/>
+                                              <Component id="jLabel113" max="32767" attributes="0"/>
                                           </Group>
-                                          <EmptySpace max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="3" attributes="0">
                                               <Component id="jl_prop4VendedorVendida" alignment="3" min="-2" max="-2" attributes="0"/>
                                               <Component id="jl_prop5VendedorVendida" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -1616,106 +1648,16 @@
                         </DimensionLayout>
                       </Layout>
                       <SubComponents>
-                        <Container class="javax.swing.JPanel" name="jPanel61">
-                          <AuxValues>
-                            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new FondoPanel(&quot;./Imagen\\prop7.jpg&quot;)"/>
-                          </AuxValues>
-
-                          <Layout>
-                            <DimensionLayout dim="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <EmptySpace min="0" pref="209" max="32767" attributes="0"/>
-                              </Group>
-                            </DimensionLayout>
-                            <DimensionLayout dim="1">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              </Group>
-                            </DimensionLayout>
-                          </Layout>
-                        </Container>
                         <Component class="javax.swing.JLabel" name="jl_prop1VendedorVendida">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Propiedad 7 id"/>
                           </Properties>
                         </Component>
-                        <Container class="javax.swing.JPanel" name="jPanel62">
-                          <AuxValues>
-                            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new FondoPanel(&quot;./Imagen\\prop10.jpg&quot;)"/>
-                          </AuxValues>
-
-                          <Layout>
-                            <DimensionLayout dim="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              </Group>
-                            </DimensionLayout>
-                            <DimensionLayout dim="1">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              </Group>
-                            </DimensionLayout>
-                          </Layout>
-                        </Container>
                         <Component class="javax.swing.JLabel" name="jl_prop4VendedorVendida">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Propiedad 10 id"/>
                           </Properties>
                         </Component>
-                        <Container class="javax.swing.JPanel" name="jPanel63">
-                          <AuxValues>
-                            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new FondoPanel(&quot;./Imagen\\prop8.jpg&quot;)"/>
-                          </AuxValues>
-
-                          <Layout>
-                            <DimensionLayout dim="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <EmptySpace min="0" pref="216" max="32767" attributes="0"/>
-                              </Group>
-                            </DimensionLayout>
-                            <DimensionLayout dim="1">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <EmptySpace min="0" pref="184" max="32767" attributes="0"/>
-                              </Group>
-                            </DimensionLayout>
-                          </Layout>
-                        </Container>
-                        <Container class="javax.swing.JPanel" name="jPanel64">
-                          <AuxValues>
-                            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new FondoPanel(&quot;./Imagen\\prop9.jpg&quot;)"/>
-                          </AuxValues>
-
-                          <Layout>
-                            <DimensionLayout dim="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              </Group>
-                            </DimensionLayout>
-                            <DimensionLayout dim="1">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              </Group>
-                            </DimensionLayout>
-                          </Layout>
-                        </Container>
-                        <Container class="javax.swing.JPanel" name="jPanel65">
-                          <AuxValues>
-                            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new FondoPanel(&quot;./Imagen\\prop11.jpg&quot;)"/>
-                          </AuxValues>
-
-                          <Layout>
-                            <DimensionLayout dim="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              </Group>
-                            </DimensionLayout>
-                            <DimensionLayout dim="1">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <EmptySpace min="0" pref="164" max="32767" attributes="0"/>
-                              </Group>
-                            </DimensionLayout>
-                          </Layout>
-                        </Container>
                         <Container class="javax.swing.JPanel" name="jPanel66">
                           <AuxValues>
                             <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new FondoPanel(&quot;./Imagen\\prop12.jpg&quot;)"/>
@@ -1752,6 +1694,39 @@
                         <Component class="javax.swing.JLabel" name="jl_prop6VendedorVendida">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Propiedad 12 id"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JButton" name="jButton32">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="Cargar imagenes"/>
+                          </Properties>
+                          <Events>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton32MouseClicked"/>
+                          </Events>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="jLabel109">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="jLabel109"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="jLabel110">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="jLabel110"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="jLabel111">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="jLabel111"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="jLabel112">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="jLabel112"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="jLabel113">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="jLabel113"/>
                           </Properties>
                         </Component>
                       </SubComponents>
@@ -1849,45 +1824,52 @@
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="115" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                              <Component id="jButton31" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="jLabel107" pref="198" max="32767" attributes="0"/>
                                   <Component id="jl_prop2VendedorenVenta" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jPanel54" max="32767" attributes="0"/>
                                   <Component id="jl_prop1VendedorenVenta" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jPanel55" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jLabel104" max="32767" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="jPanel56" max="32767" attributes="0"/>
-                                      <Component id="jPanel58" max="32767" attributes="0"/>
-                                  </Group>
                                   <Component id="jl_prop3VendedorenVenta" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="jl_prop4VendedorenVenta" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel105" min="-2" pref="203" max="-2" attributes="0"/>
+                                  <Component id="jLabel108" min="-2" pref="219" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="jl_prop6VendedorenVenta" min="-2" max="-2" attributes="0"/>
                                   <Component id="jl_prop5VendedorenVenta" min="-2" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="jPanel59" max="32767" attributes="0"/>
-                                      <Component id="jPanel57" max="32767" attributes="0"/>
-                                  </Group>
+                                  <Component id="jPanel59" max="32767" attributes="0"/>
+                                  <Component id="jLabel106" max="32767" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="75" max="32767" attributes="0"/>
+                              <EmptySpace pref="39" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                  <Component id="jPanel56" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jPanel54" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jPanel57" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
+                                      <Component id="jButton31" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="105" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="jLabel106" min="-2" pref="107" max="-2" attributes="0"/>
+                                          <Component id="jLabel105" min="-2" pref="128" max="-2" attributes="0"/>
+                                          <Component id="jLabel104" min="-2" pref="111" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
-                              <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jl_prop1VendedorenVenta" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jl_prop3VendedorenVenta" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -1896,11 +1878,12 @@
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="jPanel58" max="32767" attributes="0"/>
-                                          <Component id="jPanel55" max="32767" attributes="0"/>
+                                      <EmptySpace min="23" pref="23" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="jLabel107" min="-2" pref="112" max="-2" attributes="0"/>
+                                          <Component id="jLabel108" min="-2" pref="124" max="-2" attributes="0"/>
                                       </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="3" attributes="0">
                                           <Component id="jl_prop2VendedorenVenta" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="jl_prop4VendedorenVenta" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -1912,112 +1895,22 @@
                                       <Component id="jl_prop6VendedorenVenta" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace min="0" pref="44" max="32767" attributes="0"/>
+                              <EmptySpace min="0" pref="40" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Container class="javax.swing.JPanel" name="jPanel54">
-                      <AuxValues>
-                        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new FondoPanel(&quot;./Imagen\\prop1.jpg&quot;)"/>
-                      </AuxValues>
-
-                      <Layout>
-                        <DimensionLayout dim="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <EmptySpace min="0" pref="209" max="32767" attributes="0"/>
-                          </Group>
-                        </DimensionLayout>
-                        <DimensionLayout dim="1">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          </Group>
-                        </DimensionLayout>
-                      </Layout>
-                    </Container>
                     <Component class="javax.swing.JLabel" name="jl_prop1VendedorenVenta">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="Propiedad 1 id"/>
                       </Properties>
                     </Component>
-                    <Container class="javax.swing.JPanel" name="jPanel55">
-                      <AuxValues>
-                        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new FondoPanel(&quot;./Imagen\\prop4.jpg&quot;)"/>
-                      </AuxValues>
-
-                      <Layout>
-                        <DimensionLayout dim="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          </Group>
-                        </DimensionLayout>
-                        <DimensionLayout dim="1">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          </Group>
-                        </DimensionLayout>
-                      </Layout>
-                    </Container>
                     <Component class="javax.swing.JLabel" name="jl_prop2VendedorenVenta">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="Propiedad 2 id"/>
                       </Properties>
                     </Component>
-                    <Container class="javax.swing.JPanel" name="jPanel56">
-                      <AuxValues>
-                        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new FondoPanel(&quot;./Imagen\\prop2.jpg&quot;)"/>
-                      </AuxValues>
-
-                      <Layout>
-                        <DimensionLayout dim="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <EmptySpace min="0" pref="216" max="32767" attributes="0"/>
-                          </Group>
-                        </DimensionLayout>
-                        <DimensionLayout dim="1">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <EmptySpace min="0" pref="184" max="32767" attributes="0"/>
-                          </Group>
-                        </DimensionLayout>
-                      </Layout>
-                    </Container>
-                    <Container class="javax.swing.JPanel" name="jPanel57">
-                      <AuxValues>
-                        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new FondoPanel(&quot;./Imagen\\prop3.jpg&quot;)"/>
-                      </AuxValues>
-
-                      <Layout>
-                        <DimensionLayout dim="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          </Group>
-                        </DimensionLayout>
-                        <DimensionLayout dim="1">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          </Group>
-                        </DimensionLayout>
-                      </Layout>
-                    </Container>
-                    <Container class="javax.swing.JPanel" name="jPanel58">
-                      <AuxValues>
-                        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new FondoPanel(&quot;./Imagen\\prop5.jpg&quot;)"/>
-                      </AuxValues>
-
-                      <Layout>
-                        <DimensionLayout dim="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          </Group>
-                        </DimensionLayout>
-                        <DimensionLayout dim="1">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <EmptySpace min="0" pref="164" max="32767" attributes="0"/>
-                          </Group>
-                        </DimensionLayout>
-                      </Layout>
-                    </Container>
                     <Container class="javax.swing.JPanel" name="jPanel59">
                       <AuxValues>
                         <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new FondoPanel(&quot;./Imagen\\prop6.jpg&quot;)"/>
@@ -2054,6 +1947,39 @@
                     <Component class="javax.swing.JLabel" name="jl_prop6VendedorenVenta">
                       <Properties>
                         <Property name="text" type="java.lang.String" value="Propiedad 6 id"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="jLabel104">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="jLabel104"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JButton" name="jButton31">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="cargar imagenes"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton31MouseClicked"/>
+                      </Events>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="jLabel105">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="jLabel105"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="jLabel106">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="jLabel106"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="jLabel107">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="jLabel107"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="jLabel108">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="jLabel108"/>
                       </Properties>
                     </Component>
                   </SubComponents>
@@ -2266,56 +2192,71 @@
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="115" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="jl_prop2AgenteAsignadas" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jPanel68" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jl_prop1AgenteAsignadas" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jPanel69" alignment="0" max="32767" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                                  <Component id="jButton33" min="-2" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="jPanel70" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jPanel72" alignment="0" max="32767" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                                          <Component id="jLabel114" min="-2" pref="188" max="-2" attributes="0"/>
                                       </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="jLabel117" min="-2" pref="201" max="-2" attributes="0"/>
+                                              <Component id="jl_prop2AgenteAsignadas" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jl_prop1AgenteAsignadas" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jl_prop3AgenteAsignadas" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="jl_prop4AgenteAsignadas" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel115" min="-2" pref="216" max="-2" attributes="0"/>
+                                      <Component id="jLabel118" min="-2" pref="198" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jl_prop6AgenteAsignadas" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="jl_prop5AgenteAsignadas" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="jPanel73" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jPanel71" alignment="0" max="32767" attributes="0"/>
-                                      </Group>
+                                      <Component id="jLabel116" min="-2" pref="191" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="81" max="32767" attributes="0"/>
+                                  <EmptySpace pref="89" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
                         <DimensionLayout dim="1">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                      <Component id="jPanel70" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jPanel68" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jPanel71" alignment="1" max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="jButton33" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel114" alignment="3" min="-2" pref="122" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
+                                          <Component id="jLabel115" min="-2" pref="121" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
+                                          <Component id="jLabel116" min="-2" pref="94" max="-2" attributes="0"/>
+                                      </Group>
                                   </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jl_prop1AgenteAsignadas" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jl_prop3AgenteAsignadas" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jl_prop5AgenteAsignadas" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="jPanel72" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="jPanel69" alignment="0" max="32767" attributes="0"/>
+                                          <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="jLabel117" pref="144" max="32767" attributes="0"/>
+                                              <Component id="jLabel118" max="32767" attributes="0"/>
                                           </Group>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="3" attributes="0">
@@ -2324,135 +2265,26 @@
                                           </Group>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Component id="jPanel73" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="178" max="-2" attributes="0"/>
                                           <Component id="jl_prop6AgenteAsignadas" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <EmptySpace min="0" pref="44" max="32767" attributes="0"/>
+                                  <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
                       </Layout>
                       <SubComponents>
-                        <Container class="javax.swing.JPanel" name="jPanel68">
-                          <AuxValues>
-                            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new FondoPanel(&quot;./Imagen\\prop3.jpg&quot;)"/>
-                          </AuxValues>
-
-                          <Layout>
-                            <DimensionLayout dim="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <EmptySpace min="0" pref="209" max="32767" attributes="0"/>
-                              </Group>
-                            </DimensionLayout>
-                            <DimensionLayout dim="1">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              </Group>
-                            </DimensionLayout>
-                          </Layout>
-                        </Container>
                         <Component class="javax.swing.JLabel" name="jl_prop1AgenteAsignadas">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Propiedad 1 id"/>
                           </Properties>
                         </Component>
-                        <Container class="javax.swing.JPanel" name="jPanel69">
-                          <AuxValues>
-                            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new FondoPanel(&quot;./Imagen\\prop9.jpg&quot;)"/>
-                          </AuxValues>
-
-                          <Layout>
-                            <DimensionLayout dim="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              </Group>
-                            </DimensionLayout>
-                            <DimensionLayout dim="1">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              </Group>
-                            </DimensionLayout>
-                          </Layout>
-                        </Container>
                         <Component class="javax.swing.JLabel" name="jl_prop2AgenteAsignadas">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Propiedad 2 id"/>
                           </Properties>
                         </Component>
-                        <Container class="javax.swing.JPanel" name="jPanel70">
-                          <AuxValues>
-                            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new FondoPanel(&quot;./Imagen\\prop13.jpg&quot;)"/>
-                          </AuxValues>
-
-                          <Layout>
-                            <DimensionLayout dim="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <EmptySpace min="0" pref="216" max="32767" attributes="0"/>
-                              </Group>
-                            </DimensionLayout>
-                            <DimensionLayout dim="1">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <EmptySpace min="0" pref="184" max="32767" attributes="0"/>
-                              </Group>
-                            </DimensionLayout>
-                          </Layout>
-                        </Container>
-                        <Container class="javax.swing.JPanel" name="jPanel71">
-                          <AuxValues>
-                            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new FondoPanel(&quot;./Imagen\\prop1.jpg&quot;)"/>
-                          </AuxValues>
-
-                          <Layout>
-                            <DimensionLayout dim="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              </Group>
-                            </DimensionLayout>
-                            <DimensionLayout dim="1">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              </Group>
-                            </DimensionLayout>
-                          </Layout>
-                        </Container>
-                        <Container class="javax.swing.JPanel" name="jPanel72">
-                          <AuxValues>
-                            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new FondoPanel(&quot;./Imagen\\prop15.jpg&quot;)"/>
-                          </AuxValues>
-
-                          <Layout>
-                            <DimensionLayout dim="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              </Group>
-                            </DimensionLayout>
-                            <DimensionLayout dim="1">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <EmptySpace min="0" pref="164" max="32767" attributes="0"/>
-                              </Group>
-                            </DimensionLayout>
-                          </Layout>
-                        </Container>
-                        <Container class="javax.swing.JPanel" name="jPanel73">
-                          <AuxValues>
-                            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new FondoPanel(&quot;./Imagen\\prop2.jpg&quot;)"/>
-                          </AuxValues>
-
-                          <Layout>
-                            <DimensionLayout dim="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <EmptySpace min="0" pref="199" max="32767" attributes="0"/>
-                              </Group>
-                            </DimensionLayout>
-                            <DimensionLayout dim="1">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <EmptySpace min="0" pref="160" max="32767" attributes="0"/>
-                              </Group>
-                            </DimensionLayout>
-                          </Layout>
-                        </Container>
                         <Component class="javax.swing.JLabel" name="jl_prop3AgenteAsignadas">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Propiedad 3 id"/>
@@ -2471,6 +2303,39 @@
                         <Component class="javax.swing.JLabel" name="jl_prop6AgenteAsignadas">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Propiedad 6 id"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JButton" name="jButton33">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="Cargat imagenes"/>
+                          </Properties>
+                          <Events>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton33MouseClicked"/>
+                          </Events>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="jLabel114">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="jLabel114"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="jLabel115">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="jLabel115"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="jLabel116">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="jLabel116"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="jLabel117">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="jLabel117"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="jLabel118">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="jLabel118"/>
                           </Properties>
                         </Component>
                       </SubComponents>
@@ -2521,30 +2386,38 @@
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="115" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="jl_prop2AgenteVendidas" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jPanel75" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jl_prop1AgenteVendidas" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jPanel76" alignment="0" max="32767" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                                  <Component id="jButton34" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="jPanel77" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jPanel79" alignment="0" max="32767" attributes="0"/>
-                                      </Group>
-                                      <Component id="jl_prop3AgenteVendidas" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jl_prop4AgenteVendidas" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jl_prop2AgenteVendidas" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jl_prop1AgenteVendidas" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel119" min="-2" pref="209" max="-2" attributes="0"/>
+                                      <Component id="jLabel122" alignment="0" min="-2" pref="188" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="jl_prop3AgenteVendidas" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jl_prop4AgenteVendidas" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                                          <Component id="jLabel120" min="-2" pref="174" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                                          <Component id="jLabel123" min="-2" pref="192" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="98" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jl_prop6AgenteVendidas" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="jl_prop5AgenteVendidas" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="jPanel80" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jPanel78" alignment="0" max="32767" attributes="0"/>
-                                      </Group>
+                                      <Component id="jPanel80" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel121" min="-2" pref="162" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace pref="81" max="32767" attributes="0"/>
                               </Group>
@@ -2553,13 +2426,23 @@
                         <DimensionLayout dim="1">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                      <Component id="jPanel77" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jPanel75" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jPanel78" alignment="1" max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="jButton34" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel119" alignment="3" min="-2" pref="128" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="jLabel121" min="-2" pref="104" max="-2" attributes="0"/>
+                                              <Component id="jLabel120" min="-2" pref="104" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
                                   </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jl_prop1AgenteVendidas" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jl_prop3AgenteVendidas" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -2568,11 +2451,12 @@
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="19" pref="19" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="jPanel79" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="jPanel76" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="jLabel122" pref="116" max="32767" attributes="0"/>
+                                              <Component id="jLabel123" max="32767" attributes="0"/>
                                           </Group>
-                                          <EmptySpace max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="3" attributes="0">
                                               <Component id="jl_prop2AgenteVendidas" alignment="3" min="-2" max="-2" attributes="0"/>
                                               <Component id="jl_prop4AgenteVendidas" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -2590,106 +2474,16 @@
                         </DimensionLayout>
                       </Layout>
                       <SubComponents>
-                        <Container class="javax.swing.JPanel" name="jPanel75">
-                          <AuxValues>
-                            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new FondoPanel(&quot;./Imagen\\prop4.jpg&quot;)"/>
-                          </AuxValues>
-
-                          <Layout>
-                            <DimensionLayout dim="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <EmptySpace min="0" pref="209" max="32767" attributes="0"/>
-                              </Group>
-                            </DimensionLayout>
-                            <DimensionLayout dim="1">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              </Group>
-                            </DimensionLayout>
-                          </Layout>
-                        </Container>
                         <Component class="javax.swing.JLabel" name="jl_prop1AgenteVendidas">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Propiedad 1 id"/>
                           </Properties>
                         </Component>
-                        <Container class="javax.swing.JPanel" name="jPanel76">
-                          <AuxValues>
-                            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new FondoPanel(&quot;./Imagen\\prop9.jpg&quot;)"/>
-                          </AuxValues>
-
-                          <Layout>
-                            <DimensionLayout dim="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              </Group>
-                            </DimensionLayout>
-                            <DimensionLayout dim="1">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              </Group>
-                            </DimensionLayout>
-                          </Layout>
-                        </Container>
                         <Component class="javax.swing.JLabel" name="jl_prop2AgenteVendidas">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Propiedad 2 id"/>
                           </Properties>
                         </Component>
-                        <Container class="javax.swing.JPanel" name="jPanel77">
-                          <AuxValues>
-                            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new FondoPanel(&quot;./Imagen\\prop7.jpg&quot;)"/>
-                          </AuxValues>
-
-                          <Layout>
-                            <DimensionLayout dim="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <EmptySpace min="0" pref="216" max="32767" attributes="0"/>
-                              </Group>
-                            </DimensionLayout>
-                            <DimensionLayout dim="1">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <EmptySpace min="0" pref="184" max="32767" attributes="0"/>
-                              </Group>
-                            </DimensionLayout>
-                          </Layout>
-                        </Container>
-                        <Container class="javax.swing.JPanel" name="jPanel78">
-                          <AuxValues>
-                            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new FondoPanel(&quot;./Imagen\\prop11.jpg&quot;)"/>
-                          </AuxValues>
-
-                          <Layout>
-                            <DimensionLayout dim="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              </Group>
-                            </DimensionLayout>
-                            <DimensionLayout dim="1">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              </Group>
-                            </DimensionLayout>
-                          </Layout>
-                        </Container>
-                        <Container class="javax.swing.JPanel" name="jPanel79">
-                          <AuxValues>
-                            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new FondoPanel(&quot;./Imagen\\prop12.jpg&quot;)"/>
-                          </AuxValues>
-
-                          <Layout>
-                            <DimensionLayout dim="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              </Group>
-                            </DimensionLayout>
-                            <DimensionLayout dim="1">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <EmptySpace min="0" pref="164" max="32767" attributes="0"/>
-                              </Group>
-                            </DimensionLayout>
-                          </Layout>
-                        </Container>
                         <Container class="javax.swing.JPanel" name="jPanel80">
                           <AuxValues>
                             <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new FondoPanel(&quot;./Imagen\\prop6.jpg&quot;)"/>
@@ -2726,6 +2520,39 @@
                         <Component class="javax.swing.JLabel" name="jl_prop6AgenteVendidas">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Propiedad 6 id"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JButton" name="jButton34">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="Cargar imagenes"/>
+                          </Properties>
+                          <Events>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton34MouseClicked"/>
+                          </Events>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="jLabel119">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="jLabel119"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="jLabel120">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="jLabel120"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="jLabel121">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="jLabel121"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="jLabel122">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="jLabel122"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="jLabel123">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="jLabel123"/>
                           </Properties>
                         </Component>
                       </SubComponents>
@@ -3013,6 +2840,8 @@
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
+                              <Component id="jButton30" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
                               <Component id="jPanel81" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
@@ -3021,8 +2850,11 @@
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              <Component id="jPanel81" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="50" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jButton30" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jPanel81" min="-2" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -3039,43 +2871,61 @@
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="115" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="jl_prop2CompradorEnMercado" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jPanel82" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jl_prop1CompradorEnMercado" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jPanel83" alignment="0" max="32767" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" pref="150" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="jPanel84" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jPanel86" alignment="0" max="32767" attributes="0"/>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <EmptySpace min="-2" pref="106" max="-2" attributes="0"/>
+                                          <Component id="jLabel96" min="-2" pref="218" max="-2" attributes="0"/>
                                       </Group>
-                                      <Component id="jl_prop3CompradorEnMercado" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jl_prop4CompradorEnMercado" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" pref="146" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jl_prop6CompradorEnMercado" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jl_prop5CompradorEnMercado" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="jPanel87" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jPanel85" alignment="0" max="32767" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="115" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="jLabel103" min="-2" pref="209" max="-2" attributes="0"/>
+                                              <Component id="jl_prop2CompradorEnMercado" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jl_prop1CompradorEnMercado" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          </Group>
                                       </Group>
                                   </Group>
-                                  <EmptySpace pref="81" max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="150" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="jl_prop3CompradorEnMercado" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jl_prop4CompradorEnMercado" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel102" min="-2" pref="225" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="-2" pref="175" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="jl_prop6CompradorEnMercado" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jl_prop5CompradorEnMercado" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="133" max="-2" attributes="0"/>
+                                          <Component id="jLabel100" min="-2" pref="205" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="124" max="-2" attributes="0"/>
+                                          <Component id="jLabel101" min="-2" pref="198" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace pref="132" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
                         <DimensionLayout dim="1">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                      <Component id="jPanel84" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jPanel82" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jPanel85" alignment="1" max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                                          <Component id="jLabel96" max="32767" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="1" attributes="0">
+                                              <Component id="jLabel101" alignment="1" min="-2" pref="102" max="-2" attributes="0"/>
+                                              <Component id="jLabel100" min="-2" pref="128" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="0" pref="39" max="32767" attributes="0"/>
+                                      </Group>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
@@ -3083,149 +2933,40 @@
                                       <Component id="jl_prop3CompradorEnMercado" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jl_prop5CompradorEnMercado" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="jPanel86" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="jPanel83" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="jLabel102" pref="123" max="32767" attributes="0"/>
+                                              <Component id="jLabel103" max="32767" attributes="0"/>
                                           </Group>
-                                          <EmptySpace max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="3" attributes="0">
                                               <Component id="jl_prop2CompradorEnMercado" alignment="3" min="-2" max="-2" attributes="0"/>
                                               <Component id="jl_prop4CompradorEnMercado" alignment="3" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Component id="jPanel87" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="178" max="-2" attributes="0"/>
                                           <Component id="jl_prop6CompradorEnMercado" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <EmptySpace min="0" pref="44" max="32767" attributes="0"/>
+                                  <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
                       </Layout>
                       <SubComponents>
-                        <Container class="javax.swing.JPanel" name="jPanel82">
-                          <AuxValues>
-                            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new FondoPanel(&quot;./Imagen\\prop1.jpg&quot;)"/>
-                          </AuxValues>
-
-                          <Layout>
-                            <DimensionLayout dim="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <EmptySpace min="0" pref="209" max="32767" attributes="0"/>
-                              </Group>
-                            </DimensionLayout>
-                            <DimensionLayout dim="1">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              </Group>
-                            </DimensionLayout>
-                          </Layout>
-                        </Container>
                         <Component class="javax.swing.JLabel" name="jl_prop1CompradorEnMercado">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Propiedad 1 id"/>
                           </Properties>
                         </Component>
-                        <Container class="javax.swing.JPanel" name="jPanel83">
-                          <AuxValues>
-                            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new FondoPanel(&quot;./Imagen\\prop15.jpg&quot;)"/>
-                          </AuxValues>
-
-                          <Layout>
-                            <DimensionLayout dim="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              </Group>
-                            </DimensionLayout>
-                            <DimensionLayout dim="1">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              </Group>
-                            </DimensionLayout>
-                          </Layout>
-                        </Container>
                         <Component class="javax.swing.JLabel" name="jl_prop2CompradorEnMercado">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Propiedad 2 id"/>
                           </Properties>
                         </Component>
-                        <Container class="javax.swing.JPanel" name="jPanel84">
-                          <AuxValues>
-                            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new FondoPanel(&quot;./Imagen\\prop7.jpg&quot;)"/>
-                          </AuxValues>
-
-                          <Layout>
-                            <DimensionLayout dim="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <EmptySpace min="0" pref="216" max="32767" attributes="0"/>
-                              </Group>
-                            </DimensionLayout>
-                            <DimensionLayout dim="1">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <EmptySpace min="0" pref="184" max="32767" attributes="0"/>
-                              </Group>
-                            </DimensionLayout>
-                          </Layout>
-                        </Container>
-                        <Container class="javax.swing.JPanel" name="jPanel85">
-                          <AuxValues>
-                            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new FondoPanel(&quot;./Imagen\\prop4.jpg&quot;)"/>
-                          </AuxValues>
-
-                          <Layout>
-                            <DimensionLayout dim="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              </Group>
-                            </DimensionLayout>
-                            <DimensionLayout dim="1">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              </Group>
-                            </DimensionLayout>
-                          </Layout>
-                        </Container>
-                        <Container class="javax.swing.JPanel" name="jPanel86">
-                          <AuxValues>
-                            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new FondoPanel(&quot;./Imagen\\prop14.jpg&quot;)"/>
-                          </AuxValues>
-
-                          <Layout>
-                            <DimensionLayout dim="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              </Group>
-                            </DimensionLayout>
-                            <DimensionLayout dim="1">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <EmptySpace min="0" pref="164" max="32767" attributes="0"/>
-                              </Group>
-                            </DimensionLayout>
-                          </Layout>
-                        </Container>
-                        <Container class="javax.swing.JPanel" name="jPanel87">
-                          <AuxValues>
-                            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new FondoPanel(&quot;./Imagen\\prop3.jpg&quot;)"/>
-                          </AuxValues>
-
-                          <Layout>
-                            <DimensionLayout dim="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <EmptySpace min="0" pref="199" max="32767" attributes="0"/>
-                              </Group>
-                            </DimensionLayout>
-                            <DimensionLayout dim="1">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <EmptySpace min="0" pref="160" max="32767" attributes="0"/>
-                              </Group>
-                            </DimensionLayout>
-                          </Layout>
-                        </Container>
                         <Component class="javax.swing.JLabel" name="jl_prop3CompradorEnMercado">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Propiedad 3 id"/>
@@ -3246,8 +2987,41 @@
                             <Property name="text" type="java.lang.String" value="Propiedad 6 id"/>
                           </Properties>
                         </Component>
+                        <Component class="javax.swing.JLabel" name="jLabel96">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="jLabel96"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="jLabel100">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="jLabel100"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="jLabel101">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="jLabel101"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="jLabel102">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="jLabel102"/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="jLabel103">
+                          <Properties>
+                            <Property name="text" type="java.lang.String" value="jLabel103"/>
+                          </Properties>
+                        </Component>
                       </SubComponents>
                     </Container>
+                    <Component class="javax.swing.JButton" name="jButton30">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Cargar imagenes"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton30MouseClicked"/>
+                      </Events>
+                    </Component>
                   </SubComponents>
                 </Container>
                 <Container class="javax.swing.JPanel" name="jPanel20">
@@ -3327,18 +3101,12 @@
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" attributes="0">
                                           <EmptySpace min="-2" pref="147" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jl_prop6CompradorCompradas" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jl_prop5CompradorCompradas" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          </Group>
+                                          <Component id="jl_prop5CompradorCompradas" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="32767" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="1" attributes="0">
                                           <EmptySpace pref="111" max="32767" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jLabel100" min="-2" pref="212" max="-2" attributes="0"/>
-                                              <Component id="jLabel97" min="-2" pref="222" max="-2" attributes="0"/>
-                                          </Group>
+                                          <Component id="jLabel97" min="-2" pref="222" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" pref="94" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
@@ -3371,25 +3139,15 @@
                                       <Component id="jl_prop3CompradorCompradas" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jl_prop5CompradorCompradas" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <Group type="103" groupAlignment="1" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
-                                          <Component id="jLabel100" min="-2" pref="107" max="-2" attributes="0"/>
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="jl_prop6CompradorCompradas" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" attributes="0">
-                                          <EmptySpace min="13" pref="13" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="3" attributes="0">
-                                              <Component id="jLabel98" alignment="3" pref="163" max="32767" attributes="0"/>
-                                              <Component id="jLabel99" alignment="3" min="-2" pref="106" max="-2" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="3" attributes="0">
-                                              <Component id="jl_prop2CompradorCompradas" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jl_prop4CompradorCompradas" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
+                                  <EmptySpace min="13" pref="13" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jLabel98" alignment="3" pref="163" max="32767" attributes="0"/>
+                                      <Component id="jLabel99" alignment="3" min="-2" pref="106" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="jl_prop2CompradorCompradas" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jl_prop4CompradorCompradas" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                               </Group>
@@ -3422,11 +3180,6 @@
                             <Property name="text" type="java.lang.String" value="Propiedad 5 id"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JLabel" name="jl_prop6CompradorCompradas">
-                          <Properties>
-                            <Property name="text" type="java.lang.String" value="Propiedad 6 id"/>
-                          </Properties>
-                        </Component>
                         <Component class="javax.swing.JButton" name="jButton22">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Cargar imagenes"/>
@@ -3444,11 +3197,6 @@
                         <Component class="javax.swing.JLabel" name="jLabel98">
                         </Component>
                         <Component class="javax.swing.JLabel" name="jLabel99">
-                        </Component>
-                        <Component class="javax.swing.JLabel" name="jLabel100">
-                          <Properties>
-                            <Property name="text" type="java.lang.String" value="jLabel100"/>
-                          </Properties>
                         </Component>
                       </SubComponents>
                     </Container>
@@ -3469,7 +3217,7 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
                               <Component id="jScrollPane11" min="-2" pref="1023" max="-2" attributes="0"/>
-                              <EmptySpace pref="23" max="32767" attributes="0"/>
+                              <EmptySpace pref="126" max="32767" attributes="0"/>
                               <Component id="jButton24" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
@@ -3548,7 +3296,7 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
                               <Component id="jScrollPane12" min="-2" pref="997" max="-2" attributes="0"/>
-                              <EmptySpace pref="95" max="32767" attributes="0"/>
+                              <EmptySpace pref="198" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace max="32767" attributes="0"/>
@@ -3848,7 +3596,7 @@
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace pref="18" max="32767" attributes="0"/>
+                              <EmptySpace pref="29" max="32767" attributes="0"/>
                               <Component id="jScrollPane18" min="-2" pref="347" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
                           </Group>
@@ -3942,7 +3690,7 @@
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="jScrollPane2" min="-2" pref="252" max="-2" attributes="0"/>
-                              <EmptySpace pref="49" max="32767" attributes="0"/>
+                              <EmptySpace pref="60" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -4082,6 +3830,277 @@
                       <Properties>
                         <Property name="text" type="java.lang.String" value="Administrar:"/>
                       </Properties>
+                    </Component>
+                  </SubComponents>
+                </Container>
+                <Container class="javax.swing.JPanel" name="jPanel54">
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+                      <JTabbedPaneConstraints tabName="Propiedades Vendidas">
+                        <Property name="tabTitle" type="java.lang.String" value="Propiedades Vendidas"/>
+                      </JTabbedPaneConstraints>
+                    </Constraint>
+                  </Constraints>
+
+                  <Layout>
+                    <DimensionLayout dim="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                              <Component id="jScrollPane15" min="-2" pref="685" max="-2" attributes="0"/>
+                              <EmptySpace pref="24" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                    </DimensionLayout>
+                    <DimensionLayout dim="1">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                              <Component id="jScrollPane15" min="-2" pref="382" max="-2" attributes="0"/>
+                              <EmptySpace pref="60" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                    </DimensionLayout>
+                  </Layout>
+                  <SubComponents>
+                    <Container class="javax.swing.JScrollPane" name="jScrollPane15">
+                      <AuxValues>
+                        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+                      </AuxValues>
+
+                      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                      <SubComponents>
+                        <Component class="javax.swing.JTable" name="JT_propiedadesVendidas1">
+                          <Properties>
+                            <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                              <Table columnCount="13" rowCount="4">
+                                <Column editable="true" title="id" type="java.lang.Object"/>
+                                <Column editable="true" title="nombre" type="java.lang.Object"/>
+                                <Column editable="true" title="ciudad" type="java.lang.Object"/>
+                                <Column editable="true" title="direccion" type="java.lang.Object"/>
+                                <Column editable="true" title="cant_dormitorios" type="java.lang.Object"/>
+                                <Column editable="true" title="caracteristicas" type="java.lang.Object"/>
+                                <Column editable="true" title="precio" type="java.lang.Object"/>
+                                <Column editable="true" title="fechaPublicacion" type="java.lang.Object"/>
+                                <Column editable="true" title="fechaVenta" type="java.lang.Object"/>
+                                <Column editable="true" title="noIdentidad_Agente" type="java.lang.Object"/>
+                                <Column editable="true" title="noIdentidad_Vendedor" type="java.lang.Object"/>
+                                <Column editable="true" title="noIdentidad_Comprador" type="java.lang.Object"/>
+                                <Column editable="true" title="comisionVenta" type="java.lang.Object"/>
+                              </Table>
+                            </Property>
+                          </Properties>
+                        </Component>
+                      </SubComponents>
+                    </Container>
+                  </SubComponents>
+                </Container>
+                <Container class="javax.swing.JPanel" name="jPanel55">
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+                      <JTabbedPaneConstraints tabName="Imagenes">
+                        <Property name="tabTitle" type="java.lang.String" value="Imagenes"/>
+                      </JTabbedPaneConstraints>
+                    </Constraint>
+                  </Constraints>
+
+                  <Layout>
+                    <DimensionLayout dim="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <Component id="jLabel130" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                                              <Component id="jButton36" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" attributes="0">
+                                              <Component id="jLabel125" min="-2" pref="162" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Group type="102" alignment="0" attributes="0">
+                                                      <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                                                      <Component id="jLabel126" min="-2" pref="169" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <Group type="102" alignment="0" attributes="0">
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Group type="103" groupAlignment="0" attributes="0">
+                                                          <Component id="jButton35" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="jLabel128" min="-2" pref="182" max="-2" attributes="0"/>
+                                                      </Group>
+                                                  </Group>
+                                              </Group>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Group type="102" attributes="0">
+                                                      <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                                                      <Component id="jLabel129" min="-2" pref="164" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <Component id="jLabel127" min="-2" pref="147" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                          <Component id="jLabel124" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                                      <Component id="jLabel131" min="-2" pref="141" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                                      <Component id="jLabel134" min="-2" pref="161" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <Component id="jLabel132" min="-2" pref="162" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                                              <Component id="jLabel133" min="-2" pref="131" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Component id="jLabel135" min="-2" pref="127" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                              <EmptySpace pref="18" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                    </DimensionLayout>
+                    <DimensionLayout dim="1">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="jLabel124" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jButton35" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="jLabel125" min="-2" pref="96" max="-2" attributes="0"/>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Group type="103" groupAlignment="3" attributes="0">
+                                                  <Component id="jLabel126" alignment="3" min="-2" pref="87" max="-2" attributes="0"/>
+                                                  <Component id="jLabel127" alignment="3" min="-2" pref="70" max="-2" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="jLabel128" min="-2" pref="89" max="-2" attributes="0"/>
+                                                  <Component id="jLabel129" min="-2" pref="79" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                      </Group>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="3" attributes="0">
+                                                  <Component id="jLabel130" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jButton36" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Group type="102" attributes="0">
+                                                      <EmptySpace max="-2" attributes="0"/>
+                                                      <Component id="jLabel131" min="-2" pref="87" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <Group type="102" attributes="0">
+                                                      <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                                                      <Component id="jLabel133" min="-2" pref="62" max="-2" attributes="0"/>
+                                                  </Group>
+                                              </Group>
+                                          </Group>
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                                              <Component id="jLabel132" min="-2" pref="75" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="jLabel135" pref="69" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="jLabel134" min="-2" pref="87" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                    </DimensionLayout>
+                  </Layout>
+                  <SubComponents>
+                    <Component class="javax.swing.JLabel" name="jLabel124">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Propiedades en mercado"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="jLabel125">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="jLabel125"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="jLabel126">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="jLabel126"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="jLabel127">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="jLabel127"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="jLabel128">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="jLabel128"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="jLabel129">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="jLabel129"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="jLabel130">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Propiedades vendidas"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="jLabel131">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="jLabel131"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="jLabel132">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="jLabel132"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="jLabel133">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="jLabel133"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="jLabel134">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="jLabel134"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="jLabel135">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="jLabel135"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JButton" name="jButton35">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="cargar"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton35MouseClicked"/>
+                      </Events>
+                    </Component>
+                    <Component class="javax.swing.JButton" name="jButton36">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="cargar"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton36MouseClicked"/>
+                      </Events>
                     </Component>
                   </SubComponents>
                 </Container>
