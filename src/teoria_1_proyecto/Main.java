@@ -120,7 +120,7 @@ public class Main extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         tf_usernamelogin = new javax.swing.JTextField();
         pf_passwordlogin = new javax.swing.JPasswordField();
-        JB_login = new javax.swing.JButton();
+        JB_login = new boton();
         temporal = new javax.swing.JButton();
         JF_crearAgente = new javax.swing.JFrame();
         jPanel10 = new FondoPanel("./Imagen\\crearagente.jpg");
