@@ -769,6 +769,9 @@
       </SubComponents>
     </Container>
     <Container class="javax.swing.JFrame" name="JF_Principal">
+      <Properties>
+        <Property name="defaultCloseOperation" type="int" value="3"/>
+      </Properties>
 
       <Layout>
         <DimensionLayout dim="0">

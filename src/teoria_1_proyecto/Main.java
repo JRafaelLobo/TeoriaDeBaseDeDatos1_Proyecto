@@ -1027,6 +1027,8 @@ public class Main extends javax.swing.JFrame {
                 .addContainerGap(79, Short.MAX_VALUE))
         );
 
+        JF_Principal.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
         jPanel1.setBackground(new java.awt.Color(51, 153, 255));
 
         jPanel2.setBackground(new java.awt.Color(219, 166, 190));
@@ -7684,7 +7686,6 @@ public class Main extends javax.swing.JFrame {
                 int precio = rs.getInt("precio");
                 String cant = rs.getString("Cant_de_casas");
                 modeloLista.addElement(i + ") " + " Precio: " + precio + " | CANTIDAD DE CASAS: " + cant + "\n");
-
                 //tabla
                 Object[] row = {precio, cant};
                 m.addRow(row);
@@ -7703,6 +7704,7 @@ public class Main extends javax.swing.JFrame {
     private void jButton19MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton19MouseClicked
         // TODO add your handling code here:
         ResultSet rs = db.mostrarElementos("SELECT * FROM ventas_x_ubicacion");
+        ResultSet rs2 = db.mostrarElementos("SELECT * FROM ventas_x_ubicacion_ordenado");
         DefaultListModel<String> modeloLista = new DefaultListModel<>();
 
         //Codigo para poner en Jtable
@@ -7712,28 +7714,36 @@ public class Main extends javax.swing.JFrame {
         DefaultTableModel m = new DefaultTableModel();
         m.setColumnIdentifiers(columnNames);
 
-        int i = 1;
         try {
             while (rs.next()) {
                 String dir = rs.getString("direccion");
                 String ciudad = rs.getString("ciudad");
                 String cant = rs.getString("total_ventas");
-                modeloLista.addElement(i + "). " + "Ciudad: " + ciudad + " Dirrecion: " + dir + " | CANTIDAD DE CASAS Vendidas: " + cant + "\n");
-
                 //tabla
                 Object[] row = {ciudad, dir, cant};
                 m.addRow(row);
+            }
+            JTable_Reportes.setModel(m);
+        } catch (SQLException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
+        int i = 1;
+        try {
+            while (rs2.next()) {
+                String dir = rs2.getString("direccion");
+                String ciudad = rs2.getString("ciudad");
+                String idProp = rs2.getString("idPropiedad");
+                modeloLista.addElement(i + "). " + "Ciudad: " + ciudad + " | Dirrecion: " + dir + " | Id de la porpiedad: " + idProp + "\n");
                 i++;
             }
             jList1.setModel(modeloLista);
-            JTable_Reportes.setModel(m);
-            lb_Reportes.setText("Ventas por Ubicacion");
 
         } catch (SQLException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(Reportes, "Error: La base de datos no ha respondido a tiempo", "Error de Inactividad", JOptionPane.ERROR_MESSAGE);
         }
+        lb_Reportes.setText("Ventas por Ubicacion");
     }//GEN-LAST:event_jButton19MouseClicked
 
     private void jButton18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton18MouseClicked
