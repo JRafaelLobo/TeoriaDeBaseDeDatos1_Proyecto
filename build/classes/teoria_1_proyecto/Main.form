@@ -3560,13 +3560,13 @@
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <EmptySpace max="-2" attributes="0"/>
                                                       <Component id="jLabel134" min="-2" pref="161" max="-2" attributes="0"/>
-                                                      <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+                                                      <EmptySpace min="-2" pref="92" max="-2" attributes="0"/>
                                                       <Component id="jLabel135" min="-2" pref="147" max="-2" attributes="0"/>
                                                   </Group>
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
                                                       <Component id="jLabel132" min="-2" pref="162" max="-2" attributes="0"/>
-                                                      <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
+                                                      <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
                                                       <Component id="jLabel133" min="-2" pref="131" max="-2" attributes="0"/>
                                                   </Group>
                                               </Group>
@@ -3574,7 +3574,7 @@
                                       </Group>
                                   </Group>
                               </Group>
-                              <EmptySpace pref="86" max="32767" attributes="0"/>
+                              <EmptySpace pref="118" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -3612,20 +3612,24 @@
                                   </Group>
                               </Group>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                                       <Component id="jLabel132" min="-2" pref="75" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jLabel134" alignment="1" min="-2" pref="87" max="-2" attributes="0"/>
-                                          <Component id="jLabel135" alignment="1" min="-2" pref="88" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace pref="12" max="32767" attributes="0"/>
                                   </Group>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <EmptySpace max="32767" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                                       <Component id="jLabel133" min="-2" pref="62" max="-2" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Component id="jLabel134" min="-2" pref="87" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" pref="12" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <Component id="jLabel135" min="-2" pref="88" max="-2" attributes="0"/>
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -3658,9 +3662,6 @@
                     <Component class="javax.swing.JLabel" name="jLabel132">
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel133">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="jLabel133"/>
-                      </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel134">
                     </Component>
@@ -7582,7 +7583,7 @@
             </Component>
             <Component class="javax.swing.JButton" name="jButton19">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Ventas por Ubicacion"/>
+                <Property name="text" type="java.lang.String" value="Cantidad de Ventas por Ubicacion"/>
               </Properties>
               <Events>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton19MouseClicked"/>
@@ -7593,7 +7594,7 @@
             </Component>
             <Component class="javax.swing.JButton" name="jButton11">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Ventas por precio de propiedad"/>
+                <Property name="text" type="java.lang.String" value="Cantidad de Ventas por precio de propiedad"/>
               </Properties>
               <Events>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton11MouseClicked"/>
