@@ -4803,11 +4803,6 @@ public class Main extends javax.swing.JFrame {
                 jButton16MouseClicked(evt);
             }
         });
-        jButton16.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton16ActionPerformed(evt);
-            }
-        });
 
         jButton17.setText("Cantidad de ventas por vendedor");
         jButton17.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -7256,27 +7251,27 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton35MouseClicked
 
     private void jButton36MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton36MouseClicked
-            // TODO add your handling code here:
+        // TODO add your handling code here:
+        try {
+            ResultSet rs = db.mostrarElementos("SELECT idPropiedad FROM propiedades_vendidas;");
+            //DefaultListModel<String> modeloLista = new DefaultListModel<>();
+            int idprop = 0;
+            ArrayList fotos = new ArrayList();
             try {
-                ResultSet rs = db.mostrarElementos("SELECT idPropiedad FROM propiedades_vendidas;");
-                //DefaultListModel<String> modeloLista = new DefaultListModel<>();
-                int idprop = 0;
-                ArrayList fotos = new ArrayList();
-                try {
-                    while (rs.next()) {
-                        idprop = rs.getInt("idPropiedad");
-                        fotos.add(idprop);
-                    }
-
-                } catch (SQLException ex) {
-                    Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+                while (rs.next()) {
+                    idprop = rs.getInt("idPropiedad");
+                    fotos.add(idprop);
                 }
-                //Primera imagen -----------------------
-                String nombreImagen = fotos.get(0).toString() + ".jpg"; // Obtener el nombre de la imagen
-                String rutaImagen = "./imagenCasas/" + nombreImagen; // Ruta completa de la imagen
-                Image m = new ImageIcon(rutaImagen).getImage();
-                ImageIcon mi = new ImageIcon(m.getScaledInstance(jLabel131.getWidth(), jLabel131.getHeight(), jLabel131.getWidth()));
-                jLabel131.setIcon(mi);
+
+            } catch (SQLException ex) {
+                Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            //Primera imagen -----------------------
+            String nombreImagen = fotos.get(0).toString() + ".jpg"; // Obtener el nombre de la imagen
+            String rutaImagen = "./imagenCasas/" + nombreImagen; // Ruta completa de la imagen
+            Image m = new ImageIcon(rutaImagen).getImage();
+            ImageIcon mi = new ImageIcon(m.getScaledInstance(jLabel131.getWidth(), jLabel131.getHeight(), jLabel131.getWidth()));
+            jLabel131.setIcon(mi);
 
             //Segunda imagen ------------------------
             String nombreImagen2 = fotos.get(1).toString() + ".jpg"; // Obtener el nombre de la imagen
@@ -7472,6 +7467,8 @@ public class Main extends javax.swing.JFrame {
             lb_Reportes.setText("Ventas por precio de propiedad(id)");
         } catch (SQLException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(Reportes, "Error: La base de datos no ha respondido a tiempo", "Error de Inactividad", JOptionPane.ERROR_MESSAGE);
+
         }
     }//GEN-LAST:event_jButton37MouseClicked
 
@@ -7514,6 +7511,8 @@ public class Main extends javax.swing.JFrame {
 
         } catch (SQLException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(Reportes, "Error: La base de datos no ha respondido a tiempo", "Error de Inactividad", JOptionPane.ERROR_MESSAGE);
+
         }
     }//GEN-LAST:event_jButton20MouseClicked
 
@@ -7543,7 +7542,7 @@ public class Main extends javax.swing.JFrame {
 
         //Codigo para poner en Jtable
         // Títulos de las columnas
-        Object[] columnNames = {"id", "nombre", yearStart + " - " + yearEnd};
+        Object[] columnNames = {"Id", "Nombre", "Propiedades_Vendidas", "Valor Total", yearStart + " - " + yearEnd};
         // Crear un modelo de tabla personalizado
         DefaultTableModel m = new DefaultTableModel();
         m.setColumnIdentifiers(columnNames);
@@ -7552,10 +7551,13 @@ public class Main extends javax.swing.JFrame {
             while (rs.next()) {
                 int agenteID = rs.getInt("id");
                 String nombre = rs.getString("nombre");
-                modeloLista.addElement("Agente que vendio la mayor cantidad de propiedades en el año por valor total: \nID: " + agenteID + " NOMBRE: " + nombre);
+                String Cant = rs.getString("propiedades_vendidas");
+                String valor = rs.getString("ValorTotal");
+
+                modeloLista.addElement("Agente que vendio la mayor cantidad de propiedades en el año por valor total: \nID: " + agenteID + " NOMBRE: " + nombre + "\nPropiedades Vendidas: " + Cant+"\nValor vendido:"+valor);
 
                 //tabla
-                Object[] row = {agenteID, nombre, "Agente del Año"};
+                Object[] row = {agenteID, nombre, Cant,valor, "Agente del Año"};
                 m.addRow(row);
             }
             jList1.setModel(modeloLista);
@@ -7564,6 +7566,7 @@ public class Main extends javax.swing.JFrame {
 
         } catch (SQLException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(Reportes, "Error: La base de datos no ha respondido a tiempo", "Error de Inactividad", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_jButton15MouseClicked
 
@@ -7596,6 +7599,8 @@ public class Main extends javax.swing.JFrame {
 
         } catch (SQLException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(Reportes, "Error: La base de datos no ha respondido a tiempo", "Error de Inactividad", JOptionPane.ERROR_MESSAGE);
+
         }
     }//GEN-LAST:event_jButton13MouseClicked
 
@@ -7629,6 +7634,7 @@ public class Main extends javax.swing.JFrame {
             lb_Reportes.setText("Ventas por precio de propiedad");
         } catch (SQLException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(Reportes, "Error: La base de datos no ha respondido a tiempo", "Error de Inactividad", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_jButton11MouseClicked
 
@@ -7664,6 +7670,7 @@ public class Main extends javax.swing.JFrame {
 
         } catch (SQLException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(Reportes, "Error: La base de datos no ha respondido a tiempo", "Error de Inactividad", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_jButton19MouseClicked
 
@@ -7699,6 +7706,7 @@ public class Main extends javax.swing.JFrame {
 
         } catch (SQLException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(Reportes, "Error: La base de datos no ha respondido a tiempo", "Error de Inactividad", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_jButton18MouseClicked
 
@@ -7734,12 +7742,9 @@ public class Main extends javax.swing.JFrame {
 
         } catch (SQLException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(Reportes, "Error: La base de datos no ha respondido a tiempo", "Error de Inactividad", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_jButton17MouseClicked
-
-    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton16ActionPerformed
 
     private void jButton16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton16MouseClicked
         // TODO add your handling code here:
@@ -7773,6 +7778,8 @@ public class Main extends javax.swing.JFrame {
             lb_Reportes.setText("Cantidad de ventas por agente");
         } catch (SQLException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(Reportes, "Error: La base de datos no ha respondido a tiempo", "Error de Inactividad", JOptionPane.ERROR_MESSAGE);
+
         }
     }//GEN-LAST:event_jButton16MouseClicked
 
