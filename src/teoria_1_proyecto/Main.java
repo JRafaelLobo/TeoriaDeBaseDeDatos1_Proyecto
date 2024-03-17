@@ -73,7 +73,6 @@ public class Main extends javax.swing.JFrame {
             Portadita.setIconImage(new ImageIcon("./Imagen\\beinvenida.jpeg").getImage());
 
             //JF_crearPropiedadesVendidas.show();
-            Reportes.setVisible(true);
         } catch (SQLException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -5131,151 +5130,244 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_pf_passwordloginMousePressed
 
     private void JB_loginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_loginMouseClicked
+        //Metodo rafa
+        String correo = tf_usernamelogin.getText();
+        String contra = pf_passwordlogin.getText();
+        ResultSet rs = db.mostrarElementos("Call iniciarSeccion('" + correo + "','" + contra + "')");
+        String rol = "";
         try {
-            ArrayList<String> temp = new ArrayList();
-            ArrayList<String> temp2 = new ArrayList();
-            String correo = tf_usernamelogin.getText();
-            String contra = pf_passwordlogin.getText();
-            boolean check = false;
-
-            ResultSet rs = db.mostrarElementos("SELECT correo FROM usuario");
-
-            while (rs.next()) {
-                String correo2 = rs.getString("correo");
-                temp.add(correo2);
+            if (!rs.next()) {
+                JOptionPane.showMessageDialog(JF_Principal, "Error: No ha ingresado correo y contrasena correcta", "Error de Inicio de Seccion", JOptionPane.ERROR_MESSAGE);
+                return;
             }
-
-            ResultSet rs2 = db.mostrarElementos("SELECT contraseña FROM usuario");
-            while (rs2.next()) {
-                String contra2 = rs2.getString("contraseña");
-                temp2.add(contra2);
-            }
-
-            for (int j = 0; j < temp.size(); j++) {
-                if (temp.get(j).equalsIgnoreCase(correo)) {
-                    check = true;
-                    break;
-                }
-            }
-            for (int j = 0; j < temp2.size(); j++) {
-                if (temp2.get(j).equalsIgnoreCase(contra)) {
-                    check = true;
-                    break;
-                }
-            }
-
-            if (check) {
-                String rol = "";
-                String id = "";
-                ResultSet rs3 = db.mostrarElementos("SELECT id FROM usuario WHERE correo = '" + correo + "';");
-                while (rs3.next()) { // Aquí debe ser rs3 en lugar de rs
-                    identidadUsuarioActivo = rs3.getInt("id");
-                }
-                db.HacerConsulta("UPDATE usuario SET activo = 'TRUE' WHERE id = " + identidadUsuarioActivo + ";");
-                ResultSet rs4 = db.mostrarElementos("SELECT rol FROM usuario WHERE correo = '" + correo + "';");
-                while (rs4.next()) {
-                    rol = rs4.getString("rol");
-                }
-                if (rol.equals("administrador")) {
-                    ResultSet d = db.mostrarElementos("SELECT * FROM propiedades_en_mercado");
-                    DefaultTableModel model = (DefaultTableModel) jTable13.getModel();
-                    model.setRowCount(0);
-                    try {
-                        while (d.next()) {
-                            int idprop = d.getInt("idPropiedad");
-                            String nombre = d.getString("nombre");
-                            String ciudad = d.getString("ciudad");
-                            String direccion = d.getString("direccion");
-                            int cant_dor = d.getInt("cantidadDormitorios");
-                            String car = d.getString("caracteristicas");
-                            int precio = d.getInt("precio");
-                            String fecha = d.getString("fechaPublicacion");
-                            int agente = d.getInt("noIdentidad_Agente");
-                            int vendedor = d.getInt("noIdentidad_Vendedor");
-                            Object[] row = {idprop, nombre, ciudad, direccion, cant_dor, car, precio, fecha, agente, vendedor};
-                            model.addRow(row);
-                        }
-
-                    } catch (SQLException ex) {
-                        Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-                    ResultSet m = db.mostrarElementos("SELECT * FROM propiedades_vendidas;");
-                    DefaultTableModel model2 = (DefaultTableModel) JT_propiedadesVendidas1.getModel();
-                    model2.setRowCount(0);
-                    try {
-                        while (m.next()) {
-                            int id2 = m.getInt("idPropiedad");
-                            String nombre = m.getString("nombre");
-                            String ciudad = m.getString("ciudad");
-                            String direccion = m.getString("direccion");
-                            int cant_dor = m.getInt("cantidadDormitorios");
-                            String car = m.getString("caracteristicas");
-                            int precio = m.getInt("precio");
-                            String fecha = m.getString("fechaPublicacion");
-                            String fechaVenta = m.getString("fechaVenta");
-                            int agente = m.getInt("noIdentidad_Agente");
-                            int vendedor = m.getInt("noIdentidad_Vendedor");
-                            int comprador = m.getInt("noIdentidad_Comprador");
-                            int comision = m.getInt("comisionVenta");
-                            Object[] row = {id2, nombre, ciudad, direccion, cant_dor, car, precio, fecha, fechaVenta, agente, vendedor, comprador, comision};
-                            model2.addRow(row);
-                        }
-
-                    } catch (SQLException ex) {
-                        Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-                    JF_ventanaAdmin.pack();
-                    JF_ventanaAdmin.setLocationRelativeTo(JF_Principal);
-                    JF_ventanaAdmin.setExtendedState(MAXIMIZED_BOTH);
-                    JF_Principal.setVisible(false);
-                    JF_ventanaAdmin.setVisible(true);
-
-                } else if (rol.equals("vendedor")) {
-                    JF_ventanaVendedor.pack();
-                    JF_ventanaVendedor.setLocationRelativeTo(JF_Principal);
-                    JF_ventanaVendedor.setExtendedState(MAXIMIZED_BOTH);
-                    JF_Principal.setVisible(false);
-                    JF_ventanaVendedor.setVisible(true);
-                } else if (rol.equals("comprador")) {
-                    JF_ventanacomprador.pack();
-                    JF_ventanacomprador.setLocationRelativeTo(JF_Principal);
-                    JF_ventanacomprador.setExtendedState(MAXIMIZED_BOTH);
-                    JF_Principal.setVisible(false);
-                    JF_ventanacomprador.setVisible(true);
-                } else if (rol.equals("agente")) {
-
-                    JF_ventanaAgente.pack();
-                    JF_ventanaAgente.setLocationRelativeTo(JF_Principal);
-                    JF_ventanaAgente.setExtendedState(MAXIMIZED_BOTH);
-                    JF_Principal.setVisible(false);
-                    JF_ventanaAgente.setVisible(true);
-                }
-
-            } else {
-                JOptionPane.showMessageDialog(JF_Principal, "Correo o contraseña incorrectos");
-            }
-
-////    vendedor
-//        JF_ventanaVendedor.pack();
-//        JF_ventanaVendedor.setLocationRelativeTo(JF_Principal);
-//        JF_ventanaVendedor.setExtendedState(MAXIMIZED_BOTH);
-//        JF_Principal.setVisible(false);
-//        JF_ventanaVendedor.setVisible(true);
-////Agente
-//        JF_ventanaAgente.pack();
-//        JF_ventanaAgente.setLocationRelativeTo(JF_Principal);
-//        JF_ventanaAgente.setExtendedState(MAXIMIZED_BOTH);
-//        JF_Principal.setVisible(false);
-//       JF_ventanaAgente.setVisible(true);
-//       // Comprador
-//               JF_ventanacomprador.pack();
-//        JF_ventanacomprador.setLocationRelativeTo(JF_Principal);
-//        JF_ventanacomprador.setExtendedState(MAXIMIZED_BOTH);
-//        JF_Principal.setVisible(false);
-//      JF_ventanacomprador.setVisible(true);
+            rol = rs.getString("rol");
         } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(JF_Principal, "Error: La base de datos no ha respondido a tiempo", "Error de Inactividad", JOptionPane.ERROR_MESSAGE);
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
+
+        if (rol.equals("administrador")) {
+            ResultSet d = db.mostrarElementos("SELECT * FROM propiedades_en_mercado");
+            DefaultTableModel model = (DefaultTableModel) jTable13.getModel();
+            model.setRowCount(0);
+            try {
+                while (d.next()) {
+                    int idprop = d.getInt("idPropiedad");
+                    String nombre = d.getString("nombre");
+                    String ciudad = d.getString("ciudad");
+                    String direccion = d.getString("direccion");
+                    int cant_dor = d.getInt("cantidadDormitorios");
+                    String car = d.getString("caracteristicas");
+                    int precio = d.getInt("precio");
+                    String fecha = d.getString("fechaPublicacion");
+                    int agente = d.getInt("noIdentidad_Agente");
+                    int vendedor = d.getInt("noIdentidad_Vendedor");
+                    Object[] row = {idprop, nombre, ciudad, direccion, cant_dor, car, precio, fecha, agente, vendedor};
+                    model.addRow(row);
+                }
+
+            } catch (SQLException ex) {
+                Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            ResultSet m = db.mostrarElementos("SELECT * FROM propiedades_vendidas;");
+            DefaultTableModel model2 = (DefaultTableModel) JT_propiedadesVendidas1.getModel();
+            model2.setRowCount(0);
+            try {
+                while (m.next()) {
+                    int id2 = m.getInt("idPropiedad");
+                    String nombre = m.getString("nombre");
+                    String ciudad = m.getString("ciudad");
+                    String direccion = m.getString("direccion");
+                    int cant_dor = m.getInt("cantidadDormitorios");
+                    String car = m.getString("caracteristicas");
+                    int precio = m.getInt("precio");
+                    String fecha = m.getString("fechaPublicacion");
+                    String fechaVenta = m.getString("fechaVenta");
+                    int agente = m.getInt("noIdentidad_Agente");
+                    int vendedor = m.getInt("noIdentidad_Vendedor");
+                    int comprador = m.getInt("noIdentidad_Comprador");
+                    int comision = m.getInt("comisionVenta");
+                    Object[] row = {id2, nombre, ciudad, direccion, cant_dor, car, precio, fecha, fechaVenta, agente, vendedor, comprador, comision};
+                    model2.addRow(row);
+                }
+
+            } catch (SQLException ex) {
+                Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            JF_ventanaAdmin.pack();
+            JF_ventanaAdmin.setLocationRelativeTo(JF_Principal);
+            JF_ventanaAdmin.setExtendedState(MAXIMIZED_BOTH);
+            JF_Principal.setVisible(false);
+            JF_ventanaAdmin.setVisible(true);
+
+        } else if (rol.equals("vendedor")) {
+            JF_ventanaVendedor.pack();
+            JF_ventanaVendedor.setLocationRelativeTo(JF_Principal);
+            JF_ventanaVendedor.setExtendedState(MAXIMIZED_BOTH);
+            JF_Principal.setVisible(false);
+            JF_ventanaVendedor.setVisible(true);
+        } else if (rol.equals("comprador")) {
+            JF_ventanacomprador.pack();
+            JF_ventanacomprador.setLocationRelativeTo(JF_Principal);
+            JF_ventanacomprador.setExtendedState(MAXIMIZED_BOTH);
+            JF_Principal.setVisible(false);
+            JF_ventanacomprador.setVisible(true);
+        } else if (rol.equals("agente")) {
+
+            JF_ventanaAgente.pack();
+            JF_ventanaAgente.setLocationRelativeTo(JF_Principal);
+            JF_ventanaAgente.setExtendedState(MAXIMIZED_BOTH);
+            JF_Principal.setVisible(false);
+            JF_ventanaAgente.setVisible(true);
+        }
+
+        //MEtodo marcela
+//        try {
+//            ArrayList<String> temp = new ArrayList();
+//            ArrayList<String> temp2 = new ArrayList();
+//            String correo = tf_usernamelogin.getText();
+//            String contra = pf_passwordlogin.getText();
+//            boolean check = false;
+//            ResultSet rs = db.mostrarElementos("SELECT correo,contraseña FROM usuario");
+//            if (rs.isLast()) {
+//
+//            }
+//            while (rs.next()) {
+//                String correo2 = rs.getString("correo");
+//                temp.add(correo2);
+//            }
+//
+//            ResultSet rs2 = db.mostrarElementos("SELECT contraseña FROM usuario");
+//            while (rs2.next()) {
+//                String contra2 = rs2.getString("contraseña");
+//                temp2.add(contra2);
+//            }
+//
+//            for (int j = 0; j < temp.size(); j++) {
+//                if (temp.get(j).equalsIgnoreCase(correo)) {
+//                    check = true;
+//                    break;
+//                }
+//            }
+//            for (int j = 0; j < temp2.size(); j++) {
+//                if (temp2.get(j).equalsIgnoreCase(contra)) {
+//                    check = true;
+//                    break;
+//                }
+//            }
+//
+//            if (check) {
+//                String rol = "";
+//                String id = "";
+//                ResultSet rs3 = db.mostrarElementos("SELECT id FROM usuario WHERE correo = '" + correo + "';");
+//                while (rs3.next()) { // Aquí debe ser rs3 en lugar de rs
+//                    identidadUsuarioActivo = rs3.getInt("id");
+//                }
+//                db.HacerConsulta("UPDATE usuario SET activo = 'TRUE' WHERE id = " + identidadUsuarioActivo + ";");
+//                ResultSet rs4 = db.mostrarElementos("SELECT rol FROM usuario WHERE correo = '" + correo + "';");
+//                while (rs4.next()) {
+//                    rol = rs4.getString("rol");
+//                }
+//                if (rol.equals("administrador")) {
+//                    ResultSet d = db.mostrarElementos("SELECT * FROM propiedades_en_mercado");
+//                    DefaultTableModel model = (DefaultTableModel) jTable13.getModel();
+//                    model.setRowCount(0);
+//                    try {
+//                        while (d.next()) {
+//                            int idprop = d.getInt("idPropiedad");
+//                            String nombre = d.getString("nombre");
+//                            String ciudad = d.getString("ciudad");
+//                            String direccion = d.getString("direccion");
+//                            int cant_dor = d.getInt("cantidadDormitorios");
+//                            String car = d.getString("caracteristicas");
+//                            int precio = d.getInt("precio");
+//                            String fecha = d.getString("fechaPublicacion");
+//                            int agente = d.getInt("noIdentidad_Agente");
+//                            int vendedor = d.getInt("noIdentidad_Vendedor");
+//                            Object[] row = {idprop, nombre, ciudad, direccion, cant_dor, car, precio, fecha, agente, vendedor};
+//                            model.addRow(row);
+//                        }
+//
+//                    } catch (SQLException ex) {
+//                        Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+//                    }
+//                    ResultSet m = db.mostrarElementos("SELECT * FROM propiedades_vendidas;");
+//                    DefaultTableModel model2 = (DefaultTableModel) JT_propiedadesVendidas1.getModel();
+//                    model2.setRowCount(0);
+//                    try {
+//                        while (m.next()) {
+//                            int id2 = m.getInt("idPropiedad");
+//                            String nombre = m.getString("nombre");
+//                            String ciudad = m.getString("ciudad");
+//                            String direccion = m.getString("direccion");
+//                            int cant_dor = m.getInt("cantidadDormitorios");
+//                            String car = m.getString("caracteristicas");
+//                            int precio = m.getInt("precio");
+//                            String fecha = m.getString("fechaPublicacion");
+//                            String fechaVenta = m.getString("fechaVenta");
+//                            int agente = m.getInt("noIdentidad_Agente");
+//                            int vendedor = m.getInt("noIdentidad_Vendedor");
+//                            int comprador = m.getInt("noIdentidad_Comprador");
+//                            int comision = m.getInt("comisionVenta");
+//                            Object[] row = {id2, nombre, ciudad, direccion, cant_dor, car, precio, fecha, fechaVenta, agente, vendedor, comprador, comision};
+//                            model2.addRow(row);
+//                        }
+//
+//                    } catch (SQLException ex) {
+//                        Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+//                    }
+//                    JF_ventanaAdmin.pack();
+//                    JF_ventanaAdmin.setLocationRelativeTo(JF_Principal);
+//                    JF_ventanaAdmin.setExtendedState(MAXIMIZED_BOTH);
+//                    JF_Principal.setVisible(false);
+//                    JF_ventanaAdmin.setVisible(true);
+//
+//                } else if (rol.equals("vendedor")) {
+//                    JF_ventanaVendedor.pack();
+//                    JF_ventanaVendedor.setLocationRelativeTo(JF_Principal);
+//                    JF_ventanaVendedor.setExtendedState(MAXIMIZED_BOTH);
+//                    JF_Principal.setVisible(false);
+//                    JF_ventanaVendedor.setVisible(true);
+//                } else if (rol.equals("comprador")) {
+//                    JF_ventanacomprador.pack();
+//                    JF_ventanacomprador.setLocationRelativeTo(JF_Principal);
+//                    JF_ventanacomprador.setExtendedState(MAXIMIZED_BOTH);
+//                    JF_Principal.setVisible(false);
+//                    JF_ventanacomprador.setVisible(true);
+//                } else if (rol.equals("agente")) {
+//
+//                    JF_ventanaAgente.pack();
+//                    JF_ventanaAgente.setLocationRelativeTo(JF_Principal);
+//                    JF_ventanaAgente.setExtendedState(MAXIMIZED_BOTH);
+//                    JF_Principal.setVisible(false);
+//                    JF_ventanaAgente.setVisible(true);
+//                }
+//
+//            } else {
+//                JOptionPane.showMessageDialog(JF_Principal, "Correo o contraseña incorrectos");
+//            }
+//
+//////    vendedor
+////        JF_ventanaVendedor.pack();
+////        JF_ventanaVendedor.setLocationRelativeTo(JF_Principal);
+////        JF_ventanaVendedor.setExtendedState(MAXIMIZED_BOTH);
+////        JF_Principal.setVisible(false);
+////        JF_ventanaVendedor.setVisible(true);
+//////Agente
+////        JF_ventanaAgente.pack();
+////        JF_ventanaAgente.setLocationRelativeTo(JF_Principal);
+////        JF_ventanaAgente.setExtendedState(MAXIMIZED_BOTH);
+////        JF_Principal.setVisible(false);
+////       JF_ventanaAgente.setVisible(true);
+////       // Comprador
+////               JF_ventanacomprador.pack();
+////        JF_ventanacomprador.setLocationRelativeTo(JF_Principal);
+////        JF_ventanacomprador.setExtendedState(MAXIMIZED_BOTH);
+////        JF_Principal.setVisible(false);
+////      JF_ventanacomprador.setVisible(true);
+//        } catch (SQLException ex) {
+//            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }//GEN-LAST:event_JB_loginMouseClicked
 
     private void JB_CrearCompradorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_CrearCompradorActionPerformed
@@ -7366,11 +7458,11 @@ public class Main extends javax.swing.JFrame {
                 String cant = rs.getString("Cant_de_casas");
                 String idpropiedad = rs.getString("IdPropiedad");
 
-                modeloLista.addElement(i + ") " + " Precio: " + precio + " | CANTIDAD DE CASAS: " + cant + " | IDPropiedad: "+idpropiedad+
-                    "\n");
+                modeloLista.addElement(i + ") " + " Precio: " + precio + " | CANTIDAD DE CASAS: " + cant + " | IDPropiedad: " + idpropiedad
+                        + "\n");
 
                 //tabla
-                Object[] row = {precio, cant,idpropiedad};
+                Object[] row = {precio, cant, idpropiedad};
                 m.addRow(row);
 
                 i++;
@@ -7432,14 +7524,14 @@ public class Main extends javax.swing.JFrame {
             yearStart = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el primer año a tomar en cuenta: "));           // Aquí puedes utilizar el valor de fechaEmpezar
         } catch (NumberFormatException e) {
             // Mostrar un mensaje de error en un JOptionPane
-            JOptionPane.showMessageDialog(null, "Error: Por favor, ingrese un valor entero.", "Error de entrada", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(Reportes, "Error: Por favor, ingrese un valor entero.", "Error de entrada", JOptionPane.ERROR_MESSAGE);
             return;
         }
         try {
             yearEnd = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el segundo año a tomar en cuenta: "));           // Aquí puedes utilizar el valor de fechaEmpezar
         } catch (NumberFormatException e) {
             // Mostrar un mensaje de error en un JOptionPane
-            JOptionPane.showMessageDialog(null, "Error: Por favor, ingrese un valor entero.", "Error de entrada", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(Reportes, "Error: Por favor, ingrese un valor entero.", "Error de entrada", JOptionPane.ERROR_MESSAGE);
             return;
         }
 
