@@ -294,9 +294,6 @@ public class Main extends javax.swing.JFrame {
         jPanel7 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         JT_adminUsuarios = new javax.swing.JTable();
-        tf_buscarUsuaios = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
-        jb_buscarUsuarios = new javax.swing.JButton();
         jToolBar1 = new javax.swing.JToolBar();
         jb_crudagentes = new javax.swing.JButton();
         jb_crudcompradores = new javax.swing.JButton();
@@ -304,6 +301,11 @@ public class Main extends javax.swing.JFrame {
         jb_crudagentespropiedades = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
+        jLabel137 = new javax.swing.JLabel();
+        JB_verAgentes = new javax.swing.JButton();
+        JB_verCompradores = new javax.swing.JButton();
+        JB_verVendedores = new javax.swing.JButton();
+        JB_verUsuarios = new javax.swing.JButton();
         jPanel54 = new javax.swing.JPanel();
         jScrollPane15 = new javax.swing.JScrollPane();
         JT_propiedadesVendidas1 = new javax.swing.JTable();
@@ -2695,17 +2697,6 @@ public class Main extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(JT_adminUsuarios);
 
-        tf_buscarUsuaios.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tf_buscarUsuaiosActionPerformed(evt);
-            }
-        });
-
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel7.setText("Buscar id:");
-
-        jb_buscarUsuarios.setText("Buscar");
-
         jToolBar1.setRollover(true);
 
         jb_crudagentes.setText("Agentes");
@@ -2765,28 +2756,57 @@ public class Main extends javax.swing.JFrame {
 
         jLabel8.setText("Administrar:");
 
+        jLabel137.setText("Ver:");
+
+        JB_verAgentes.setText("Agentes");
+        JB_verAgentes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                JB_verAgentesMouseClicked(evt);
+            }
+        });
+
+        JB_verCompradores.setText("Compradores");
+        JB_verCompradores.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                JB_verCompradoresMouseClicked(evt);
+            }
+        });
+
+        JB_verVendedores.setText("Vendedores");
+        JB_verVendedores.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                JB_verVendedoresMouseClicked(evt);
+            }
+        });
+
+        JB_verUsuarios.setText("Usuarios");
+        JB_verUsuarios.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                JB_verUsuariosMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(33, 33, 33)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGap(33, 33, 33)
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel7Layout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addComponent(jLabel7)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(tf_buscarUsuaios, javax.swing.GroupLayout.PREFERRED_SIZE, 427, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jb_buscarUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel8)
-                            .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 478, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGap(19, 19, 19)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 649, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(57, Short.MAX_VALUE))
+                        .addComponent(jLabel137, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(JB_verAgentes)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(JB_verCompradores)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(JB_verVendedores)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(JB_verUsuarios))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 649, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel8)
+                    .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 478, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2795,14 +2815,17 @@ public class Main extends javax.swing.JFrame {
                 .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(tf_buscarUsuaios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jb_buscarUsuarios))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(60, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel137)
+                    .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(JB_verAgentes)
+                        .addComponent(JB_verCompradores)
+                        .addComponent(JB_verVendedores)
+                        .addComponent(JB_verUsuarios)))
+                .addContainerGap(72, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("Mantenimiento", jPanel7);
@@ -5579,10 +5602,6 @@ public class Main extends javax.swing.JFrame {
         JF_modificarVendedor.setVisible(true);
     }//GEN-LAST:event_jButton10MouseClicked
 
-    private void tf_buscarUsuaiosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_buscarUsuaiosActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tf_buscarUsuaiosActionPerformed
-
     private void jb_crudagentesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_crudagentesMouseClicked
         JF_Agentes.pack();
         JF_Agentes.setLocationRelativeTo(JF_Principal);
@@ -7519,6 +7538,114 @@ public class Main extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jb_buscaridVendedorMouseClicked
 
+    private void JB_verAgentesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_verAgentesMouseClicked
+
+        ResultSet rs = db.mostrarElementos("SELECT id, nombre, direccion, celular FROM agentes;");
+        DefaultTableModel model = (DefaultTableModel) JT_adminUsuarios.getModel();
+        model.setRowCount(0);
+        try {
+            while (rs.next()) {
+                int id2 = rs.getInt("id");
+                String nombre = rs.getString("nombre");
+                String direccion = rs.getString("direccion");
+                int cel = rs.getInt("celular");
+                Object[] row = {id2, nombre, direccion, cel};
+                model.addRow(row);
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_JB_verAgentesMouseClicked
+
+    private void JB_verCompradoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_verCompradoresMouseClicked
+
+        ResultSet rs = db.mostrarElementos("SELECT * FROM compradores;");
+        DefaultTableModel model = (DefaultTableModel) JT_adminUsuarios.getModel();
+        model.setRowCount(0);
+        try {
+            while (rs.next()) {
+                int id2 = rs.getInt("id");
+                String nombre = rs.getString("nombre");
+                String direccion = rs.getString("direccion");
+                int cel = rs.getInt("celular");
+                Object[] row = {id2, nombre, direccion, cel};
+                model.addRow(row);
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_JB_verCompradoresMouseClicked
+
+    private void JB_verVendedoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_verVendedoresMouseClicked
+        String id =tf_buscaridVendedor.getText();
+        ResultSet rs = db.mostrarElementos("SELECT * FROM vendedores;");
+        DefaultTableModel model = (DefaultTableModel) JT_adminUsuarios.getModel();
+        model.setRowCount(0);
+        try {
+            while (rs.next()) {
+                int id2 = rs.getInt("id");
+                String nombre = rs.getString("nombre");
+                String direccion = rs.getString("direccion");
+                int cel = rs.getInt("celular");
+                Object[] row = {id2, nombre, direccion, cel};
+                model.addRow(row);
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_JB_verVendedoresMouseClicked
+
+    private void JB_verUsuariosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_verUsuariosMouseClicked
+       String id =tf_buscaridVendedor.getText();
+        ResultSet rs = db.mostrarElementos("SELECT * FROM vendedores;");
+        DefaultTableModel model = (DefaultTableModel) JT_adminUsuarios.getModel();
+        model.setRowCount(0);
+        try {
+            while (rs.next()) {
+                int id2 = rs.getInt("id");
+                String nombre = rs.getString("nombre");
+                String direccion = rs.getString("direccion");
+                int cel = rs.getInt("celular");
+                Object[] row = {id2, nombre, direccion, cel};
+                model.addRow(row);
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        ResultSet rs2 = db.mostrarElementos("SELECT id, nombre, direccion, celular FROM agentes;");
+        try {
+            while (rs2.next()) {
+                int id2 = rs2.getInt("id");
+                String nombre = rs2.getString("nombre");
+                String direccion = rs2.getString("direccion");
+                int cel = rs2.getInt("celular");
+                Object[] row = {id2, nombre, direccion, cel};
+                model.addRow(row);
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        ResultSet rs3 = db.mostrarElementos("SELECT * FROM compradores;");
+        try {
+            while (rs3.next()) {
+                int id2 = rs3.getInt("id");
+                String nombre = rs3.getString("nombre");
+                String direccion = rs3.getString("direccion");
+                int cel = rs3.getInt("celular");
+                Object[] row = {id2, nombre, direccion, cel};
+                model.addRow(row);
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_JB_verUsuariosMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -7588,6 +7715,10 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton JB_ventanaEliminarPropiedadesVendidas;
     private javax.swing.JButton JB_ventanaModificarPropiedadesVendidas;
     private javax.swing.JButton JB_ventanacrearPropiedadesVendidas;
+    private javax.swing.JButton JB_verAgentes;
+    private javax.swing.JButton JB_verCompradores;
+    private javax.swing.JButton JB_verUsuarios;
+    private javax.swing.JButton JB_verVendedores;
     private javax.swing.JFrame JF_Agentes;
     private javax.swing.JFrame JF_Compradores;
     private javax.swing.JFrame JF_Principal;
@@ -7720,6 +7851,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel134;
     private javax.swing.JLabel jLabel135;
     private javax.swing.JLabel jLabel136;
+    private javax.swing.JLabel jLabel137;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
@@ -7781,7 +7913,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel67;
     private javax.swing.JLabel jLabel68;
     private javax.swing.JLabel jLabel69;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel70;
     private javax.swing.JLabel jLabel71;
     private javax.swing.JLabel jLabel72;
@@ -7918,7 +8049,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField7;
     private javax.swing.JToolBar jToolBar1;
-    private javax.swing.JButton jb_buscarUsuarios;
     private javax.swing.JButton jb_buscaridVendedor;
     private javax.swing.JButton jb_crudagentes;
     private javax.swing.JButton jb_crudagentespropiedades;
@@ -7968,7 +8098,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton temporal;
     private javax.swing.JTextField tf_buscarAgentes;
     private javax.swing.JTextField tf_buscarPropiedadesVendidas;
-    private javax.swing.JTextField tf_buscarUsuaios;
     private javax.swing.JTextField tf_buscarUsuarioId;
     private javax.swing.JTextField tf_buscaridVendedor;
     private javax.swing.JTextField tf_crearAgenteCelular;
