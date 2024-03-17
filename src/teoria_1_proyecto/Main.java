@@ -2585,11 +2585,6 @@ public class Main extends javax.swing.JFrame {
                 jButton36MouseClicked(evt);
             }
         });
-        jButton36.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton36ActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout jPanel55Layout = new javax.swing.GroupLayout(jPanel55);
         jPanel55.setLayout(jPanel55Layout);
@@ -4882,7 +4877,12 @@ public class Main extends javax.swing.JFrame {
         lb_Reportes.setFont(new java.awt.Font("Dialog", 0, 36)); // NOI18N
         lb_Reportes.setText(" ");
 
-        jButton37.setText("Ventas por precio de propiedad");
+        jButton37.setText("Ventas por precio de propiedad(ID)");
+        jButton37.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton37MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel95Layout = new javax.swing.GroupLayout(jPanel95);
         jPanel95.setLayout(jPanel95Layout);
@@ -4891,26 +4891,25 @@ public class Main extends javax.swing.JFrame {
             .addGroup(jPanel95Layout.createSequentialGroup()
                 .addGroup(jPanel95Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel95Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel95Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jButton13, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 409, Short.MAX_VALUE)
-                            .addComponent(jButton15, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton11, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton19, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton18, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton17, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton16, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel95Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jScrollPane19, javax.swing.GroupLayout.DEFAULT_SIZE, 507, Short.MAX_VALUE)
-                            .addComponent(jScrollPane10)))
-                    .addGroup(jPanel95Layout.createSequentialGroup()
                         .addGap(406, 406, 406)
                         .addComponent(lb_Reportes))
                     .addGroup(jPanel95Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jButton37, javax.swing.GroupLayout.PREFERRED_SIZE, 409, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel95Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel95Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jButton13, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 409, Short.MAX_VALUE)
+                                .addComponent(jButton15, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton11, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton19, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton18, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton17, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton16, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jButton37, javax.swing.GroupLayout.PREFERRED_SIZE, 409, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel95Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jScrollPane19, javax.swing.GroupLayout.DEFAULT_SIZE, 507, Short.MAX_VALUE)
+                            .addComponent(jScrollPane10))))
                 .addContainerGap(43, Short.MAX_VALUE))
         );
         jPanel95Layout.setVerticalGroup(
@@ -4935,14 +4934,14 @@ public class Main extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton37)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton20, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel95Layout.createSequentialGroup()
                         .addComponent(jScrollPane19, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton37, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
-                .addContainerGap())
+                .addContainerGap(93, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout ReportesLayout = new javax.swing.GroupLayout(Reportes.getContentPane());
@@ -6454,10 +6453,6 @@ public class Main extends javax.swing.JFrame {
     private void tf_buscarUsuarioIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_buscarUsuarioIdActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tf_buscarUsuarioIdActionPerformed
-
-    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton16ActionPerformed
     // TODO add your handling code here:
 
     private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
@@ -6513,180 +6508,6 @@ public class Main extends javax.swing.JFrame {
         Reportes.setVisible(false);
         Reportes.setVisible(true);
     }//GEN-LAST:event_verReportesMouseClicked
-
-    private void jButton16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton16MouseClicked
-        // TODO add your handling code here:
-        ResultSet rs = db.mostrarElementos("SELECT * FROM ventas_x_agente");
-        DefaultListModel<String> modeloLista = new DefaultListModel<>();
-        int i = 1;
-
-        //Codigo para poner en Jtable
-        // Títulos de las columnas
-        Object[] columnNames = {"id", "nombre", "Cantidad Vendida"};
-        // Crear un modelo de tabla personalizado
-        DefaultTableModel m = new DefaultTableModel();
-        m.setColumnIdentifiers(columnNames);
-
-        try {
-            while (rs.next()) {
-                int id = rs.getInt("id");
-                String nombre = rs.getString("nombre");
-                String cant = rs.getString("Cantidad_de_propiedades_vendidas");
-                modeloLista.addElement(i + "). " + " ID: " + id + " | NOMBRE: " + nombre + " | " + "CANTIDAD VENDIDAS: " + cant + "\n");
-
-                //tabla
-                Object[] row = {id, nombre, cant};
-                m.addRow(row);
-
-                i++;
-
-            }
-            jList1.setModel(modeloLista);
-            JTable_Reportes.setModel(m);
-            lb_Reportes.setText("Cantidad de ventas por agente");
-        } catch (SQLException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-    }//GEN-LAST:event_jButton16MouseClicked
-
-    private void jButton17MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton17MouseClicked
-        // TODO add your handling code here:
-        ResultSet rs = db.mostrarElementos("SELECT * FROM ventas_x_vendedor");
-        DefaultListModel<String> modeloLista = new DefaultListModel<>();
-
-        //Codigo para poner en Jtable
-        // Títulos de las columnas
-        Object[] columnNames = {"id", "nombre", "Cantidad Vendida"};
-        // Crear un modelo de tabla personalizado
-        DefaultTableModel m = new DefaultTableModel();
-        m.setColumnIdentifiers(columnNames);
-
-        int i = 1;
-        try {
-
-            while (rs.next()) {
-                int id = rs.getInt("id");
-                String nombre = rs.getString("nombre");
-                String cant = rs.getString("Cantidad_de_propiedades_vendidas");
-                modeloLista.addElement(i + "). " + " ID: " + id + " | NOMBRE: " + nombre + " | " + "CANTIDAD VENDIDAS: " + cant + "\n");
-
-                //tabla
-                Object[] row = {id, nombre, cant};
-                m.addRow(row);
-                i++;
-            }
-            JTable_Reportes.setModel(m);
-            jList1.setModel(modeloLista);
-            lb_Reportes.setText("Cantidad de ventas por vendedor");
-
-        } catch (SQLException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_jButton17MouseClicked
-
-    private void jButton18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton18MouseClicked
-        // TODO add your handling code here:
-        ResultSet rs = db.mostrarElementos("SELECT * FROM compras_x_comprador");
-        DefaultListModel<String> modeloLista = new DefaultListModel<>();
-
-        //Codigo para poner en Jtable
-        // Títulos de las columnas
-        Object[] columnNames = {"id", "nombre", "Cantidad Compradas"};
-        // Crear un modelo de tabla personalizado
-        DefaultTableModel m = new DefaultTableModel();
-        m.setColumnIdentifiers(columnNames);
-
-        int i = 1;
-        try {
-            while (rs.next()) {
-                int id = rs.getInt("id");
-                String nombre = rs.getString("nombre");
-                String cant = rs.getString("Cant_Propiedades_Compradas");
-                modeloLista.addElement(i + "). " + " ID: " + id + " | NOMBRE: " + nombre + " | " + "CANTIDAD COMPRADAS: " + cant + "\n");
-
-                //tabla
-                Object[] row = {id, nombre, cant};
-                m.addRow(row);
-
-                i++;
-            }
-            jList1.setModel(modeloLista);
-            JTable_Reportes.setModel(m);
-            lb_Reportes.setText("Cantidad de compras por comprador");
-
-        } catch (SQLException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_jButton18MouseClicked
-
-    private void jButton19MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton19MouseClicked
-        // TODO add your handling code here:
-        ResultSet rs = db.mostrarElementos("SELECT * FROM ventas_x_ubicacion");
-        DefaultListModel<String> modeloLista = new DefaultListModel<>();
-
-        //Codigo para poner en Jtable
-        // Títulos de las columnas
-        Object[] columnNames = {"ciudad", "direccion", "Cantidad"};
-        // Crear un modelo de tabla personalizado
-        DefaultTableModel m = new DefaultTableModel();
-        m.setColumnIdentifiers(columnNames);
-
-        int i = 1;
-        try {
-            while (rs.next()) {
-                String dir = rs.getString("direccion");
-                String ciudad = rs.getString("ciudad");
-                String cant = rs.getString("total_ventas");
-                modeloLista.addElement(i + "). " + "Ciudad: " + ciudad + " Dirrecion: " + dir + " | CANTIDAD DE CASAS Vendidas: " + cant + "\n");
-
-                //tabla
-                Object[] row = {ciudad, dir, cant};
-                m.addRow(row);
-
-                i++;
-            }
-            jList1.setModel(modeloLista);
-            JTable_Reportes.setModel(m);
-            lb_Reportes.setText("Ventas por Ubicacion");
-
-        } catch (SQLException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_jButton19MouseClicked
-
-    private void jButton11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton11MouseClicked
-        // TODO add your handling code here:
-        ResultSet rs = db.mostrarElementos("SELECT * FROM ventas_x_precio");
-        DefaultListModel<String> modeloLista = new DefaultListModel<>();
-
-        //Codigo para poner en Jtable
-        // Títulos de las columnas
-        Object[] columnNames = {"Precio", "Cantidad de Casas"};
-        // Crear un modelo de tabla personalizado
-        DefaultTableModel m = new DefaultTableModel();
-        m.setColumnIdentifiers(columnNames);
-
-        int i = 1;
-        try {
-            while (rs.next()) {
-                int precio = rs.getInt("precio");
-                String cant = rs.getString("Cant_de_casas");
-                modeloLista.addElement(i + ") " + " Precio: " + precio + " | CANTIDAD DE CASAS: " + cant + "\n");
-
-                //tabla
-                Object[] row = {precio, cant};
-                m.addRow(row);
-
-                i++;
-            }
-            jList1.setModel(modeloLista);
-            JTable_Reportes.setModel(m);
-            lb_Reportes.setText("Ventas por precio de propiedad");
-        } catch (SQLException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_jButton11MouseClicked
 
     private void jButton9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton9MouseClicked
         // TODO add your handling code here:
@@ -6744,130 +6565,6 @@ public class Main extends javax.swing.JFrame {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_JB_buscarPropiedadesVendidasMouseClicked
-
-    private void jButton15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton15MouseClicked
-        // TODO add your handling code here:
-        int yearStart, yearEnd;
-        try {
-            yearStart = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el primer año a tomar en cuenta: "));           // Aquí puedes utilizar el valor de fechaEmpezar
-        } catch (NumberFormatException e) {
-            // Mostrar un mensaje de error en un JOptionPane
-            JOptionPane.showMessageDialog(null, "Error: Por favor, ingrese un valor entero.", "Error de entrada", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-        try {
-            yearEnd = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el segundo año a tomar en cuenta: "));           // Aquí puedes utilizar el valor de fechaEmpezar
-        } catch (NumberFormatException e) {
-            // Mostrar un mensaje de error en un JOptionPane
-            JOptionPane.showMessageDialog(null, "Error: Por favor, ingrese un valor entero.", "Error de entrada", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-
-        //String fechaEmpezar = JOptionPane.showInputDialog("Ingrese el primer año a tomar en cuenta: ");
-        //String fechaTerminar = JOptionPane.showInputDialog("Ingrese el segundo año a tomar en cuenta: ");
-        ResultSet rs = db.mostrarElementos("CALL agenteVendioMayor('" + yearStart + "','" + yearEnd + "');");
-
-        DefaultListModel<String> modeloLista = new DefaultListModel<>();
-
-        //Codigo para poner en Jtable
-        // Títulos de las columnas
-        Object[] columnNames = {"id", "nombre", yearStart + " - " + yearEnd};
-        // Crear un modelo de tabla personalizado
-        DefaultTableModel m = new DefaultTableModel();
-        m.setColumnIdentifiers(columnNames);
-
-        try {
-            while (rs.next()) {
-                int agenteID = rs.getInt("id");
-                String nombre = rs.getString("nombre");
-                modeloLista.addElement("Agente que vendio la mayor cantidad de propiedades en el año por valor total: \nID: " + agenteID + " NOMBRE: " + nombre);
-
-                //tabla
-                Object[] row = {agenteID, nombre, "Agente del Año"};
-                m.addRow(row);
-            }
-            jList1.setModel(modeloLista);
-            JTable_Reportes.setModel(m);
-            lb_Reportes.setText("Agente que vendio la mayor cantidad");
-
-        } catch (SQLException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_jButton15MouseClicked
-
-    private void jButton20MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton20MouseClicked
-        // TODO add your handling code here:
-        int anioempezar;
-        try {
-            anioempezar = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el año a tomar en cuenta: "));           // Aquí puedes utilizar el valor de fechaEmpezar
-        } catch (NumberFormatException e) {
-            // Mostrar un mensaje de error en un JOptionPane
-            JOptionPane.showMessageDialog(null, "Error: Por favor, ingrese un valor entero.", "Error de entrada", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-        ResultSet rs = db.mostrarElementos("CALL promedioVentas('" + anioempezar + "')");
-        DefaultListModel<String> modeloLista = new DefaultListModel<>();
-
-        //Codigo para poner en Jtable
-        // Títulos de las columnas
-        Object[] columnNames = {"id", "nombre", "Precio Promedio", "Tiempo Promedio en el mercado"};
-        // Crear un modelo de tabla personalizado
-        DefaultTableModel m = new DefaultTableModel();
-        m.setColumnIdentifiers(columnNames);
-
-        try {
-            while (rs.next()) {
-                int id = rs.getInt("id");
-                String nombre = rs.getString("nombre");
-                int promedioPrecio = rs.getInt("promedioPrecio");
-                String tiempoProm = rs.getString("tiempoPromedioEnMercado");
-                modeloLista.addElement("ID: " + id + " Nombre: " + nombre + " Precio promedio: " + promedioPrecio + " Tiempo Promedio en el mercado: " + tiempoProm);
-
-                //tabla
-                Object[] row = {id, nombre, promedioPrecio, tiempoProm};
-                m.addRow(row);
-
-            }
-            jList1.setModel(modeloLista);
-            JTable_Reportes.setModel(m);
-            lb_Reportes.setText("Promedios de agentes");
-
-        } catch (SQLException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_jButton20MouseClicked
-
-    private void jButton13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton13MouseClicked
-        // TODO add your handling code here:
-        ResultSet rs = db.mostrarElementos("SELECT * FROM ventas_x_caracteristica");
-        DefaultListModel<String> modeloLista = new DefaultListModel<>();
-
-        //Codigo para poner en Jtable
-        // Títulos de las columnas
-        Object[] columnNames = {"idPropiedad", "cantidadDormitorios", "TienePiscina"};
-        // Crear un modelo de tabla personalizado
-        DefaultTableModel m = new DefaultTableModel();
-        m.setColumnIdentifiers(columnNames);
-
-        try {
-            while (rs.next()) {
-                int cant = rs.getInt("cantidadDormitorios");
-                int id = rs.getInt("idPropiedad");
-                String piscina = rs.getString("TienePiscina");
-                modeloLista.addElement("CANTIDAD DE DORMITORIOS: " + cant + " ID: " + id + " Piscina: " + piscina);
-
-                //tabla
-                Object[] row = {id, cant, piscina};
-                m.addRow(row);
-            }
-            jList1.setModel(modeloLista);
-            JTable_Reportes.setModel(m);
-            lb_Reportes.setText("Ventas de propiedades por caracteristicas");
-
-        } catch (SQLException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_jButton13MouseClicked
 
     private void jButton21MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton21MouseClicked
         // TODO add your handling code here:
@@ -7467,27 +7164,27 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton35MouseClicked
 
     private void jButton36MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton36MouseClicked
-        // TODO add your handling code here:
-        try {
-            ResultSet rs = db.mostrarElementos("SELECT idPropiedad FROM propiedades_vendidas;");
-            //DefaultListModel<String> modeloLista = new DefaultListModel<>();
-            int idprop = 0;
-            ArrayList fotos = new ArrayList();
+            // TODO add your handling code here:
             try {
-                while (rs.next()) {
-                    idprop = rs.getInt("idPropiedad");
-                    fotos.add(idprop);
-                }
+                ResultSet rs = db.mostrarElementos("SELECT idPropiedad FROM propiedades_vendidas;");
+                //DefaultListModel<String> modeloLista = new DefaultListModel<>();
+                int idprop = 0;
+                ArrayList fotos = new ArrayList();
+                try {
+                    while (rs.next()) {
+                        idprop = rs.getInt("idPropiedad");
+                        fotos.add(idprop);
+                    }
 
-            } catch (SQLException ex) {
-                Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            //Primera imagen -----------------------
-            String nombreImagen = fotos.get(0).toString() + ".jpg"; // Obtener el nombre de la imagen
-            String rutaImagen = "./imagenCasas/" + nombreImagen; // Ruta completa de la imagen
-            Image m = new ImageIcon(rutaImagen).getImage();
-            ImageIcon mi = new ImageIcon(m.getScaledInstance(jLabel131.getWidth(), jLabel131.getHeight(), jLabel131.getWidth()));
-            jLabel131.setIcon(mi);
+                } catch (SQLException ex) {
+                    Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                //Primera imagen -----------------------
+                String nombreImagen = fotos.get(0).toString() + ".jpg"; // Obtener el nombre de la imagen
+                String rutaImagen = "./imagenCasas/" + nombreImagen; // Ruta completa de la imagen
+                Image m = new ImageIcon(rutaImagen).getImage();
+                ImageIcon mi = new ImageIcon(m.getScaledInstance(jLabel131.getWidth(), jLabel131.getHeight(), jLabel131.getWidth()));
+                jLabel131.setIcon(mi);
 
             //Segunda imagen ------------------------
             String nombreImagen2 = fotos.get(1).toString() + ".jpg"; // Obtener el nombre de la imagen
@@ -7522,7 +7219,7 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton36MouseClicked
 
     private void jb_buscaridVendedorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_buscaridVendedorMouseClicked
-        String id =tf_buscaridVendedor.getText();
+        String id = tf_buscaridVendedor.getText();
         ResultSet rs = db.mostrarElementos("SELECT * FROM vendedores WHERE id = '" + id + "';");
         DefaultTableModel model = (DefaultTableModel) jTableVendedores.getModel();
         model.setRowCount(0);
@@ -7582,7 +7279,7 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_JB_verCompradoresMouseClicked
 
     private void JB_verVendedoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_verVendedoresMouseClicked
-        String id =tf_buscaridVendedor.getText();
+        String id = tf_buscaridVendedor.getText();
         ResultSet rs = db.mostrarElementos("SELECT * FROM vendedores;");
         DefaultTableModel model = (DefaultTableModel) JT_adminUsuarios.getModel();
         model.setRowCount(0);
@@ -7601,9 +7298,391 @@ public class Main extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_JB_verVendedoresMouseClicked
 
-    private void jButton36ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton36ActionPerformed
+    private void JB_verUsuariosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_verUsuariosMouseClicked
+        String id = tf_buscaridVendedor.getText();
+        ResultSet rs = db.mostrarElementos("SELECT * FROM vendedores;");
+        DefaultTableModel model = (DefaultTableModel) JT_adminUsuarios.getModel();
+        model.setRowCount(0);
+        try {
+            while (rs.next()) {
+                int id2 = rs.getInt("id");
+                String nombre = rs.getString("nombre");
+                String direccion = rs.getString("direccion");
+                int cel = rs.getInt("celular");
+                Object[] row = {id2, nombre, direccion, cel};
+                model.addRow(row);
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        ResultSet rs2 = db.mostrarElementos("SELECT id, nombre, direccion, celular FROM agentes;");
+        try {
+            while (rs2.next()) {
+                int id2 = rs2.getInt("id");
+                String nombre = rs2.getString("nombre");
+                String direccion = rs2.getString("direccion");
+                int cel = rs2.getInt("celular");
+                Object[] row = {id2, nombre, direccion, cel};
+                model.addRow(row);
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        ResultSet rs3 = db.mostrarElementos("SELECT * FROM compradores;");
+        try {
+            while (rs3.next()) {
+                int id2 = rs3.getInt("id");
+                String nombre = rs3.getString("nombre");
+                String direccion = rs3.getString("direccion");
+                int cel = rs3.getInt("celular");
+                Object[] row = {id2, nombre, direccion, cel};
+                model.addRow(row);
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_JB_verUsuariosMouseClicked
+
+    private void jButton37MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton37MouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton36ActionPerformed
+        // TODO add your handling code here:
+        ResultSet rs = db.mostrarElementos("SELECT * FROM ventas_x_precio_id");
+        DefaultListModel<String> modeloLista = new DefaultListModel<>();
+
+        //Codigo para poner en Jtable
+        // Títulos de las columnas
+        Object[] columnNames = {"Precio", "Cantidad de Casas", "IDPropiedad"};
+        // Crear un modelo de tabla personalizado
+        DefaultTableModel m = new DefaultTableModel();
+        m.setColumnIdentifiers(columnNames);
+
+        int i = 1;
+        try {
+            while (rs.next()) {
+                int precio = rs.getInt("precio");
+                String cant = rs.getString("Cant_de_casas");
+                String idpropiedad = rs.getString("IdPropiedad");
+
+                modeloLista.addElement(i + ") " + " Precio: " + precio + " | CANTIDAD DE CASAS: " + cant + " | IDPropiedad: "+idpropiedad+
+                    "\n");
+
+                //tabla
+                Object[] row = {precio, cant,idpropiedad};
+                m.addRow(row);
+
+                i++;
+            }
+            jList1.setModel(modeloLista);
+            JTable_Reportes.setModel(m);
+            lb_Reportes.setText("Ventas por precio de propiedad(id)");
+        } catch (SQLException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton37MouseClicked
+
+    private void jButton20MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton20MouseClicked
+        // TODO add your handling code here:
+        int anioempezar;
+        try {
+            anioempezar = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el año a tomar en cuenta: "));           // Aquí puedes utilizar el valor de fechaEmpezar
+        } catch (NumberFormatException e) {
+            // Mostrar un mensaje de error en un JOptionPane
+            JOptionPane.showMessageDialog(null, "Error: Por favor, ingrese un valor entero.", "Error de entrada", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        ResultSet rs = db.mostrarElementos("CALL promedioVentas('" + anioempezar + "')");
+        DefaultListModel<String> modeloLista = new DefaultListModel<>();
+
+        //Codigo para poner en Jtable
+        // Títulos de las columnas
+        Object[] columnNames = {"id", "nombre", "Precio Promedio", "Tiempo Promedio en el mercado"};
+        // Crear un modelo de tabla personalizado
+        DefaultTableModel m = new DefaultTableModel();
+        m.setColumnIdentifiers(columnNames);
+
+        try {
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                String nombre = rs.getString("nombre");
+                int promedioPrecio = rs.getInt("promedioPrecio");
+                String tiempoProm = rs.getString("tiempoPromedioEnMercado");
+                modeloLista.addElement("ID: " + id + " Nombre: " + nombre + " Precio promedio: " + promedioPrecio + " Tiempo Promedio en el mercado: " + tiempoProm);
+
+                //tabla
+                Object[] row = {id, nombre, promedioPrecio, tiempoProm};
+                m.addRow(row);
+
+            }
+            jList1.setModel(modeloLista);
+            JTable_Reportes.setModel(m);
+            lb_Reportes.setText("Promedios de agentes");
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton20MouseClicked
+
+    private void jButton15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton15MouseClicked
+        // TODO add your handling code here:
+        int yearStart, yearEnd;
+        try {
+            yearStart = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el primer año a tomar en cuenta: "));           // Aquí puedes utilizar el valor de fechaEmpezar
+        } catch (NumberFormatException e) {
+            // Mostrar un mensaje de error en un JOptionPane
+            JOptionPane.showMessageDialog(null, "Error: Por favor, ingrese un valor entero.", "Error de entrada", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        try {
+            yearEnd = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el segundo año a tomar en cuenta: "));           // Aquí puedes utilizar el valor de fechaEmpezar
+        } catch (NumberFormatException e) {
+            // Mostrar un mensaje de error en un JOptionPane
+            JOptionPane.showMessageDialog(null, "Error: Por favor, ingrese un valor entero.", "Error de entrada", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        //String fechaEmpezar = JOptionPane.showInputDialog("Ingrese el primer año a tomar en cuenta: ");
+        //String fechaTerminar = JOptionPane.showInputDialog("Ingrese el segundo año a tomar en cuenta: ");
+        ResultSet rs = db.mostrarElementos("CALL agenteVendioMayor('" + yearStart + "','" + yearEnd + "');");
+
+        DefaultListModel<String> modeloLista = new DefaultListModel<>();
+
+        //Codigo para poner en Jtable
+        // Títulos de las columnas
+        Object[] columnNames = {"id", "nombre", yearStart + " - " + yearEnd};
+        // Crear un modelo de tabla personalizado
+        DefaultTableModel m = new DefaultTableModel();
+        m.setColumnIdentifiers(columnNames);
+
+        try {
+            while (rs.next()) {
+                int agenteID = rs.getInt("id");
+                String nombre = rs.getString("nombre");
+                modeloLista.addElement("Agente que vendio la mayor cantidad de propiedades en el año por valor total: \nID: " + agenteID + " NOMBRE: " + nombre);
+
+                //tabla
+                Object[] row = {agenteID, nombre, "Agente del Año"};
+                m.addRow(row);
+            }
+            jList1.setModel(modeloLista);
+            JTable_Reportes.setModel(m);
+            lb_Reportes.setText("Agente que vendio la mayor cantidad");
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton15MouseClicked
+
+    private void jButton13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton13MouseClicked
+        // TODO add your handling code here:
+        ResultSet rs = db.mostrarElementos("SELECT * FROM ventas_x_caracteristica");
+        DefaultListModel<String> modeloLista = new DefaultListModel<>();
+
+        //Codigo para poner en Jtable
+        // Títulos de las columnas
+        Object[] columnNames = {"idPropiedad", "cantidadDormitorios", "TienePiscina"};
+        // Crear un modelo de tabla personalizado
+        DefaultTableModel m = new DefaultTableModel();
+        m.setColumnIdentifiers(columnNames);
+
+        try {
+            while (rs.next()) {
+                int cant = rs.getInt("cantidadDormitorios");
+                int id = rs.getInt("idPropiedad");
+                String piscina = rs.getString("TienePiscina");
+                modeloLista.addElement("CANTIDAD DE DORMITORIOS: " + cant + " ID: " + id + " Piscina: " + piscina);
+
+                //tabla
+                Object[] row = {id, cant, piscina};
+                m.addRow(row);
+            }
+            jList1.setModel(modeloLista);
+            JTable_Reportes.setModel(m);
+            lb_Reportes.setText("Ventas de propiedades por caracteristicas");
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton13MouseClicked
+
+    private void jButton11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton11MouseClicked
+        // TODO add your handling code here:
+        ResultSet rs = db.mostrarElementos("SELECT * FROM ventas_x_precio");
+        DefaultListModel<String> modeloLista = new DefaultListModel<>();
+
+        //Codigo para poner en Jtable
+        // Títulos de las columnas
+        Object[] columnNames = {"Precio", "Cantidad de Casas"};
+        // Crear un modelo de tabla personalizado
+        DefaultTableModel m = new DefaultTableModel();
+        m.setColumnIdentifiers(columnNames);
+
+        int i = 1;
+        try {
+            while (rs.next()) {
+                int precio = rs.getInt("precio");
+                String cant = rs.getString("Cant_de_casas");
+                modeloLista.addElement(i + ") " + " Precio: " + precio + " | CANTIDAD DE CASAS: " + cant + "\n");
+
+                //tabla
+                Object[] row = {precio, cant};
+                m.addRow(row);
+
+                i++;
+            }
+            jList1.setModel(modeloLista);
+            JTable_Reportes.setModel(m);
+            lb_Reportes.setText("Ventas por precio de propiedad");
+        } catch (SQLException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton11MouseClicked
+
+    private void jButton19MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton19MouseClicked
+        // TODO add your handling code here:
+        ResultSet rs = db.mostrarElementos("SELECT * FROM ventas_x_ubicacion");
+        DefaultListModel<String> modeloLista = new DefaultListModel<>();
+
+        //Codigo para poner en Jtable
+        // Títulos de las columnas
+        Object[] columnNames = {"ciudad", "direccion", "Cantidad"};
+        // Crear un modelo de tabla personalizado
+        DefaultTableModel m = new DefaultTableModel();
+        m.setColumnIdentifiers(columnNames);
+
+        int i = 1;
+        try {
+            while (rs.next()) {
+                String dir = rs.getString("direccion");
+                String ciudad = rs.getString("ciudad");
+                String cant = rs.getString("total_ventas");
+                modeloLista.addElement(i + "). " + "Ciudad: " + ciudad + " Dirrecion: " + dir + " | CANTIDAD DE CASAS Vendidas: " + cant + "\n");
+
+                //tabla
+                Object[] row = {ciudad, dir, cant};
+                m.addRow(row);
+
+                i++;
+            }
+            jList1.setModel(modeloLista);
+            JTable_Reportes.setModel(m);
+            lb_Reportes.setText("Ventas por Ubicacion");
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton19MouseClicked
+
+    private void jButton18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton18MouseClicked
+        // TODO add your handling code here:
+        ResultSet rs = db.mostrarElementos("SELECT * FROM compras_x_comprador");
+        DefaultListModel<String> modeloLista = new DefaultListModel<>();
+
+        //Codigo para poner en Jtable
+        // Títulos de las columnas
+        Object[] columnNames = {"id", "nombre", "Cantidad Compradas"};
+        // Crear un modelo de tabla personalizado
+        DefaultTableModel m = new DefaultTableModel();
+        m.setColumnIdentifiers(columnNames);
+
+        int i = 1;
+        try {
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                String nombre = rs.getString("nombre");
+                String cant = rs.getString("Cant_Propiedades_Compradas");
+                modeloLista.addElement(i + "). " + " ID: " + id + " | NOMBRE: " + nombre + " | " + "CANTIDAD COMPRADAS: " + cant + "\n");
+
+                //tabla
+                Object[] row = {id, nombre, cant};
+                m.addRow(row);
+
+                i++;
+            }
+            jList1.setModel(modeloLista);
+            JTable_Reportes.setModel(m);
+            lb_Reportes.setText("Cantidad de compras por comprador");
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton18MouseClicked
+
+    private void jButton17MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton17MouseClicked
+        // TODO add your handling code here:
+        ResultSet rs = db.mostrarElementos("SELECT * FROM ventas_x_vendedor");
+        DefaultListModel<String> modeloLista = new DefaultListModel<>();
+
+        //Codigo para poner en Jtable
+        // Títulos de las columnas
+        Object[] columnNames = {"id", "nombre", "Cantidad Vendida"};
+        // Crear un modelo de tabla personalizado
+        DefaultTableModel m = new DefaultTableModel();
+        m.setColumnIdentifiers(columnNames);
+
+        int i = 1;
+        try {
+
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                String nombre = rs.getString("nombre");
+                String cant = rs.getString("Cantidad_de_propiedades_vendidas");
+                modeloLista.addElement(i + "). " + " ID: " + id + " | NOMBRE: " + nombre + " | " + "CANTIDAD VENDIDAS: " + cant + "\n");
+
+                //tabla
+                Object[] row = {id, nombre, cant};
+                m.addRow(row);
+                i++;
+            }
+            JTable_Reportes.setModel(m);
+            jList1.setModel(modeloLista);
+            lb_Reportes.setText("Cantidad de ventas por vendedor");
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton17MouseClicked
+
+    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton16ActionPerformed
+
+    private void jButton16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton16MouseClicked
+        // TODO add your handling code here:
+        ResultSet rs = db.mostrarElementos("SELECT * FROM ventas_x_agente");
+        DefaultListModel<String> modeloLista = new DefaultListModel<>();
+        int i = 1;
+
+        //Codigo para poner en Jtable
+        // Títulos de las columnas
+        Object[] columnNames = {"id", "nombre", "Cantidad Vendida"};
+        // Crear un modelo de tabla personalizado
+        DefaultTableModel m = new DefaultTableModel();
+        m.setColumnIdentifiers(columnNames);
+
+        try {
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                String nombre = rs.getString("nombre");
+                String cant = rs.getString("Cantidad_de_propiedades_vendidas");
+                modeloLista.addElement(i + "). " + " ID: " + id + " | NOMBRE: " + nombre + " | " + "CANTIDAD VENDIDAS: " + cant + "\n");
+
+                //tabla
+                Object[] row = {id, nombre, cant};
+                m.addRow(row);
+
+                i++;
+
+            }
+            jList1.setModel(modeloLista);
+            JTable_Reportes.setModel(m);
+            lb_Reportes.setText("Cantidad de ventas por agente");
+        } catch (SQLException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton16MouseClicked
 
     /**
      * @param args the command line arguments
