@@ -73,7 +73,7 @@ public class Main extends javax.swing.JFrame {
             Portadita.setIconImage(new ImageIcon("./Imagen\\beinvenida.jpeg").getImage());
 
             //JF_crearPropiedadesVendidas.show();
-            //Reportes.setVisible(true);
+            Reportes.setVisible(true);
         } catch (SQLException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -540,6 +540,7 @@ public class Main extends javax.swing.JFrame {
         jScrollPane19 = new javax.swing.JScrollPane();
         JTable_Reportes = new javax.swing.JTable();
         lb_Reportes = new javax.swing.JLabel();
+        jButton37 = new boton();
         JF_bitacora = new javax.swing.JFrame();
         jPanel52 = new FondoPanel("./Imagen\\bitacora.jpg");
         jPanel53 = new javax.swing.JPanel();
@@ -5064,6 +5065,8 @@ public class Main extends javax.swing.JFrame {
         lb_Reportes.setFont(new java.awt.Font("Dialog", 0, 36)); // NOI18N
         lb_Reportes.setText(" ");
 
+        jButton37.setText("Ventas por precio de propiedad");
+
         javax.swing.GroupLayout jPanel95Layout = new javax.swing.GroupLayout(jPanel95);
         jPanel95.setLayout(jPanel95Layout);
         jPanel95Layout.setHorizontalGroup(
@@ -5087,7 +5090,10 @@ public class Main extends javax.swing.JFrame {
                             .addComponent(jScrollPane10)))
                     .addGroup(jPanel95Layout.createSequentialGroup()
                         .addGap(406, 406, 406)
-                        .addComponent(lb_Reportes)))
+                        .addComponent(lb_Reportes))
+                    .addGroup(jPanel95Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jButton37, javax.swing.GroupLayout.PREFERRED_SIZE, 409, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(43, Short.MAX_VALUE))
         );
         jPanel95Layout.setVerticalGroup(
@@ -5117,7 +5123,9 @@ public class Main extends javax.swing.JFrame {
                         .addComponent(jScrollPane19, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
-                .addContainerGap(54, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton37, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout ReportesLayout = new javax.swing.GroupLayout(Reportes.getContentPane());
@@ -8003,6 +8011,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton jButton34;
     private javax.swing.JButton jButton35;
     private javax.swing.JButton jButton36;
+    private javax.swing.JButton jButton37;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
