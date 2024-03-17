@@ -515,7 +515,7 @@ public class Main extends javax.swing.JFrame {
         JB_eliminarPropVendida = new javax.swing.JButton();
         jLabel93 = new javax.swing.JLabel();
         Reportes = new javax.swing.JFrame();
-        jPanel95 = new javax.swing.JPanel();
+        jPanel95 = new FondoPanel("./Imagen\\reportes.jpg");
         jButton16 = new boton();
         jButton17 = new boton();
         jButton18 = new boton();
@@ -2426,6 +2426,9 @@ public class Main extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Segoe Script", 1, 24)); // NOI18N
         jLabel5.setText("Reportes");
 
+        verReportes.setBackground(new java.awt.Color(0, 0, 0));
+        verReportes.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        verReportes.setForeground(new java.awt.Color(255, 255, 255));
         verReportes.setText("Ver reportes");
         verReportes.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -2444,7 +2447,7 @@ public class Main extends javax.swing.JFrame {
                         .addComponent(jLabel5))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(28, 28, 28)
-                        .addComponent(verReportes, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(verReportes, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
@@ -4798,6 +4801,8 @@ public class Main extends javax.swing.JFrame {
         jPanel95.setBackground(new java.awt.Color(255, 204, 255));
         jPanel95.setForeground(new java.awt.Color(255, 153, 255));
 
+        jButton16.setBackground(new java.awt.Color(119, 100, 190));
+        jButton16.setForeground(new java.awt.Color(255, 255, 255));
         jButton16.setText("Cantidad de ventas por agente");
         jButton16.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -4847,8 +4852,10 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
+        jList1.setBackground(new java.awt.Color(243, 232, 246));
         jScrollPane10.setViewportView(jList1);
 
+        JTable_Reportes.setBackground(new java.awt.Color(250, 247, 251));
         JTable_Reportes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -4860,6 +4867,7 @@ public class Main extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        JTable_Reportes.setSelectionBackground(new java.awt.Color(239, 224, 240));
         jScrollPane19.setViewportView(JTable_Reportes);
 
         lb_Reportes.setFont(new java.awt.Font("Dialog", 0, 36)); // NOI18N
@@ -5096,7 +5104,7 @@ public class Main extends javax.swing.JFrame {
 
         if (tf_usernamelogin.getText().equals("Ingrese su nombre de usuario")) {
             tf_usernamelogin.setText("");
-            tf_usernamelogin.setForeground(Color.WHITE);
+            tf_usernamelogin.setForeground(Color.DARK_GRAY);
         }
         if (String.valueOf(pf_passwordlogin.getPassword()).isEmpty()) {
             pf_passwordlogin.setText("*******");
@@ -5108,7 +5116,7 @@ public class Main extends javax.swing.JFrame {
     private void pf_passwordloginMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pf_passwordloginMousePressed
         if (String.valueOf(pf_passwordlogin.getPassword()).equals("*******")) {
             pf_passwordlogin.setText("");
-            pf_passwordlogin.setForeground(Color.white);
+            pf_passwordlogin.setForeground(Color.DARK_GRAY);
         }
         if (tf_usernamelogin.getText().isEmpty()) {
             tf_usernamelogin.setText("Ingrese su nombre de usuario");

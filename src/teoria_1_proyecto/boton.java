@@ -25,8 +25,8 @@ import javax.swing.ImageIcon;
  */
 public class boton extends javax.swing.JButton {
 
-    private Color Linea = Color.WHITE;
-    private Color relleno = new java.awt.Color(83,101,114);
+    private Color Linea = new java.awt.Color(224,216,239);
+    private Color relleno = new java.awt.Color(207,100,144);
     private Color colorLinea = Color.white;
     private java.awt.Color Color1 = new java.awt.Color(255, 0, 0);
     private java.awt.Color Color2 = new java.awt.Color(0, 255, 0);
@@ -45,7 +45,7 @@ public class boton extends javax.swing.JButton {
         //int fontSize = (int) (getHeight() * 0.5);
         int fontSize =14;
         this.setFont(new Font("Tahoma", 0,fontSize));
-        this.setForeground(Color.WHITE);
+        this.setForeground(new java.awt.Color(224,216,239));
         this.setText("");
         this.addMouseListener(new Adaptador());
 //        this.setBackground(Color.RED);
