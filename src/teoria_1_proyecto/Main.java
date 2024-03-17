@@ -290,9 +290,11 @@ public class Main extends javax.swing.JFrame {
         jPanel8 = new javax.swing.JPanel();
         jScrollPane18 = new javax.swing.JScrollPane();
         jTable13 = new javax.swing.JTable();
+        jb_actualizarPropiedadesenMercado = new javax.swing.JButton();
         jPanel54 = new javax.swing.JPanel();
         jScrollPane15 = new javax.swing.JScrollPane();
         JT_propiedadesVendidas1 = new javax.swing.JTable();
+        jb_actualizarPropiedadesVendidas = new javax.swing.JButton();
         jPanel55 = new javax.swing.JPanel();
         jLabel124 = new javax.swing.JLabel();
         jLabel125 = new javax.swing.JLabel();
@@ -2518,6 +2520,13 @@ public class Main extends javax.swing.JFrame {
         ));
         jScrollPane18.setViewportView(jTable13);
 
+        jb_actualizarPropiedadesenMercado.setText("Actualizar");
+        jb_actualizarPropiedadesenMercado.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_actualizarPropiedadesenMercadoMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
@@ -2526,11 +2535,17 @@ public class Main extends javax.swing.JFrame {
                 .addGap(29, 29, 29)
                 .addComponent(jScrollPane18, javax.swing.GroupLayout.PREFERRED_SIZE, 659, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(37, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jb_actualizarPropiedadesenMercado)
+                .addGap(71, 71, 71))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
-                .addContainerGap(39, Short.MAX_VALUE)
+                .addContainerGap()
+                .addComponent(jb_actualizarPropiedadesenMercado)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
                 .addComponent(jScrollPane18, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(86, 86, 86))
         );
@@ -2550,21 +2565,34 @@ public class Main extends javax.swing.JFrame {
         ));
         jScrollPane15.setViewportView(JT_propiedadesVendidas1);
 
+        jb_actualizarPropiedadesVendidas.setText("Actualizar");
+        jb_actualizarPropiedadesVendidas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_actualizarPropiedadesVendidasMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel54Layout = new javax.swing.GroupLayout(jPanel54);
         jPanel54.setLayout(jPanel54Layout);
         jPanel54Layout.setHorizontalGroup(
             jPanel54Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel54Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
+                .addGap(19, 19, 19)
                 .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, 685, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addContainerGap(21, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel54Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jb_actualizarPropiedadesVendidas)
+                .addGap(58, 58, 58))
         );
         jPanel54Layout.setVerticalGroup(
             jPanel54Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel54Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
+                .addContainerGap()
+                .addComponent(jb_actualizarPropiedadesVendidas)
+                .addGap(10, 10, 10)
                 .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, 382, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(70, Short.MAX_VALUE))
+                .addContainerGap(51, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("Propiedades Vendidas", jPanel54);
@@ -6059,28 +6087,39 @@ public class Main extends javax.swing.JFrame {
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         ResultSet rs = db.mostrarElementos("SELECT id FROM agentes");
+        cb_crearpropiedadenVentaIdAgente.removeAllItems();
+        boolean agentesNotEmpty = false;
+        boolean vendedoresNotEmpty = false;
         try {
             while (rs.next()) {
                 int id = rs.getInt("id");
                 cb_crearpropiedadenVentaIdAgente.addItem(Integer.toString(id));
+                agentesNotEmpty = true;
             }
 
         } catch (SQLException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
+        cb_crearpropiedadenVentaIdVendedor.removeAllItems();
         ResultSet rs2 = db.mostrarElementos("SELECT id FROM vendedores");
         try {
             while (rs2.next()) {
                 int id = rs2.getInt("id");
                 cb_crearpropiedadenVentaIdVendedor.addItem(Integer.toString(id));
+                vendedoresNotEmpty = true;
             }
 
         } catch (SQLException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
-        JF_crearPropiedadVenta.pack();
-        JF_crearPropiedadVenta.setLocationRelativeTo(JF_Agentes);;
-        JF_crearPropiedadVenta.setVisible(true);
+        if (vendedoresNotEmpty && agentesNotEmpty) {
+            JF_crearPropiedadVenta.pack();
+            JF_crearPropiedadVenta.setLocationRelativeTo(JF_Agentes);
+            JF_crearPropiedadVenta.setVisible(true);
+        } else {
+            JOptionPane.showMessageDialog(JF_crudPropiedadesVenta, "No es posible, hay agentes o vendedores");
+        }
+
     }//GEN-LAST:event_jButton1MouseClicked
 
     private void JB_modificarPropenVentaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_modificarPropenVentaMouseClicked
@@ -6228,39 +6267,54 @@ public class Main extends javax.swing.JFrame {
 
     private void JB_ventanacrearPropiedadesVendidasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_ventanacrearPropiedadesVendidasMouseClicked
         ResultSet rs = db.mostrarElementos("SELECT id FROM agentes");
+        cb_crearPropiedadVendidaIdAgente.removeAllItems();
+        boolean agentesnotempty = false;
+        boolean compradoresnotempty = false;
+        boolean vendedoresnotempty = false;
         try {
             while (rs.next()) {
                 int id = rs.getInt("id");
                 cb_crearPropiedadVendidaIdAgente.addItem(Integer.toString(id));
+                agentesnotempty = true;
             }
 
         } catch (SQLException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
+        cb_crearPropiedadVendidaIdVendedor.removeAllItems();
         ResultSet rs2 = db.mostrarElementos("SELECT id FROM vendedores");
         try {
             while (rs2.next()) {
                 int id = rs2.getInt("id");
                 cb_crearPropiedadVendidaIdVendedor.addItem(Integer.toString(id));
+                vendedoresnotempty = true;
             }
 
         } catch (SQLException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
         ResultSet rs3 = db.mostrarElementos("SELECT id FROM compradores");
+        cb_crearPropiedadVendidaIdComprador.removeAllItems();
         try {
             while (rs3.next()) {
                 int id = rs3.getInt("id");
                 cb_crearPropiedadVendidaIdComprador.addItem(Integer.toString(id));
+                compradoresnotempty = true;
             }
 
         } catch (SQLException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
+        if (vendedoresnotempty && compradoresnotempty && agentesnotempty) {
+            JF_crearPropiedadesVendidas.pack();
+            JF_crearPropiedadesVendidas.setLocationRelativeTo(JF_Agentes);;
+            JF_crearPropiedadesVendidas.setVisible(true);
 
-        JF_crearPropiedadesVendidas.pack();
-        JF_crearPropiedadesVendidas.setLocationRelativeTo(JF_Agentes);;
-        JF_crearPropiedadesVendidas.setVisible(true);
+        } else {
+            JOptionPane.showMessageDialog(JF_crudPropiedadesVendidas, "No existen vendedores, compradores o agentes, intente mas tarde");
+        }
+
+
     }//GEN-LAST:event_JB_ventanacrearPropiedadesVendidasMouseClicked
 
     private void JB_ventanaModificarPropiedadesVendidasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_ventanaModificarPropiedadesVendidasMouseClicked
@@ -6793,7 +6847,7 @@ public class Main extends javax.swing.JFrame {
             Image m5 = new ImageIcon(rutaImagen5).getImage();
             ImageIcon mi5 = new ImageIcon(m5.getScaledInstance(jLabel99.getWidth(), jLabel99.getHeight(), jLabel99.getWidth()));
             jLabel99.setIcon(mi5);
-            
+
             //Labels
             jl_prop1CompradorCompradas.setText(fotos.get(0).toString());
             jl_prop2CompradorCompradas.setText(fotos.get(1).toString());
@@ -7040,7 +7094,7 @@ public class Main extends javax.swing.JFrame {
             Image m5 = new ImageIcon(rutaImagen5).getImage();
             ImageIcon mi5 = new ImageIcon(m5.getScaledInstance(jLabel103.getWidth(), jLabel103.getHeight(), jLabel103.getWidth()));
             jLabel103.setIcon(mi5);
-            
+
             //Labels
             jl_prop1CompradorEnMercado.setText(fotos.get(0).toString());
             jl_prop2CompradorEnMercado.setText(fotos.get(1).toString());
@@ -7102,14 +7156,14 @@ public class Main extends javax.swing.JFrame {
             Image m5 = new ImageIcon(rutaImagen5).getImage();
             ImageIcon mi5 = new ImageIcon(m5.getScaledInstance(jLabel108.getWidth(), jLabel108.getHeight(), jLabel108.getWidth()));
             jLabel108.setIcon(mi5);
-            
+
             //Labels
             jl_prop1VendedorenVenta.setText(fotos.get(0).toString());
             jl_prop2VendedorenVenta.setText(fotos.get(1).toString());
             jl_prop3VendedorenVenta.setText(fotos.get(2).toString());
             jl_prop4VendedorenVenta.setText(fotos.get(3).toString());
             jl_prop5VendedorenVenta.setText(fotos.get(4).toString());
-            
+
         } catch (IndexOutOfBoundsException e) {
             JOptionPane.showMessageDialog(JF_ventanaVendedor, "No hay suficientes imagenes para llenar el resto de los espacios");
         }
@@ -7165,7 +7219,7 @@ public class Main extends javax.swing.JFrame {
             Image m5 = new ImageIcon(rutaImagen5).getImage();
             ImageIcon mi5 = new ImageIcon(m5.getScaledInstance(jLabel113.getWidth(), jLabel113.getHeight(), jLabel113.getWidth()));
             jLabel113.setIcon(mi5);
-            
+
             //Labels
             jl_prop1VendedorVendida.setText(fotos.get(0).toString());
             jl_prop2VendedorVendida.setText(fotos.get(1).toString());
@@ -7200,7 +7254,7 @@ public class Main extends javax.swing.JFrame {
             ImageIcon mi = new ImageIcon(m.getScaledInstance(jLabel114.getWidth(), jLabel114.getHeight(), jLabel114.getWidth()));
             jLabel114.setIcon(mi);
             jl_prop1AgenteAsignadas.setText(fotos.get(0).toString());
-            
+
             //Segunda imagen ------------------------
             String nombreImagen2 = fotos.get(1).toString() + ".jpg"; // Obtener el nombre de la imagen
             String rutaImagen2 = "./imagenCasas/" + nombreImagen2; // Ruta completa de la imagen
@@ -7287,13 +7341,13 @@ public class Main extends javax.swing.JFrame {
             Image m5 = new ImageIcon(rutaImagen5).getImage();
             ImageIcon mi5 = new ImageIcon(m5.getScaledInstance(jLabel122.getWidth(), jLabel122.getHeight(), jLabel122.getWidth()));
             jLabel122.setIcon(mi5);
-            
+
             //Labels
-            jl_prop1AgenteVendidas.setText( fotos.get(0).toString());
-            jl_prop2AgenteVendidas.setText( fotos.get(1).toString());
-            jl_prop3AgenteVendidas.setText( fotos.get(2).toString());
-            jl_prop4AgenteVendidas.setText( fotos.get(3).toString());
-            jl_prop5AgenteVendidas.setText( fotos.get(4).toString());
+            jl_prop1AgenteVendidas.setText(fotos.get(0).toString());
+            jl_prop2AgenteVendidas.setText(fotos.get(1).toString());
+            jl_prop3AgenteVendidas.setText(fotos.get(2).toString());
+            jl_prop4AgenteVendidas.setText(fotos.get(3).toString());
+            jl_prop5AgenteVendidas.setText(fotos.get(4).toString());
         } catch (IndexOutOfBoundsException e) {
             JOptionPane.showMessageDialog(JF_ventanaAgente, "No hay suficientes imagenes para llenar el resto de los espacios");
         }
@@ -7874,6 +7928,61 @@ public class Main extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton16MouseClicked
 
+    private void jb_actualizarPropiedadesenMercadoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_actualizarPropiedadesenMercadoMouseClicked
+        ResultSet d = db.mostrarElementos("SELECT * FROM propiedades_en_mercado");
+        DefaultTableModel model = (DefaultTableModel) jTable13.getModel();
+        model.setRowCount(0);
+        try {
+            while (d.next()) {
+                int idprop = d.getInt("idPropiedad");
+                String nombre = d.getString("nombre");
+                String ciudad = d.getString("ciudad");
+                String direccion = d.getString("direccion");
+                int cant_dor = d.getInt("cantidadDormitorios");
+                String car = d.getString("caracteristicas");
+                int precio = d.getInt("precio");
+                String fecha = d.getString("fechaPublicacion");
+                int agente = d.getInt("noIdentidad_Agente");
+                int vendedor = d.getInt("noIdentidad_Vendedor");
+                Object[] row = {idprop, nombre, ciudad, direccion, cant_dor, car, precio, fecha, agente, vendedor};
+                model.addRow(row);
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }//GEN-LAST:event_jb_actualizarPropiedadesenMercadoMouseClicked
+
+    private void jb_actualizarPropiedadesVendidasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_actualizarPropiedadesVendidasMouseClicked
+        ResultSet m = db.mostrarElementos("SELECT * FROM propiedades_vendidas;");
+            DefaultTableModel model2 = (DefaultTableModel) JT_propiedadesVendidas1.getModel();
+            model2.setRowCount(0);
+            try {
+                while (m.next()) {
+                    int id2 = m.getInt("idPropiedad");
+                    String nombre = m.getString("nombre");
+                    String ciudad = m.getString("ciudad");
+                    String direccion = m.getString("direccion");
+                    int cant_dor = m.getInt("cantidadDormitorios");
+                    String car = m.getString("caracteristicas");
+                    int precio = m.getInt("precio");
+                    String fecha = m.getString("fechaPublicacion");
+                    String fechaVenta = m.getString("fechaVenta");
+                    int agente = m.getInt("noIdentidad_Agente");
+                    int vendedor = m.getInt("noIdentidad_Vendedor");
+                    int comprador = m.getInt("noIdentidad_Comprador");
+                    int comision = m.getInt("comisionVenta");
+                    Object[] row = {id2, nombre, ciudad, direccion, cant_dor, car, precio, fecha, fechaVenta, agente, vendedor, comprador, comision};
+                    model2.addRow(row);
+                }
+
+            } catch (SQLException ex) {
+                Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+    }//GEN-LAST:event_jb_actualizarPropiedadesVendidasMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -8276,6 +8385,8 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField7;
     private javax.swing.JToolBar jToolBar1;
+    private javax.swing.JButton jb_actualizarPropiedadesVendidas;
+    private javax.swing.JButton jb_actualizarPropiedadesenMercado;
     private javax.swing.JButton jb_buscaridVendedor;
     private javax.swing.JButton jb_crudagentes;
     private javax.swing.JButton jb_crudagentespropiedades;
