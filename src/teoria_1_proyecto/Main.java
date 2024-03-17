@@ -22,6 +22,9 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -420,12 +423,12 @@ public class Main extends javax.swing.JFrame {
         jLabel62 = new javax.swing.JLabel();
         jLabel63 = new javax.swing.JLabel();
         jLabel64 = new javax.swing.JLabel();
-        tf_crearPropiedadenVentaidAgente = new javax.swing.JTextField();
-        tf_crearPropiedadenVentaidVendedor = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
+        tf_crearPropiedadenVentaDorm = new javax.swing.JTextField();
+        tf_crearPropiedadenVentaFecha = new javax.swing.JTextField();
+        tf_crearPropiedadenVentaPrecio = new javax.swing.JTextField();
         jButton21 = new javax.swing.JButton();
+        cb_crearpropiedadenVentaIdAgente = new javax.swing.JComboBox<>();
+        cb_crearpropiedadenVentaIdVendedor = new javax.swing.JComboBox<>();
         JF_modificarPropiedadVenta = new javax.swing.JFrame();
         jPanel36 = new FondoPanel("./Imagen\\modificarPropVenta.jpg");
         jPanel37 = new javax.swing.JPanel();
@@ -478,18 +481,18 @@ public class Main extends javax.swing.JFrame {
         jLabel82 = new javax.swing.JLabel();
         jLabel83 = new javax.swing.JLabel();
         jLabel84 = new javax.swing.JLabel();
-        tf_crearPropiedadenvendidaidAgente = new javax.swing.JTextField();
-        tf_crearPropiedadenvendidaidVendedor = new javax.swing.JTextField();
         jLabel85 = new javax.swing.JLabel();
         jLabel86 = new javax.swing.JLabel();
-        tf_crearPropiedadenvendidaidComprador = new javax.swing.JTextField();
         jLabel87 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
+        tf_crearPropiedadVendidaPrecio = new javax.swing.JTextField();
         jTextField7 = new javax.swing.JTextField();
-        jTextField8 = new javax.swing.JTextField();
-        jTextField9 = new javax.swing.JTextField();
-        jTextField10 = new javax.swing.JTextField();
+        tf_crearPropiedadVendidaFechaPublicacion = new javax.swing.JTextField();
+        tf_crearPropiedadVendidaFechaVenta = new javax.swing.JTextField();
+        tf_crearpropiedadVendidaComision = new javax.swing.JTextField();
         jButton23 = new javax.swing.JButton();
+        cb_crearPropiedadVendidaIdAgente = new javax.swing.JComboBox<>();
+        cb_crearPropiedadVendidaIdVendedor = new javax.swing.JComboBox<>();
+        cb_crearPropiedadVendidaIdComprador = new javax.swing.JComboBox<>();
         JF_modificarPropVendidas = new javax.swing.JFrame();
         jPanel48 = new FondoPanel("./Imagen\\modifcarPropVendida.jpg");
         jPanel49 = new javax.swing.JPanel();
@@ -3969,15 +3972,6 @@ public class Main extends javax.swing.JFrame {
         jLabel64.setForeground(new java.awt.Color(245, 253, 255));
         jLabel64.setText("ID Agente:");
 
-        tf_crearPropiedadenVentaidAgente.setBackground(new java.awt.Color(234, 234, 234));
-        tf_crearPropiedadenVentaidAgente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tf_crearPropiedadenVentaidAgenteActionPerformed(evt);
-            }
-        });
-
-        tf_crearPropiedadenVentaidVendedor.setBackground(new java.awt.Color(234, 234, 234));
-
         jButton21.setText("Seleccionar imagen");
         jButton21.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -3993,36 +3987,39 @@ public class Main extends javax.swing.JFrame {
                 .addGap(44, 44, 44)
                 .addGroup(jPanel41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel41Layout.createSequentialGroup()
-                        .addGroup(jPanel41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel59)
-                                .addComponent(jLabel58)
-                                .addComponent(jLabel56)
-                                .addComponent(jLabel57)
-                                .addComponent(jLabel54)
-                                .addComponent(jLabel60)
-                                .addComponent(jLabel63)
-                                .addComponent(jLabel62)
-                                .addComponent(jLabel64))
-                            .addGroup(jPanel41Layout.createSequentialGroup()
-                                .addComponent(jLabel61)
-                                .addGap(80, 80, 80)))
-                        .addGroup(jPanel41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(tf_crearPropiedadenVentaDireccion)
-                            .addComponent(tf_crearPropiedadenVentanombre)
-                            .addComponent(tf_crearPropiedadenVentaCiudad)
-                            .addComponent(tf_crearPropiedadenVentaid)
-                            .addComponent(jScrollPane6)
-                            .addComponent(tf_crearPropiedadenVentaidAgente, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(tf_crearPropiedadenVentaidVendedor, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jTextField3)
-                            .addComponent(jTextField4)
-                            .addComponent(jTextField5))
-                        .addGap(31, 31, 31))
-                    .addGroup(jPanel41Layout.createSequentialGroup()
                         .addGap(6, 6, 6)
                         .addComponent(jButton21, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel41Layout.createSequentialGroup()
+                        .addGroup(jPanel41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(jPanel41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel59)
+                                    .addComponent(jLabel58)
+                                    .addComponent(jLabel56)
+                                    .addComponent(jLabel57)
+                                    .addComponent(jLabel54)
+                                    .addComponent(jLabel60)
+                                    .addComponent(jLabel63)
+                                    .addComponent(jLabel64))
+                                .addGroup(jPanel41Layout.createSequentialGroup()
+                                    .addComponent(jLabel61)
+                                    .addGap(80, 80, 80)))
+                            .addGroup(jPanel41Layout.createSequentialGroup()
+                                .addComponent(jLabel62)
+                                .addGap(22, 22, 22)))
+                        .addGroup(jPanel41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(cb_crearpropiedadenVentaIdVendedor, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(tf_crearPropiedadenVentaDireccion, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tf_crearPropiedadenVentanombre, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tf_crearPropiedadenVentaCiudad, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tf_crearPropiedadenVentaid, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane6, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tf_crearPropiedadenVentaDorm, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tf_crearPropiedadenVentaFecha, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tf_crearPropiedadenVentaPrecio, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cb_crearpropiedadenVentaIdAgente, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(31, 31, 31))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel41Layout.createSequentialGroup()
                 .addGap(0, 17, Short.MAX_VALUE)
                 .addGroup(jPanel41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -4054,7 +4051,7 @@ public class Main extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel59)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(tf_crearPropiedadenVentaDorm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(tf_crearPropiedadenVentanombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -4063,19 +4060,19 @@ public class Main extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel61)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tf_crearPropiedadenVentaPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel63)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tf_crearPropiedadenVentaFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel64)
-                    .addComponent(tf_crearPropiedadenVentaidAgente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cb_crearpropiedadenVentaIdAgente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tf_crearPropiedadenVentaidVendedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel62))
+                    .addComponent(jLabel62)
+                    .addComponent(cb_crearpropiedadenVentaIdVendedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JB_crearPropiedadVenta, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -4555,15 +4552,6 @@ public class Main extends javax.swing.JFrame {
         jLabel84.setForeground(new java.awt.Color(102, 102, 255));
         jLabel84.setText("ID Agente:");
 
-        tf_crearPropiedadenvendidaidAgente.setBackground(new java.awt.Color(234, 234, 234));
-        tf_crearPropiedadenvendidaidAgente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tf_crearPropiedadenvendidaidAgenteActionPerformed(evt);
-            }
-        });
-
-        tf_crearPropiedadenvendidaidVendedor.setBackground(new java.awt.Color(234, 234, 234));
-
         jLabel85.setFont(new java.awt.Font("Montserrat Thin", 1, 18)); // NOI18N
         jLabel85.setForeground(new java.awt.Color(102, 102, 255));
         jLabel85.setText("Fecha Venta:");
@@ -4571,8 +4559,6 @@ public class Main extends javax.swing.JFrame {
         jLabel86.setFont(new java.awt.Font("Montserrat Thin", 1, 18)); // NOI18N
         jLabel86.setForeground(new java.awt.Color(102, 102, 255));
         jLabel86.setText("ID Comprador:");
-
-        tf_crearPropiedadenvendidaidComprador.setBackground(new java.awt.Color(234, 234, 234));
 
         jLabel87.setFont(new java.awt.Font("Montserrat Thin", 1, 18)); // NOI18N
         jLabel87.setForeground(new java.awt.Color(102, 102, 255));
@@ -4625,14 +4611,14 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(tf_crearPropiedadenvendidaCiudad)
                     .addComponent(tf_crearPropiedadenvendidaNombre)
                     .addComponent(tf_crearPropiedadenvendidaId)
-                    .addComponent(tf_crearPropiedadenvendidaidAgente)
-                    .addComponent(tf_crearPropiedadenvendidaidVendedor)
-                    .addComponent(tf_crearPropiedadenvendidaidComprador)
-                    .addComponent(jTextField6)
+                    .addComponent(tf_crearPropiedadVendidaPrecio)
                     .addComponent(jTextField7)
-                    .addComponent(jTextField8)
-                    .addComponent(jTextField9)
-                    .addComponent(jTextField10))
+                    .addComponent(tf_crearPropiedadVendidaFechaPublicacion)
+                    .addComponent(tf_crearPropiedadVendidaFechaVenta)
+                    .addComponent(tf_crearpropiedadVendidaComision)
+                    .addComponent(cb_crearPropiedadVendidaIdAgente, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(cb_crearPropiedadVendidaIdVendedor, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(cb_crearPropiedadVendidaIdComprador, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(15, 15, 15))
         );
         jPanel47Layout.setVerticalGroup(
@@ -4667,31 +4653,31 @@ public class Main extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel87)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tf_crearPropiedadVendidaPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel83)
-                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tf_crearPropiedadVendidaFechaPublicacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel85)
-                    .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tf_crearPropiedadVendidaFechaVenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel84)
-                    .addComponent(tf_crearPropiedadenvendidaidAgente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cb_crearPropiedadVendidaIdAgente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel82)
-                    .addComponent(tf_crearPropiedadenvendidaidVendedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cb_crearPropiedadVendidaIdVendedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel86)
-                    .addComponent(tf_crearPropiedadenvendidaidComprador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cb_crearPropiedadVendidaIdComprador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel81)
-                    .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tf_crearpropiedadVendidaComision, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(11, 11, 11)
                 .addGroup(jPanel47Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(JB_crearPropiedadVenta1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -5642,21 +5628,115 @@ public class Main extends javax.swing.JFrame {
         String nombre = tf_crearPropiedadenVentanombre.getText();
         String dir = tf_crearPropiedadenVentaDireccion.getText();
         String ciudad = tf_crearPropiedadenVentaCiudad.getText();
-        String cantDormitorios = jTextField3.getText();
+        String cantDormitorios = tf_crearPropiedadenVentaDorm.getText();
         String caracteristicas = ta_crearPropiedadenVentaCaracteristicas.getText();
-        String precio = jTextField5.getText();
-        String fechaPublicacion = jTextField4.getText();
-        String numeroIdentidadA = tf_crearPropiedadenVentaidAgente.getText();
-        String numeroIdentidadV = tf_crearPropiedadenVentaidVendedor.getText();
-        String vista = "CALL insertarPV ('" + id + "','" + nombre + "','" + ciudad + "','" + dir + "','" + cantDormitorios + "','" + caracteristicas + "','" + precio + "','" + fechaPublicacion + "','" + numeroIdentidadA + "','" + numeroIdentidadV + "')";
-        db.HacerConsulta(vista);
+        String precio = tf_crearPropiedadenVentaPrecio.getText();
+        String fechaPublicacion = tf_crearPropiedadenVentaFecha.getText();
+        String numeroIdentidadA = (String) cb_crearpropiedadenVentaIdAgente.getSelectedItem();
+        String numeroIdentidadV = (String) cb_crearpropiedadenVentaIdVendedor.getSelectedItem();
+        boolean valido = true;
+        //no se repite id
+        try {
+            ResultSet rs = db.mostrarElementos("SELECT idPropiedad FROM propiedades_en_mercado");
+            while (rs.next()) {
+                String idExistente = rs.getString("idPropiedad");
+                if (idExistente.equals(id)) {
+                    JOptionPane.showMessageDialog(null, "El ID ya existe en la base de datos.", "Error", JOptionPane.ERROR_MESSAGE);
+                    valido = false;
+                    break; // Salir del bucle al encontrar el ID existente
+                }
+            }
+            rs.close(); // Cerrar el ResultSet después de usarlo
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Ocurrió un error al verificar el ID en la base de datos: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            valido = false;
+        }
+        //los numeros no son char
+
+        try {
+            Integer.parseInt(id);
+            Integer.parseInt(cantDormitorios);
+            Integer.parseInt(precio);
+            Integer.parseInt(numeroIdentidadA);
+            Integer.parseInt(numeroIdentidadV);
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "Por favor, ingrese números enteros válidos en los campos correspondientes.", "Error", JOptionPane.ERROR_MESSAGE);
+            valido = false;
+        }
+        //formato fecha
+        if (fechaPublicacion.matches("\\d{4}-\\d{2}-\\d{2}")) {
+        } else {
+            JOptionPane.showMessageDialog(null, "Formato de fecha incorrecto.\nDebe ser YYYY-MM-DD.", "Error", JOptionPane.ERROR_MESSAGE);
+            valido = false;
+        }
+        //los string no son numeros
+        if (!nombre.matches(".*\\d.*") && !dir.matches(".*\\d.*") && !ciudad.matches(".*\\d.*") && !caracteristicas.matches(".*\\d.*")) {
+        } else {
+            JOptionPane.showMessageDialog(null, "Los campos Nombre, Dirección, Ciudad y Características no pueden contener números.", "Error", JOptionPane.ERROR_MESSAGE);
+            valido = false;
+        }
+        //no se pasan de la longitud
+        if (nombre.length() > 10 || ciudad.length() > 20 || dir.length() > 30 || caracteristicas.length() > 100) {
+            JOptionPane.showMessageDialog(null, "La longitud de Nombre debe ser menor o igual a 10 caracteres.\nLa longitud de Ciudad debe ser menor o igual a 10 caracteres.\nLa longitud de Dirección debe ser menor o igual a 30 caracteres.", "Error", JOptionPane.ERROR_MESSAGE);
+            valido = false;
+        }
+        // Verificar que los campos no estén vacíos
+        if (id.isEmpty() || nombre.isEmpty() || dir.isEmpty() || ciudad.isEmpty() || cantDormitorios.isEmpty()
+                || caracteristicas.isEmpty() || precio.isEmpty() || fechaPublicacion.isEmpty() || numeroIdentidadA.isEmpty() || numeroIdentidadV.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Todos los campos son obligatorios.", "Error", JOptionPane.ERROR_MESSAGE);
+            valido = false;
+        }
+        if (imagenseleccionada == false) {
+            valido = false;
+            JOptionPane.showMessageDialog(null, "Se debe seleccionar una imagen.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+
+        //hacer consulta
+        if (valido) {
+            JOptionPane.showMessageDialog(JF_crearPropiedadVenta, "Insercion realizada con exito");
+            String vista = "CALL insertarPV ('" + id + "','" + nombre + "','" + ciudad + "','" + dir + "','" + cantDormitorios + "','" + caracteristicas + "','" + precio + "','" + fechaPublicacion + "','" + numeroIdentidadA + "','" + numeroIdentidadV + "')";
+            try {
+                db.HacerConsulta(vista);
+                tf_crearPropiedadenVentaid.setText("");
+                tf_crearPropiedadenVentanombre.setText("");
+                tf_crearPropiedadenVentaDireccion.setText("");
+                tf_crearPropiedadenVentaCiudad.setText("");
+                tf_crearPropiedadenVentaDorm.setText("");
+                ta_crearPropiedadenVentaCaracteristicas.setText("");
+                tf_crearPropiedadenVentaPrecio.setText("");
+                tf_crearPropiedadenVentaFecha.setText("");
+                JF_crearPropiedadVenta.setVisible(false);
+                imagenseleccionada = false;
+
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Ocurrió un error al hacer la consulta: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            }
+
+        }
+
     }//GEN-LAST:event_JB_crearPropiedadVentaMouseClicked
 
-    private void tf_crearPropiedadenVentaidAgenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_crearPropiedadenVentaidAgenteActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tf_crearPropiedadenVentaidAgenteActionPerformed
-
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        ResultSet rs = db.mostrarElementos("SELECT id FROM agentes");
+        try {
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                cb_crearpropiedadenVentaIdAgente.addItem(Integer.toString(id));
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        ResultSet rs2 = db.mostrarElementos("SELECT id FROM vendedores");
+        try {
+            while (rs2.next()) {
+                int id = rs2.getInt("id");
+                cb_crearpropiedadenVentaIdVendedor.addItem(Integer.toString(id));
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
         JF_crearPropiedadVenta.pack();
         JF_crearPropiedadVenta.setLocationRelativeTo(JF_Agentes);;
         JF_crearPropiedadVenta.setVisible(true);
@@ -5666,7 +5746,93 @@ public class Main extends javax.swing.JFrame {
         String id = (String) CB_modificarPropEnVenta.getSelectedItem();
         String atributo = (String) cb_atributoPropEnVenta.getSelectedItem();
         String nuevo_valor = tf_nuevovalorPropEnVenta.getText();
-        db.HacerConsulta("CALL modificarPropiedadEnMercado('" + id + "','" + atributo + "','" + nuevo_valor + "');");
+        boolean valido = true;
+        ArrayList<String> ids = new ArrayList<>();
+
+        try {
+            // Consulta para obtener IDs de agentes
+            ResultSet rs = db.mostrarElementos("SELECT id FROM agentes");
+            while (rs.next()) {
+                int id1 = rs.getInt("id");
+                ids.add(Integer.toString(id1));
+            }
+
+            // Consulta para obtener IDs de vendedores
+            ResultSet rs2 = db.mostrarElementos("SELECT id FROM vendedores");
+            while (rs2.next()) {
+                int id2 = rs2.getInt("id");
+                ids.add(Integer.toString(id2));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        if (nuevo_valor.isEmpty()) {
+            valido = false;
+            JOptionPane.showMessageDialog(null, "Rellenar el nuevo valor", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
+            if (atributo.equals("nombre") || atributo.equals("ciudad") || atributo.equals("direccion") || atributo.equals("caracteristicas")) {
+                if (nuevo_valor.matches(".*\\d.*")) {
+                    JOptionPane.showMessageDialog(null, "Los campos Nombre, Dirección, Ciudad y Características no pueden contener números.", "Error", JOptionPane.ERROR_MESSAGE);
+                    valido = false;
+                }
+                if (atributo.equals("nombre")) {
+                    if (nuevo_valor.length() > 10) {
+                        valido = false;
+                        JOptionPane.showMessageDialog(null, "Nombre no valido", "Error", JOptionPane.ERROR_MESSAGE);
+                    }
+                } else if (atributo.equals("ciudad")) {
+                    if (nuevo_valor.length() > 20) {
+                        valido = false;
+                        JOptionPane.showMessageDialog(null, "Nombre de ciudad no valido", "Error", JOptionPane.ERROR_MESSAGE);
+                    }
+                } else if (atributo.equals("caracteristicas")) {
+                    if (nuevo_valor.length() > 1000) {
+                        valido = false;
+                        JOptionPane.showMessageDialog(null, "Caracteristicas exceden el limite", "Error", JOptionPane.ERROR_MESSAGE);
+                    }
+                } else {
+                    if (nuevo_valor.length() > 30) {
+                        valido = false;
+                        JOptionPane.showMessageDialog(null, "Nombre de direccion no valido", "Error", JOptionPane.ERROR_MESSAGE);
+                    }
+                }
+
+            } else if (atributo.equals("fechaPublicacion")) {
+                if (!(nuevo_valor.matches("\\d{4}-\\d{2}-\\d{2}"))) {
+                    JOptionPane.showMessageDialog(null, "Formato de fecha incorrecto.\nDebe ser YYYY-MM-DD.", "Error", JOptionPane.ERROR_MESSAGE);
+                    valido = false;
+                } else if (atributo.equals("cantidadDormitorios") || atributo.equals("precio")) {
+                    try {
+                        Integer.parseInt(nuevo_valor);
+                    } catch (NumberFormatException e) {
+                        JOptionPane.showMessageDialog(null, "Por favor, ingrese números enteros válidos en los campos correspondientes.", "Error", JOptionPane.ERROR_MESSAGE);
+                        valido = false;
+                    }
+
+                } else if (atributo.equals("noIdentidad_Agente") || atributo.equals("noIdentidad_Vendedor")) {
+                    for (String idcomp : ids) {
+                        if (!(nuevo_valor.equals(idcomp))) {
+                            valido = false;
+                            JOptionPane.showMessageDialog(null, "Seleccione un id existente", "Error", JOptionPane.ERROR_MESSAGE);
+                        }
+                    }
+                }
+
+            } else {
+                valido = false;
+                JOptionPane.showMessageDialog(null, "Atributo no valido", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+        if (valido) {
+            db.HacerConsulta("CALL modificarPropiedadEnMercado('" + id + "','" + atributo + "','" + nuevo_valor + "');");
+            tf_nuevovalorPropEnVenta.setText("");
+            JF_modificarPropiedadVenta.setVisible(false);
+            JOptionPane.showMessageDialog(null, "Modificacion realizada con exito");
+        } else {
+            JOptionPane.showMessageDialog(null, "Error al realizar la modificacion", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+
     }//GEN-LAST:event_JB_modificarPropenVentaMouseClicked
 
     private void JB_modificarPropenVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_modificarPropenVentaActionPerformed
@@ -5681,6 +5847,8 @@ public class Main extends javax.swing.JFrame {
         // TODO add your handling code here:
         String id = (String) cb_eliminarPropVenta.getSelectedItem();
         db.HacerConsulta("CALL eliminarPM('" + id + "');");
+        JOptionPane.showMessageDialog(JF_eliminarPropiedadVenta, "Propiedad eliminada con exito");
+        JF_eliminarPropiedadVenta.setVisible(false);
     }//GEN-LAST:event_JB_eliminarPropiedadenVentaMouseClicked
 
     private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
@@ -5716,6 +5884,37 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_JB_eliminarPropVentaMouseClicked
 
     private void JB_ventanacrearPropiedadesVendidasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_ventanacrearPropiedadesVendidasMouseClicked
+        ResultSet rs = db.mostrarElementos("SELECT id FROM agentes");
+        try {
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                cb_crearPropiedadVendidaIdAgente.addItem(Integer.toString(id));
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        ResultSet rs2 = db.mostrarElementos("SELECT id FROM vendedores");
+        try {
+            while (rs2.next()) {
+                int id = rs2.getInt("id");
+                cb_crearPropiedadVendidaIdVendedor.addItem(Integer.toString(id));
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        ResultSet rs3 = db.mostrarElementos("SELECT id FROM compradores");
+        try {
+            while (rs3.next()) {
+                int id = rs3.getInt("id");
+                cb_crearPropiedadVendidaIdComprador.addItem(Integer.toString(id));
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
         JF_crearPropiedadesVendidas.pack();
         JF_crearPropiedadesVendidas.setLocationRelativeTo(JF_Agentes);;
         JF_crearPropiedadesVendidas.setVisible(true);
@@ -5758,28 +5957,107 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_tf_buscarPropiedadesVendidasActionPerformed
 
     private void JB_crearPropiedadVenta1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_crearPropiedadVenta1MouseClicked
-        // TODO add your handling code here:
         String id = tf_crearPropiedadenvendidaId.getText();
         String nombre = tf_crearPropiedadenvendidaNombre.getText();
         String dir = tf_crearPropiedadenvendidaDireccion.getText();
         String ciudad = tf_crearPropiedadenvendidaCiudad.getText();
         String cantDormitorios = jTextField7.getText();
         String caracteristicas = ta_crearPropiedadenvendidaCaracteristicas.getText();
-        String precio = jTextField6.getText();
-        String fechaPublicacion = jTextField8.getText();
-        String fechaVenta = jTextField9.getText();
-        String numeroIdentidadA = tf_crearPropiedadenvendidaidAgente.getText();
-        String numeroIdentidadV = tf_crearPropiedadenvendidaidVendedor.getText();
-        String numeroIdentidadC = tf_crearPropiedadenvendidaidComprador.getText();
-        String comision = jTextField10.getText();
+        String precio = tf_crearPropiedadVendidaPrecio.getText();
+        String fechaPublicacion = tf_crearPropiedadVendidaFechaPublicacion.getText();
+        String fechaVenta = tf_crearPropiedadVendidaFechaVenta.getText();
+        String numeroIdentidadA = (String) cb_crearPropiedadVendidaIdAgente.getSelectedItem();
+        String numeroIdentidadV = (String) cb_crearPropiedadVendidaIdVendedor.getSelectedItem();
+        String numeroIdentidadC = (String) cb_crearPropiedadVendidaIdComprador.getSelectedItem();
+        String comision = tf_crearpropiedadVendidaComision.getText();
 
-        String vista = "CALL insertarPM ('" + id + "','" + nombre + "','" + ciudad + "','" + dir + "','" + cantDormitorios + "','" + caracteristicas + "','" + precio + "','" + fechaPublicacion + "','" + fechaVenta + "','" + numeroIdentidadA + "','" + numeroIdentidadV + "','" + numeroIdentidadC + "','" + comision + "')";
-        db.HacerConsulta(vista);
+        boolean valido = true;
+        //no se repite id
+        try {
+            ResultSet rs = db.mostrarElementos("SELECT idPropiedad FROM propiedades_vendidas");
+            while (rs.next()) {
+                String idExistente = rs.getString("idPropiedad");
+                if (idExistente.equals(id)) {
+                    JOptionPane.showMessageDialog(null, "El ID ya existe en la base de datos.", "Error", JOptionPane.ERROR_MESSAGE);
+                    valido = false;
+                    break; // Salir del bucle al encontrar el ID existente
+                }
+            }
+            rs.close(); // Cerrar el ResultSet después de usarlo
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Ocurrió un error al verificar el ID en la base de datos: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            valido = false;
+        }
+        //los numeros no son char
+
+        try {
+            Integer.parseInt(id);
+            Integer.parseInt(cantDormitorios);
+            Integer.parseInt(precio);
+            Integer.parseInt(numeroIdentidadA);
+            Integer.parseInt(numeroIdentidadV);
+            Integer.parseInt(numeroIdentidadC);
+            Integer.parseInt(comision);
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "Por favor, ingrese números enteros válidos en los campos correspondientes.", "Error", JOptionPane.ERROR_MESSAGE);
+            valido = false;
+        }
+        //formato fecha
+        if (fechaVenta.matches("\\d{4}-\\d{2}-\\d{2}") && fechaPublicacion.matches("\\d{4}-\\d{2}-\\d{2}")) {
+        } else {
+            JOptionPane.showMessageDialog(null, "Formato de fecha incorrecto.\nDebe ser YYYY-MM-DD.", "Error", JOptionPane.ERROR_MESSAGE);
+            valido = false;
+        }
+        //los string no son numeros
+        if (!nombre.matches(".*\\d.*") && !dir.matches(".*\\d.*") && !ciudad.matches(".*\\d.*") && !caracteristicas.matches(".*\\d.*")) {
+        } else {
+            JOptionPane.showMessageDialog(null, "Los campos Nombre, Dirección, Ciudad y Características no pueden contener números.", "Error", JOptionPane.ERROR_MESSAGE);
+            valido = false;
+        }
+        //no se pasan de la longitud
+        if (nombre.length() > 10 || ciudad.length() > 20 || dir.length() > 30 || caracteristicas.length() > 100) {
+            JOptionPane.showMessageDialog(null, "La longitud de Nombre debe ser menor o igual a 10 caracteres.\nLa longitud de Ciudad debe ser menor o igual a 10 caracteres.\nLa longitud de Dirección debe ser menor o igual a 30 caracteres.", "Error", JOptionPane.ERROR_MESSAGE);
+            valido = false;
+        }
+        // Verificar que los campos no estén vacíos
+        if (id.isEmpty() || nombre.isEmpty() || dir.isEmpty() || ciudad.isEmpty() || cantDormitorios.isEmpty()
+                || caracteristicas.isEmpty() || precio.isEmpty() || fechaPublicacion.isEmpty() || fechaVenta.isEmpty()
+                || numeroIdentidadA.isEmpty() || numeroIdentidadV.isEmpty() || numeroIdentidadC.isEmpty() || comision.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Todos los campos son obligatorios.", "Error", JOptionPane.ERROR_MESSAGE);
+            valido = false;
+        }
+        if (imagenseleccionada == false) {
+            valido = false;
+            JOptionPane.showMessageDialog(null, "Se debe seleccionar una imagen.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+
+        //hacer consulta
+        if (valido) {
+            JOptionPane.showMessageDialog(JF_crearPropiedadesVendidas, "Insercion realizada con exito");
+            String vista = "CALL insertarPM ('" + id + "','" + nombre + "','" + ciudad + "','" + dir + "','" + cantDormitorios + "','" + caracteristicas + "','" + precio + "','" + fechaPublicacion + "','" + fechaVenta + "','" + numeroIdentidadA + "','" + numeroIdentidadV + "','" + numeroIdentidadC + "','" + comision + "')";
+            try {
+                db.HacerConsulta(vista);
+                tf_crearPropiedadenvendidaId.setText("");
+                tf_crearPropiedadenvendidaNombre.setText("");
+                tf_crearPropiedadenvendidaDireccion.setText("");
+                tf_crearPropiedadenvendidaCiudad.setText("");
+                jTextField7.setText("");
+                ta_crearPropiedadenvendidaCaracteristicas.setText("");
+                tf_crearPropiedadVendidaPrecio.setText("");
+                tf_crearPropiedadVendidaFechaPublicacion.setText("");
+                tf_crearPropiedadVendidaFechaVenta.setText("");
+                tf_crearpropiedadVendidaComision.setText("");
+                JF_crearPropiedadesVendidas.setVisible(false);
+                imagenseleccionada = false;
+
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Ocurrió un error al hacer la consulta: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            }
+
+        }
+
+
     }//GEN-LAST:event_JB_crearPropiedadVenta1MouseClicked
-
-    private void tf_crearPropiedadenvendidaidAgenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_crearPropiedadenvendidaidAgenteActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tf_crearPropiedadenvendidaidAgenteActionPerformed
 
     private void tf_nuevovalorVendidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_nuevovalorVendidaActionPerformed
         // TODO add your handling code here:
@@ -5790,7 +6068,100 @@ public class Main extends javax.swing.JFrame {
         String id = (String) CB_modificarPropVendida.getSelectedItem();
         String atributo = (String) cb_atributoPropVendida.getSelectedItem();
         String nuevo_valor = tf_nuevovalorVendida.getText();
-        db.HacerConsulta("CALL modificarPropiedadVendida('" + id + "','" + atributo + "','" + nuevo_valor + "');");
+        boolean valido = true;
+        ArrayList<String> ids = new ArrayList<>();
+
+        try {
+            // Consulta para obtener IDs de agentes
+            ResultSet rs = db.mostrarElementos("SELECT id FROM agentes");
+            while (rs.next()) {
+                int id1 = rs.getInt("id");
+                ids.add(Integer.toString(id1));
+            }
+
+            // Consulta para obtener IDs de vendedores
+            ResultSet rs2 = db.mostrarElementos("SELECT id FROM vendedores");
+            while (rs2.next()) {
+                int id2 = rs2.getInt("id");
+                ids.add(Integer.toString(id2));
+            }
+
+            // Consulta para obtener IDs de compradores
+            ResultSet rs3 = db.mostrarElementos("SELECT id FROM compradores");
+            while (rs3.next()) {
+                int id3 = rs3.getInt("id");
+                ids.add(Integer.toString(id3));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        if (nuevo_valor.isEmpty()) {
+            valido = false;
+            JOptionPane.showMessageDialog(null, "Rellenar el nuevo valor", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
+            if (atributo.equals("nombre") || atributo.equals("ciudad") || atributo.equals("direccion") || atributo.equals("caracteristicas")) {
+                if (nuevo_valor.matches(".*\\d.*")) {
+                    JOptionPane.showMessageDialog(null, "Los campos Nombre, Dirección, Ciudad y Características no pueden contener números.", "Error", JOptionPane.ERROR_MESSAGE);
+                    valido = false;
+                }
+                if (atributo.equals("nombre")) {
+                    if (nuevo_valor.length() > 10) {
+                        valido = false;
+                        JOptionPane.showMessageDialog(null, "Nombre no valido", "Error", JOptionPane.ERROR_MESSAGE);
+                    }
+                } else if (atributo.equals("ciudad")) {
+                    if (nuevo_valor.length() > 20) {
+                        valido = false;
+                        JOptionPane.showMessageDialog(null, "Nombre de ciudad no valido", "Error", JOptionPane.ERROR_MESSAGE);
+                    }
+                } else if (atributo.equals("caracteristicas")) {
+                    if (nuevo_valor.length() > 1000) {
+                        valido = false;
+                        JOptionPane.showMessageDialog(null, "Caracteristicas exceden el limite", "Error", JOptionPane.ERROR_MESSAGE);
+                    }
+                } else {
+                    if (nuevo_valor.length() > 30) {
+                        valido = false;
+                        JOptionPane.showMessageDialog(null, "Nombre de direccion no valido", "Error", JOptionPane.ERROR_MESSAGE);
+                    }
+                }
+
+            } else if (atributo.equals("fechaPublicacion") || atributo.equals("fechaVenta")) {
+                if (!(nuevo_valor.matches("\\d{4}-\\d{2}-\\d{2}"))) {
+                    JOptionPane.showMessageDialog(null, "Formato de fecha incorrecto.\nDebe ser YYYY-MM-DD.", "Error", JOptionPane.ERROR_MESSAGE);
+                    valido = false;
+                } else if (atributo.equals("cantidadDormitorios") || atributo.equals("precio") || atributo.equals("comisionVenta")) {
+                    try {
+                        Integer.parseInt(nuevo_valor);
+                    } catch (NumberFormatException e) {
+                        JOptionPane.showMessageDialog(null, "Por favor, ingrese números enteros válidos en los campos correspondientes.", "Error", JOptionPane.ERROR_MESSAGE);
+                        valido = false;
+                    }
+
+                } else if (atributo.equals("noIdentidad_Agente") || atributo.equals("noIdentidad_Comprador") || atributo.equals("noIdentidad_Vendedor")) {
+                    for (String idcomp : ids) {
+                        if (!(nuevo_valor.equals(idcomp))) {
+                            valido = false;
+                            JOptionPane.showMessageDialog(null, "Seleccione un id existente", "Error", JOptionPane.ERROR_MESSAGE);
+                        }
+                    }
+                }
+
+            } else {
+                valido = false;
+                JOptionPane.showMessageDialog(null, "Atributo no valido", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+        if (valido) {
+            db.HacerConsulta("CALL modificarPropiedadVendida('" + id + "','" + atributo + "','" + nuevo_valor + "');");
+            tf_nuevovalorVendida.setText("");
+            JF_modificarPropVendidas.setVisible(false);
+            JOptionPane.showMessageDialog(null, "Modificacion realizada con exito");
+        } else {
+            JOptionPane.showMessageDialog(null, "Error al realizar la modificacion", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+
     }//GEN-LAST:event_JB_modificarVendidaMouseClicked
 
     private void JB_modificarVendidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_modificarVendidaActionPerformed
@@ -5801,6 +6172,8 @@ public class Main extends javax.swing.JFrame {
         // TODO add your handling code here:
         String id = (String) cb_eliminarPropVendida.getSelectedItem();
         db.HacerConsulta("CALL eliminarPV('" + id + "');");
+        JOptionPane.showMessageDialog(JF_eliminarPropVendidas, "Propiedad eliminada con exito");
+        JF_eliminarPropVendidas.setVisible(false);
     }//GEN-LAST:event_JB_eliminarPropVendidaMouseClicked
 
     private void jButton14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton14MouseClicked
@@ -6188,6 +6561,7 @@ public class Main extends javax.swing.JFrame {
                 Files.copy(origenPath, destinoPath, StandardCopyOption.REPLACE_EXISTING);
 
                 System.out.println("Imagen guardada en: " + destinoPath.toString());
+                imagenseleccionada = true;
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -6253,6 +6627,7 @@ public class Main extends javax.swing.JFrame {
     private void jButton23MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton23MouseClicked
         // TODO add your handling code here:
         String ruta = "";
+
         JFileChooser jf = new JFileChooser();
         FileNameExtensionFilter filtrado = new FileNameExtensionFilter("JPG, PNG", "jpg", "png");
         jf.setFileFilter(filtrado);
@@ -6268,8 +6643,8 @@ public class Main extends javax.swing.JFrame {
                 Path origenPath = Paths.get(ruta);
                 Path destinoPath = Paths.get(carpetaDestino + "/" + nuevoNombre);
                 Files.copy(origenPath, destinoPath, StandardCopyOption.REPLACE_EXISTING);
-
                 System.out.println("Imagen guardada en: " + destinoPath.toString());
+                imagenseleccionada = true;
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -6929,6 +7304,11 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cb_atributoPropEnVenta;
     private javax.swing.JComboBox<String> cb_atributoPropVendida;
     private javax.swing.JComboBox<String> cb_atributovendedor;
+    private javax.swing.JComboBox<String> cb_crearPropiedadVendidaIdAgente;
+    private javax.swing.JComboBox<String> cb_crearPropiedadVendidaIdComprador;
+    private javax.swing.JComboBox<String> cb_crearPropiedadVendidaIdVendedor;
+    private javax.swing.JComboBox<String> cb_crearpropiedadenVentaIdAgente;
+    private javax.swing.JComboBox<String> cb_crearpropiedadenVentaIdVendedor;
     private javax.swing.JComboBox<String> cb_eliminarAgente;
     private javax.swing.JComboBox<String> cb_eliminarComprador;
     private javax.swing.JComboBox<String> cb_eliminarPropVendida;
@@ -7208,15 +7588,8 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTable jTable8;
     private javax.swing.JTable jTable9;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JButton jb_buscarUsuarios;
     private javax.swing.JButton jb_crudagentes;
@@ -7278,23 +7651,25 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTextField tf_crearCompradorDireccion;
     private javax.swing.JTextField tf_crearCompradorId;
     private javax.swing.JTextField tf_crearCompradorNombre;
+    private javax.swing.JTextField tf_crearPropiedadVendidaFechaPublicacion;
+    private javax.swing.JTextField tf_crearPropiedadVendidaFechaVenta;
+    private javax.swing.JTextField tf_crearPropiedadVendidaPrecio;
     private javax.swing.JTextField tf_crearPropiedadenVentaCiudad;
     private javax.swing.JTextField tf_crearPropiedadenVentaDireccion;
+    private javax.swing.JTextField tf_crearPropiedadenVentaDorm;
+    private javax.swing.JTextField tf_crearPropiedadenVentaFecha;
+    private javax.swing.JTextField tf_crearPropiedadenVentaPrecio;
     private javax.swing.JTextField tf_crearPropiedadenVentaid;
-    private javax.swing.JTextField tf_crearPropiedadenVentaidAgente;
-    private javax.swing.JTextField tf_crearPropiedadenVentaidVendedor;
     private javax.swing.JTextField tf_crearPropiedadenVentanombre;
     private javax.swing.JTextField tf_crearPropiedadenvendidaCiudad;
     private javax.swing.JTextField tf_crearPropiedadenvendidaDireccion;
     private javax.swing.JTextField tf_crearPropiedadenvendidaId;
     private javax.swing.JTextField tf_crearPropiedadenvendidaNombre;
-    private javax.swing.JTextField tf_crearPropiedadenvendidaidAgente;
-    private javax.swing.JTextField tf_crearPropiedadenvendidaidComprador;
-    private javax.swing.JTextField tf_crearPropiedadenvendidaidVendedor;
     private javax.swing.JTextField tf_crearVendedorCelular;
     private javax.swing.JTextField tf_crearVendedorDireccion;
     private javax.swing.JTextField tf_crearVendedorId;
     private javax.swing.JTextField tf_crearVendedorNombre;
+    private javax.swing.JTextField tf_crearpropiedadVendidaComision;
     private javax.swing.JTextField tf_nuevoValorComprador;
     private javax.swing.JTextField tf_nuevoValorVendedor;
     private javax.swing.JTextField tf_nuevovalorAgente;
@@ -7305,6 +7680,7 @@ public class Main extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     //Variables globales
+    boolean imagenseleccionada = false;
     DB_Manager db = new DB_Manager();
     int identidadUsuarioActivo = 0;
 //Este metodo es para reproducir sonidos en el programa
