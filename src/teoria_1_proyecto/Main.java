@@ -65,10 +65,19 @@ public class Main extends javax.swing.JFrame {
             for (int i = 0; i < temp.size(); i++) {
                 db.HacerConsulta("UPDATE usuario SET activo = 'FALSE' WHERE id = " + temp.get(i));
             }
+            //Poniendo logos
+            this.setIconImage(new ImageIcon("./Imagen\\beinvenida.jpeg").getImage());
+            JF_Principal.setIconImage(new ImageIcon("./Imagen\\beinvenida.jpeg").getImage());
+            JF_bitacora.setIconImage(new ImageIcon("./Imagen\\beinvenida.jpeg").getImage());
+            Reportes.setIconImage(new ImageIcon("./Imagen\\beinvenida.jpeg").getImage());
+            Portadita.setIconImage(new ImageIcon("./Imagen\\beinvenida.jpeg").getImage());
+
             //JF_crearPropiedadesVendidas.show();
+            //Reportes.setVisible(true);
         } catch (SQLException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
+
     }
 
     /**
@@ -128,7 +137,7 @@ public class Main extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         tf_usernamelogin = new javax.swing.JTextField();
         pf_passwordlogin = new javax.swing.JPasswordField();
-        JB_login = new javax.swing.JButton();
+        JB_login = new boton();
         temporal = new javax.swing.JButton();
         JF_crearAgente = new javax.swing.JFrame();
         jPanel10 = new FondoPanel("./Imagen\\crearagente.jpg");
@@ -283,7 +292,7 @@ public class Main extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
-        verReportes = new javax.swing.JButton();
+        verReportes = new boton();
         jPanel6 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jButton6 = new javax.swing.JButton();
@@ -517,16 +526,20 @@ public class Main extends javax.swing.JFrame {
         JB_eliminarPropVendida = new javax.swing.JButton();
         jLabel93 = new javax.swing.JLabel();
         Reportes = new javax.swing.JFrame();
-        jButton16 = new javax.swing.JButton();
-        jButton17 = new javax.swing.JButton();
-        jButton18 = new javax.swing.JButton();
-        jButton19 = new javax.swing.JButton();
-        jButton11 = new javax.swing.JButton();
-        jButton13 = new javax.swing.JButton();
-        jButton15 = new javax.swing.JButton();
-        jButton20 = new javax.swing.JButton();
+        jPanel95 = new javax.swing.JPanel();
+        jButton16 = new boton();
+        jButton17 = new boton();
+        jButton18 = new boton();
+        jButton19 = new boton();
+        jButton11 = new boton();
+        jButton13 = new boton();
+        jButton15 = new boton();
+        jButton20 = new boton();
         jScrollPane10 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList<>();
+        jScrollPane19 = new javax.swing.JScrollPane();
+        JTable_Reportes = new javax.swing.JTable();
+        lb_Reportes = new javax.swing.JLabel();
         JF_bitacora = new javax.swing.JFrame();
         jPanel52 = new FondoPanel("./Imagen\\bitacora.jpg");
         jPanel53 = new javax.swing.JPanel();
@@ -3387,7 +3400,7 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(tf_crearVendedorNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(JB_crearVendedor)
-                .addContainerGap(11, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel22Layout = new javax.swing.GroupLayout(jPanel22);
@@ -4966,6 +4979,12 @@ public class Main extends javax.swing.JFrame {
             .addComponent(jPanel50, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        Reportes.setTitle("Reportes");
+        Reportes.setBackground(new java.awt.Color(255, 51, 255));
+
+        jPanel95.setBackground(new java.awt.Color(255, 204, 255));
+        jPanel95.setForeground(new java.awt.Color(255, 153, 255));
+
         jButton16.setText("Cantidad de ventas por agente");
         jButton16.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -5029,49 +5048,87 @@ public class Main extends javax.swing.JFrame {
 
         jScrollPane10.setViewportView(jList1);
 
+        JTable_Reportes.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane19.setViewportView(JTable_Reportes);
+
+        lb_Reportes.setFont(new java.awt.Font("Dialog", 0, 36)); // NOI18N
+        lb_Reportes.setText(" ");
+
+        javax.swing.GroupLayout jPanel95Layout = new javax.swing.GroupLayout(jPanel95);
+        jPanel95.setLayout(jPanel95Layout);
+        jPanel95Layout.setHorizontalGroup(
+            jPanel95Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel95Layout.createSequentialGroup()
+                .addGroup(jPanel95Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel95Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel95Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jButton13, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 409, Short.MAX_VALUE)
+                            .addComponent(jButton15, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton11, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton19, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton18, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton17, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton16, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel95Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jScrollPane19, javax.swing.GroupLayout.DEFAULT_SIZE, 507, Short.MAX_VALUE)
+                            .addComponent(jScrollPane10)))
+                    .addGroup(jPanel95Layout.createSequentialGroup()
+                        .addGap(406, 406, 406)
+                        .addComponent(lb_Reportes)))
+                .addContainerGap(43, Short.MAX_VALUE))
+        );
+        jPanel95Layout.setVerticalGroup(
+            jPanel95Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel95Layout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addComponent(lb_Reportes)
+                .addGap(28, 28, 28)
+                .addGroup(jPanel95Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(jPanel95Layout.createSequentialGroup()
+                        .addComponent(jButton16)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton17, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton18, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton19, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton15, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton20, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel95Layout.createSequentialGroup()
+                        .addComponent(jScrollPane19, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
+                .addContainerGap(54, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout ReportesLayout = new javax.swing.GroupLayout(Reportes.getContentPane());
         Reportes.getContentPane().setLayout(ReportesLayout);
         ReportesLayout.setHorizontalGroup(
             ReportesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ReportesLayout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addGroup(ReportesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton20)
-                    .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton15)
-                    .addComponent(jButton17, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton16)
-                    .addGroup(ReportesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jButton18, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                        .addComponent(jButton11, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(jButton19, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 155, Short.MAX_VALUE)
-                .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 455, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel95, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         ReportesLayout.setVerticalGroup(
             ReportesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ReportesLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addGroup(ReportesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(ReportesLayout.createSequentialGroup()
-                        .addComponent(jButton16)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton17, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton18)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton19)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton11)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton15)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton13)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton20)))
-                .addContainerGap(18, Short.MAX_VALUE))
+            .addComponent(jPanel95, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         jPanel52.setBackground(new java.awt.Color(0, 0, 86));
@@ -6658,16 +6715,31 @@ public class Main extends javax.swing.JFrame {
         ResultSet rs = db.mostrarElementos("SELECT * FROM ventas_x_agente");
         DefaultListModel<String> modeloLista = new DefaultListModel<>();
         int i = 1;
+
+        //Codigo para poner en Jtable
+        // Títulos de las columnas
+        Object[] columnNames = {"id", "nombre", "Cantidad Vendida"};
+        // Crear un modelo de tabla personalizado
+        DefaultTableModel m = new DefaultTableModel();
+        m.setColumnIdentifiers(columnNames);
+
         try {
             while (rs.next()) {
                 int id = rs.getInt("id");
                 String nombre = rs.getString("nombre");
                 String cant = rs.getString("Cantidad_de_propiedades_vendidas");
                 modeloLista.addElement(i + "). " + " ID: " + id + " | NOMBRE: " + nombre + " | " + "CANTIDAD VENDIDAS: " + cant + "\n");
+
+                //tabla
+                Object[] row = {id, nombre, cant};
+                m.addRow(row);
+
                 i++;
+
             }
             jList1.setModel(modeloLista);
-
+            JTable_Reportes.setModel(m);
+            lb_Reportes.setText("Cantidad de ventas por agente");
         } catch (SQLException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -6678,16 +6750,31 @@ public class Main extends javax.swing.JFrame {
         // TODO add your handling code here:
         ResultSet rs = db.mostrarElementos("SELECT * FROM ventas_x_vendedor");
         DefaultListModel<String> modeloLista = new DefaultListModel<>();
+
+        //Codigo para poner en Jtable
+        // Títulos de las columnas
+        Object[] columnNames = {"id", "nombre", "Cantidad Vendida"};
+        // Crear un modelo de tabla personalizado
+        DefaultTableModel m = new DefaultTableModel();
+        m.setColumnIdentifiers(columnNames);
+
         int i = 1;
         try {
+
             while (rs.next()) {
                 int id = rs.getInt("id");
                 String nombre = rs.getString("nombre");
                 String cant = rs.getString("Cantidad_de_propiedades_vendidas");
                 modeloLista.addElement(i + "). " + " ID: " + id + " | NOMBRE: " + nombre + " | " + "CANTIDAD VENDIDAS: " + cant + "\n");
+
+                //tabla
+                Object[] row = {id, nombre, cant};
+                m.addRow(row);
                 i++;
             }
+            JTable_Reportes.setModel(m);
             jList1.setModel(modeloLista);
+            lb_Reportes.setText("Cantidad de ventas por vendedor");
 
         } catch (SQLException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
@@ -6698,6 +6785,14 @@ public class Main extends javax.swing.JFrame {
         // TODO add your handling code here:
         ResultSet rs = db.mostrarElementos("SELECT * FROM compras_x_comprador");
         DefaultListModel<String> modeloLista = new DefaultListModel<>();
+
+        //Codigo para poner en Jtable
+        // Títulos de las columnas
+        Object[] columnNames = {"id", "nombre", "Cantidad Compradas"};
+        // Crear un modelo de tabla personalizado
+        DefaultTableModel m = new DefaultTableModel();
+        m.setColumnIdentifiers(columnNames);
+
         int i = 1;
         try {
             while (rs.next()) {
@@ -6705,9 +6800,16 @@ public class Main extends javax.swing.JFrame {
                 String nombre = rs.getString("nombre");
                 String cant = rs.getString("Cant_Propiedades_Compradas");
                 modeloLista.addElement(i + "). " + " ID: " + id + " | NOMBRE: " + nombre + " | " + "CANTIDAD COMPRADAS: " + cant + "\n");
+
+                //tabla
+                Object[] row = {id, nombre, cant};
+                m.addRow(row);
+
                 i++;
             }
             jList1.setModel(modeloLista);
+            JTable_Reportes.setModel(m);
+            lb_Reportes.setText("Cantidad de compras por comprador");
 
         } catch (SQLException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
@@ -6718,15 +6820,31 @@ public class Main extends javax.swing.JFrame {
         // TODO add your handling code here:
         ResultSet rs = db.mostrarElementos("SELECT * FROM ventas_x_ubicacion");
         DefaultListModel<String> modeloLista = new DefaultListModel<>();
+
+        //Codigo para poner en Jtable
+        // Títulos de las columnas
+        Object[] columnNames = {"ciudad", "direccion", "Cantidad"};
+        // Crear un modelo de tabla personalizado
+        DefaultTableModel m = new DefaultTableModel();
+        m.setColumnIdentifiers(columnNames);
+
         int i = 1;
         try {
             while (rs.next()) {
                 String dir = rs.getString("direccion");
-                String cant = rs.getString("Cant_de_casas");
-                modeloLista.addElement(i + "). " + " Dirrecion: " + dir + " | CANTIDAD DE CASAS: " + cant + "\n");
+                String ciudad = rs.getString("ciudad");
+                String cant = rs.getString("total_ventas");
+                modeloLista.addElement(i + "). " + "Ciudad: " + ciudad + " Dirrecion: " + dir + " | CANTIDAD DE CASAS Vendidas: " + cant + "\n");
+
+                //tabla
+                Object[] row = {ciudad, dir, cant};
+                m.addRow(row);
+
                 i++;
             }
             jList1.setModel(modeloLista);
+            JTable_Reportes.setModel(m);
+            lb_Reportes.setText("Ventas por Ubicacion");
 
         } catch (SQLException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
@@ -6737,16 +6855,30 @@ public class Main extends javax.swing.JFrame {
         // TODO add your handling code here:
         ResultSet rs = db.mostrarElementos("SELECT * FROM ventas_x_precio");
         DefaultListModel<String> modeloLista = new DefaultListModel<>();
+
+        //Codigo para poner en Jtable
+        // Títulos de las columnas
+        Object[] columnNames = {"Precio", "Cantidad de Casas"};
+        // Crear un modelo de tabla personalizado
+        DefaultTableModel m = new DefaultTableModel();
+        m.setColumnIdentifiers(columnNames);
+
         int i = 1;
         try {
             while (rs.next()) {
                 int precio = rs.getInt("precio");
                 String cant = rs.getString("Cant_de_casas");
                 modeloLista.addElement(i + ") " + " Precio: " + precio + " | CANTIDAD DE CASAS: " + cant + "\n");
+
+                //tabla
+                Object[] row = {precio, cant};
+                m.addRow(row);
+
                 i++;
             }
             jList1.setModel(modeloLista);
-
+            JTable_Reportes.setModel(m);
+            lb_Reportes.setText("Ventas por precio de propiedad");
         } catch (SQLException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -6811,17 +6943,48 @@ public class Main extends javax.swing.JFrame {
 
     private void jButton15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton15MouseClicked
         // TODO add your handling code here:
-        String fechaEmpezar = JOptionPane.showInputDialog("Ingrese el primer año a tomar en cuenta: ");
-        String fechaTerminar = JOptionPane.showInputDialog("Ingrese el segundo año a tomar en cuenta: ");
-        ResultSet rs = db.mostrarElementos("CALL agenteVendioMayor('" + fechaEmpezar + "','" + fechaTerminar + "');");
+        int yearStart, yearEnd;
+        try {
+            yearStart = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el primer año a tomar en cuenta: "));           // Aquí puedes utilizar el valor de fechaEmpezar
+        } catch (NumberFormatException e) {
+            // Mostrar un mensaje de error en un JOptionPane
+            JOptionPane.showMessageDialog(null, "Error: Por favor, ingrese un valor entero.", "Error de entrada", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        try {
+            yearEnd = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el segundo año a tomar en cuenta: "));           // Aquí puedes utilizar el valor de fechaEmpezar
+        } catch (NumberFormatException e) {
+            // Mostrar un mensaje de error en un JOptionPane
+            JOptionPane.showMessageDialog(null, "Error: Por favor, ingrese un valor entero.", "Error de entrada", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        //String fechaEmpezar = JOptionPane.showInputDialog("Ingrese el primer año a tomar en cuenta: ");
+        //String fechaTerminar = JOptionPane.showInputDialog("Ingrese el segundo año a tomar en cuenta: ");
+        ResultSet rs = db.mostrarElementos("CALL agenteVendioMayor('" + yearStart + "','" + yearEnd + "');");
+
         DefaultListModel<String> modeloLista = new DefaultListModel<>();
+
+        //Codigo para poner en Jtable
+        // Títulos de las columnas
+        Object[] columnNames = {"id", "nombre", yearStart + " - " + yearEnd};
+        // Crear un modelo de tabla personalizado
+        DefaultTableModel m = new DefaultTableModel();
+        m.setColumnIdentifiers(columnNames);
+
         try {
             while (rs.next()) {
                 int agenteID = rs.getInt("id");
                 String nombre = rs.getString("nombre");
                 modeloLista.addElement("Agente que vendio la mayor cantidad de propiedades en el año por valor total: \nID: " + agenteID + " NOMBRE: " + nombre);
+
+                //tabla
+                Object[] row = {agenteID, nombre, "Agente del Año"};
+                m.addRow(row);
             }
             jList1.setModel(modeloLista);
+            JTable_Reportes.setModel(m);
+            lb_Reportes.setText("Agente que vendio la mayor cantidad");
 
         } catch (SQLException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
@@ -6830,9 +6993,24 @@ public class Main extends javax.swing.JFrame {
 
     private void jButton20MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton20MouseClicked
         // TODO add your handling code here:
-        String fechaEmpezar = JOptionPane.showInputDialog("Ingrese el año a tomar en cuenta: ");
-        ResultSet rs = db.mostrarElementos("CALL promedioVentas('" + fechaEmpezar + "')");
+        int anioempezar;
+        try {
+            anioempezar = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el año a tomar en cuenta: "));           // Aquí puedes utilizar el valor de fechaEmpezar
+        } catch (NumberFormatException e) {
+            // Mostrar un mensaje de error en un JOptionPane
+            JOptionPane.showMessageDialog(null, "Error: Por favor, ingrese un valor entero.", "Error de entrada", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        ResultSet rs = db.mostrarElementos("CALL promedioVentas('" + anioempezar + "')");
         DefaultListModel<String> modeloLista = new DefaultListModel<>();
+
+        //Codigo para poner en Jtable
+        // Títulos de las columnas
+        Object[] columnNames = {"id", "nombre", "Precio Promedio", "Tiempo Promedio en el mercado"};
+        // Crear un modelo de tabla personalizado
+        DefaultTableModel m = new DefaultTableModel();
+        m.setColumnIdentifiers(columnNames);
+
         try {
             while (rs.next()) {
                 int id = rs.getInt("id");
@@ -6840,8 +7018,15 @@ public class Main extends javax.swing.JFrame {
                 int promedioPrecio = rs.getInt("promedioPrecio");
                 String tiempoProm = rs.getString("tiempoPromedioEnMercado");
                 modeloLista.addElement("ID: " + id + " Nombre: " + nombre + " Precio promedio: " + promedioPrecio + " Tiempo Promedio en el mercado: " + tiempoProm);
+
+                //tabla
+                Object[] row = {id, nombre, promedioPrecio, tiempoProm};
+                m.addRow(row);
+
             }
             jList1.setModel(modeloLista);
+            JTable_Reportes.setModel(m);
+            lb_Reportes.setText("Promedios de agentes");
 
         } catch (SQLException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
@@ -6852,14 +7037,28 @@ public class Main extends javax.swing.JFrame {
         // TODO add your handling code here:
         ResultSet rs = db.mostrarElementos("SELECT * FROM ventas_x_caracteristica");
         DefaultListModel<String> modeloLista = new DefaultListModel<>();
+
+        //Codigo para poner en Jtable
+        // Títulos de las columnas
+        Object[] columnNames = {"idPropiedad", "cantidadDormitorios", "TienePiscina"};
+        // Crear un modelo de tabla personalizado
+        DefaultTableModel m = new DefaultTableModel();
+        m.setColumnIdentifiers(columnNames);
+
         try {
             while (rs.next()) {
                 int cant = rs.getInt("cantidadDormitorios");
                 int id = rs.getInt("idPropiedad");
                 String piscina = rs.getString("TienePiscina");
                 modeloLista.addElement("CANTIDAD DE DORMITORIOS: " + cant + " ID: " + id + " Piscina: " + piscina);
+
+                //tabla
+                Object[] row = {id, cant, piscina};
+                m.addRow(row);
             }
             jList1.setModel(modeloLista);
+            JTable_Reportes.setModel(m);
+            lb_Reportes.setText("Ventas de propiedades por caracteristicas");
 
         } catch (SQLException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
@@ -7752,6 +7951,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTable JT_adminUsuarios;
     private javax.swing.JTable JT_propiedadesVendidas;
     private javax.swing.JTable JT_propiedadesVendidas1;
+    private javax.swing.JTable JTable_Reportes;
     private javax.swing.JFrame Portadita;
     private javax.swing.JFrame Reportes;
     private javax.swing.JTabbedPane TP_ventanaCliente;
@@ -8013,6 +8213,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel92;
     private javax.swing.JPanel jPanel93;
     private javax.swing.JPanel jPanel94;
+    private javax.swing.JPanel jPanel95;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane11;
@@ -8023,6 +8224,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane16;
     private javax.swing.JScrollPane jScrollPane17;
     private javax.swing.JScrollPane jScrollPane18;
+    private javax.swing.JScrollPane jScrollPane19;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
@@ -8092,6 +8294,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel jp_ventanaVendedor;
     private javax.swing.JPanel jp_ventanaVendedor1;
     private javax.swing.JPanel jp_ventanaVendedor2;
+    private javax.swing.JLabel lb_Reportes;
     private javax.swing.JPasswordField pf_passwordlogin;
     private javax.swing.JTextArea ta_crearPropiedadenVentaCaracteristicas;
     private javax.swing.JTextArea ta_crearPropiedadenvendidaCaracteristicas;
