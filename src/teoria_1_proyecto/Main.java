@@ -111,7 +111,10 @@ public class Main extends javax.swing.JFrame {
         jButton10 = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        jTableVendedores = new javax.swing.JTable();
+        jLabel136 = new javax.swing.JLabel();
+        tf_buscaridVendedor = new javax.swing.JTextField();
+        jb_buscaridVendedor = new javax.swing.JButton();
         JF_Vendidas = new javax.swing.JFrame();
         JB_CrearPropiedadEVendida = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
@@ -881,7 +884,7 @@ public class Main extends javax.swing.JFrame {
         jLabel9.setForeground(new java.awt.Color(255, 227, 255));
         jLabel9.setText("Administrar Vendedores ");
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        jTableVendedores.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -892,7 +895,16 @@ public class Main extends javax.swing.JFrame {
                 "ID", "Nombre", "Dirección", "Celular"
             }
         ));
-        jScrollPane3.setViewportView(jTable2);
+        jScrollPane3.setViewportView(jTableVendedores);
+
+        jLabel136.setText("Id:");
+
+        jb_buscaridVendedor.setText("Buscar");
+        jb_buscaridVendedor.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_buscaridVendedorMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -903,7 +915,14 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel9)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 813, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 813, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(jLabel136, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(tf_buscaridVendedor, javax.swing.GroupLayout.PREFERRED_SIZE, 652, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(9, 9, 9)
+                                .addComponent(jb_buscaridVendedor)))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jButton10)
@@ -918,7 +937,12 @@ public class Main extends javax.swing.JFrame {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(27, 27, 27)
                         .addComponent(jLabel9)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(7, 7, 7)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel136)
+                            .addComponent(tf_buscaridVendedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jb_buscaridVendedor))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(120, 120, 120)
@@ -927,7 +951,7 @@ public class Main extends javax.swing.JFrame {
                         .addComponent(jButton10)
                         .addGap(18, 18, 18)
                         .addComponent(jButton2)))
-                .addContainerGap(239, Short.MAX_VALUE))
+                .addContainerGap(203, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout JF_VendedorLayout = new javax.swing.GroupLayout(JF_Vendedor.getContentPane());
@@ -5439,28 +5463,69 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_JB_CrearAgenteActionPerformed
 
     private void JB_crearAgenteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_crearAgenteMouseClicked
-        //        String id = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el id", JOptionPane.QUESTION_MESSAGE);
-//        String nombre = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el nombre", JOptionPane.QUESTION_MESSAGE);
-//        String dir = JOptionPane.showInputDialog(JF_Agentes, "Ingrese la dir", JOptionPane.QUESTION_MESSAGE);
-//        String cel = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el cel", JOptionPane.QUESTION_MESSAGE);
-//        String telOf = JOptionPane.showInputDialog(JF_Agentes, "Ingrese el teloficina", JOptionPane.QUESTION_MESSAGE);
-//
-//        char[] nombreChar = nombre.toCharArray();
-//        char[] dirChar = dir.toCharArray();
-//        int celInt = Integer.parseInt(cel);
-//        int telofInt = Integer.parseInt(telOf);
-//        char[] idChar = id.toCharArray();
-//
-//        String vista = "INSERT INTO agentes VALUES ('" + new String(idChar) + "','" + new String(nombreChar) + "','" + new String(dirChar) + "'," + celInt + ",'" + telOf + "')";
-//        
-//        db.HacerConsulta(vista);
+
         String id = tf_crearAgenteId.getText();
         String nombre = tf_crearAgenteNombre.getText();
         String dir = tf_crearAgenteDireccion.getText();
         String cel = tf_crearAgenteCelular.getText();
         String telOf = tf_crearAgenteOficina.getText();
+        boolean valido = true;
+        //no se repite id
+        try {
+            ResultSet rs = db.mostrarElementos("SELECT id FROM agentes");
+            while (rs.next()) {
+                String idExistente = rs.getString("id");
+                if (idExistente.equals(id)) {
+                    JOptionPane.showMessageDialog(null, "El ID ya existe en la base de datos.", "Error", JOptionPane.ERROR_MESSAGE);
+                    valido = false;
+                    break; // Salir del bucle al encontrar el ID existente
+                }
+            }
+            rs.close(); // Cerrar el ResultSet después de usarlo
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Ocurrió un error al verificar el ID en la base de datos: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            valido = false;
+        }
+        //los numeros no son char
 
-        db.HacerConsulta("CALL insertarAgente('" + id + "','" + nombre + "','" + dir + "','" + cel + "','" + telOf + "');");
+        try {
+            Integer.parseInt(id);
+            Integer.parseInt(cel);
+            Integer.parseInt(telOf);
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "Por favor, ingrese números enteros válidos en los campos correspondientes.", "Error", JOptionPane.ERROR_MESSAGE);
+            valido = false;
+        }
+        //los string no son numeros
+        if (!nombre.matches(".*\\d.*") && !dir.matches(".*\\d.*")) {
+        } else {
+            JOptionPane.showMessageDialog(null, "Los campos Nombre y Dirección no pueden contener números.", "Error", JOptionPane.ERROR_MESSAGE);
+            valido = false;
+        }
+        //no se pasan de la longitud
+        if (nombre.length() > 40 || dir.length() > 30) {
+            JOptionPane.showMessageDialog(null, "La longitud de Nombre debe ser menor o igual a 40 caracteres.\nLa longitud de Dirección debe ser menor o igual a 30 caracteres.", "Error", JOptionPane.ERROR_MESSAGE);
+            valido = false;
+        }
+        // Verificar que los campos no estén vacíos
+        if (id.isEmpty() || nombre.isEmpty() || dir.isEmpty() || cel.isEmpty() || telOf.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Todos los campos son obligatorios.", "Error", JOptionPane.ERROR_MESSAGE);
+            valido = false;
+        }
+        if (valido) {
+            db.HacerConsulta("CALL insertarAgente('" + id + "','" + nombre + "','" + dir + "','" + cel + "','" + telOf + "');");
+            JOptionPane.showMessageDialog(JF_crearAgente, "Agente creado exitosamente");
+            tf_crearAgenteId.setText("");
+            tf_crearAgenteNombre.setText("");
+            tf_crearAgenteDireccion.setText("");
+            tf_crearAgenteCelular.setText("");
+            tf_crearAgenteOficina.setText("");
+            JF_crearAgente.setVisible(false);
+        } else {
+            JOptionPane.showMessageDialog(null, "Error al crear agente", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+
+
     }//GEN-LAST:event_JB_crearAgenteMouseClicked
 
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
@@ -5554,9 +5619,50 @@ public class Main extends javax.swing.JFrame {
         String id = (String) CB_modificarAgente.getSelectedItem();
         String atributo = (String) cb_atributoAgente.getSelectedItem();
         String valor = (String) tf_nuevovalorAgente.getText();
+        Boolean valido = true;
+        if (valor.isEmpty()) {
+            valido = false;
+            JOptionPane.showMessageDialog(null, "Rellenar el nuevo valor", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
+            if (atributo.equals("nombre") || atributo.equals("direccion")) {
+                if (valor.matches(".*\\d.*")) {
+                    JOptionPane.showMessageDialog(null, "Los campos Nombre y Dirección no pueden contener números.", "Error", JOptionPane.ERROR_MESSAGE);
+                    valido = false;
+                }
+                if (atributo.equals("nombre")) {
+                    if (valor.length() > 40) {
+                        valido = false;
+                        JOptionPane.showMessageDialog(null, "Nombre no valido", "Error", JOptionPane.ERROR_MESSAGE);
+                    }
+                } else {
+                    if (valor.length() > 30) {
+                        valido = false;
+                        JOptionPane.showMessageDialog(null, "Nombre de direccion no valido", "Error", JOptionPane.ERROR_MESSAGE);
+                    }
+                }
+            }
+            if (atributo.equals("celular") || atributo.equals("telefonoOficina")) {
+                try {
+                    Integer.parseInt(valor);
+                } catch (NumberFormatException e) {
+                    JOptionPane.showMessageDialog(null, "Por favor, ingrese números enteros válidos en los campos correspondientes.", "Error", JOptionPane.ERROR_MESSAGE);
+                    valido = false;
+                }
 
-        String vista = "UPDATE agentes SET " + atributo + " = '" + valor + "' WHERE id = '" + id + "'";
-        db.HacerConsulta(vista);
+            }
+        }
+        if (valido) {
+
+            String vista = "UPDATE agentes SET " + atributo + " = '" + valor + "' WHERE id = '" + id + "'";
+            db.HacerConsulta(vista);
+            tf_nuevovalorAgente.setText("");
+            JF_modificarAgente.setVisible(false);
+            JOptionPane.showMessageDialog(null, "Modificacion realizada con exito");
+        } else {
+            JOptionPane.showMessageDialog(null, "Error al realizar la modificacion", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+
+
     }//GEN-LAST:event_JB_modificarAgenteMouseClicked
 
     private void JB_modificarAgenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_modificarAgenteActionPerformed
@@ -5568,16 +5674,107 @@ public class Main extends javax.swing.JFrame {
         String nombre = tf_crearVendedorNombre.getText();
         String dir = tf_crearVendedorDireccion.getText();
         String cel = tf_crearVendedorCelular.getText();
+        boolean valido = true;
+        //no se repite id
+        try {
+            ResultSet rs = db.mostrarElementos("SELECT id FROM vendedores");
+            while (rs.next()) {
+                String idExistente = rs.getString("id");
+                if (idExistente.equals(id)) {
+                    JOptionPane.showMessageDialog(null, "El ID ya existe en la base de datos.", "Error", JOptionPane.ERROR_MESSAGE);
+                    valido = false;
+                    break; // Salir del bucle al encontrar el ID existente
+                }
+            }
+            rs.close(); // Cerrar el ResultSet después de usarlo
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Ocurrió un error al verificar el ID en la base de datos: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            valido = false;
+        }
+        //los numeros no son char
 
-        String vista = "CALL insertarVendedor('" + id + "','" + nombre + "','" + dir + "'," + cel + ")";
-        db.HacerConsulta(vista);
+        try {
+            Integer.parseInt(id);
+            Integer.parseInt(cel);
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "Por favor, ingrese números enteros válidos en los campos correspondientes.", "Error", JOptionPane.ERROR_MESSAGE);
+            valido = false;
+        }
+        //los string no son numeros
+        if (!nombre.matches(".*\\d.*") && !dir.matches(".*\\d.*")) {
+        } else {
+            JOptionPane.showMessageDialog(null, "Los campos Nombre y Dirección no pueden contener números.", "Error", JOptionPane.ERROR_MESSAGE);
+            valido = false;
+        }
+        //no se pasan de la longitud
+        if (nombre.length() > 40 || dir.length() > 30) {
+            JOptionPane.showMessageDialog(null, "La longitud de Nombre debe ser menor o igual a 40 caracteres.\nLa longitud de Dirección debe ser menor o igual a 30 caracteres.", "Error", JOptionPane.ERROR_MESSAGE);
+            valido = false;
+        }
+        // Verificar que los campos no estén vacíos
+        if (id.isEmpty() || nombre.isEmpty() || dir.isEmpty() || cel.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Todos los campos son obligatorios.", "Error", JOptionPane.ERROR_MESSAGE);
+            valido = false;
+        }
+        if (valido) {
+            String vista = "CALL insertarVendedor('" + id + "','" + nombre + "','" + dir + "'," + cel + ")";
+            db.HacerConsulta(vista);
+            JOptionPane.showMessageDialog(JF_crearAgente, "Agente creado exitosamente");
+            tf_crearVendedorId.setText("");
+            tf_crearVendedorNombre.setText("");
+            tf_crearVendedorDireccion.setText("");
+            tf_crearVendedorCelular.setText("");
+            JF_crearVendedor.setVisible(false);
+        } else {
+            JOptionPane.showMessageDialog(null, "Error al crear agente", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+
     }//GEN-LAST:event_JB_crearVendedorMouseClicked
 
     private void JB_modificarVendedorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_modificarVendedorMouseClicked
         String id = (String) cb_modificarVendedor.getSelectedItem();
         String atributo = (String) cb_atributovendedor.getSelectedItem();
-        String nuevo_valor = (String) tf_nuevoValorVendedor.getText();
-        db.HacerConsulta("CALL modificarvendedor('" + id + "','" + atributo + "','" + nuevo_valor + "');");
+        String valor = (String) tf_nuevoValorVendedor.getText();
+        Boolean valido = true;
+        if (valor.isEmpty()) {
+            valido = false;
+            JOptionPane.showMessageDialog(null, "Rellenar el nuevo valor", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
+            if (atributo.equals("nombre") || atributo.equals("direccion")) {
+                if (valor.matches(".*\\d.*")) {
+                    JOptionPane.showMessageDialog(null, "Los campos Nombre y Dirección no pueden contener números.", "Error", JOptionPane.ERROR_MESSAGE);
+                    valido = false;
+                }
+                if (atributo.equals("nombre")) {
+                    if (valor.length() > 40) {
+                        valido = false;
+                        JOptionPane.showMessageDialog(null, "Nombre no valido", "Error", JOptionPane.ERROR_MESSAGE);
+                    }
+                } else {
+                    if (valor.length() > 30) {
+                        valido = false;
+                        JOptionPane.showMessageDialog(null, "Nombre de direccion no valido", "Error", JOptionPane.ERROR_MESSAGE);
+                    }
+                }
+            }
+            if (atributo.equals("celular")) {
+                try {
+                    Integer.parseInt(valor);
+                } catch (NumberFormatException e) {
+                    JOptionPane.showMessageDialog(null, "Por favor, ingrese números enteros válidos en los campos correspondientes.", "Error", JOptionPane.ERROR_MESSAGE);
+                    valido = false;
+                }
+
+            }
+        }
+        if (valido) {
+            db.HacerConsulta("CALL modificarvendedor('" + id + "','" + atributo + "','" + valor + "');");
+            tf_nuevoValorVendedor.setText("");
+            JF_modificarVendedor.setVisible(false);
+            JOptionPane.showMessageDialog(null, "Modificacion realizada con exito");
+        } else {
+            JOptionPane.showMessageDialog(null, "Error al realizar la modificacion", "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_JB_modificarVendedorMouseClicked
 
     private void JB_crearCompradorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_crearCompradorMouseClicked
@@ -5585,17 +5782,110 @@ public class Main extends javax.swing.JFrame {
         String nombre = tf_crearCompradorNombre.getText();
         String dir = tf_crearCompradorDireccion.getText();
         String cel = tf_crearCompradorCelular.getText();
+        boolean valido = true;
+        //no se repite id
+        try {
+            ResultSet rs = db.mostrarElementos("SELECT id FROM compradores");
+            while (rs.next()) {
+                String idExistente = rs.getString("id");
+                if (idExistente.equals(id)) {
+                    JOptionPane.showMessageDialog(null, "El ID ya existe en la base de datos.", "Error", JOptionPane.ERROR_MESSAGE);
+                    valido = false;
+                    break; // Salir del bucle al encontrar el ID existente
+                }
+            }
+            rs.close(); // Cerrar el ResultSet después de usarlo
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Ocurrió un error al verificar el ID en la base de datos: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            valido = false;
+        }
+        //los numeros no son char
 
-        String vista = "CALL insertarComprador('" + id + "','" + nombre + "','" + dir + "'," + cel + ")";
-        db.HacerConsulta(vista);
+        try {
+            Integer.parseInt(id);
+            Integer.parseInt(cel);
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "Por favor, ingrese números enteros válidos en los campos correspondientes.", "Error", JOptionPane.ERROR_MESSAGE);
+            valido = false;
+        }
+        //los string no son numeros
+        if (!nombre.matches(".*\\d.*") && !dir.matches(".*\\d.*")) {
+        } else {
+            JOptionPane.showMessageDialog(null, "Los campos Nombre y Dirección no pueden contener números.", "Error", JOptionPane.ERROR_MESSAGE);
+            valido = false;
+        }
+        //no se pasan de la longitud
+        if (nombre.length() > 40 || dir.length() > 30) {
+            JOptionPane.showMessageDialog(null, "La longitud de Nombre debe ser menor o igual a 40 caracteres.\nLa longitud de Dirección debe ser menor o igual a 30 caracteres.", "Error", JOptionPane.ERROR_MESSAGE);
+            valido = false;
+        }
+        // Verificar que los campos no estén vacíos
+        if (id.isEmpty() || nombre.isEmpty() || dir.isEmpty() || cel.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Todos los campos son obligatorios.", "Error", JOptionPane.ERROR_MESSAGE);
+            valido = false;
+        }
+        if (valido) {
+            String vista = "CALL insertarComprador('" + id + "','" + nombre + "','" + dir + "'," + cel + ")";
+            db.HacerConsulta(vista);
+            JOptionPane.showMessageDialog(JF_crearComprador, "Comprador creado exitosamente");
+            tf_crearCompradorId.setText("");
+            tf_crearCompradorNombre.setText("");
+            tf_crearCompradorDireccion.setText("");
+            tf_crearCompradorCelular.setText("");
+            JF_crearComprador.setVisible(false);
+
+        } else {
+            JOptionPane.showMessageDialog(null, "Error al crear Comprador", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+
+
     }//GEN-LAST:event_JB_crearCompradorMouseClicked
 
     private void JB_modificarVenCompradorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_modificarVenCompradorMouseClicked
         // TODO add your handling code here:
         String id = (String) cb_modificarComprador.getSelectedItem();
         String atributo = (String) cb_atributoComprador.getSelectedItem();
-        String nuevo_atributo = tf_nuevoValorComprador.getText();
-        db.HacerConsulta("CALL modificarComprador('" + id + "','" + atributo + "','" + nuevo_atributo + "');");
+        String valor = tf_nuevoValorComprador.getText();
+        Boolean valido = true;
+        if (valor.isEmpty()) {
+            valido = false;
+            JOptionPane.showMessageDialog(null, "Rellenar el nuevo valor", "Error", JOptionPane.ERROR_MESSAGE);
+        } else {
+            if (atributo.equals("nombre") || atributo.equals("direccion")) {
+                if (valor.matches(".*\\d.*")) {
+                    JOptionPane.showMessageDialog(null, "Los campos Nombre y Dirección no pueden contener números.", "Error", JOptionPane.ERROR_MESSAGE);
+                    valido = false;
+                }
+                if (atributo.equals("nombre")) {
+                    if (valor.length() > 40) {
+                        valido = false;
+                        JOptionPane.showMessageDialog(null, "Nombre no valido", "Error", JOptionPane.ERROR_MESSAGE);
+                    }
+                } else {
+                    if (valor.length() > 30) {
+                        valido = false;
+                        JOptionPane.showMessageDialog(null, "Nombre de direccion no valido", "Error", JOptionPane.ERROR_MESSAGE);
+                    }
+                }
+            }
+            if (atributo.equals("celular")) {
+                try {
+                    Integer.parseInt(valor);
+                } catch (NumberFormatException e) {
+                    JOptionPane.showMessageDialog(null, "Por favor, ingrese números enteros válidos en los campos correspondientes.", "Error", JOptionPane.ERROR_MESSAGE);
+                    valido = false;
+                }
+
+            }
+        }
+        if (valido) {
+            db.HacerConsulta("CALL modificarComprador('" + id + "','" + atributo + "','" + valor + "');");
+            tf_nuevoValorComprador.setText("");
+            JF_modificarComprador.setVisible(false);
+            JOptionPane.showMessageDialog(null, "Modificacion realizada con exito");
+        } else {
+            JOptionPane.showMessageDialog(null, "Error al realizar la modificacion", "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_JB_modificarVenCompradorMouseClicked
 
     private void JB_eliminarAgenteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_eliminarAgenteMouseClicked
@@ -5603,17 +5893,23 @@ public class Main extends javax.swing.JFrame {
 
         String id = (String) cb_eliminarAgente.getSelectedItem();
         db.HacerConsulta("CALL eliminarAgente('" + id + "');");
+        JF_eliminarAgente.setVisible(false);
+        JOptionPane.showMessageDialog(JF_eliminarAgente, "Agente eliminado exitosamente");
     }//GEN-LAST:event_JB_eliminarAgenteMouseClicked
 
     private void JB_eliminarVendedorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_eliminarVendedorMouseClicked
         // TODO add your handling code here:
         String id = (String) cb_eliminarVendedor.getSelectedItem();
         db.HacerConsulta("CALL eliminarVendedor('" + id + "');");
+        JF_eliminarVendedor.setVisible(false);
+        JOptionPane.showMessageDialog(JF_eliminarVendedor, "Vendedor eliminado exitosamente");
     }//GEN-LAST:event_JB_eliminarVendedorMouseClicked
 
     private void JB_eliminarCompradorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_eliminarCompradorMouseClicked
         String id = (String) cb_eliminarComprador.getSelectedItem();
         db.HacerConsulta("CALL eliminarComprador('" + id + "');");
+        JF_eliminarComprador.setVisible(false);
+        JOptionPane.showMessageDialog(JF_eliminarComprador, "Comprador eliminado exitosamente");
     }//GEN-LAST:event_JB_eliminarCompradorMouseClicked
 
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
@@ -5682,8 +5978,8 @@ public class Main extends javax.swing.JFrame {
             valido = false;
         }
         //no se pasan de la longitud
-        if (nombre.length() > 10 || ciudad.length() > 20 || dir.length() > 30 || caracteristicas.length() > 100) {
-            JOptionPane.showMessageDialog(null, "La longitud de Nombre debe ser menor o igual a 10 caracteres.\nLa longitud de Ciudad debe ser menor o igual a 10 caracteres.\nLa longitud de Dirección debe ser menor o igual a 30 caracteres.", "Error", JOptionPane.ERROR_MESSAGE);
+        if (nombre.length() > 40 || ciudad.length() > 20 || dir.length() > 30 || caracteristicas.length() > 100) {
+            JOptionPane.showMessageDialog(null, "La longitud de Nombre debe ser menor o igual a 40 caracteres.\nLa longitud de Ciudad debe ser menor o igual a 10 caracteres.\nLa longitud de Dirección debe ser menor o igual a 30 caracteres.", "Error", JOptionPane.ERROR_MESSAGE);
             valido = false;
         }
         // Verificar que los campos no estén vacíos
@@ -5783,7 +6079,7 @@ public class Main extends javax.swing.JFrame {
                     valido = false;
                 }
                 if (atributo.equals("nombre")) {
-                    if (nuevo_valor.length() > 10) {
+                    if (nuevo_valor.length() > 40) {
                         valido = false;
                         JOptionPane.showMessageDialog(null, "Nombre no valido", "Error", JOptionPane.ERROR_MESSAGE);
                     }
@@ -5793,7 +6089,7 @@ public class Main extends javax.swing.JFrame {
                         JOptionPane.showMessageDialog(null, "Nombre de ciudad no valido", "Error", JOptionPane.ERROR_MESSAGE);
                     }
                 } else if (atributo.equals("caracteristicas")) {
-                    if (nuevo_valor.length() > 1000) {
+                    if (nuevo_valor.length() > 100) {
                         valido = false;
                         JOptionPane.showMessageDialog(null, "Caracteristicas exceden el limite", "Error", JOptionPane.ERROR_MESSAGE);
                     }
@@ -6025,8 +6321,8 @@ public class Main extends javax.swing.JFrame {
             valido = false;
         }
         //no se pasan de la longitud
-        if (nombre.length() > 10 || ciudad.length() > 20 || dir.length() > 30 || caracteristicas.length() > 100) {
-            JOptionPane.showMessageDialog(null, "La longitud de Nombre debe ser menor o igual a 10 caracteres.\nLa longitud de Ciudad debe ser menor o igual a 10 caracteres.\nLa longitud de Dirección debe ser menor o igual a 30 caracteres.", "Error", JOptionPane.ERROR_MESSAGE);
+        if (nombre.length() > 40 || ciudad.length() > 20 || dir.length() > 30 || caracteristicas.length() > 100) {
+            JOptionPane.showMessageDialog(null, "La longitud de Nombre debe ser menor o igual a 40 caracteres.\nLa longitud de Ciudad debe ser menor o igual a 10 caracteres.\nLa longitud de Dirección debe ser menor o igual a 30 caracteres.", "Error", JOptionPane.ERROR_MESSAGE);
             valido = false;
         }
         // Verificar que los campos no estén vacíos
@@ -6116,7 +6412,7 @@ public class Main extends javax.swing.JFrame {
                     valido = false;
                 }
                 if (atributo.equals("nombre")) {
-                    if (nuevo_valor.length() > 10) {
+                    if (nuevo_valor.length() > 40) {
                         valido = false;
                         JOptionPane.showMessageDialog(null, "Nombre no valido", "Error", JOptionPane.ERROR_MESSAGE);
                     }
@@ -6126,7 +6422,7 @@ public class Main extends javax.swing.JFrame {
                         JOptionPane.showMessageDialog(null, "Nombre de ciudad no valido", "Error", JOptionPane.ERROR_MESSAGE);
                     }
                 } else if (atributo.equals("caracteristicas")) {
-                    if (nuevo_valor.length() > 1000) {
+                    if (nuevo_valor.length() > 100) {
                         valido = false;
                         JOptionPane.showMessageDialog(null, "Caracteristicas exceden el limite", "Error", JOptionPane.ERROR_MESSAGE);
                     }
@@ -7203,6 +7499,26 @@ public class Main extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton36MouseClicked
 
+    private void jb_buscaridVendedorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_buscaridVendedorMouseClicked
+        String id =tf_buscaridVendedor.getText();
+        ResultSet rs = db.mostrarElementos("SELECT * FROM vendedores WHERE id = '" + id + "';");
+        DefaultTableModel model = (DefaultTableModel) jTableVendedores.getModel();
+        model.setRowCount(0);
+        try {
+            while (rs.next()) {
+                int id2 = rs.getInt("id");
+                String nombre = rs.getString("nombre");
+                String direccion = rs.getString("direccion");
+                int cel = rs.getInt("celular");
+                Object[] row = {id2, nombre, direccion, cel};
+                model.addRow(row);
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jb_buscaridVendedorMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -7403,6 +7719,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel133;
     private javax.swing.JLabel jLabel134;
     private javax.swing.JLabel jLabel135;
+    private javax.swing.JLabel jLabel136;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
@@ -7589,7 +7906,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTable jTable11;
     private javax.swing.JTable jTable12;
     private javax.swing.JTable jTable13;
-    private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
     private javax.swing.JTable jTable4;
     private javax.swing.JTable jTable5;
@@ -7597,11 +7913,13 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTable jTable7;
     private javax.swing.JTable jTable8;
     private javax.swing.JTable jTable9;
+    private javax.swing.JTable jTableVendedores;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField7;
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JButton jb_buscarUsuarios;
+    private javax.swing.JButton jb_buscaridVendedor;
     private javax.swing.JButton jb_crudagentes;
     private javax.swing.JButton jb_crudagentespropiedades;
     private javax.swing.JButton jb_crudcompradores;
@@ -7652,6 +7970,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTextField tf_buscarPropiedadesVendidas;
     private javax.swing.JTextField tf_buscarUsuaios;
     private javax.swing.JTextField tf_buscarUsuarioId;
+    private javax.swing.JTextField tf_buscaridVendedor;
     private javax.swing.JTextField tf_crearAgenteCelular;
     private javax.swing.JTextField tf_crearAgenteDireccion;
     private javax.swing.JTextField tf_crearAgenteId;
