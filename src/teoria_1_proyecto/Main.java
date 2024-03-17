@@ -55,7 +55,7 @@ public class Main extends javax.swing.JFrame {
             CPT.start();
 
             ArrayList<String> temp = new ArrayList();
-            ResultSet rs = db.mostrarElementos("SELECT id FROM usuario");
+            ResultSet rs = db.mostrarElementos("SELECT id FROM usuarios");
 
             while (rs.next()) {
                 String id = rs.getString("id");
@@ -63,7 +63,7 @@ public class Main extends javax.swing.JFrame {
             }
 
             for (int i = 0; i < temp.size(); i++) {
-                db.HacerConsulta("UPDATE usuario SET activo = 'FALSE' WHERE id = " + temp.get(i));
+                db.HacerConsulta("UPDATE usuarios SET activo = 'FALSE' WHERE id = " + temp.get(i));
             }
             //Poniendo logos
             this.setIconImage(new ImageIcon("./Imagen\\beinvenida.jpeg").getImage());
@@ -2569,8 +2569,6 @@ public class Main extends javax.swing.JFrame {
 
         jLabel130.setText("Propiedades vendidas");
 
-        jLabel133.setText("jLabel133");
-
         jButton35.setText("cargar");
         jButton35.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -2626,14 +2624,14 @@ public class Main extends javax.swing.JFrame {
                                     .addGroup(jPanel55Layout.createSequentialGroup()
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jLabel134, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(50, 50, 50)
+                                        .addGap(92, 92, 92)
                                         .addComponent(jLabel135, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(jPanel55Layout.createSequentialGroup()
                                         .addGap(70, 70, 70)
                                         .addComponent(jLabel132, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(86, 86, 86)
+                                        .addGap(54, 54, 54)
                                         .addComponent(jLabel133, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
-                .addContainerGap(86, Short.MAX_VALUE))
+                .addContainerGap(118, Short.MAX_VALUE))
         );
         jPanel55Layout.setVerticalGroup(
             jPanel55Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2664,16 +2662,18 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(jPanel55Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel55Layout.createSequentialGroup()
                         .addGap(38, 38, 38)
-                        .addComponent(jLabel132, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel55Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel134, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel135, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabel132, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel55Layout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addComponent(jLabel133, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(7, 7, 7)
+                .addGroup(jPanel55Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel55Layout.createSequentialGroup()
+                        .addComponent(jLabel134, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(12, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel55Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel133, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())))
+                    .addGroup(jPanel55Layout.createSequentialGroup()
+                        .addComponent(jLabel135, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
 
         jTabbedPane2.addTab("Imagenes", jPanel55);
@@ -4818,14 +4818,14 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
-        jButton19.setText("Ventas por Ubicacion");
+        jButton19.setText("Cantidad de Ventas por Ubicacion");
         jButton19.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton19MouseClicked(evt);
             }
         });
 
-        jButton11.setText("Ventas por precio de propiedad");
+        jButton11.setText("Cantidad de Ventas por precio de propiedad");
         jButton11.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton11MouseClicked(evt);
@@ -5140,7 +5140,15 @@ public class Main extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(JF_Principal, "Error: La base de datos no ha respondido a tiempo", "Error de Inactividad", JOptionPane.ERROR_MESSAGE);
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
-
+        ResultSet rs3 = db.mostrarElementos("SELECT id FROM usuarios WHERE correo = '" + correo + "';");
+        try {
+            while (rs3.next()) { // Aquí debe ser rs3 en lugar de rs
+                identidadUsuarioActivo = rs3.getInt("id");
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        db.HacerConsulta("UPDATE usuarios SET activo = 'TRUE' WHERE id = " + identidadUsuarioActivo + ";");
         if (rol.equals("administrador")) {
             ResultSet d = db.mostrarElementos("SELECT * FROM propiedades_en_mercado");
             DefaultTableModel model = (DefaultTableModel) jTable13.getModel();
@@ -5463,6 +5471,17 @@ public class Main extends javax.swing.JFrame {
         boolean valido = true;
         //no se repite id
         try {
+            ResultSet rs = db.mostrarElementos("SELECT id FROM agentes WHERE id = '" + id + "'");
+            if (rs.next()) {
+                JOptionPane.showMessageDialog(null, "El ID ya existe en la base de datos.", "Error", JOptionPane.ERROR_MESSAGE);
+                valido = false;
+            }
+            rs.close(); // Cerrar el ResultSet después de usarlo
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Ocurrió un error al verificar el ID en la base de datos: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            valido = false;
+        }
+        try {
             ResultSet rs = db.mostrarElementos("SELECT id FROM agentes");
             while (rs.next()) {
                 String idExistente = rs.getString("id");
@@ -5664,6 +5683,17 @@ public class Main extends javax.swing.JFrame {
         boolean valido = true;
         //no se repite id
         try {
+            ResultSet rs = db.mostrarElementos("SELECT id FROM vendedores WHERE id = '" + id + "'");
+            if (rs.next()) {
+                JOptionPane.showMessageDialog(null, "El ID ya existe en la base de datos.", "Error", JOptionPane.ERROR_MESSAGE);
+                valido = false;
+            }
+            rs.close(); // Cerrar el ResultSet después de usarlo
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Ocurrió un error al verificar el ID en la base de datos: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            valido = false;
+        }
+        try {
             ResultSet rs = db.mostrarElementos("SELECT id FROM vendedores");
             while (rs.next()) {
                 String idExistente = rs.getString("id");
@@ -5771,6 +5801,17 @@ public class Main extends javax.swing.JFrame {
         String cel = tf_crearCompradorCelular.getText();
         boolean valido = true;
         //no se repite id
+        try {
+            ResultSet rs = db.mostrarElementos("SELECT id FROM compradores WHERE id = '" + id + "'");
+            if (rs.next()) {
+                JOptionPane.showMessageDialog(null, "El ID ya existe en la base de datos.", "Error", JOptionPane.ERROR_MESSAGE);
+                valido = false;
+            }
+            rs.close(); // Cerrar el ResultSet después de usarlo
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Ocurrió un error al verificar el ID en la base de datos: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            valido = false;
+        }
         try {
             ResultSet rs = db.mostrarElementos("SELECT id FROM compradores");
             while (rs.next()) {
@@ -5925,6 +5966,17 @@ public class Main extends javax.swing.JFrame {
         String numeroIdentidadV = (String) cb_crearpropiedadenVentaIdVendedor.getSelectedItem();
         boolean valido = true;
         //no se repite id
+        try {
+            ResultSet rs = db.mostrarElementos("SELECT idPropiedad FROM propiedades_en_mercado WHERE idPropiedad = '" + id + "'");
+            if (rs.next()) {
+                JOptionPane.showMessageDialog(null, "El ID ya existe en la base de datos.", "Error", JOptionPane.ERROR_MESSAGE);
+                valido = false;
+            }
+            rs.close(); // Cerrar el ResultSet después de usarlo
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Ocurrió un error al verificar el ID en la base de datos: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            valido = false;
+        }
         try {
             ResultSet rs = db.mostrarElementos("SELECT idPropiedad FROM propiedades_en_mercado");
             while (rs.next()) {
@@ -6266,6 +6318,17 @@ public class Main extends javax.swing.JFrame {
 
         boolean valido = true;
         //no se repite id
+        try {
+            ResultSet rs = db.mostrarElementos("SELECT idPropiedad FROM propiedades_vendidas WHERE idPropiedad = '" + id + "'");
+            if (rs.next()) {
+                JOptionPane.showMessageDialog(null, "El ID ya existe en la base de datos.", "Error", JOptionPane.ERROR_MESSAGE);
+                valido = false;
+            }
+            rs.close(); // Cerrar el ResultSet después de usarlo
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Ocurrió un error al verificar el ID en la base de datos: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            valido = false;
+        }
         try {
             ResultSet rs = db.mostrarElementos("SELECT idPropiedad FROM propiedades_vendidas");
             while (rs.next()) {
@@ -7441,7 +7504,7 @@ public class Main extends javax.swing.JFrame {
 
         //Codigo para poner en Jtable
         // Títulos de las columnas
-        Object[] columnNames = {"Precio", "Cantidad de Casas", "IDPropiedad"};
+        Object[] columnNames = {"Precio", "IDPropiedad"};
         // Crear un modelo de tabla personalizado
         DefaultTableModel m = new DefaultTableModel();
         m.setColumnIdentifiers(columnNames);
@@ -7450,14 +7513,13 @@ public class Main extends javax.swing.JFrame {
         try {
             while (rs.next()) {
                 int precio = rs.getInt("precio");
-                String cant = rs.getString("Cant_de_casas");
                 String idpropiedad = rs.getString("IdPropiedad");
 
-                modeloLista.addElement(i + ") " + " Precio: " + precio + " | CANTIDAD DE CASAS: " + cant + " | IDPropiedad: " + idpropiedad
+                modeloLista.addElement(i + ") " + " Precio: " + precio + " | IDPropiedad: " + idpropiedad
                         + "\n");
 
                 //tabla
-                Object[] row = {precio, cant, idpropiedad};
+                Object[] row = {precio, idpropiedad};
                 m.addRow(row);
 
                 i++;
@@ -7554,10 +7616,10 @@ public class Main extends javax.swing.JFrame {
                 String Cant = rs.getString("propiedades_vendidas");
                 String valor = rs.getString("ValorTotal");
 
-                modeloLista.addElement("Agente que vendio la mayor cantidad de propiedades en el año por valor total: \nID: " + agenteID + " NOMBRE: " + nombre + "\nPropiedades Vendidas: " + Cant+"\nValor vendido:"+valor);
+                modeloLista.addElement("Agente que vendio la mayor cantidad de propiedades en el año por valor total: \nID: " + agenteID + " NOMBRE: " + nombre + "\nPropiedades Vendidas: " + Cant + "\nValor vendido:" + valor);
 
                 //tabla
-                Object[] row = {agenteID, nombre, Cant,valor, "Agente del Año"};
+                Object[] row = {agenteID, nombre, Cant, valor, "Agente del Año"};
                 m.addRow(row);
             }
             jList1.setModel(modeloLista);
