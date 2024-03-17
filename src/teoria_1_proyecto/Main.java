@@ -62,6 +62,12 @@ public class Main extends javax.swing.JFrame {
             for (int i = 0; i < temp.size(); i++) {
                 db.HacerConsulta("UPDATE usuario SET activo = 'FALSE' WHERE id = " + temp.get(i));
             }
+            //Poniendo logos
+            this.setIconImage(new ImageIcon("./Imagen\\beinvenida.jpeg").getImage());
+            JF_Principal.setIconImage(new ImageIcon("./Imagen\\beinvenida.jpeg").getImage());
+            JF_bitacora.setIconImage(new ImageIcon("./Imagen\\beinvenida.jpeg").getImage());
+            Reportes.setIconImage(new ImageIcon("./Imagen\\beinvenida.jpeg").getImage());
+
             //JF_crearPropiedadesVendidas.show();
             Reportes.setVisible(true);
         } catch (SQLException ex) {
@@ -6009,7 +6015,7 @@ public class Main extends javax.swing.JFrame {
 
         //Codigo para poner en Jtable
         // Títulos de las columnas
-        Object[] columnNames = {"id", "nombre", "cantitad Vendida"};
+        Object[] columnNames = {"id", "nombre", "Cantidad Vendida"};
         // Crear un modelo de tabla personalizado
         DefaultTableModel m = new DefaultTableModel();
         m.setColumnIdentifiers(columnNames);
@@ -6020,13 +6026,11 @@ public class Main extends javax.swing.JFrame {
                 String nombre = rs.getString("nombre");
                 String cant = rs.getString("Cantidad_de_propiedades_vendidas");
                 modeloLista.addElement(i + "). " + " ID: " + id + " | NOMBRE: " + nombre + " | " + "CANTIDAD VENDIDAS: " + cant + "\n");
-                
-                
+
                 //tabla
                 Object[] row = {id, nombre, cant};
                 m.addRow(row);
-                
-                
+
                 i++;
 
             }
@@ -6042,15 +6046,29 @@ public class Main extends javax.swing.JFrame {
         // TODO add your handling code here:
         ResultSet rs = db.mostrarElementos("SELECT * FROM ventas_x_vendedor");
         DefaultListModel<String> modeloLista = new DefaultListModel<>();
+
+        //Codigo para poner en Jtable
+        // Títulos de las columnas
+        Object[] columnNames = {"id", "nombre", "Cantidad Vendida"};
+        // Crear un modelo de tabla personalizado
+        DefaultTableModel m = new DefaultTableModel();
+        m.setColumnIdentifiers(columnNames);
+
         int i = 1;
         try {
+
             while (rs.next()) {
                 int id = rs.getInt("id");
                 String nombre = rs.getString("nombre");
                 String cant = rs.getString("Cantidad_de_propiedades_vendidas");
                 modeloLista.addElement(i + "). " + " ID: " + id + " | NOMBRE: " + nombre + " | " + "CANTIDAD VENDIDAS: " + cant + "\n");
+
+                //tabla
+                Object[] row = {id, nombre, cant};
+                m.addRow(row);
                 i++;
             }
+            JTable_Reportes.setModel(m);
             jList1.setModel(modeloLista);
 
         } catch (SQLException ex) {
@@ -6062,6 +6080,14 @@ public class Main extends javax.swing.JFrame {
         // TODO add your handling code here:
         ResultSet rs = db.mostrarElementos("SELECT * FROM compras_x_comprador");
         DefaultListModel<String> modeloLista = new DefaultListModel<>();
+
+        //Codigo para poner en Jtable
+        // Títulos de las columnas
+        Object[] columnNames = {"id", "nombre", "Cantidad Compradas"};
+        // Crear un modelo de tabla personalizado
+        DefaultTableModel m = new DefaultTableModel();
+        m.setColumnIdentifiers(columnNames);
+
         int i = 1;
         try {
             while (rs.next()) {
@@ -6069,10 +6095,15 @@ public class Main extends javax.swing.JFrame {
                 String nombre = rs.getString("nombre");
                 String cant = rs.getString("Cant_Propiedades_Compradas");
                 modeloLista.addElement(i + "). " + " ID: " + id + " | NOMBRE: " + nombre + " | " + "CANTIDAD COMPRADAS: " + cant + "\n");
+
+                //tabla
+                Object[] row = {id, nombre, cant};
+                m.addRow(row);
+
                 i++;
             }
             jList1.setModel(modeloLista);
-
+            JTable_Reportes.setModel(m);
         } catch (SQLException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -6082,6 +6113,14 @@ public class Main extends javax.swing.JFrame {
         // TODO add your handling code here:
         ResultSet rs = db.mostrarElementos("SELECT * FROM ventas_x_ubicacion");
         DefaultListModel<String> modeloLista = new DefaultListModel<>();
+
+        //Codigo para poner en Jtable
+        // Títulos de las columnas
+        Object[] columnNames = {"ciudad", "direccion", "Cantidad"};
+        // Crear un modelo de tabla personalizado
+        DefaultTableModel m = new DefaultTableModel();
+        m.setColumnIdentifiers(columnNames);
+
         int i = 1;
         try {
             while (rs.next()) {
@@ -6089,10 +6128,15 @@ public class Main extends javax.swing.JFrame {
                 String ciudad = rs.getString("ciudad");
                 String cant = rs.getString("total_ventas");
                 modeloLista.addElement(i + "). " + "Ciudad: " + ciudad + " Dirrecion: " + dir + " | CANTIDAD DE CASAS Vendidas: " + cant + "\n");
+
+                //tabla
+                Object[] row = {ciudad, dir, cant};
+                m.addRow(row);
+
                 i++;
             }
             jList1.setModel(modeloLista);
-
+            JTable_Reportes.setModel(m);
         } catch (SQLException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -6102,16 +6146,29 @@ public class Main extends javax.swing.JFrame {
         // TODO add your handling code here:
         ResultSet rs = db.mostrarElementos("SELECT * FROM ventas_x_precio");
         DefaultListModel<String> modeloLista = new DefaultListModel<>();
+
+        //Codigo para poner en Jtable
+        // Títulos de las columnas
+        Object[] columnNames = {"Precio", "Cantidad de Casas"};
+        // Crear un modelo de tabla personalizado
+        DefaultTableModel m = new DefaultTableModel();
+        m.setColumnIdentifiers(columnNames);
+
         int i = 1;
         try {
             while (rs.next()) {
                 int precio = rs.getInt("precio");
                 String cant = rs.getString("Cant_de_casas");
                 modeloLista.addElement(i + ") " + " Precio: " + precio + " | CANTIDAD DE CASAS: " + cant + "\n");
+
+                //tabla
+                Object[] row = {precio, cant};
+                m.addRow(row);
+
                 i++;
             }
             jList1.setModel(modeloLista);
-
+            JTable_Reportes.setModel(m);
         } catch (SQLException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -6197,14 +6254,26 @@ public class Main extends javax.swing.JFrame {
         ResultSet rs = db.mostrarElementos("CALL agenteVendioMayor('" + yearStart + "','" + yearEnd + "');");
 
         DefaultListModel<String> modeloLista = new DefaultListModel<>();
+
+        //Codigo para poner en Jtable
+        // Títulos de las columnas
+        Object[] columnNames = {"id", "nombre", yearStart + " - " + yearEnd};
+        // Crear un modelo de tabla personalizado
+        DefaultTableModel m = new DefaultTableModel();
+        m.setColumnIdentifiers(columnNames);
+
         try {
             while (rs.next()) {
                 int agenteID = rs.getInt("id");
                 String nombre = rs.getString("nombre");
                 modeloLista.addElement("Agente que vendio la mayor cantidad de propiedades en el año por valor total: \nID: " + agenteID + " NOMBRE: " + nombre);
+
+                //tabla
+                Object[] row = {agenteID, nombre, "Agente del Año"};
+                m.addRow(row);
             }
             jList1.setModel(modeloLista);
-
+            JTable_Reportes.setModel(m);
         } catch (SQLException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -6222,6 +6291,14 @@ public class Main extends javax.swing.JFrame {
         }
         ResultSet rs = db.mostrarElementos("CALL promedioVentas('" + anioempezar + "')");
         DefaultListModel<String> modeloLista = new DefaultListModel<>();
+
+        //Codigo para poner en Jtable
+        // Títulos de las columnas
+        Object[] columnNames = {"id", "nombre", "Precio Promedio", "Tiempo Promedio en el mercado"};
+        // Crear un modelo de tabla personalizado
+        DefaultTableModel m = new DefaultTableModel();
+        m.setColumnIdentifiers(columnNames);
+
         try {
             while (rs.next()) {
                 int id = rs.getInt("id");
@@ -6229,8 +6306,14 @@ public class Main extends javax.swing.JFrame {
                 int promedioPrecio = rs.getInt("promedioPrecio");
                 String tiempoProm = rs.getString("tiempoPromedioEnMercado");
                 modeloLista.addElement("ID: " + id + " Nombre: " + nombre + " Precio promedio: " + promedioPrecio + " Tiempo Promedio en el mercado: " + tiempoProm);
+
+                //tabla
+                Object[] row = {id, nombre, promedioPrecio, tiempoProm};
+                m.addRow(row);
+
             }
             jList1.setModel(modeloLista);
+            JTable_Reportes.setModel(m);
 
         } catch (SQLException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
@@ -6241,14 +6324,27 @@ public class Main extends javax.swing.JFrame {
         // TODO add your handling code here:
         ResultSet rs = db.mostrarElementos("SELECT * FROM ventas_x_caracteristica");
         DefaultListModel<String> modeloLista = new DefaultListModel<>();
+
+        //Codigo para poner en Jtable
+        // Títulos de las columnas
+        Object[] columnNames = {"idPropiedad", "cantidadDormitorios", "TienePiscina"};
+        // Crear un modelo de tabla personalizado
+        DefaultTableModel m = new DefaultTableModel();
+        m.setColumnIdentifiers(columnNames);
+
         try {
             while (rs.next()) {
                 int cant = rs.getInt("cantidadDormitorios");
                 int id = rs.getInt("idPropiedad");
                 String piscina = rs.getString("TienePiscina");
                 modeloLista.addElement("CANTIDAD DE DORMITORIOS: " + cant + " ID: " + id + " Piscina: " + piscina);
+
+                //tabla
+                Object[] row = {id, cant, piscina};
+                m.addRow(row);
             }
             jList1.setModel(modeloLista);
+            JTable_Reportes.setModel(m);
 
         } catch (SQLException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
