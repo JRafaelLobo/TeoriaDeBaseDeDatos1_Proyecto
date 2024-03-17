@@ -7767,6 +7767,10 @@
                               <EmptySpace min="-2" pref="406" max="-2" attributes="0"/>
                               <Component id="lb_Reportes" min="-2" max="-2" attributes="0"/>
                           </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jButton37" min="-2" pref="409" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                       <EmptySpace pref="43" max="32767" attributes="0"/>
                   </Group>
@@ -7802,7 +7806,9 @@
                               <Component id="jScrollPane10" pref="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="54" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jButton37" pref="37" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -7944,6 +7950,14 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value=" "/>
               </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="jButton37">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Ventas por precio de propiedad"/>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new boton()"/>
+              </AuxValues>
             </Component>
           </SubComponents>
         </Container>
