@@ -5163,6 +5163,7 @@ public class Main extends javax.swing.JFrame {
     private void JB_ModificarAgenteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_ModificarAgenteMouseClicked
         // TODO add your handling code here:
         ResultSet rs = db.mostrarElementos("SELECT id FROM agentes");
+        CB_modificarAgente.removeAllItems();
         try {
             while (rs.next()) {
                 int id = rs.getInt("id");
@@ -5355,6 +5356,7 @@ public class Main extends javax.swing.JFrame {
 
     private void JB_modificarCompradorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_modificarCompradorMouseClicked
         ResultSet rs = db.mostrarElementos("SELECT id FROM compradores");
+        cb_modificarComprador.removeAllItems();
         try {
             while (rs.next()) {
                 int id = rs.getInt("id");
@@ -5375,6 +5377,7 @@ public class Main extends javax.swing.JFrame {
 
     private void JB_BorrarCompradorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_BorrarCompradorMouseClicked
         ResultSet rs = db.mostrarElementos("SELECT id FROM compradores");
+        cb_eliminarComprador.removeAllItems();
         try {
             while (rs.next()) {
                 int id = rs.getInt("id");
@@ -5462,6 +5465,7 @@ public class Main extends javax.swing.JFrame {
 
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
         ResultSet rs = db.mostrarElementos("SELECT id FROM agentes");
+        cb_eliminarAgente.removeAllItems();
         try {
             while (rs.next()) {
                 int id = rs.getInt("id");
@@ -5478,6 +5482,7 @@ public class Main extends javax.swing.JFrame {
 
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
         ResultSet rs = db.mostrarElementos("SELECT id FROM vendedores");
+        cb_eliminarVendedor.removeAllItems();
         try {
             while (rs.next()) {
                 int id = rs.getInt("id");
@@ -5494,6 +5499,7 @@ public class Main extends javax.swing.JFrame {
 
     private void jButton10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton10MouseClicked
         ResultSet rs = db.mostrarElementos("SELECT id FROM vendedores");
+        cb_modificarVendedor.removeAllItems();
         try {
             while (rs.next()) {
                 int id = rs.getInt("id");
@@ -5853,6 +5859,7 @@ public class Main extends javax.swing.JFrame {
 
     private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
         ResultSet rs = db.mostrarElementos("SELECT idPropiedad FROM propiedades_en_mercado");
+        CB_modificarPropEnVenta.removeAllItems();
         try {
             while (rs.next()) {
                 int id = rs.getInt("idPropiedad");
@@ -5863,12 +5870,13 @@ public class Main extends javax.swing.JFrame {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
         JF_modificarPropiedadVenta.pack();
-        JF_modificarPropiedadVenta.setLocationRelativeTo(JF_Agentes);;
+        JF_modificarPropiedadVenta.setLocationRelativeTo(JF_Agentes);
         JF_modificarPropiedadVenta.setVisible(true);
     }//GEN-LAST:event_jButton4MouseClicked
 
     private void JB_eliminarPropVentaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_eliminarPropVentaMouseClicked
         ResultSet rs = db.mostrarElementos("SELECT idPropiedad FROM propiedades_en_mercado");
+        cb_eliminarPropVenta.removeAllItems();
         try {
             while (rs.next()) {
                 int id = rs.getInt("idPropiedad");
@@ -5922,6 +5930,7 @@ public class Main extends javax.swing.JFrame {
 
     private void JB_ventanaModificarPropiedadesVendidasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_ventanaModificarPropiedadesVendidasMouseClicked
         ResultSet rs = db.mostrarElementos("SELECT idPropiedad FROM propiedades_vendidas");
+        CB_modificarPropVendida.removeAllItems();
         try {
             while (rs.next()) {
                 int id = rs.getInt("idPropiedad");
@@ -5938,6 +5947,7 @@ public class Main extends javax.swing.JFrame {
 
     private void JB_ventanaEliminarPropiedadesVendidasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_ventanaEliminarPropiedadesVendidasMouseClicked
         ResultSet rs = db.mostrarElementos("SELECT idPropiedad FROM propiedades_vendidas");
+        cb_eliminarPropVendida.removeAllItems();
         try {
             while (rs.next()) {
                 int id = rs.getInt("idPropiedad");
