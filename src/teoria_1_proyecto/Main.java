@@ -520,7 +520,6 @@ public class Main extends javax.swing.JFrame {
         jButton17 = new boton();
         jButton18 = new boton();
         jButton19 = new boton();
-        jButton11 = new boton();
         jButton13 = new boton();
         jButton15 = new boton();
         jButton20 = new boton();
@@ -4820,17 +4819,10 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
-        jButton19.setText("Cantidad de Ventas por Ubicacion");
+        jButton19.setText("Ventas por Ubicacion");
         jButton19.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton19MouseClicked(evt);
-            }
-        });
-
-        jButton11.setText("Cantidad de Ventas por precio de propiedad");
-        jButton11.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton11MouseClicked(evt);
             }
         });
 
@@ -4895,7 +4887,6 @@ public class Main extends javax.swing.JFrame {
                             .addGroup(jPanel95Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addComponent(jButton13, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 409, Short.MAX_VALUE)
                                 .addComponent(jButton15, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton11, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jButton19, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jButton18, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jButton17, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -4923,16 +4914,15 @@ public class Main extends javax.swing.JFrame {
                         .addComponent(jButton18, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton19, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(14, 14, 14)
+                        .addComponent(jButton37)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jButton15, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton37)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton20, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton20, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(23, 23, 23))
                     .addGroup(jPanel95Layout.createSequentialGroup()
                         .addComponent(jScrollPane19, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -6795,6 +6785,13 @@ public class Main extends javax.swing.JFrame {
             Image m5 = new ImageIcon(rutaImagen5).getImage();
             ImageIcon mi5 = new ImageIcon(m5.getScaledInstance(jLabel99.getWidth(), jLabel99.getHeight(), jLabel99.getWidth()));
             jLabel99.setIcon(mi5);
+            
+            //Labels
+            jl_prop1CompradorCompradas.setText(fotos.get(0).toString());
+            jl_prop2CompradorCompradas.setText(fotos.get(1).toString());
+            jl_prop3CompradorCompradas.setText(fotos.get(2).toString());
+            jl_prop4CompradorCompradas.setText(fotos.get(3).toString());
+            jl_prop5CompradorCompradas.setText(fotos.get(4).toString());
         } catch (IndexOutOfBoundsException e) {
             JOptionPane.showMessageDialog(JF_ventanacomprador, "No hay suficientes imagenes para llenar el resto de los espacios");
         }
@@ -7035,6 +7032,13 @@ public class Main extends javax.swing.JFrame {
             Image m5 = new ImageIcon(rutaImagen5).getImage();
             ImageIcon mi5 = new ImageIcon(m5.getScaledInstance(jLabel103.getWidth(), jLabel103.getHeight(), jLabel103.getWidth()));
             jLabel103.setIcon(mi5);
+            
+            //Labels
+            jl_prop1CompradorEnMercado.setText(fotos.get(0).toString());
+            jl_prop2CompradorEnMercado.setText(fotos.get(1).toString());
+            jl_prop3CompradorEnMercado.setText(fotos.get(2).toString());
+            jl_prop4CompradorEnMercado.setText(fotos.get(3).toString());
+            jl_prop5CompradorEnMercado.setText(fotos.get(4).toString());
         } catch (IndexOutOfBoundsException e) {
             JOptionPane.showMessageDialog(JF_ventanacomprador, "No hay suficientes imagenes para llenar el resto de los espacios");
         }
@@ -7090,6 +7094,14 @@ public class Main extends javax.swing.JFrame {
             Image m5 = new ImageIcon(rutaImagen5).getImage();
             ImageIcon mi5 = new ImageIcon(m5.getScaledInstance(jLabel108.getWidth(), jLabel108.getHeight(), jLabel108.getWidth()));
             jLabel108.setIcon(mi5);
+            
+            //Labels
+            jl_prop1VendedorenVenta.setText(fotos.get(0).toString());
+            jl_prop2VendedorenVenta.setText(fotos.get(1).toString());
+            jl_prop3VendedorenVenta.setText(fotos.get(2).toString());
+            jl_prop4VendedorenVenta.setText(fotos.get(3).toString());
+            jl_prop5VendedorenVenta.setText(fotos.get(4).toString());
+            
         } catch (IndexOutOfBoundsException e) {
             JOptionPane.showMessageDialog(JF_ventanaVendedor, "No hay suficientes imagenes para llenar el resto de los espacios");
         }
@@ -7145,6 +7157,13 @@ public class Main extends javax.swing.JFrame {
             Image m5 = new ImageIcon(rutaImagen5).getImage();
             ImageIcon mi5 = new ImageIcon(m5.getScaledInstance(jLabel113.getWidth(), jLabel113.getHeight(), jLabel113.getWidth()));
             jLabel113.setIcon(mi5);
+            
+            //Labels
+            jl_prop1VendedorVendida.setText(fotos.get(0).toString());
+            jl_prop2VendedorVendida.setText(fotos.get(1).toString());
+            jl_prop3VendedorVendida.setText(fotos.get(2).toString());
+            jl_prop4VendedorVendida.setText(fotos.get(3).toString());
+            jl_prop5VendedorVendida.setText(fotos.get(4).toString());
         } catch (IndexOutOfBoundsException e) {
             JOptionPane.showMessageDialog(JF_ventanaVendedor, "No hay suficientes imagenes para llenar el resto de los espacios");
         }
@@ -7172,13 +7191,15 @@ public class Main extends javax.swing.JFrame {
             Image m = new ImageIcon(rutaImagen).getImage();
             ImageIcon mi = new ImageIcon(m.getScaledInstance(jLabel114.getWidth(), jLabel114.getHeight(), jLabel114.getWidth()));
             jLabel114.setIcon(mi);
-
+            jl_prop1AgenteAsignadas.setText(fotos.get(0).toString());
+            
             //Segunda imagen ------------------------
             String nombreImagen2 = fotos.get(1).toString() + ".jpg"; // Obtener el nombre de la imagen
             String rutaImagen2 = "./imagenCasas/" + nombreImagen2; // Ruta completa de la imagen
             Image m2 = new ImageIcon(rutaImagen2).getImage();
             ImageIcon mi2 = new ImageIcon(m2.getScaledInstance(jLabel115.getWidth(), jLabel115.getHeight(), jLabel115.getWidth()));
             jLabel115.setIcon(mi2);
+            jl_prop3AgenteAsignadas.setText(fotos.get(1).toString());
 
             //Tercera imagen ------------------------
             String nombreImagen3 = fotos.get(2).toString() + ".jpg"; // Obtener el nombre de la imagen
@@ -7186,6 +7207,7 @@ public class Main extends javax.swing.JFrame {
             Image m3 = new ImageIcon(rutaImagen3).getImage();
             ImageIcon mi3 = new ImageIcon(m3.getScaledInstance(jLabel116.getWidth(), jLabel116.getHeight(), jLabel116.getWidth()));
             jLabel116.setIcon(mi3);
+            jl_prop5AgenteAsignadas.setText(fotos.get(2).toString());
 
             //Cuarta imagen -------------------------
             String nombreImagen4 = fotos.get(3).toString() + ".jpg"; // Obtener el nombre de la imagen
@@ -7193,6 +7215,7 @@ public class Main extends javax.swing.JFrame {
             Image m4 = new ImageIcon(rutaImagen4).getImage();
             ImageIcon mi4 = new ImageIcon(m4.getScaledInstance(jLabel117.getWidth(), jLabel117.getHeight(), jLabel117.getWidth()));
             jLabel117.setIcon(mi4);
+            jl_prop2AgenteAsignadas.setText(fotos.get(3).toString());
 
             //Quinta imagen -------------------------
             String nombreImagen5 = fotos.get(4).toString() + ".jpg"; // Obtener el nombre de la imagen
@@ -7200,6 +7223,7 @@ public class Main extends javax.swing.JFrame {
             Image m5 = new ImageIcon(rutaImagen5).getImage();
             ImageIcon mi5 = new ImageIcon(m5.getScaledInstance(jLabel118.getWidth(), jLabel118.getHeight(), jLabel118.getWidth()));
             jLabel118.setIcon(mi5);
+            jl_prop4AgenteAsignadas.setText(fotos.get(4).toString());
         } catch (IndexOutOfBoundsException e) {
             JOptionPane.showMessageDialog(JF_ventanaAgente, "No hay suficientes imagenes para llenar el resto de los espacios");
         }
@@ -7255,6 +7279,13 @@ public class Main extends javax.swing.JFrame {
             Image m5 = new ImageIcon(rutaImagen5).getImage();
             ImageIcon mi5 = new ImageIcon(m5.getScaledInstance(jLabel122.getWidth(), jLabel122.getHeight(), jLabel122.getWidth()));
             jLabel122.setIcon(mi5);
+            
+            //Labels
+            jl_prop1AgenteVendidas.setText( fotos.get(0).toString());
+            jl_prop2AgenteVendidas.setText( fotos.get(1).toString());
+            jl_prop3AgenteVendidas.setText( fotos.get(2).toString());
+            jl_prop4AgenteVendidas.setText( fotos.get(3).toString());
+            jl_prop5AgenteVendidas.setText( fotos.get(4).toString());
         } catch (IndexOutOfBoundsException e) {
             JOptionPane.showMessageDialog(JF_ventanaAgente, "No hay suficientes imagenes para llenar el resto de los espacios");
         }
@@ -7500,9 +7531,26 @@ public class Main extends javax.swing.JFrame {
 
     private void jButton37MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton37MouseClicked
         // TODO add your handling code here:
+        ResultSet rs2 = db.mostrarElementos("SELECT * FROM ventas_x_precio");
+        DefaultListModel<String> modeloLista = new DefaultListModel<>();
+        // Crear un modelo de tabla personalizado
+        int i = 1;
+        try {
+            while (rs2.next()) {
+                int precio = rs2.getInt("precio");
+                String cant = rs2.getString("Cant_de_casas");
+                modeloLista.addElement(i + ") " + " Precio: " + precio + " | CANTIDAD DE CASAS: " + cant + "\n");
+
+                i++;
+            }
+            jList1.setModel(modeloLista);
+            lb_Reportes.setText("Ventas por precio de propiedad");
+        } catch (SQLException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(Reportes, "Error: La base de datos no ha respondido a tiempo", "Error de Inactividad", JOptionPane.ERROR_MESSAGE);
+        }
         // TODO add your handling code here:
         ResultSet rs = db.mostrarElementos("SELECT * FROM ventas_x_precio_id");
-        DefaultListModel<String> modeloLista = new DefaultListModel<>();
 
         //Codigo para poner en Jtable
         // Títulos de las columnas
@@ -7511,14 +7559,10 @@ public class Main extends javax.swing.JFrame {
         DefaultTableModel m = new DefaultTableModel();
         m.setColumnIdentifiers(columnNames);
 
-        int i = 1;
         try {
             while (rs.next()) {
                 int precio = rs.getInt("precio");
                 String idpropiedad = rs.getString("IdPropiedad");
-
-                modeloLista.addElement(i + ") " + " Precio: " + precio + " | IDPropiedad: " + idpropiedad
-                        + "\n");
 
                 //tabla
                 Object[] row = {precio, idpropiedad};
@@ -7526,9 +7570,9 @@ public class Main extends javax.swing.JFrame {
 
                 i++;
             }
-            jList1.setModel(modeloLista);
+
             JTable_Reportes.setModel(m);
-            lb_Reportes.setText("Ventas por precio de propiedad(id)");
+            lb_Reportes.setText("Ventas por precio de propiedad");
         } catch (SQLException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(Reportes, "Error: La base de datos no ha respondido a tiempo", "Error de Inactividad", JOptionPane.ERROR_MESSAGE);
@@ -7668,39 +7712,6 @@ public class Main extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton13MouseClicked
 
-    private void jButton11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton11MouseClicked
-        // TODO add your handling code here:
-        ResultSet rs = db.mostrarElementos("SELECT * FROM ventas_x_precio");
-        DefaultListModel<String> modeloLista = new DefaultListModel<>();
-
-        //Codigo para poner en Jtable
-        // Títulos de las columnas
-        Object[] columnNames = {"Precio", "Cantidad de Casas"};
-        // Crear un modelo de tabla personalizado
-        DefaultTableModel m = new DefaultTableModel();
-        m.setColumnIdentifiers(columnNames);
-
-        int i = 1;
-        try {
-            while (rs.next()) {
-                int precio = rs.getInt("precio");
-                String cant = rs.getString("Cant_de_casas");
-                modeloLista.addElement(i + ") " + " Precio: " + precio + " | CANTIDAD DE CASAS: " + cant + "\n");
-                //tabla
-                Object[] row = {precio, cant};
-                m.addRow(row);
-
-                i++;
-            }
-            jList1.setModel(modeloLista);
-            JTable_Reportes.setModel(m);
-            lb_Reportes.setText("Ventas por precio de propiedad");
-        } catch (SQLException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-            JOptionPane.showMessageDialog(Reportes, "Error: La base de datos no ha respondido a tiempo", "Error de Inactividad", JOptionPane.ERROR_MESSAGE);
-        }
-    }//GEN-LAST:event_jButton11MouseClicked
-
     private void jButton19MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton19MouseClicked
         // TODO add your handling code here:
         ResultSet rs = db.mostrarElementos("SELECT * FROM ventas_x_ubicacion");
@@ -7709,18 +7720,18 @@ public class Main extends javax.swing.JFrame {
 
         //Codigo para poner en Jtable
         // Títulos de las columnas
-        Object[] columnNames = {"ciudad", "direccion", "Cantidad"};
+        Object[] columnNames = {"ciudad", "direccion", "idPropiedad"};
         // Crear un modelo de tabla personalizado
         DefaultTableModel m = new DefaultTableModel();
         m.setColumnIdentifiers(columnNames);
 
         try {
-            while (rs.next()) {
-                String dir = rs.getString("direccion");
-                String ciudad = rs.getString("ciudad");
-                String cant = rs.getString("total_ventas");
+            while (rs2.next()) {
+                String dir = rs2.getString("direccion");
+                String ciudad = rs2.getString("ciudad");
+                String id = rs2.getString("idPropiedad");
                 //tabla
-                Object[] row = {ciudad, dir, cant};
+                Object[] row = {ciudad, dir, id};
                 m.addRow(row);
             }
             JTable_Reportes.setModel(m);
@@ -7730,11 +7741,11 @@ public class Main extends javax.swing.JFrame {
 
         int i = 1;
         try {
-            while (rs2.next()) {
-                String dir = rs2.getString("direccion");
-                String ciudad = rs2.getString("ciudad");
-                String idProp = rs2.getString("idPropiedad");
-                modeloLista.addElement(i + "). " + "Ciudad: " + ciudad + " | Dirrecion: " + dir + " | Id de la porpiedad: " + idProp + "\n");
+            while (rs.next()) {
+                String dir = rs.getString("direccion");
+                String ciudad = rs.getString("ciudad");
+                String cant = rs.getString("total_ventas");
+                modeloLista.addElement(i + "). " + "Ciudad: " + ciudad + " | Dirrecion: " + dir + " | Total_Ventas: " + cant + "\n");
                 i++;
             }
             jList1.setModel(modeloLista);
@@ -7984,7 +7995,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cb_modificarVendedor;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton14;
