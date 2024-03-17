@@ -70,6 +70,7 @@ public class Main extends javax.swing.JFrame {
             JF_Principal.setIconImage(new ImageIcon("./Imagen\\beinvenida.jpeg").getImage());
             JF_bitacora.setIconImage(new ImageIcon("./Imagen\\beinvenida.jpeg").getImage());
             Reportes.setIconImage(new ImageIcon("./Imagen\\beinvenida.jpeg").getImage());
+            Portadita.setIconImage(new ImageIcon("./Imagen\\beinvenida.jpeg").getImage());
 
             //JF_crearPropiedadesVendidas.show();
             //Reportes.setVisible(true);
