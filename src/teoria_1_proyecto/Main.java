@@ -199,6 +199,10 @@ public class Main extends javax.swing.JFrame {
         jScrollPane14 = new javax.swing.JScrollPane();
         jTable9 = new javax.swing.JTable();
         jButton27 = new javax.swing.JButton();
+        jPanel56 = new javax.swing.JPanel();
+        jButton11 = new javax.swing.JButton();
+        jScrollPane20 = new javax.swing.JScrollPane();
+        jTable10 = new javax.swing.JTable();
         JF_ventanaAgente = new javax.swing.JFrame();
         jp_ventanaVendedor1 = new FondoPanel("./Imagen\\ventanaAgente.jpeg");
         jLabel12 = new javax.swing.JLabel();
@@ -1675,6 +1679,49 @@ public class Main extends javax.swing.JFrame {
         );
 
         jTabbedPane1.addTab("Propiedades Disponibles", jPanel92);
+
+        jButton11.setText("Cargar Propiedades");
+        jButton11.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton11MouseClicked(evt);
+            }
+        });
+
+        jTable10.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "nombre", "ciudad", "direccion", "cantidad dormitorios", "carcateristicas", "precio", "fechaPublicacion", "fechaVenta", "Agente", "Vendedor", "Comprador", "Comision"
+            }
+        ));
+        jScrollPane20.setViewportView(jTable10);
+
+        javax.swing.GroupLayout jPanel56Layout = new javax.swing.GroupLayout(jPanel56);
+        jPanel56.setLayout(jPanel56Layout);
+        jPanel56Layout.setHorizontalGroup(
+            jPanel56Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel56Layout.createSequentialGroup()
+                .addGap(39, 39, 39)
+                .addGroup(jPanel56Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane20, javax.swing.GroupLayout.PREFERRED_SIZE, 791, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton11))
+                .addContainerGap(100, Short.MAX_VALUE))
+        );
+        jPanel56Layout.setVerticalGroup(
+            jPanel56Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel56Layout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(jButton11)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane20, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(121, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Propiedades Vendidas", jPanel56);
 
         javax.swing.GroupLayout jp_ventanaVendedorLayout = new javax.swing.GroupLayout(jp_ventanaVendedor);
         jp_ventanaVendedor.setLayout(jp_ventanaVendedorLayout);
@@ -7013,7 +7060,7 @@ public class Main extends javax.swing.JFrame {
 
     private void jButton26MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton26MouseClicked
         // TODO add your handling code here:
-        ResultSet rs = db.mostrarElementos("CALL propiedadesVendedor(" + identidadUsuarioActivo + ");");
+        ResultSet rs = db.mostrarElementos("SELECT * FROM propiedades_en_mercado WHERE noIdentidad_Vendedor = " + identidadUsuarioActivo + ";");
         DefaultTableModel model = (DefaultTableModel) jTable8.getModel();
         model.setRowCount(0);
         try {
@@ -8111,6 +8158,36 @@ public class Main extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_JB_modificarVendidaMouseEntered
 
+    private void jButton11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton11MouseClicked
+        // TODO add your handling code here:
+        ResultSet rs = db.mostrarElementos("SELECT * FROM propiedades_vendidas WHERE noIdentidad_Vendedor = "+identidadUsuarioActivo);
+        DefaultTableModel model = (DefaultTableModel) jTable10.getModel();
+        model.setRowCount(0);
+        try {
+            while (rs.next()) {
+                String nombre = rs.getString("nombre");
+                String ciudad = rs.getString("ciudad");
+                String direccion = rs.getString("direccion");
+                int cant_dor = rs.getInt("cantidadDormitorios");
+                String car = rs.getString("caracteristicas");
+                int precio = rs.getInt("precio");
+                String fecha = rs.getString("fechaPublicacion");
+                String fechaVenta = rs.getString("fechaVenta");
+                int agente = rs.getInt("noIdentidad_Agente");
+                int vendedor = rs.getInt("noIdentidad_Vendedor");
+                int comprador = rs.getInt("noIdentidad_Comprador");
+                int comision = rs.getInt("comisionVenta");
+                Object[] row = {nombre, ciudad, direccion, cant_dor, car, precio, fecha, fechaVenta, agente, vendedor, comprador, comision};
+                model.addRow(row);
+
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Main.class
+                    .getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton11MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -8248,6 +8325,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cb_modificarVendedor;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton14;
@@ -8469,6 +8547,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel53;
     private javax.swing.JPanel jPanel54;
     private javax.swing.JPanel jPanel55;
+    private javax.swing.JPanel jPanel56;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel60;
     private javax.swing.JPanel jPanel67;
@@ -8496,6 +8575,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane18;
     private javax.swing.JScrollPane jScrollPane19;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane20;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
@@ -8506,6 +8586,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTable10;
     private javax.swing.JTable jTable11;
     private javax.swing.JTable jTable12;
     private javax.swing.JTable jTable13;
