@@ -50,12 +50,11 @@ public class Main extends javax.swing.JFrame {
             this.setLocationRelativeTo(null);
             DB_Manager db = new DB_Manager();
             db.crearConexion();
-            db.crearTablas();
             CambiarPantallaTiempo CPT = new CambiarPantallaTiempo(Portadita, JF_Principal, 4000, true);
             CPT.start();
 
             ArrayList<String> temp = new ArrayList();
-            ResultSet rs = db.mostrarElementos("SELECT id FROM usuarios");
+            ResultSet rs = db.mostrarElementos("SELECT * FROM seleccionarIdUsuarios");
 
             while (rs.next()) {
                 String id = rs.getString("id");
@@ -63,7 +62,7 @@ public class Main extends javax.swing.JFrame {
             }
 
             for (int i = 0; i < temp.size(); i++) {
-                db.HacerConsulta("UPDATE usuarios SET activo = 'FALSE' WHERE id = " + temp.get(i));
+                db.HacerConsulta("SELECT desactivarUsuario("+temp.get(i)+");");
             }
             //Poniendo logos
             this.setIconImage(new ImageIcon("./Imagen\\beinvenida.jpeg").getImage());
@@ -4759,7 +4758,7 @@ public class Main extends javax.swing.JFrame {
         jLabel93.setBackground(new java.awt.Color(224, 238, 247));
         jLabel93.setFont(new java.awt.Font("Montserrat Thin", 1, 24)); // NOI18N
         jLabel93.setForeground(new java.awt.Color(245, 253, 255));
-        jLabel93.setText("Eliminar Propiedad en Venta");
+        jLabel93.setText("Eliminar Propiedad Vendida");
 
         javax.swing.GroupLayout jPanel51Layout = new javax.swing.GroupLayout(jPanel51);
         jPanel51.setLayout(jPanel51Layout);
@@ -4802,7 +4801,7 @@ public class Main extends javax.swing.JFrame {
             .addGroup(jPanel50Layout.createSequentialGroup()
                 .addGap(33, 33, 33)
                 .addComponent(jPanel51, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(51, Short.MAX_VALUE))
+                .addContainerGap(57, Short.MAX_VALUE))
         );
         jPanel50Layout.setVerticalGroup(
             jPanel50Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -5112,7 +5111,7 @@ public class Main extends javax.swing.JFrame {
 
     private void JB_ModificarAgenteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_ModificarAgenteMouseClicked
         // TODO add your handling code here:
-        ResultSet rs = db.mostrarElementos("SELECT id FROM agentes");
+        ResultSet rs = db.mostrarElementos("select * from seleccionarIdAgentes");
         CB_modificarAgente.removeAllItems();
         try {
             while (rs.next()) {
@@ -5168,7 +5167,7 @@ public class Main extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(JF_Principal, "Error: La base de datos no ha respondido a tiempo", "Error de Inactividad", JOptionPane.ERROR_MESSAGE);
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
-        ResultSet rs3 = db.mostrarElementos("SELECT id FROM usuarios WHERE correo = '" + correo + "';");
+        ResultSet rs3 = db.mostrarElementos("call obtenerIDUsuario('" + correo + "');");
         try {
             while (rs3.next()) { // Aquí debe ser rs3 en lugar de rs
                 identidadUsuarioActivo = rs3.getInt("id");
@@ -5176,7 +5175,7 @@ public class Main extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
-        db.HacerConsulta("UPDATE usuarios SET activo = 'TRUE' WHERE id = " + identidadUsuarioActivo + ";");
+        db.HacerConsulta("SELECT ActivarUsuario(" + identidadUsuarioActivo + ");");
         if (rol.equals("administrador")) {
             ResultSet d = db.mostrarElementos("SELECT * FROM propiedades_en_mercado");
             DefaultTableModel model = (DefaultTableModel) jTable13.getModel();
@@ -5200,7 +5199,7 @@ public class Main extends javax.swing.JFrame {
             } catch (SQLException ex) {
                 Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
             }
-            ResultSet m = db.mostrarElementos("SELECT * FROM propiedades_vendidas;");
+            ResultSet m = db.mostrarElementos("select * from obtenerTodasPropiedadesPV;");
             DefaultTableModel model2 = (DefaultTableModel) JT_propiedadesVendidas1.getModel();
             model2.setRowCount(0);
             try {
@@ -5406,7 +5405,7 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_JB_CrearCompradorActionPerformed
 
     private void JB_modificarCompradorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_modificarCompradorMouseClicked
-        ResultSet rs = db.mostrarElementos("SELECT id FROM compradores");
+        ResultSet rs = db.mostrarElementos("select * from seleccionarIdCompradores");
         cb_modificarComprador.removeAllItems();
         try {
             while (rs.next()) {
@@ -5427,7 +5426,7 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_JB_modificarCompradorActionPerformed
 
     private void JB_BorrarCompradorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_BorrarCompradorMouseClicked
-        ResultSet rs = db.mostrarElementos("SELECT id FROM compradores");
+        ResultSet rs = db.mostrarElementos("select * from seleccionarIdCompradores");
         cb_eliminarComprador.removeAllItems();
         try {
             while (rs.next()) {
@@ -5463,7 +5462,7 @@ public class Main extends javax.swing.JFrame {
 //            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
 //        }
         String id = jTextField1.getText();
-        ResultSet rs = db.mostrarElementos("SELECT * FROM compradores WHERE id = '" + id + "';");
+        ResultSet rs = db.mostrarElementos("CALL obtenerCompradorPorId("+id+")");
         DefaultTableModel model = (DefaultTableModel) jTable3.getModel();
         model.setRowCount(0);
         try {
@@ -5499,7 +5498,7 @@ public class Main extends javax.swing.JFrame {
         boolean valido = true;
         //no se repite id
         try {
-            ResultSet rs = db.mostrarElementos("SELECT id FROM agentes WHERE id = '" + id + "'");
+            ResultSet rs = db.mostrarElementos("call obtenerAgentePorId('" + id + "')");
             if (rs.next()) {
                 JOptionPane.showMessageDialog(null, "El ID ya existe en la base de datos.", "Error", JOptionPane.ERROR_MESSAGE);
                 valido = false;
@@ -5510,7 +5509,7 @@ public class Main extends javax.swing.JFrame {
             valido = false;
         }
         try {
-            ResultSet rs = db.mostrarElementos("SELECT id FROM agentes");
+            ResultSet rs = db.mostrarElementos("select * from seleccionarIdAgentes");
             while (rs.next()) {
                 String idExistente = rs.getString("id");
                 if (idExistente.equals(id)) {
@@ -5567,7 +5566,7 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_JB_crearAgenteMouseClicked
 
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
-        ResultSet rs = db.mostrarElementos("SELECT id FROM agentes");
+        ResultSet rs = db.mostrarElementos("select * from seleccionarIdAgentes");
         cb_eliminarAgente.removeAllItems();
         try {
             while (rs.next()) {
@@ -5584,7 +5583,7 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3MouseClicked
 
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
-        ResultSet rs = db.mostrarElementos("SELECT id FROM vendedores");
+        ResultSet rs = db.mostrarElementos("select * from seleccionarIdVendedores");
         cb_eliminarVendedor.removeAllItems();
         try {
             while (rs.next()) {
@@ -5601,7 +5600,7 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2MouseClicked
 
     private void jButton10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton10MouseClicked
-        ResultSet rs = db.mostrarElementos("SELECT id FROM vendedores");
+        ResultSet rs = db.mostrarElementos("select * from seleccionarIdVendedores");
         cb_modificarVendedor.removeAllItems();
         try {
             while (rs.next()) {
@@ -5687,7 +5686,8 @@ public class Main extends javax.swing.JFrame {
         }
         if (valido) {
 
-            String vista = "UPDATE agentes SET " + atributo + " = '" + valor + "' WHERE id = '" + id + "'";
+            String vista = "CALL modificarAgente('"+id+"','"+atributo+"','"+valor+"');";
+//"UPDATE agentes SET " + atributo + " = '" + valor + "' WHERE id = '" + id + "'";
             db.HacerConsulta(vista);
             tf_nuevovalorAgente.setText("");
             JF_modificarAgente.setVisible(false);
@@ -5830,7 +5830,7 @@ public class Main extends javax.swing.JFrame {
         boolean valido = true;
         //no se repite id
         try {
-            ResultSet rs = db.mostrarElementos("SELECT id FROM compradores WHERE id = '" + id + "'");
+            ResultSet rs = db.mostrarElementos("CALL obtenerCompradorPorId('" + id + "')");
             if (rs.next()) {
                 JOptionPane.showMessageDialog(null, "El ID ya existe en la base de datos.", "Error", JOptionPane.ERROR_MESSAGE);
                 valido = false;
@@ -5841,7 +5841,7 @@ public class Main extends javax.swing.JFrame {
             valido = false;
         }
         try {
-            ResultSet rs = db.mostrarElementos("SELECT id FROM compradores");
+            ResultSet rs = db.mostrarElementos("select * from seleccionarIdCompradores");
             while (rs.next()) {
                 String idExistente = rs.getString("id");
                 if (idExistente.equals(id)) {
@@ -5995,7 +5995,7 @@ public class Main extends javax.swing.JFrame {
         boolean valido = true;
         //no se repite id
         try {
-            ResultSet rs = db.mostrarElementos("SELECT idPropiedad FROM propiedades_en_mercado WHERE idPropiedad = '" + id + "'");
+            ResultSet rs = db.mostrarElementos("CALL obtenerPropiedadPorId('" + id + "')");
             if (rs.next()) {
                 JOptionPane.showMessageDialog(null, "El ID ya existe en la base de datos.", "Error", JOptionPane.ERROR_MESSAGE);
                 valido = false;
@@ -6006,7 +6006,7 @@ public class Main extends javax.swing.JFrame {
             valido = false;
         }
         try {
-            ResultSet rs = db.mostrarElementos("SELECT idPropiedad FROM propiedades_en_mercado");
+            ResultSet rs = db.mostrarElementos("select * from seleccionarIdPM");
             while (rs.next()) {
                 String idExistente = rs.getString("idPropiedad");
                 if (idExistente.equals(id)) {
@@ -6086,7 +6086,7 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_JB_crearPropiedadVentaMouseClicked
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-        ResultSet rs = db.mostrarElementos("SELECT id FROM agentes");
+        ResultSet rs = db.mostrarElementos("select * from seleccionarIdAgentes");
         cb_crearpropiedadenVentaIdAgente.removeAllItems();
         boolean agentesNotEmpty = false;
         boolean vendedoresNotEmpty = false;
@@ -6131,14 +6131,14 @@ public class Main extends javax.swing.JFrame {
 
         try {
             // Consulta para obtener IDs de agentes
-            ResultSet rs = db.mostrarElementos("SELECT id FROM agentes");
+            ResultSet rs = db.mostrarElementos("select * from seleccionarIdAgentes");
             while (rs.next()) {
                 int id1 = rs.getInt("id");
                 ids.add(Integer.toString(id1));
             }
 
             // Consulta para obtener IDs de vendedores
-            ResultSet rs2 = db.mostrarElementos("SELECT id FROM vendedores");
+            ResultSet rs2 = db.mostrarElementos("select * from seleccionarIdVendedores");
             while (rs2.next()) {
                 int id2 = rs2.getInt("id");
                 ids.add(Integer.toString(id2));
@@ -6232,7 +6232,7 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_JB_eliminarPropiedadenVentaMouseClicked
 
     private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
-        ResultSet rs = db.mostrarElementos("SELECT idPropiedad FROM propiedades_en_mercado");
+        ResultSet rs = db.mostrarElementos("select * from seleccionarIdPM");
         CB_modificarPropEnVenta.removeAllItems();
         try {
             while (rs.next()) {
@@ -6249,7 +6249,7 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4MouseClicked
 
     private void JB_eliminarPropVentaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_eliminarPropVentaMouseClicked
-        ResultSet rs = db.mostrarElementos("SELECT idPropiedad FROM propiedades_en_mercado");
+        ResultSet rs = db.mostrarElementos("select * from seleccionarIdPM");
         cb_eliminarPropVenta.removeAllItems();
         try {
             while (rs.next()) {
@@ -6266,7 +6266,7 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_JB_eliminarPropVentaMouseClicked
 
     private void JB_ventanacrearPropiedadesVendidasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_ventanacrearPropiedadesVendidasMouseClicked
-        ResultSet rs = db.mostrarElementos("SELECT id FROM agentes");
+        ResultSet rs = db.mostrarElementos("select * from seleccionarIdAgentes");
         cb_crearPropiedadVendidaIdAgente.removeAllItems();
         boolean agentesnotempty = false;
         boolean compradoresnotempty = false;
@@ -6282,7 +6282,7 @@ public class Main extends javax.swing.JFrame {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
         cb_crearPropiedadVendidaIdVendedor.removeAllItems();
-        ResultSet rs2 = db.mostrarElementos("SELECT id FROM vendedores");
+        ResultSet rs2 = db.mostrarElementos("select * from seleccionarIdVendedores");
         try {
             while (rs2.next()) {
                 int id = rs2.getInt("id");
@@ -6293,7 +6293,7 @@ public class Main extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
-        ResultSet rs3 = db.mostrarElementos("SELECT id FROM compradores");
+        ResultSet rs3 = db.mostrarElementos("select * from seleccionarIdCompradores");
         cb_crearPropiedadVendidaIdComprador.removeAllItems();
         try {
             while (rs3.next()) {
@@ -6318,7 +6318,7 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_JB_ventanacrearPropiedadesVendidasMouseClicked
 
     private void JB_ventanaModificarPropiedadesVendidasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_ventanaModificarPropiedadesVendidasMouseClicked
-        ResultSet rs = db.mostrarElementos("SELECT idPropiedad FROM propiedades_vendidas");
+        ResultSet rs = db.mostrarElementos("select * from seleccionarIdPV");
         CB_modificarPropVendida.removeAllItems();
         try {
             while (rs.next()) {
@@ -6335,7 +6335,7 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_JB_ventanaModificarPropiedadesVendidasMouseClicked
 
     private void JB_ventanaEliminarPropiedadesVendidasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_ventanaEliminarPropiedadesVendidasMouseClicked
-        ResultSet rs = db.mostrarElementos("SELECT idPropiedad FROM propiedades_vendidas");
+        ResultSet rs = db.mostrarElementos("select * from seleccionarIdPV");
         cb_eliminarPropVendida.removeAllItems();
         try {
             while (rs.next()) {
@@ -6373,7 +6373,7 @@ public class Main extends javax.swing.JFrame {
         boolean valido = true;
         //no se repite id
         try {
-            ResultSet rs = db.mostrarElementos("SELECT idPropiedad FROM propiedades_vendidas WHERE idPropiedad = '" + id + "'");
+            ResultSet rs = db.mostrarElementos("Call obtenerPropiedadVendidaPorId('" + id + "')");
             if (rs.next()) {
                 JOptionPane.showMessageDialog(null, "El ID ya existe en la base de datos.", "Error", JOptionPane.ERROR_MESSAGE);
                 valido = false;
@@ -6384,7 +6384,7 @@ public class Main extends javax.swing.JFrame {
             valido = false;
         }
         try {
-            ResultSet rs = db.mostrarElementos("SELECT idPropiedad FROM propiedades_vendidas");
+            ResultSet rs = db.mostrarElementos("select * from seleccionarIdPV");
             while (rs.next()) {
                 String idExistente = rs.getString("idPropiedad");
                 if (idExistente.equals(id)) {
@@ -6483,21 +6483,21 @@ public class Main extends javax.swing.JFrame {
 
         try {
             // Consulta para obtener IDs de agentes
-            ResultSet rs = db.mostrarElementos("SELECT id FROM agentes");
+            ResultSet rs = db.mostrarElementos("select * from seleccionarIdAgentes");
             while (rs.next()) {
                 int id1 = rs.getInt("id");
                 ids.add(Integer.toString(id1));
             }
 
             // Consulta para obtener IDs de vendedores
-            ResultSet rs2 = db.mostrarElementos("SELECT id FROM vendedores");
+            ResultSet rs2 = db.mostrarElementos("select * from seleccionarIdVendedores");
             while (rs2.next()) {
                 int id2 = rs2.getInt("id");
                 ids.add(Integer.toString(id2));
             }
 
             // Consulta para obtener IDs de compradores
-            ResultSet rs3 = db.mostrarElementos("SELECT id FROM compradores");
+            ResultSet rs3 = db.mostrarElementos("select * from seleccionarIdCompradores");
             while (rs3.next()) {
                 int id3 = rs3.getInt("id");
                 ids.add(Integer.toString(id3));
@@ -6662,7 +6662,7 @@ public class Main extends javax.swing.JFrame {
     private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
         // TODO add your handling code here:
         String id = tf_buscarAgentes.getText();
-        ResultSet rs = db.mostrarElementos("SELECT * FROM agentes WHERE id = '" + id + "';");
+        ResultSet rs = db.mostrarElementos("CALL obtenerAgentePorIdBuscando('" + id + "');");
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
         model.setRowCount(0);
         try {
@@ -6716,7 +6716,7 @@ public class Main extends javax.swing.JFrame {
     private void jButton9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton9MouseClicked
         // TODO add your handling code here:
         String id = jTextField2.getText();
-        ResultSet rs = db.mostrarElementos("SELECT * FROM propiedades_en_mercado WHERE idPropiedad = '" + id + "';");
+        ResultSet rs = db.mostrarElementos("CALL obtenerPropiedadEnMercadoPorIdBuscar('" + id + "');");
         DefaultTableModel model = (DefaultTableModel) jTable4.getModel();
         model.setRowCount(0);
         try {
@@ -6743,7 +6743,7 @@ public class Main extends javax.swing.JFrame {
     private void JB_buscarPropiedadesVendidasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_buscarPropiedadesVendidasMouseClicked
         // TODO add your handling code here:
         String id = tf_buscarPropiedadesVendidas.getText();
-        ResultSet rs = db.mostrarElementos("SELECT * FROM propiedades_vendidas WHERE idPropiedad = '" + id + "';");
+        ResultSet rs = db.mostrarElementos("CALL obtenerPropiedadEnVentaPorIdBuscar('" + id + "');");
         DefaultTableModel model = (DefaultTableModel) JT_propiedadesVendidas.getModel();
         model.setRowCount(0);
         try {
@@ -7047,7 +7047,7 @@ public class Main extends javax.swing.JFrame {
     private void jButton30MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton30MouseClicked
         // TODO add your handling code here:
         try {
-            ResultSet rs = db.mostrarElementos("SELECT idPropiedad FROM propiedades_en_mercado;");
+            ResultSet rs = db.mostrarElementos("select * from seleccionarIdPM;");
             DefaultListModel<String> modeloLista = new DefaultListModel<>();
             int idprop = 0;
             ArrayList fotos = new ArrayList();
@@ -7109,7 +7109,7 @@ public class Main extends javax.swing.JFrame {
     private void jButton31MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton31MouseClicked
         // TODO add your handling code here:
         try {
-            ResultSet rs = db.mostrarElementos("SELECT idPropiedad FROM propiedades_en_mercado;");
+            ResultSet rs = db.mostrarElementos("select * from seleccionarIdPM;");
             DefaultListModel<String> modeloLista = new DefaultListModel<>();
             int idprop = 0;
             ArrayList fotos = new ArrayList();
@@ -7593,7 +7593,7 @@ public class Main extends javax.swing.JFrame {
 
     private void jButton37MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton37MouseClicked
         // TODO add your handling code here:
-        ResultSet rs2 = db.mostrarElementos("SELECT * FROM ventas_x_precio");
+        ResultSet rs2 = db.mostrarElementos("SELECT * FROM ventasXprecio");
         DefaultListModel<String> modeloLista = new DefaultListModel<>();
         // Crear un modelo de tabla personalizado
         int i = 1;
@@ -7612,7 +7612,7 @@ public class Main extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(Reportes, "Error: La base de datos no ha respondido a tiempo", "Error de Inactividad", JOptionPane.ERROR_MESSAGE);
         }
         // TODO add your handling code here:
-        ResultSet rs = db.mostrarElementos("SELECT * FROM ventas_x_precio_id");
+        ResultSet rs = db.mostrarElementos("SELECT * FROM ventasXprecioId");
 
         //Codigo para poner en Jtable
         // Títulos de las columnas
@@ -7742,7 +7742,7 @@ public class Main extends javax.swing.JFrame {
 
     private void jButton13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton13MouseClicked
         // TODO add your handling code here:
-        ResultSet rs = db.mostrarElementos("SELECT * FROM ventas_x_caracteristica");
+        ResultSet rs = db.mostrarElementos("SELECT * FROM ventasXcaracteristica");
         DefaultListModel<String> modeloLista = new DefaultListModel<>();
 
         //Codigo para poner en Jtable
@@ -7776,8 +7776,8 @@ public class Main extends javax.swing.JFrame {
 
     private void jButton19MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton19MouseClicked
         // TODO add your handling code here:
-        ResultSet rs = db.mostrarElementos("SELECT * FROM ventas_x_ubicacion");
-        ResultSet rs2 = db.mostrarElementos("SELECT * FROM ventas_x_ubicacion_ordenado");
+        ResultSet rs = db.mostrarElementos("SELECT * FROM ventasXubicacion");
+        ResultSet rs2 = db.mostrarElementos("SELECT * FROM ventasXubicacionOrdenado");
         DefaultListModel<String> modeloLista = new DefaultListModel<>();
 
         //Codigo para poner en Jtable
@@ -7821,7 +7821,7 @@ public class Main extends javax.swing.JFrame {
 
     private void jButton18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton18MouseClicked
         // TODO add your handling code here:
-        ResultSet rs = db.mostrarElementos("SELECT * FROM compras_x_comprador");
+        ResultSet rs = db.mostrarElementos("SELECT * FROM comprasXcomprador");
         DefaultListModel<String> modeloLista = new DefaultListModel<>();
 
         //Codigo para poner en Jtable
@@ -7857,7 +7857,7 @@ public class Main extends javax.swing.JFrame {
 
     private void jButton17MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton17MouseClicked
         // TODO add your handling code here:
-        ResultSet rs = db.mostrarElementos("SELECT * FROM ventas_x_vendedor");
+        ResultSet rs = db.mostrarElementos("SELECT * FROM ventasXvendedor");
         DefaultListModel<String> modeloLista = new DefaultListModel<>();
 
         //Codigo para poner en Jtable
@@ -7893,7 +7893,7 @@ public class Main extends javax.swing.JFrame {
 
     private void jButton16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton16MouseClicked
         // TODO add your handling code here:
-        ResultSet rs = db.mostrarElementos("SELECT * FROM ventas_x_agente");
+        ResultSet rs = db.mostrarElementos("SELECT * FROM ventasXagente");
         DefaultListModel<String> modeloLista = new DefaultListModel<>();
         int i = 1;
 

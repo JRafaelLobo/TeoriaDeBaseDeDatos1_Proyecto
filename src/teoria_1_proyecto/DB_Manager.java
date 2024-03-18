@@ -32,7 +32,7 @@ public class DB_Manager {
         }
     }
 
-    public void crearTablas() {
+    /*public void crearTablas() {
         // Tabla de prueba para probar conexion
         if (con != null) {
             try {
@@ -119,7 +119,7 @@ public class DB_Manager {
         } else {
             System.err.println("Connection is null. Unable to create table.");
         }
-    }
+    }*/
 
     public void HacerConsulta(String consulta) {
         try {
