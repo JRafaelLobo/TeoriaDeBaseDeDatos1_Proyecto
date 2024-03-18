@@ -65,7 +65,6 @@ public class CambiarPantallaTiempo extends Thread {
             //---------------
             DB_Manager db = new DB_Manager();
             db.crearConexion();
-            db.crearTablas();
 
             ArrayList<String> temp = new ArrayList();
             ResultSet rs = db.mostrarElementos("SELECT id FROM usuario");
