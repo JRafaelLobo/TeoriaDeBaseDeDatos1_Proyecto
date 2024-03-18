@@ -62,7 +62,7 @@ public class Main extends javax.swing.JFrame {
             }
 
             for (int i = 0; i < temp.size(); i++) {
-                db.HacerConsulta("SELECT desactivarUsuario("+temp.get(i)+");");
+                db.HacerConsulta("SELECT desactivarUsuario(" + temp.get(i) + ");");
             }
             //Poniendo logos
             this.setIconImage(new ImageIcon("./Imagen\\beinvenida.jpeg").getImage());
@@ -2098,10 +2098,10 @@ public class Main extends javax.swing.JFrame {
             .addGroup(jPanel81Layout.createSequentialGroup()
                 .addGroup(jPanel81Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel81Layout.createSequentialGroup()
-                        .addGap(106, 106, 106)
+                        .addGap(45, 45, 45)
                         .addComponent(jLabel96, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel81Layout.createSequentialGroup()
-                        .addGap(115, 115, 115)
+                        .addGap(28, 28, 28)
                         .addGroup(jPanel81Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel103, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jl_prop2CompradorEnMercado)
@@ -2120,7 +2120,7 @@ public class Main extends javax.swing.JFrame {
                         .addComponent(jLabel100, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(124, 124, 124)
                         .addComponent(jLabel101, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(132, Short.MAX_VALUE))
+                .addContainerGap(39, Short.MAX_VALUE))
         );
         jPanel81Layout.setVerticalGroup(
             jPanel81Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2165,12 +2165,12 @@ public class Main extends javax.swing.JFrame {
             .addGroup(jPanel19Layout.createSequentialGroup()
                 .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel19Layout.createSequentialGroup()
-                        .addGap(125, 125, 125)
-                        .addComponent(jPanel81, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel19Layout.createSequentialGroup()
                         .addGap(25, 25, 25)
-                        .addComponent(jButton30)))
-                .addGap(0, 98, Short.MAX_VALUE))
+                        .addComponent(jButton30))
+                    .addGroup(jPanel19Layout.createSequentialGroup()
+                        .addGap(128, 128, 128)
+                        .addComponent(jPanel81, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel19Layout.setVerticalGroup(
             jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2204,10 +2204,10 @@ public class Main extends javax.swing.JFrame {
             .addGroup(jPanel88Layout.createSequentialGroup()
                 .addGroup(jPanel88Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel88Layout.createSequentialGroup()
-                        .addGap(164, 164, 164)
+                        .addContainerGap()
                         .addComponent(JL_propCompFoto1, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel88Layout.createSequentialGroup()
-                        .addGap(153, 153, 153)
+                        .addGap(56, 56, 56)
                         .addGroup(jPanel88Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel98, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jl_prop2CompradorCompradas)
@@ -2228,7 +2228,7 @@ public class Main extends javax.swing.JFrame {
                         .addComponent(jl_prop5CompradorCompradas)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel88Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 111, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
                         .addComponent(jLabel97, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(94, 94, 94))))
         );
@@ -2274,11 +2274,11 @@ public class Main extends javax.swing.JFrame {
             .addGroup(jPanel20Layout.createSequentialGroup()
                 .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel20Layout.createSequentialGroup()
-                        .addGap(125, 125, 125)
-                        .addComponent(jPanel88, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel20Layout.createSequentialGroup()
                         .addGap(26, 26, 26)
-                        .addComponent(jButton22)))
+                        .addComponent(jButton22))
+                    .addGroup(jPanel20Layout.createSequentialGroup()
+                        .addGap(125, 125, 125)
+                        .addComponent(jPanel88, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel20Layout.setVerticalGroup(
@@ -2321,7 +2321,7 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(jPanel89Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 1023, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton24))
-                .addContainerGap(300, Short.MAX_VALUE))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
         jPanel89Layout.setVerticalGroup(
             jPanel89Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2364,7 +2364,7 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(jPanel90Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton25)
                     .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 997, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(330, Short.MAX_VALUE))
+                .addContainerGap(61, Short.MAX_VALUE))
         );
         jPanel90Layout.setVerticalGroup(
             jPanel90Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2386,8 +2386,8 @@ public class Main extends javax.swing.JFrame {
                 .addContainerGap(72, Short.MAX_VALUE)
                 .addGroup(jp_ventanaVendedor2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(TP_ventanaCliente1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(112, 112, 112))
+                    .addComponent(TP_ventanaCliente1, javax.swing.GroupLayout.PREFERRED_SIZE, 1070, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(381, 381, 381))
         );
         jp_ventanaVendedor2Layout.setVerticalGroup(
             jp_ventanaVendedor2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -4650,6 +4650,9 @@ public class Main extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 JB_modificarVendidaMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                JB_modificarVendidaMouseEntered(evt);
+            }
         });
         JB_modificarVendida.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -5462,7 +5465,7 @@ public class Main extends javax.swing.JFrame {
 //            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
 //        }
         String id = jTextField1.getText();
-        ResultSet rs = db.mostrarElementos("CALL obtenerCompradorPorId("+id+")");
+        ResultSet rs = db.mostrarElementos("CALL obtenerCompradorPorId(" + id + ")");
         DefaultTableModel model = (DefaultTableModel) jTable3.getModel();
         model.setRowCount(0);
         try {
@@ -5686,7 +5689,7 @@ public class Main extends javax.swing.JFrame {
         }
         if (valido) {
 
-            String vista = "CALL modificarAgente('"+id+"','"+atributo+"','"+valor+"');";
+            String vista = "CALL modificarAgente('" + id + "','" + atributo + "','" + valor + "');";
 //"UPDATE agentes SET " + atributo + " = '" + valor + "' WHERE id = '" + id + "'";
             db.HacerConsulta(vista);
             tf_nuevovalorAgente.setText("");
@@ -6127,21 +6130,22 @@ public class Main extends javax.swing.JFrame {
         String atributo = (String) cb_atributoPropEnVenta.getSelectedItem();
         String nuevo_valor = tf_nuevovalorPropEnVenta.getText();
         boolean valido = true;
-        ArrayList<String> ids = new ArrayList<>();
+        ArrayList<String> idsa = new ArrayList<>();
+        ArrayList<String> idsv = new ArrayList<>();
 
         try {
             // Consulta para obtener IDs de agentes
             ResultSet rs = db.mostrarElementos("select * from seleccionarIdAgentes");
             while (rs.next()) {
                 int id1 = rs.getInt("id");
-                ids.add(Integer.toString(id1));
+                idsa.add(Integer.toString(id1));
             }
 
             // Consulta para obtener IDs de vendedores
             ResultSet rs2 = db.mostrarElementos("select * from seleccionarIdVendedores");
             while (rs2.next()) {
                 int id2 = rs2.getInt("id");
-                ids.add(Integer.toString(id2));
+                idsv.add(Integer.toString(id2));
             }
         } catch (SQLException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
@@ -6182,28 +6186,47 @@ public class Main extends javax.swing.JFrame {
                 if (!(nuevo_valor.matches("\\d{4}-\\d{2}-\\d{2}"))) {
                     JOptionPane.showMessageDialog(null, "Formato de fecha incorrecto.\nDebe ser YYYY-MM-DD.", "Error", JOptionPane.ERROR_MESSAGE);
                     valido = false;
-                } else if (atributo.equals("cantidadDormitorios") || atributo.equals("precio")) {
-                    try {
-                        Integer.parseInt(nuevo_valor);
-                    } catch (NumberFormatException e) {
-                        JOptionPane.showMessageDialog(null, "Por favor, ingrese números enteros válidos en los campos correspondientes.", "Error", JOptionPane.ERROR_MESSAGE);
-                        valido = false;
-                    }
-
-                } else if (atributo.equals("noIdentidad_Agente") || atributo.equals("noIdentidad_Vendedor")) {
-                    for (String idcomp : ids) {
-                        if (!(nuevo_valor.equals(idcomp))) {
-                            valido = false;
-                            JOptionPane.showMessageDialog(null, "Seleccione un id existente", "Error", JOptionPane.ERROR_MESSAGE);
-                        }
-                    }
+                }
+            } else if (atributo.equals("cantidadDormitorios") || atributo.equals("precio")) {
+                try {
+                    Integer.parseInt(nuevo_valor);
+                } catch (NumberFormatException e) {
+                    JOptionPane.showMessageDialog(null, "Por favor, ingrese números enteros válidos en los campos correspondientes.", "Error", JOptionPane.ERROR_MESSAGE);
+                    valido = false;
                 }
 
+            } else if (atributo.equals("noIdentidad_Agente")) {
+                // Validación de IDs
+                boolean idValidoa = false;
+                for (String idcomp : idsa) {
+                    if (nuevo_valor.equals(idcomp)) {
+                        idValidoa = true;
+                        break;
+                    }
+                }
+                if (!idValidoa) {
+                    valido = false;
+                    JOptionPane.showMessageDialog(null, "El nuevo valor debe coincidir con un ID de agente, vendedor o comprador.", "Error", JOptionPane.ERROR_MESSAGE);
+                }
+            } else if (atributo.equals("noIdentidad_Vendedor")) {
+                                // Validación de IDs
+                boolean idValidov = false;
+                for (String idcomp : idsv) {
+                    if (nuevo_valor.equals(idcomp)) {
+                        idValidov = true;
+                        break;
+                    }
+                }
+                if (!idValidov) {
+                    valido = false;
+                    JOptionPane.showMessageDialog(null, "El nuevo valor debe coincidir con un ID de agente, vendedor o comprador.", "Error", JOptionPane.ERROR_MESSAGE);
+                }
             } else {
                 valido = false;
                 JOptionPane.showMessageDialog(null, "Atributo no valido", "Error", JOptionPane.ERROR_MESSAGE);
             }
         }
+
         if (valido) {
             db.HacerConsulta("CALL modificarPropiedadEnMercado('" + id + "','" + atributo + "','" + nuevo_valor + "');");
             tf_nuevovalorPropEnVenta.setText("");
@@ -6479,34 +6502,35 @@ public class Main extends javax.swing.JFrame {
         String atributo = (String) cb_atributoPropVendida.getSelectedItem();
         String nuevo_valor = tf_nuevovalorVendida.getText();
         boolean valido = true;
-        ArrayList<String> ids = new ArrayList<>();
-
+        ArrayList<String> idsa = new ArrayList<>();
+        ArrayList<String> idsv = new ArrayList<>();
+        ArrayList<String> idsc = new ArrayList<>();
         try {
             // Consulta para obtener IDs de agentes
             ResultSet rs = db.mostrarElementos("select * from seleccionarIdAgentes");
             while (rs.next()) {
                 int id1 = rs.getInt("id");
-                ids.add(Integer.toString(id1));
+                idsa.add(Integer.toString(id1));
             }
 
             // Consulta para obtener IDs de vendedores
             ResultSet rs2 = db.mostrarElementos("select * from seleccionarIdVendedores");
             while (rs2.next()) {
                 int id2 = rs2.getInt("id");
-                ids.add(Integer.toString(id2));
+                idsv.add(Integer.toString(id2));
             }
 
             // Consulta para obtener IDs de compradores
             ResultSet rs3 = db.mostrarElementos("select * from seleccionarIdCompradores");
             while (rs3.next()) {
                 int id3 = rs3.getInt("id");
-                ids.add(Integer.toString(id3));
+                idsc.add(Integer.toString(id3));
             }
         } catch (SQLException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        if (nuevo_valor.isEmpty()) {
+         if (nuevo_valor.isEmpty()) {
             valido = false;
             JOptionPane.showMessageDialog(null, "Rellenar el nuevo valor", "Error", JOptionPane.ERROR_MESSAGE);
         } else {
@@ -6541,36 +6565,66 @@ public class Main extends javax.swing.JFrame {
                 if (!(nuevo_valor.matches("\\d{4}-\\d{2}-\\d{2}"))) {
                     JOptionPane.showMessageDialog(null, "Formato de fecha incorrecto.\nDebe ser YYYY-MM-DD.", "Error", JOptionPane.ERROR_MESSAGE);
                     valido = false;
-                } else if (atributo.equals("cantidadDormitorios") || atributo.equals("precio") || atributo.equals("comisionVenta")) {
-                    try {
-                        Integer.parseInt(nuevo_valor);
-                    } catch (NumberFormatException e) {
-                        JOptionPane.showMessageDialog(null, "Por favor, ingrese números enteros válidos en los campos correspondientes.", "Error", JOptionPane.ERROR_MESSAGE);
-                        valido = false;
-                    }
-
-                } else if (atributo.equals("noIdentidad_Agente") || atributo.equals("noIdentidad_Comprador") || atributo.equals("noIdentidad_Vendedor")) {
-                    for (String idcomp : ids) {
-                        if (!(nuevo_valor.equals(idcomp))) {
-                            valido = false;
-                            JOptionPane.showMessageDialog(null, "Seleccione un id existente", "Error", JOptionPane.ERROR_MESSAGE);
-                        }
-                    }
+                }
+            } else if (atributo.equals("cantidadDormitorios") || atributo.equals("precio") || atributo.equals("comisionVenta")) {
+                try {
+                    Integer.parseInt(nuevo_valor);
+                } catch (NumberFormatException e) {
+                    JOptionPane.showMessageDialog(null, "Por favor, ingrese números enteros válidos en los campos correspondientes.", "Error", JOptionPane.ERROR_MESSAGE);
+                    valido = false;
                 }
 
-            } else {
-                valido = false;
-                JOptionPane.showMessageDialog(null, "Atributo no valido", "Error", JOptionPane.ERROR_MESSAGE);
-            }
+            } else if (atributo.equals("noIdentidad_Agente")) {
+                // Validación de IDs
+                boolean idValidoa = false;
+                for (String idcomp : idsa) {
+                    if (nuevo_valor.equals(idcomp)) {
+                        idValidoa = true;
+                        break;
+                    }
+                }
+                if (!idValidoa) {
+                    valido = false;
+                    JOptionPane.showMessageDialog(null, "El nuevo valor debe coincidir con un ID de agente, vendedor o comprador.", "Error", JOptionPane.ERROR_MESSAGE);
+                }
+            } else if (atributo.equals("noIdentidad_Vendedor")) {
+                                // Validación de IDs
+                boolean idValidov = false;
+                for (String idcomp : idsv) {
+                    if (nuevo_valor.equals(idcomp)) {
+                        idValidov = true;
+                        break;
+                    }
+                }
+                if (!idValidov) {
+                    valido = false;
+                    JOptionPane.showMessageDialog(null, "El nuevo valor debe coincidir con un ID de agente, vendedor o comprador.", "Error", JOptionPane.ERROR_MESSAGE);
+                }
+        }else if (atributo.equals("noIdentidad_Comprador")) {
+                                // Validación de IDs
+                boolean idValidoc = false;
+                for (String idcomp : idsc) {
+                    if (nuevo_valor.equals(idcomp)) {
+                        idValidoc = true;
+                        break;
+                    }
+                }
+                if (!idValidoc) {
+                    valido = false;
+                    JOptionPane.showMessageDialog(null, "El nuevo valor debe coincidir con un ID de agente, vendedor o comprador.", "Error", JOptionPane.ERROR_MESSAGE);
+                }
         }
+        }
+
         if (valido) {
             db.HacerConsulta("CALL modificarPropiedadVendida('" + id + "','" + atributo + "','" + nuevo_valor + "');");
             tf_nuevovalorVendida.setText("");
             JF_modificarPropVendidas.setVisible(false);
-            JOptionPane.showMessageDialog(null, "Modificacion realizada con exito");
+            JOptionPane.showMessageDialog(null, "Modificación realizada con éxito");
         } else {
-            JOptionPane.showMessageDialog(null, "Error al realizar la modificacion", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Error al realizar la modificación", "Error", JOptionPane.ERROR_MESSAGE);
         }
+
 
     }//GEN-LAST:event_JB_modificarVendidaMouseClicked
 
@@ -6642,10 +6696,12 @@ public class Main extends javax.swing.JFrame {
                 String alteracion = rs.getString("alteracion");
                 Object[] row = {id2, accion, tabla, timestamp, alteracion};
                 model.addRow(row);
+
             }
 
         } catch (SQLException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Main.class
+                    .getName()).log(Level.SEVERE, null, ex);
         }
         JF_bitacora.pack();
         JF_bitacora.setLocationRelativeTo(JF_Principal);
@@ -6674,10 +6730,12 @@ public class Main extends javax.swing.JFrame {
                 int telefonoOficina = rs.getInt("telefonoOficina");
                 Object[] row = {id2, nombre, direccion, cel, telefonoOficina};
                 model.addRow(row);
+
             }
 
         } catch (SQLException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Main.class
+                    .getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jButton5MouseClicked
 
@@ -6696,10 +6754,12 @@ public class Main extends javax.swing.JFrame {
                 String alteracion = rs.getString("alteracion");
                 Object[] row = {id2, accion, tabla, timestamp, alteracion};
                 model.addRow(row);
+
             }
 
         } catch (SQLException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Main.class
+                    .getName()).log(Level.SEVERE, null, ex);
         }
 
     }//GEN-LAST:event_JB_buscarUsuarioBitacoraMouseClicked
@@ -6733,10 +6793,12 @@ public class Main extends javax.swing.JFrame {
                 int vendedor = rs.getInt("noIdentidad_Vendedor");
                 Object[] row = {id2, nombre, ciudad, direccion, cant_dor, car, precio, fecha, agente, vendedor};
                 model.addRow(row);
+
             }
 
         } catch (SQLException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Main.class
+                    .getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jButton9MouseClicked
 
@@ -6763,10 +6825,12 @@ public class Main extends javax.swing.JFrame {
                 int comision = rs.getInt("comisionVenta");
                 Object[] row = {id2, nombre, ciudad, direccion, cant_dor, car, precio, fecha, fechaVenta, agente, vendedor, comprador, comision};
                 model.addRow(row);
+
             }
 
         } catch (SQLException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Main.class
+                    .getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_JB_buscarPropiedadesVendidasMouseClicked
 
@@ -6808,10 +6872,12 @@ public class Main extends javax.swing.JFrame {
                 while (rs.next()) {
                     idprop = rs.getInt("idPropiedad");
                     fotos.add(idprop);
+
                 }
 
             } catch (SQLException ex) {
-                Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Main.class
+                        .getName()).log(Level.SEVERE, null, ex);
             }
             //Primera imagen -----------------------
             String nombreImagen = fotos.get(0).toString() + ".jpg"; // Obtener el nombre de la imagen
@@ -6909,10 +6975,12 @@ public class Main extends javax.swing.JFrame {
                 int comision = rs.getInt("comisionVenta");
                 Object[] row = {nombre, ciudad, direccion, cant_dor, car, precio, fecha, fechaVenta, agente, vendedor, comprador, comision};
                 model.addRow(row);
+
             }
 
         } catch (SQLException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Main.class
+                    .getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jButton24MouseClicked
 
@@ -6934,10 +7002,12 @@ public class Main extends javax.swing.JFrame {
                 int vendedor = rs.getInt("noIdentidad_Vendedor");
                 Object[] row = {nombre, ciudad, direccion, cant_dor, car, precio, fecha, agente, vendedor};
                 model.addRow(row);
+
             }
 
         } catch (SQLException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Main.class
+                    .getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jButton25MouseClicked
 
@@ -6959,10 +7029,12 @@ public class Main extends javax.swing.JFrame {
                 int vendedor = rs.getInt("noIdentidad_Vendedor");
                 Object[] row = {nombre, ciudad, direccion, cant_dor, car, precio, fecha, agente, vendedor};
                 model.addRow(row);
+
             }
 
         } catch (SQLException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Main.class
+                    .getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jButton26MouseClicked
 
@@ -6984,10 +7056,12 @@ public class Main extends javax.swing.JFrame {
                 int vendedor = rs.getInt("noIdentidad_Vendedor");
                 Object[] row = {nombre, ciudad, direccion, cant_dor, car, precio, fecha, agente, vendedor};
                 model.addRow(row);
+
             }
 
         } catch (SQLException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Main.class
+                    .getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jButton27MouseClicked
 
@@ -7009,10 +7083,12 @@ public class Main extends javax.swing.JFrame {
                 int vendedor = rs.getInt("noIdentidad_Vendedor");
                 Object[] row = {nombre, ciudad, direccion, cant_dor, car, precio, fecha, agente, vendedor};
                 model.addRow(row);
+
             }
 
         } catch (SQLException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Main.class
+                    .getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jButton28MouseClicked
 
@@ -7037,10 +7113,12 @@ public class Main extends javax.swing.JFrame {
                 int comision = rs.getInt("comisionVenta");
                 Object[] row = {nombre, ciudad, direccion, cant_dor, car, precio, fecha, fechaVenta, agente, vendedor, comprador, comision};
                 model.addRow(row);
+
             }
 
         } catch (SQLException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Main.class
+                    .getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jButton29MouseClicked
 
@@ -7055,10 +7133,12 @@ public class Main extends javax.swing.JFrame {
                 while (rs.next()) {
                     idprop = rs.getInt("idPropiedad");
                     fotos.add(idprop);
+
                 }
 
             } catch (SQLException ex) {
-                Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Main.class
+                        .getName()).log(Level.SEVERE, null, ex);
             }
             //Primera imagen -----------------------
             String nombreImagen = fotos.get(0).toString() + ".jpg"; // Obtener el nombre de la imagen
@@ -7117,10 +7197,12 @@ public class Main extends javax.swing.JFrame {
                 while (rs.next()) {
                     idprop = rs.getInt("idPropiedad");
                     fotos.add(idprop);
+
                 }
 
             } catch (SQLException ex) {
-                Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Main.class
+                        .getName()).log(Level.SEVERE, null, ex);
             }
             //Primera imagen -----------------------
             String nombreImagen = fotos.get(0).toString() + ".jpg"; // Obtener el nombre de la imagen
@@ -7180,10 +7262,12 @@ public class Main extends javax.swing.JFrame {
                 while (rs.next()) {
                     idprop = rs.getInt("idPropiedad");
                     fotos.add(idprop);
+
                 }
 
             } catch (SQLException ex) {
-                Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Main.class
+                        .getName()).log(Level.SEVERE, null, ex);
             }
             //Primera imagen -----------------------
             String nombreImagen = fotos.get(0).toString() + ".jpg"; // Obtener el nombre de la imagen
@@ -7242,10 +7326,12 @@ public class Main extends javax.swing.JFrame {
                 while (rs.next()) {
                     idprop = rs.getInt("idPropiedad");
                     fotos.add(idprop);
+
                 }
 
             } catch (SQLException ex) {
-                Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Main.class
+                        .getName()).log(Level.SEVERE, null, ex);
             }
             //Primera imagen -----------------------
             String nombreImagen = fotos.get(0).toString() + ".jpg"; // Obtener el nombre de la imagen
@@ -7302,10 +7388,12 @@ public class Main extends javax.swing.JFrame {
                 while (rs.next()) {
                     idprop = rs.getInt("idPropiedad");
                     fotos.add(idprop);
+
                 }
 
             } catch (SQLException ex) {
-                Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Main.class
+                        .getName()).log(Level.SEVERE, null, ex);
             }
             //Primera imagen -----------------------
             String nombreImagen = fotos.get(0).toString() + ".jpg"; // Obtener el nombre de la imagen
@@ -7364,10 +7452,12 @@ public class Main extends javax.swing.JFrame {
                 while (rs.next()) {
                     idprop = rs.getInt("idPropiedad");
                     fotos.add(idprop);
+
                 }
 
             } catch (SQLException ex) {
-                Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Main.class
+                        .getName()).log(Level.SEVERE, null, ex);
             }
             //Primera imagen -----------------------
             String nombreImagen = fotos.get(0).toString() + ".jpg"; // Obtener el nombre de la imagen
@@ -7419,10 +7509,12 @@ public class Main extends javax.swing.JFrame {
                 while (rs.next()) {
                     idprop = rs.getInt("idPropiedad");
                     fotos.add(idprop);
+
                 }
 
             } catch (SQLException ex) {
-                Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Main.class
+                        .getName()).log(Level.SEVERE, null, ex);
             }
             //Primera imagen -----------------------
             String nombreImagen = fotos.get(0).toString() + ".jpg"; // Obtener el nombre de la imagen
@@ -7476,10 +7568,12 @@ public class Main extends javax.swing.JFrame {
                 int cel = rs.getInt("celular");
                 Object[] row = {id2, nombre, direccion, cel};
                 model.addRow(row);
+
             }
 
         } catch (SQLException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Main.class
+                    .getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jb_buscaridVendedorMouseClicked
 
@@ -7496,10 +7590,12 @@ public class Main extends javax.swing.JFrame {
                 int cel = rs.getInt("celular");
                 Object[] row = {id2, nombre, direccion, cel};
                 model.addRow(row);
+
             }
 
         } catch (SQLException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Main.class
+                    .getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_JB_verAgentesMouseClicked
 
@@ -7516,10 +7612,12 @@ public class Main extends javax.swing.JFrame {
                 int cel = rs.getInt("celular");
                 Object[] row = {id2, nombre, direccion, cel};
                 model.addRow(row);
+
             }
 
         } catch (SQLException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Main.class
+                    .getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_JB_verCompradoresMouseClicked
 
@@ -7536,10 +7634,12 @@ public class Main extends javax.swing.JFrame {
                 int cel = rs.getInt("celular");
                 Object[] row = {id2, nombre, direccion, cel};
                 model.addRow(row);
+
             }
 
         } catch (SQLException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Main.class
+                    .getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_JB_verVendedoresMouseClicked
 
@@ -7556,10 +7656,12 @@ public class Main extends javax.swing.JFrame {
                 int cel = rs.getInt("celular");
                 Object[] row = {id2, nombre, direccion, cel};
                 model.addRow(row);
+
             }
 
         } catch (SQLException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Main.class
+                    .getName()).log(Level.SEVERE, null, ex);
         }
         ResultSet rs2 = db.mostrarElementos("SELECT id, nombre, direccion, celular FROM agentes;");
         try {
@@ -7570,10 +7672,12 @@ public class Main extends javax.swing.JFrame {
                 int cel = rs2.getInt("celular");
                 Object[] row = {id2, nombre, direccion, cel};
                 model.addRow(row);
+
             }
 
         } catch (SQLException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Main.class
+                    .getName()).log(Level.SEVERE, null, ex);
         }
         ResultSet rs3 = db.mostrarElementos("SELECT * FROM compradores;");
         try {
@@ -7584,10 +7688,12 @@ public class Main extends javax.swing.JFrame {
                 int cel = rs3.getInt("celular");
                 Object[] row = {id2, nombre, direccion, cel};
                 model.addRow(row);
+
             }
 
         } catch (SQLException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Main.class
+                    .getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_JB_verUsuariosMouseClicked
 
@@ -7607,8 +7713,10 @@ public class Main extends javax.swing.JFrame {
             }
             jList1.setModel(modeloLista);
             lb_Reportes.setText("Ventas por precio de propiedad");
+
         } catch (SQLException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Main.class
+                    .getName()).log(Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(Reportes, "Error: La base de datos no ha respondido a tiempo", "Error de Inactividad", JOptionPane.ERROR_MESSAGE);
         }
         // TODO add your handling code here:
@@ -7635,8 +7743,10 @@ public class Main extends javax.swing.JFrame {
 
             JTable_Reportes.setModel(m);
             lb_Reportes.setText("Ventas por precio de propiedad");
+
         } catch (SQLException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Main.class
+                    .getName()).log(Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(Reportes, "Error: La base de datos no ha respondido a tiempo", "Error de Inactividad", JOptionPane.ERROR_MESSAGE);
 
         }
@@ -7680,7 +7790,8 @@ public class Main extends javax.swing.JFrame {
             lb_Reportes.setText("Promedios de agentes");
 
         } catch (SQLException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Main.class
+                    .getName()).log(Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(Reportes, "Error: La base de datos no ha respondido a tiempo", "Error de Inactividad", JOptionPane.ERROR_MESSAGE);
 
         }
@@ -7735,7 +7846,8 @@ public class Main extends javax.swing.JFrame {
             lb_Reportes.setText("Agente que vendio la mayor cantidad");
 
         } catch (SQLException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Main.class
+                    .getName()).log(Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(Reportes, "Error: La base de datos no ha respondido a tiempo", "Error de Inactividad", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_jButton15MouseClicked
@@ -7768,7 +7880,8 @@ public class Main extends javax.swing.JFrame {
             lb_Reportes.setText("Ventas de propiedades por caracteristicas");
 
         } catch (SQLException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Main.class
+                    .getName()).log(Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(Reportes, "Error: La base de datos no ha respondido a tiempo", "Error de Inactividad", JOptionPane.ERROR_MESSAGE);
 
         }
@@ -7797,8 +7910,10 @@ public class Main extends javax.swing.JFrame {
                 m.addRow(row);
             }
             JTable_Reportes.setModel(m);
+
         } catch (SQLException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Main.class
+                    .getName()).log(Level.SEVERE, null, ex);
         }
 
         int i = 1;
@@ -7813,7 +7928,8 @@ public class Main extends javax.swing.JFrame {
             jList1.setModel(modeloLista);
 
         } catch (SQLException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Main.class
+                    .getName()).log(Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(Reportes, "Error: La base de datos no ha respondido a tiempo", "Error de Inactividad", JOptionPane.ERROR_MESSAGE);
         }
         lb_Reportes.setText("Ventas por Ubicacion");
@@ -7850,7 +7966,8 @@ public class Main extends javax.swing.JFrame {
             lb_Reportes.setText("Cantidad de compras por comprador");
 
         } catch (SQLException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Main.class
+                    .getName()).log(Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(Reportes, "Error: La base de datos no ha respondido a tiempo", "Error de Inactividad", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_jButton18MouseClicked
@@ -7886,7 +8003,8 @@ public class Main extends javax.swing.JFrame {
             lb_Reportes.setText("Cantidad de ventas por vendedor");
 
         } catch (SQLException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Main.class
+                    .getName()).log(Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(Reportes, "Error: La base de datos no ha respondido a tiempo", "Error de Inactividad", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_jButton17MouseClicked
@@ -7921,8 +8039,10 @@ public class Main extends javax.swing.JFrame {
             jList1.setModel(modeloLista);
             JTable_Reportes.setModel(m);
             lb_Reportes.setText("Cantidad de ventas por agente");
+
         } catch (SQLException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Main.class
+                    .getName()).log(Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(Reportes, "Error: La base de datos no ha respondido a tiempo", "Error de Inactividad", JOptionPane.ERROR_MESSAGE);
 
         }
@@ -7946,42 +8066,50 @@ public class Main extends javax.swing.JFrame {
                 int vendedor = d.getInt("noIdentidad_Vendedor");
                 Object[] row = {idprop, nombre, ciudad, direccion, cant_dor, car, precio, fecha, agente, vendedor};
                 model.addRow(row);
+
             }
 
         } catch (SQLException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Main.class
+                    .getName()).log(Level.SEVERE, null, ex);
         }
 
     }//GEN-LAST:event_jb_actualizarPropiedadesenMercadoMouseClicked
 
     private void jb_actualizarPropiedadesVendidasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_actualizarPropiedadesVendidasMouseClicked
         ResultSet m = db.mostrarElementos("SELECT * FROM propiedades_vendidas;");
-            DefaultTableModel model2 = (DefaultTableModel) JT_propiedadesVendidas1.getModel();
-            model2.setRowCount(0);
-            try {
-                while (m.next()) {
-                    int id2 = m.getInt("idPropiedad");
-                    String nombre = m.getString("nombre");
-                    String ciudad = m.getString("ciudad");
-                    String direccion = m.getString("direccion");
-                    int cant_dor = m.getInt("cantidadDormitorios");
-                    String car = m.getString("caracteristicas");
-                    int precio = m.getInt("precio");
-                    String fecha = m.getString("fechaPublicacion");
-                    String fechaVenta = m.getString("fechaVenta");
-                    int agente = m.getInt("noIdentidad_Agente");
-                    int vendedor = m.getInt("noIdentidad_Vendedor");
-                    int comprador = m.getInt("noIdentidad_Comprador");
-                    int comision = m.getInt("comisionVenta");
-                    Object[] row = {id2, nombre, ciudad, direccion, cant_dor, car, precio, fecha, fechaVenta, agente, vendedor, comprador, comision};
-                    model2.addRow(row);
-                }
+        DefaultTableModel model2 = (DefaultTableModel) JT_propiedadesVendidas1.getModel();
+        model2.setRowCount(0);
+        try {
+            while (m.next()) {
+                int id2 = m.getInt("idPropiedad");
+                String nombre = m.getString("nombre");
+                String ciudad = m.getString("ciudad");
+                String direccion = m.getString("direccion");
+                int cant_dor = m.getInt("cantidadDormitorios");
+                String car = m.getString("caracteristicas");
+                int precio = m.getInt("precio");
+                String fecha = m.getString("fechaPublicacion");
+                String fechaVenta = m.getString("fechaVenta");
+                int agente = m.getInt("noIdentidad_Agente");
+                int vendedor = m.getInt("noIdentidad_Vendedor");
+                int comprador = m.getInt("noIdentidad_Comprador");
+                int comision = m.getInt("comisionVenta");
+                Object[] row = {id2, nombre, ciudad, direccion, cant_dor, car, precio, fecha, fechaVenta, agente, vendedor, comprador, comision};
+                model2.addRow(row);
 
-            } catch (SQLException ex) {
-                Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
             }
 
+        } catch (SQLException ex) {
+            Logger.getLogger(Main.class
+                    .getName()).log(Level.SEVERE, null, ex);
+        }
+
     }//GEN-LAST:event_jb_actualizarPropiedadesVendidasMouseClicked
+
+    private void JB_modificarVendidaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_modificarVendidaMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JB_modificarVendidaMouseEntered
 
     /**
      * @param args the command line arguments
@@ -7997,16 +8125,24 @@ public class Main extends javax.swing.JFrame {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
+
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Main.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Main.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Main.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Main.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
@@ -8488,6 +8624,7 @@ public class Main extends javax.swing.JFrame {
             e.printStackTrace();
         }
         return null;
+
     }
 
     //--------------------------
